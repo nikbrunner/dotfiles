@@ -93,7 +93,7 @@ alias greb="git rebase"
 alias grebi="git rebase -i"
 
 # Combined update
-alias xupdate="cupdate && gnupdates"
+alias xupdate="cupdate && gnupdate"
 
 # Config Files
 EDITOR="code"
