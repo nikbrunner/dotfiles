@@ -37,6 +37,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases ===================
+# Commands
+alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 
 # Git dotfiles bare repository
 alias c="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
@@ -51,6 +53,7 @@ alias cupdate="ccam \"Updates\" && cpush"
 
 # Git notes
 NOTES_PATH="$HOME/Documents/notes"
+alias notes="cd $NOTES_PATH"
 alias gn="/usr/bin/git --git-dir=$NOTES_PATH/.git --work-tree=$NOTES_PATH"
 alias gnl="gn log --oneline"
 alias gns="gn status"
@@ -88,6 +91,9 @@ alias grv="git remote -v"
 alias gl="git log --oneline"
 alias greb="git rebase"
 alias grebi="git rebase -i"
+
+# Combined update
+alias xupdate="cupdate && gnupdates"
 
 # Config Files
 EDITOR="code"
