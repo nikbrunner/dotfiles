@@ -53,7 +53,7 @@ alias cpush="c push"
 alias cupdate="ccam \"Updates\" && cpush"
 
 # Git notes
-NOTES_PATH="$HOME/Documents/notes"
+NOTES_PATH="$HOME/Documents/brain"
 alias notes="cd $NOTES_PATH"
 alias gn="/usr/bin/git --git-dir=$NOTES_PATH/.git --work-tree=$NOTES_PATH"
 alias gnl="gn log --oneline"
@@ -104,11 +104,13 @@ alias npmconfig="$EDITOR ~/.npmrc"
 
 # Navigation
 DEV_PATH="$HOME/Documents/dev"
+BRAIN_PATH="$HOME/Documents/brain"
 PROJECTS_PATH="$DEV_PATH/projects"
 OWN_PROJECTS_PATH="$PROJECTS_PATH/own"
 COURSE_PROJECTS_PATH="$PROJECTS_PATH/courses"
 WORK_PROJECTS_PATH="$PROJECTS_PATH/work"
 alias home="cd $HOME"
+alias brain="cd $BRAIN_PATH"
 alias dev="cd $DEV_PATH"
 alias projects="cd $PROJECTS_PATH"
 alias own="cd $OWN_PROJECTS_PATH"
