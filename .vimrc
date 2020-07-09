@@ -10,7 +10,6 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
 set undofile
 set incsearch
 
@@ -27,15 +26,14 @@ endif
 " Plugins
 call plug#begin()
 Plug 'arcticicestudio/nord-vim'
-Plug 'jremmen/vim-ripgrep'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
-Plug 'vim-utils/vim-man'
-Plug 'git@github.com:kien/ctrlp.vim.git'
-Plug 'git@github.com:ycm-core/YouCompleteMe.git'
 Plug 'git@github.com:mbbill/undotree.git'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-Plug 'vuciv/vim-bujo'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 colorscheme nord
@@ -62,9 +60,10 @@ nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
-" Prettier
-nmap <Leader>py <Plug>(Prettier)
+" fzf
+map <C-f> <Esc><Esc>:Files!<CR>
+inoremap <C-f> <Esc><Esc>:BLines!<CR>
+map <C-g> <Esc><Esc>:BCommits!<CR>
 
-" YCM
-nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
