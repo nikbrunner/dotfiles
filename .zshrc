@@ -13,13 +13,11 @@
 # Website: https://nibru.dev
 # E-Mail: nikolaus.brunner@protonmail.ch
 # Repository: https://github.com/nikbrunner/dotfiles-apple
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/nikolaus.brunner/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -28,33 +26,45 @@ export ZSH="/Users/nikolaus.brunner/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Aliases ===================
-# Commands
-alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
+# Path Declaration =======================================================
+# APPLICATIONS_PATH="$HOME/Applications"
+DOCUMENTS_PATH="$HOME/Documents"
+BRAIN_PATH="$DOCUMENTS_PATH/brain"
+# MUSIC_PATH="$DOCUMENTS_PATH/music"
+DEV_PATH="$DOCUMENTS_PATH/dev"
+PROJECTS_PATH="$DEV_PATH/projects"
+SCRIPTS_PATH="$DEV_PATH/resources/scripts"
+OWN_PROJECTS_PATH="$PROJECTS_PATH/own"
+COURSE_PROJECTS_PATH="$PROJECTS_PATH/courses"
+WORK_PROJECTS_PATH="$PROJECTS_PATH/work"
 
-# Git dotfiles bare repository
+# Aliases ================================================================
+
+# Basics =================================================================
+alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
+alias clr="clear"
+
+# Git dotfiles ===========================================================
 alias c="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias cl="c log --oneline"
 alias cs="c status"
 alias ca="c add"
-alias ca.="c add $HOME/."
 alias cau="c add -u"
 alias ccm="c commit -m"
 alias ccam="c commit -a -m"
 alias cpush="c push"
 alias cupdate="ccam \"Updates\" && cpush"
 
-# Git notes
-BRAIN_PATH="$HOME/Documents/brain"
-alias brain="cd $BRAIN_PATH"
+# BRAIN ==================================================================
+alias brainE="cd $BRAIN_PATH && nvim ."
 alias b="/usr/bin/git --git-dir=$BRAIN_PATH/.git --work-tree=$BRAIN_PATH"
 alias bl="b log --oneline"
 alias bs="b status"
@@ -66,7 +76,7 @@ alias bcam="b commit -a -m"
 alias bpush="b push"
 alias bupdate="ba. && bcm \"Updates\" && bpush"
 
-# Git commands
+# Git commands ===========================================================
 alias gs="git status"
 alias gpush="git push"
 alias gpushu="git push -u"
@@ -94,23 +104,26 @@ alias greb="git rebase"
 alias grebi="git rebase -i"
 
 # Combined update
-alias xupdate="cupdate && gnupdate"
+alias xupdate="cupdate && bupdate"
 
-# Config Files
-EDITOR="vim"
-alias vimconfig="$EDITOR ~/.vimrc"
+# Edit Config Files ======================================================
+EDITOR="nvim"
+SCIM="scim"
+NVIM_PATH="~/.config/nvim"
+TMUX_PATH="~"
+alias vim="nvim"
+alias v="nvim"
+alias vimconfig="$EDITOR $NVIM_PATH/init.vim"
 alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias npmconfig="$EDITOR ~/.npmrc"
+alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
+alias food="$SCIM $BRAIN_PATH/household/food-purchases.csv"
 
-# Navigation
-DEV_PATH="$HOME/Documents/dev"
-BRAIN_PATH="$HOME/Documents/brain"
-PROJECTS_PATH="$DEV_PATH/projects"
-OWN_PROJECTS_PATH="$PROJECTS_PATH/own"
-COURSE_PROJECTS_PATH="$PROJECTS_PATH/courses"
-WORK_PROJECTS_PATH="$PROJECTS_PATH/work"
+# Navigation =============================================================
 alias home="cd $HOME"
+alias docs="cd $DOCUMENTS_PATH"
+alias music="cd $MUSIC_PATH"
 alias brain="cd $BRAIN_PATH"
 alias dev="cd $DEV_PATH"
 alias projects="cd $PROJECTS_PATH"
@@ -118,30 +131,43 @@ alias own="cd $OWN_PROJECTS_PATH"
 alias courses="cd $COURSE_PROJECTS_PATH"
 alias work="cd $WORK_PROJECTS_PATH"
 
-# diva-e
+# diva-e =================================================================
 DIVAE_PATH="$WORK_PROJECTS_PATH/diva-e"
 alias divae="cd $DIVAE_PATH"
-alias divagram="cd $DIVAE_PATH/divagram/frontend/repo"
-alias baywa="cd $DIVAE_PATH/baywa/repo"
+alias divagram="cd $DIVAE_PATH/divagram"
+alias divagramF="cd $DIVAE_PATH/divagram/frontend/repo"
+alias divagramB="cd $DIVAE_PATH/divagram/backend/repo"
+alias baywa="cd $DIVAE_PATH/baywa/repo/frontend"
 
-# Basics
-alias clr="clear"
+# File Explorer ==========================================================
+FILE_EXPLORER="vifm"
+alias e-home="$FILE_EXPLORER $HOME"
+alias e-docs="$FILE_EXPLORER $DOCUMENTS_PATH $BRAIN_PATH"
+alias e-brain="$FILE_EXPLORER $BRAIN_PATH $BRAIN_PATH"
+alias e-dev="$FILE_EXPLORER $DEV_PATH $DEV_PATH"
+alias e-projects="$FILE_EXPLORER $PROJECTS_PATH $PROJECTS_PATH"
+alias e-own="$FILE_EXPLORER $OWN_PROJECTS_PATH $OWN_PROJECTS_PATH"
+alias e-courses="$FILE_EXPLORER $COURSE_PROJECTS_PATH $OWN_PROJECTS_PATH"
+alias e-work="$FILE_EXPLORER $WORK_PROJECTS_PATH $WORK_PROJECTS_PATH"
 
-# Xclip
-alias copy="xclip -selection clipboard"     # copy to system wide clipboard (register +)
-alias paste="xclip -o -selection clipboard" # paste from system wide clipboard (equivalent to `v -selection clipboard`)
-alias getdir="pwd | copy"
-alias godir="cd \`paste\`"
+# Spotify ================================================================
+alias spt="$APPLICATIONS_PATH/./spt"
 
-# Copy setup-repo script to current directory
-RESOURCES_PATH="$DEV_PATH/resources"
-SCRIPTS_PATH="$RESOURCES_PATH/scripts"
-alias srs="cp $RESOURCES_PATH/setup-repo.sh ."
+# Scripts ================================================================
+alias srs="cp $SCRIPTS_PATH/setup-repo.sh ."
 
-# Copy Stillness DSI files to current directory
-alias stillness="cp -r $HOME/Documents/dev/projects/stillness/repo/stillness ."
-alias stillness="cp -r $OWN_PROJECTS_PATH/stillness/repo/stillness/dsi ."
+# Path Exports ===========================================================
+# export PATH=/opt/firefox/firefox:$PATH
+export PATH=/usr/bin/python:$PATH
+export PATH=/usr/bin/python3:$PATH
+# export PATH=/usr/bin/snap:$PATH
 
+# Node ===================================================================
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# fzf ====================================================================
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}" | fzf`'
