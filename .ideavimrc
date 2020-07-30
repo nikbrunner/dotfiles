@@ -1,0 +1,79 @@
+" https://gist.github.com/aca/ea551d91e305ca3ead8313fbd7bd999d
+" https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+set rnu nu
+set ideamarks
+set smartindent
+
+" set leader key ========================================
+let mapleader =       "\<Space>"
+
+" Escape ================================================
+imap kj                <Esc>
+
+" Unbinds ===============================================
+map Q                 <nop>
+
+" Saving ================================================
+
+map <C-s>            :action SaveAll<CR>
+
+" Creating Splits =======================================
+map <leader>l        :vsp<CR>
+map <leader>j        :sp<CR>
+
+" Closers ===============================================
+map <C-w>            :action CloseContent<CR>
+map <leader>cc       :action CloseContent<CR>
+map <leader>co       :action CloseAllEditorsButActive<CR>
+
+" Better window navigation with TabShifter ==============
+map <C-h>            :action TabShiftActions.MoveFocusLeft<CR>
+map <C-j>            :action TabShiftActions.MoveFocusDown<CR>
+map <C-k>            :action TabShiftActions.MoveFocusUp<CR>
+map <C-l>            :action TabShiftActions.MoveFocusRight<CR>
+
+" Stretch Panes with TabShifter =========================
+nmap H               :action TabShiftActions.StretchLeft<CR>
+nmap J               :action TabShiftActions.StretchDown<CR>
+nmap K               :action TabShiftActions.StretchUp<CR>
+nmap L               :action TabShiftActions.StretchRight<CR>
+
+" Stretch Panes with TabShifter =========================
+nmap <A-h>           :action PreviousTab<CR>
+nmap <A-j>           :action NextTab<CR>
+nmap <A-k>           :action PreviousTab<CR>
+nmap <A-l>           :action NextTab<CR>
+
+" Settings ==============================================
+map <leader>.        :action ShowSettings<CR>
+
+" Folding ===============================================
+" These do not work properly. I will use the KeyMap from IntelliJ
+" Folding with VIM: https://vim.fandom.com/wiki/Folding
+nmap zC              :action CollapseRegionRecursively<CR>
+nmap zO              :action ExpandRegionRecursively<CR>
+nmap zR              :action ExpandAllRegions<CR>
+
+" VCS ===================================================
+map <leader>gs       :action Vcs.Show.Local.Changes<CR>
+map <leader>gc       :action ChangesView.ToggleCommitUi<CR>
+map <leader>go       :action Vcs.QuickListPopupAction<CR>
+map <leader>gpu      :action Vcs.Push<CR>
+map <leader>gup      :action Vcs.UpdateProject<CR>
+
+" Find ==================================================
+map <leader>ff       :action GotoFile<CR>
+map <leader>fip      :action FindInPath<CR>
+map <leader>fa       :action GotoAction<CR>
+map <leader>fr       :action RecentFiles<CR>
+" map <leader>fu       :action GotoDeclaration<CR>
+
+" Rename ================================================
+map <leader>rn       :action RenameElement<CR>
+
+" Comment ===============================================
+map <leader>cml      :action CommentByLineComment<CR>
+map <leader>cmb      :action CommentByBlockComment<CR>
+
+" Run ===================================================
+map <leader>run      :action RunMenu<CR>
