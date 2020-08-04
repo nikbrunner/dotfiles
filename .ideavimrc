@@ -2,7 +2,6 @@
 " https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 set rnu nu
 set ideamarks
-set smartindent
 
 " set leader key ========================================
 let mapleader =       "\<Space>"
@@ -10,16 +9,15 @@ let mapleader =       "\<Space>"
 " Escape ================================================
 imap kj                <Esc>
 
-" Unbinds ===============================================
+" Unbind Q
 map Q                 <nop>
-
-" Saving ================================================
-
-map <C-s>            :action SaveAll<CR>
 
 " Creating Splits =======================================
 map <leader>l        :vsp<CR>
 map <leader>j        :sp<CR>
+
+" Equalize Mac/Win/Linux ================================
+map <C-s>            :action SaveAll<CR>
 
 " Closers ===============================================
 map <C-w>            :action CloseContent<CR>
@@ -45,7 +43,8 @@ nmap <A-k>           :action PreviousTab<CR>
 nmap <A-l>           :action NextTab<CR>
 
 " Settings ==============================================
-map <leader>.        :action ShowSettings<CR>
+map <leader>,        :action ShowSettings<CR>
+map <A-,>            :action ShowSettings<CR>
 
 " Folding ===============================================
 " These do not work properly. I will use the KeyMap from IntelliJ
@@ -61,11 +60,15 @@ map <leader>go       :action Vcs.QuickListPopupAction<CR>
 map <leader>gpu      :action Vcs.Push<CR>
 map <leader>gup      :action Vcs.UpdateProject<CR>
 
-" Find ==================================================
-map <leader>ff       :action GotoFile<CR>
-map <leader>fip      :action FindInPath<CR>
-map <leader>fa       :action GotoAction<CR>
+" Files =================================================
+" file open
+map <leader>fo       :action GotoFile<CR>
+" files recent
 map <leader>fr       :action RecentFiles<CR>
+" find in path
+map <leader>fip      :action FindInPath<CR>
+" find action
+map <leader>fa       :action GotoAction<CR>
 " map <leader>fu       :action GotoDeclaration<CR>
 
 " Rename ================================================
@@ -77,3 +80,7 @@ map <leader>cmb      :action CommentByBlockComment<CR>
 
 " Run ===================================================
 map <leader>run      :action RunMenu<CR>
+
+" Actions ===============================================
+nmap <leader>clr      ggVGdd<CR>
+nmap <leader>cpa      ggVGy<CR>
