@@ -20,9 +20,10 @@ map <leader>j        :sp<CR>
 map <C-s>            :action SaveAll<CR>
 
 " Closers ===============================================
-map <C-w>            :action CloseContent<CR>
+#map <C-w>            :action CloseContent<CR>
 map <leader>cc       :action CloseContent<CR>
 map <leader>co       :action CloseAllEditorsButActive<CR>
+
 
 " Better window navigation with TabShifter ==============
 map <C-h>            :action TabShiftActions.MoveFocusLeft<CR>
@@ -31,16 +32,17 @@ map <C-k>            :action TabShiftActions.MoveFocusUp<CR>
 map <C-l>            :action TabShiftActions.MoveFocusRight<CR>
 
 " Stretch Panes with TabShifter =========================
-nmap H               :action TabShiftActions.StretchLeft<CR>
-nmap J               :action TabShiftActions.StretchDown<CR>
-nmap K               :action TabShiftActions.StretchUp<CR>
-nmap L               :action TabShiftActions.StretchRight<CR>
+map <C-A-h>          :action TabShiftActions.StretchLeft<CR>
+map <C-A-j>          :action TabShiftActions.StretchDown<CR>
+map <C-A-k>          :action TabShiftActions.StretchUp<CR>
+map <C-A-l>          :action TabShiftActions.StretchRight<CR>
+map <C-A-m>          :action TabShiftActions.ToggleMaximizeRestore<CR>
 
 " Stretch Panes with TabShifter =========================
-nmap <A-h>           :action PreviousTab<CR>
-nmap <A-j>           :action NextTab<CR>
-nmap <A-k>           :action PreviousTab<CR>
-nmap <A-l>           :action NextTab<CR>
+nmap H                :action PreviousTab<CR>
+nmap J                :action NextTab<CR>
+nmap K                :action PreviousTab<CR>
+nmap L                :action NextTab<CR>
 
 " Settings ==============================================
 map <leader>,        :action ShowSettings<CR>
