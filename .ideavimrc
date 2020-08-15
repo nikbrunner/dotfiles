@@ -17,13 +17,13 @@ map <leader>l        :vsp<CR>
 map <leader>j        :sp<CR>
 
 " Saving ================================================
-map <C-s>            :action SaveAll<CR>
 map <leader>s        :action SaveAll<CR>
 
 " Closers ===============================================
-" map <C-w>          :action CloseContent<CR>
 map <leader>cc       :action CloseContent<CR>
+map <leader>cg       :action CloseEditorsGroup<CR>
 map <leader>co       :action CloseAllEditorsButActive<CR>
+map <leader>cpp      :action CloseProject<CR>
 
 " Better window navigation with TabShifter ==============
 map <C-h>            :action TabShiftActions.MoveFocusLeft<CR>
@@ -73,8 +73,14 @@ map <leader>gup      :action Vcs.UpdateProject<CR>
 " Action
 map <leader><leader> :action GotoAction<CR>
 
-" Open
+" Open Tree
+map <leader>ot       :action ActivateProjectToolWindow<CR>
+
+" Open File
 map <leader>of       :action GotoFile<CR>
+
+" Open Project
+map <leader>opp      :action ManageRecentProjects<CR>
 
 " Open Recent
 map <leader>or       :action RecentFiles<CR>
@@ -86,8 +92,9 @@ map <leader>ft       :action FindInPath<CR>
 map <leader>rn       :action RenameElement<CR>
 
 " Comment ===============================================
-vmap gc              :action CommentByLineComment<CR>
-vmap gC              :action CommentByBlockComment<CR>
+nmap gcc              :action CommentByLineComment<CR>
+vmap gc               :action CommentByLineComment<CR>
+vmap gC               :action CommentByBlockComment<CR>
 
 " Run ===================================================
 map <leader>run      :action RunMenu<CR>
