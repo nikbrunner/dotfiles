@@ -7,7 +7,7 @@ set ideamarks
 let mapleader =       "\<Space>"
 
 " Escape ================================================
-imap jj                <Esc>
+imap kj                <Esc>
 
 " Unbind Q
 map Q                 <nop>
@@ -16,8 +16,9 @@ map Q                 <nop>
 map <leader>l        :vsp<CR>
 map <leader>j        :sp<CR>
 
-" Equalize Mac/Win/Linux ================================
+" Saving ================================================
 map <C-s>            :action SaveAll<CR>
+map <leader>s        :action SaveAll<CR>
 
 " Closers ===============================================
 " map <C-w>          :action CloseContent<CR>
@@ -42,6 +43,14 @@ nmap H                :action PreviousTab<CR>
 nmap J                :action NextTab<CR>
 nmap K                :action PreviousTab<CR>
 nmap L                :action NextTab<CR>
+
+" Insert Lines ==========================================
+" .. below.
+nnoremap <A-k>     O<esc>0C<esc>j
+" .. below.
+nnoremap <A-j>     o<esc>0C<esc>k
+
+" Comment ===============================================
 
 " Settings ==============================================
 map <A-,>            :action ShowSettings<CR>
@@ -77,7 +86,8 @@ map <leader>ft       :action FindInPath<CR>
 map <leader>rn       :action RenameElement<CR>
 
 " Comment ===============================================
-" map <leader>cl       :action CommentByLineComment<CR>
+vmap gc              :action CommentByLineComment<CR>
+vmap gC              :action CommentByBlockComment<CR>
 
 " Run ===================================================
 map <leader>run      :action RunMenu<CR>
@@ -86,11 +96,3 @@ map <leader>run      :action RunMenu<CR>
 nmap <leader>clr      ggVGdd<CR>
 nmap <leader>cpa      ggVGy<CR>
 
-" Insert line below.
-" nnoremap <space>K     O<esc>0C<esc>j
-" Insert line below.
-" nnoremap <space>J     o<esc>0C<esc>k
-
-map <leader>s :action SaveAll<CR>
-map <leader>t :action Vcs.UpdateProject<CR>
-map <leader>k :action Vcs.QuickListPopupAction<CR>
