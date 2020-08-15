@@ -7,7 +7,7 @@ set ideamarks
 let mapleader =       "\<Space>"
 
 " Escape ================================================
-imap kj                <Esc>
+imap jj                <Esc>
 
 " Unbind Q
 map Q                 <nop>
@@ -20,10 +20,9 @@ map <leader>j        :sp<CR>
 map <C-s>            :action SaveAll<CR>
 
 " Closers ===============================================
-#map <C-w>            :action CloseContent<CR>
+" map <C-w>          :action CloseContent<CR>
 map <leader>cc       :action CloseContent<CR>
 map <leader>co       :action CloseAllEditorsButActive<CR>
-
 
 " Better window navigation with TabShifter ==============
 map <C-h>            :action TabShiftActions.MoveFocusLeft<CR>
@@ -45,7 +44,6 @@ nmap K                :action PreviousTab<CR>
 nmap L                :action NextTab<CR>
 
 " Settings ==============================================
-map <leader>,        :action ShowSettings<CR>
 map <A-,>            :action ShowSettings<CR>
 
 " Folding ===============================================
@@ -63,22 +61,23 @@ map <leader>gpu      :action Vcs.Push<CR>
 map <leader>gup      :action Vcs.UpdateProject<CR>
 
 " Files =================================================
-" file open
-map <leader>fo       :action GotoFile<CR>
-" files recent
-map <leader>fr       :action RecentFiles<CR>
-" find in path
-map <leader>fip      :action FindInPath<CR>
-" find action
-map <leader>fa       :action GotoAction<CR>
-" map <leader>fu       :action GotoDeclaration<CR>
+" Action
+map <leader><leader> :action GotoAction<CR>
+
+" Open
+map <leader>of       :action GotoFile<CR>
+
+" Open Recent
+map <leader>or       :action RecentFiles<CR>
+
+" Find Text
+map <leader>ft       :action FindInPath<CR>
 
 " Rename ================================================
 map <leader>rn       :action RenameElement<CR>
 
 " Comment ===============================================
-map <leader>cml      :action CommentByLineComment<CR>
-map <leader>cmb      :action CommentByBlockComment<CR>
+" map <leader>cl       :action CommentByLineComment<CR>
 
 " Run ===================================================
 map <leader>run      :action RunMenu<CR>
@@ -86,3 +85,12 @@ map <leader>run      :action RunMenu<CR>
 " Actions ===============================================
 nmap <leader>clr      ggVGdd<CR>
 nmap <leader>cpa      ggVGy<CR>
+
+" Insert line below.
+" nnoremap <space>K     O<esc>0C<esc>j
+" Insert line below.
+" nnoremap <space>J     o<esc>0C<esc>k
+
+map <leader>s :action SaveAll<CR>
+map <leader>t :action Vcs.UpdateProject<CR>
+map <leader>k :action Vcs.QuickListPopupAction<CR>
