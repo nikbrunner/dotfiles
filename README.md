@@ -26,15 +26,15 @@ alias c='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 zsh
 
 # hide untracked files
-config config --local status.showUntrackedFiles no
+c config --local status.showUntrackedFiles no
 
 # Add remote repo
-config remote add origin <repoUrl>
+c remote add origin <repoUrl>
 
 # Basic usage example:
-config add /path/to/file
-config commit -m "A short message"
-config push
+c add /path/to/file
+c commit -m "A short message"
+c push
 
 # In .zshrc i set up aliases to shorten config to c
 ...
