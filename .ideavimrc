@@ -2,12 +2,17 @@
 " https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 set rnu nu
 set ideamarks
+set scrolloff=999
 
 " set leader key =============
 let mapleader =               "\<Space>"
 
 " Unbind Q
 map Q                         <nop>
+
+" Enter ZenMode
+map <leader>z                 :action ToggleZenMode<CR>
+map <leader>d                 :action ToggleDistractionFreeMode<CR>
 
 " Creating Splits ============
 map <leader>l                 :vsp<CR>
@@ -19,6 +24,7 @@ map <leader>s                 :action SaveAll<CR>
 " Closers ====================
 map <leader>cc                :action CloseContent<CR>
 map <leader>cg                :action CloseEditorsGroup<CR>
+map <leader>cu                :action CloseAllUnmodifiedEditors<CR>
 map <leader>co                :action CloseAllEditorsButActive<CR>
 map <leader>cpr               :action CloseProject<CR>
 
@@ -58,9 +64,8 @@ map <A-,>                     :action ShowSettings<CR>
 " Folding ===================
 " These do not work properly. I will use the KeyMap from IntelliJ
 " Folding with VIM: https://vim.fandom.com/wiki/Folding
-nmap zC                       :action CollapseRegionRecursively<CR>
-nmap zO                       :action ExpandRegionRecursively<CR>
-nmap zR                       :action ExpandAllRegions<CR>
+nmap zC                       :action CollapseAllRegions<CR>
+nmap zO                       :action ExpandAllRegions<CR>
 
 " VCS =======================
 map <leader>gs                :action Vcs.Show.Local.Changes<CR>
@@ -91,6 +96,7 @@ map <leader>ft                :action FindInPath<CR>
 
 " Quick Docu
 map <leader>i                 :action QuickJavaDoc<CR>
+map gh                        :action ShowErrorDescription<CR>
 
 " Rename ====================
 map <leader>rn                :action RenameElement<CR>
@@ -106,3 +112,4 @@ map <leader>run               :action RunMenu<CR>
 " Actions ===================
 nmap <leader>clr              ggVGdd<CR>
 nmap <leader>cpa              ggVGy<CR>
+

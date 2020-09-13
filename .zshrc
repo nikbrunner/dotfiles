@@ -178,3 +178,5 @@ alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git
   # Set Spaceship ZSH as a prompt
   autoload -U promptinit; promptinit
   prompt spaceship
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
