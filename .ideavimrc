@@ -2,7 +2,7 @@
 " https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 set rnu nu
 set ideamarks
-set scrolloff=999
+" set scrolloff=999
 
 " set leader key =============
 let mapleader =               "\<Space>"
@@ -33,6 +33,7 @@ map <C-h>                     :action TabShiftActions.MoveFocusLeft<CR>
 map <C-j>                     :action TabShiftActions.MoveFocusDown<CR>
 map <C-k>                     :action TabShiftActions.MoveFocusUp<CR>
 map <C-l>                     :action TabShiftActions.MoveFocusRight<CR>
+map <leader>m                 :action TabShiftActions.ToggleMaximizeRestore<CR>
 
 " Switch Tabs ================
 nmap H                        :action PreviousTab<CR>
@@ -68,6 +69,8 @@ nmap zC                       :action CollapseAllRegions<CR>
 nmap zO                       :action ExpandAllRegions<CR>
 
 " VCS =======================
+map <leader>gr                :action Vcs.RollbackChangedLines<CR>
+map <leader>gb                :action Annotate<CR>
 map <leader>gs                :action Vcs.Show.Local.Changes<CR>
 map <leader>gc                :action ChangesView.ToggleCommitUi<CR>
 map <leader>go                :action Vcs.QuickListPopupAction<CR>
@@ -95,7 +98,7 @@ map <leader>or                :action RecentFiles<CR>
 map <leader>ft                :action FindInPath<CR>
 
 " Quick Docu
-map <leader>i                 :action QuickJavaDoc<CR>
+map <leader>i               :action QuickJavaDoc<CR>
 map gh                        :action ShowErrorDescription<CR>
 
 " Rename ====================
