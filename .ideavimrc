@@ -1,6 +1,6 @@
 " https://gist.github.com/aca/ea551d91e305ca3ead8313fbd7bd999d
 " https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
-set rnu nu
+" set rnu nu
 set ideamarks
 " set scrolloff=999
 
@@ -40,6 +40,12 @@ nmap H                        :action PreviousTab<CR>
 nmap J                        :action NextTab<CR>
 nmap K                        :action PreviousTab<CR>
 nmap L                        :action NextTab<CR>
+
+" Move Tabs ================
+nmap <A-h>                    :action TabShiftActions.ShiftLeft<CR>
+nmap <A-j>                    :action TabShiftActions.ShiftDown<CR>
+nmap <A-k>                    :action TabShiftActions.ShiftUp<CR>
+nmap <A-l>                    :action TabShiftActions.ShiftRight<CR>
 
 " Resize Panes ==============
 map <C-A-h>                   :action TabShiftActions.StretchLeft<CR>
@@ -115,4 +121,7 @@ map <leader>run               :action RunMenu<CR>
 " Actions ===================
 nmap <leader>clr              ggVGdd<CR>
 nmap <leader>cpa              ggVGy<CR>
+
+" YouTrack ==================
+nmap <leader>yt               :action ActivateYouTrackToolWindow<CR>
 
