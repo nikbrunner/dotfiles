@@ -40,9 +40,9 @@ source $ZSH/oh-my-zsh.sh
 # Path Declaration =======================================================
 # APPLICATIONS_PATH="$HOME/Applications"
 DOCUMENTS_PATH="$HOME/Documents"
-BRAIN_PATH="$DOCUMENTS_PATH/brain"
 # MUSIC_PATH="$DOCUMENTS_PATH/music"
 DEV_PATH="$DOCUMENTS_PATH/dev"
+DEV_NOTES_PATH="$DOCUMENTS_PATH/dev/notes"
 PROJECTS_PATH="$DEV_PATH/projects"
 SCRIPTS_PATH="$DEV_PATH/resources/scripts"
 OWN_PROJECTS_PATH="$PROJECTS_PATH/own"
@@ -67,17 +67,16 @@ alias cpush="c push"
 alias cupdate="ccam \"Updates\" && cpush"
 
 # BRAIN ==================================================================
-alias brainE="cd $BRAIN_PATH && nvim ."
-alias b="/usr/bin/git --git-dir=$BRAIN_PATH/.git --work-tree=$BRAIN_PATH"
-alias bl="b log --oneline"
-alias bs="b status"
-alias ba="b add"
-alias ba.="b add $BRAIN_PATH/."
-alias bau="b add -u"
-alias bcm="b commit -m"
-alias bcam="b commit -a -m"
-alias bpush="b push"
-alias bupdate="ba. && bcm \"Updates\" && bpush"
+alias n="/usr/bin/git --git-dir=$DEV_NOTES_PATH/.git --work-tree=$DEV_NOTES_PATH"
+alias nl="b log --oneline"
+alias ns="b status"
+alias na="b add"
+alias na.="b add $DEV_NOTES_PATH/."
+alias nau="b add -u"
+alias ncm="b commit -m"
+alias ncam="b commit -a -m"
+alias npush="b push"
+alias nupdate="ba. && bcm \"Updates\" && bpush"
 
 # Git commands ===========================================================
 alias gs="git status"
@@ -107,7 +106,7 @@ alias greb="git rebase"
 alias grebi="git rebase -i"
 
 # Combined update
-alias xupdate="cupdate && bupdate"
+alias xupdate="cupdate && nupdate"
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
@@ -127,20 +126,12 @@ alias food="$SCIM $BRAIN_PATH/household/food-purchases.csv"
 alias home="cd $HOME"
 alias docs="cd $DOCUMENTS_PATH"
 alias music="cd $MUSIC_PATH"
-alias brain="cd $BRAIN_PATH"
 alias dev="cd $DEV_PATH"
+alias devnotes="cd $DEV_NOTES_PATH"
 alias projects="cd $PROJECTS_PATH"
 alias own="cd $OWN_PROJECTS_PATH"
 alias courses="cd $COURSE_PROJECTS_PATH"
 alias work="cd $WORK_PROJECTS_PATH"
-
-# diva-e =================================================================
-DIVAE_PATH="$WORK_PROJECTS_PATH/diva-e"
-alias divae="cd $DIVAE_PATH"
-alias divagram="cd $DIVAE_PATH/divagram"
-alias divagramF="cd $DIVAE_PATH/divagram/frontend/repo"
-alias divagramB="cd $DIVAE_PATH/divagram/backend/repo"
-alias baywa="cd $DIVAE_PATH/baywa/repo/frontend"
 
 # File Explorer ==========================================================
 FILE_EXPLORER="vifm"
