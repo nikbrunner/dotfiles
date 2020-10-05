@@ -76,7 +76,7 @@ alias nau="n add -u"
 alias ncm="n commit -m"
 alias ncam="n commit -a -m"
 alias npush="n push"
-alias nupdate="na. && bcm \"Updates\" && bpush"
+alias nupdate="na. && ncm \"Updates\" && npush"
 
 # Git commands ===========================================================
 alias gs="git status"
