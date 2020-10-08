@@ -50,12 +50,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'chaoren/vim-wordmotion'
 " Appearence
-Plug 'vwxyutarooo/nerdtree-devicons-syntax'
-Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " File management
-Plug 'vifm/vifm.vim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -85,16 +82,17 @@ call plug#end()
 
 " Remaps
 " general ================================================================
-nnoremap <leader>src :source ~/.config/nvim/init.vim<CR>
-"inoremap jk <ESC> 
 let mapleader = " "
-nnoremap Q <nop>
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
-nnoremap <leader>l :vsp<CR>
-nnoremap <leader>j :sp<CR>
-nnoremap <silent> <Leader>+ :vertical resize +5<CR>
-nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nmap <C-r>      :source ~/.config/nvim/init.vim<CR>
+map <C-s>      :w<CR>
+map <C-w>      :wq<CR>
+map <C-q>      :q<CR>
+"inoremap jk   <ESC> 
+nmap Q         <nop>
+xmap K         :move '<-2<CR>gv-gv
+xmap J         :move '>+1<CR>gv-gv
+nmap <leader>l :vsp<CR>
+nmap <leader>j :sp<CR>
 
 " Undootree ==============================================================
 nnoremap <leader>u :UndotreeShow<CR>
@@ -109,25 +107,26 @@ map <F6> :colorscheme nord <bar> let g:airline_theme='bubblegum' <bar> set backg
 map <F7> :colorscheme gruvbox <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
 map <F8> :colorscheme github <bar> let g:airline_theme ='github' <bar> set background=dark<CR>
 
-" Spell checking =========================================================
+" spell checking =========================================================
 set spelllang=en_us,de_de
-nnoremap <silent> <F5> :set spell!<cr>
+nmap <silent> <F5> :set spell!<cr>
 
 " git-fugitive
 " CheatSheet https://gist.github.com/mikaelz/38600d22b716b39b031165cd6d201a67
-nnoremap <leader>g :G<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gpu :Gpush<CR>
-nnoremap <leader>gpl :Gpull<CR>
+nmap <leader>gs  :G<CR>
+nmap <leader>gc  :Gcommit<CR>
+nmap <leader>gpu :Gpush<CR>
+nmap <leader>gpl :Gpull<CR>
+nmap <leader>gl  :BCommits!<CR>
 
-" Merginal ==============================================================
-nmap <leader>B :MerginalToggle<CR>
+" merginal ==============================================================
+nmap <C+9> :MerginalToggle<CR>
 
 " emmet ==================================================================
 let g:user_emmet_leader_key='<C-e>'
 
 " RipGrep ================================================================
-nnoremap <leader>ps :Rg<space>
+nmap <leader>ps :Rg<space>
 if executable('rg')
     let g:rg_derive_root='true'
 endif
@@ -135,16 +134,16 @@ endif
 " fzf ====================================================================
 " map <C-f> <Esc><Esc>:Files!<CR>
 " inoremap <C-f> <Esc><Esc>:BLines!<CR>
-map <C-g> <Esc><Esc>:BCommits!<CR>
 command! -bang -nargs=*  All
   \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
-nnoremap <silent> <leader>o :All<cr>
+nmap <silent> <C-p> :All<cr>
 
 " vifm ===================================================================
-nmap <leader>n               :EditVifm .<CR>
+" nmap <leader>n               :EditVifm .<CR>
 
 " nerdtree ===============================================================
-map <leader>t                :NERDTreeToggle<CR>
+" map <leader>t                :NERDTreeToggle<CR>
+map <C-b>                :NERDTreeToggle<CR>
 
 "map <leader>n :NERDTreeFind<CR> 
 let g:NERDTreeIgnore = ['^node_modules$']
@@ -176,7 +175,7 @@ let g:vim_markdown_folding_disabled = 1
 nmap <leader>p <Plug>MarkdownPreviewToggle<CR>
 
 " prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
