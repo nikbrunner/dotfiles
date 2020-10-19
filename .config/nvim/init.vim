@@ -1,6 +1,4 @@
 " TODO Go deeper with vim-fugitive
-" TODO Go deeper with tmux
-" TODO Set some custom snippets
 syntax on
 
 set noerrorbells
@@ -84,9 +82,9 @@ call plug#end()
 " general ================================================================
 let mapleader = " "
 nmap <C-r>      :source ~/.config/nvim/init.vim<CR>
-map <C-s>      :w<CR>
-map <C-w>      :wq<CR>
-map <C-q>      :q<CR>
+map <silent><C-s>      :w<CR>
+map <silent><C-w>      :wq<CR>
+map <silent><C-q>      :q<CR>
 "inoremap jk   <ESC> 
 nmap Q         <nop>
 xmap K         :move '<-2<CR>gv-gv
