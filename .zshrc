@@ -48,6 +48,7 @@ SCRIPTS_PATH="$DEV_PATH/resources/scripts"
 OWN_PROJECTS_PATH="$PROJECTS_PATH/own"
 COURSE_PROJECTS_PATH="$PROJECTS_PATH/courses"
 WORK_PROJECTS_PATH="$PROJECTS_PATH/work"
+DCD_PROJECTS_PATH="$WORK_PROJECTS_PATH/dcd"
 
 # Aliases ================================================================
 
@@ -132,6 +133,10 @@ alias projects="cd $PROJECTS_PATH"
 alias own="cd $OWN_PROJECTS_PATH"
 alias courses="cd $COURSE_PROJECTS_PATH"
 alias work="cd $WORK_PROJECTS_PATH"
+
+# DCD ====================================================================
+alias bc-website="cd $DCD_PROJECTS_PATH/bc-homepage/repo"
+alias bc-client="cd $DCD_PROJECTS_PATH/bc-desktop-client/repo"
 
 # File Explorer ==========================================================
 FILE_EXPLORER="vifm"
