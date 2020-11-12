@@ -1,6 +1,9 @@
-" set rnu nu
+set rnu nu
 " set scrolloff=999
 set ideamarks
+set highlightedyank
+set commentary
+set surround
 
 " set leader key =============
 let mapleader =               "\<Space>"
@@ -57,11 +60,6 @@ map <C-A-m>                   :action TabShiftActions.ToggleMaximizeRestore<CR>
 nmap <A-S-o>                  O<esc>0C<esc>j
 " .. below.
 nmap <A-o>                    o<esc>0C<esc>k
-
-" Comment ===================
-nmap gcc                      :action CommentByLineComment<CR>
-vmap gc                       :action CommentByLineComment<CR>
-vmap gC                       :action CommentByBlockComment<CR>
 
 " Settings ==================
 map <A-,>                     :action ShowSettings<CR>
