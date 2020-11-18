@@ -1,3 +1,7 @@
+" set leader key
+let mapleader =               "\<Space>"
+
+" Basic Settings
 set rnu nu
 " set scrolloff=999
 set ideamarks
@@ -5,8 +9,13 @@ set highlightedyank
 set commentary
 set surround
 
-" set leader key =============
-let mapleader =               "\<Space>"
+" easymotion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+set easymotion
+nmap s                        <Plug>(easymotion-s)
+
+" Other Escape
+imap jj                       <ESC>
 
 " Unbind Q
 map Q                         <nop>
@@ -80,9 +89,6 @@ map <leader>gpu               :action Vcs.Push<CR>
 map <leader>gup               :action Vcs.UpdateProject<CR>
 
 " Files =====================
-" Open File
-map <leader><leader>          :action GotoFile<CR>
-
 " Open Action
 map <leader>oa                :action GotoAction<CR>
 
@@ -105,11 +111,6 @@ map gh                        :action ShowErrorDescription<CR>
 
 " Rename ====================
 map <leader>rn                :action RenameElement<CR>
-
-" Comment ===================
-nmap gcc                      :action CommentByLineComment<CR>
-vmap gc                       :action CommentByLineComment<CR>
-vmap gC                       :action CommentByBlockComment<CR>
 
 " Run =======================
 map <leader>run               :action RunMenu<CR>
