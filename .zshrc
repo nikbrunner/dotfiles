@@ -135,8 +135,11 @@ alias courses="cd $COURSE_PROJECTS_PATH"
 alias work="cd $WORK_PROJECTS_PATH"
 
 # DCD ====================================================================
-alias bc-website="cd $DCD_PROJECTS_PATH/bc-homepage/repo"
-alias bc-client="cd $DCD_PROJECTS_PATH/bc-desktop-client/repo"
+alias dcd="cd $DCD_PROJECTS_PATH"
+alias bc-website="cd $DCD_PROJECTS_PATH/bc-homepage"
+alias bc-client="cd $DCD_PROJECTS_PATH/bc-desktop-client"
+alias bc-tools="cd $DCD_PROJECTS_PATH/bc-desktop-tools"
+alias bc-bpc="cd $DCD_PROJECTS_PATH/bc-tools-bikepricecalculator"
 
 # File Explorer ==========================================================
 FILE_EXPLORER="vifm"

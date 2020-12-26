@@ -82,6 +82,7 @@ call plug#end()
 " general ================================================================
 let mapleader = " "
 nmap <C-r>      :source ~/.config/nvim/init.vim<CR>
+map <silent><leader>s  :w<CR>
 map <silent><C-s>      :w<CR>
 map <silent><C-w>      :wq<CR>
 map <silent><C-q>      :q<CR>
