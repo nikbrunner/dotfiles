@@ -56,7 +56,7 @@ git init --bare $HOME/dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 zsh
 dotfiles config --local status.showUntrackedFiles no
-
+dotfiles remote add origin git@github.com:nikbrunner/dotfiles-apple.git
 
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

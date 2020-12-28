@@ -19,8 +19,10 @@ mkdir $HOME/dotfiles
 # Initialize bare Git Repository
 git init --bare $HOME/dotfiles
 
-# add this alias to .zshrc or .bashrc
+# add this alias to your .zshrc or .bashrc
+# Git dotfiles ===========================================================
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles-push="dotfiles commit -a -m \"Updates\" && dotfiles push"
 
 # Reload shell
 zsh
@@ -31,18 +33,10 @@ dotfiles config --local status.showUntrackedFiles no
 # Add remote repo
 dotfiles remote add origin git@github.com:nikbrunner/dotfiles-apple.git
 
+# Pull from remote
+dotfiles pull origin master
+
 # Basic usage example:
-c add /path/to/file
-c commit -m "A short message"
-c push
-
-# In .zshrc i set up aliases to shorten config to c
-...
-
-alias c='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-alias cl="c log --oneline"
-alias cs="c status"
-alias ca="c add"
-
-...
+dotfiles add /path/to/file
+dotfiles-push
 ```
