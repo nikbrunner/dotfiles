@@ -6,14 +6,14 @@ Workflow taken and quoted from [here](https://www.youtube.com/watch?v=tBoLDpTWVO
 
 ```bash
 # Create folder for bare Git Repository
-mkdir $HOME/dotfiles
+mkdir $HOME/.dotfiles
 
 # Initialize bare Git Repository
-git init --bare $HOME/dotfiles
+git init --bare $HOME/.dotfiles
 
 # add this alias to your .zshrc or .bashrc
 # Dotfiles ===============================================================
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles-push="dotfiles commit -a -m \"Updates\" && dotfiles push"
 
 # Reload shell
