@@ -40,7 +40,8 @@ alias clr="clear"
 
 # Dotfiles ===============================================================
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dotfiles-push="dotfiles commit -a -m \"Updates\" && dotfiles push"
+## dotfiles-push / dfp
+alias dfp="dotfiles commit -a -m \"Updates\" && dotfiles push"
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
