@@ -2,8 +2,6 @@
 
 Save-place for my Apple dotfiles.
 
-Workflow taken and quoted from [here](https://www.youtube.com/watch?v=tBoLDpTWVOM)
-
 ```bash
 # Create folder for bare Git Repository
 mkdir $HOME/.dotfiles
