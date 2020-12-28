@@ -13,22 +13,22 @@ git init --bare $HOME/.dotfiles
 
 # add this alias to your .zshrc or .bashrc
 # Dotfiles ===============================================================
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dotfiles-push="dotfiles commit -a -m \"Updates\" && dotfiles push"
+alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dfp="df commit -a -m \"Updates\" && df push"
 
 # Reload shell
 zsh
 
 # hide untracked files
-dotfiles config --local status.showUntrackedFiles no
+df config --local status.showUntrackedFiles no
 
 # Add remote repo
-dotfiles remote add origin git@github.com:nikbrunner/dotfiles-apple.git
+df remote add origin git@github.com:nikbrunner/df-apple.git
 
 # Pull from remote
-dotfiles pull origin master
+df pull origin master
 
 # Basic usage example:
-dotfiles add /path/to/file
-dotfiles-push
+df add /path/to/file
+dfp
 ```

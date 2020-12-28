@@ -1,16 +1,13 @@
 # nibru's Mac Install Script
 
-# TODO
-# - [ ] Clean out zshrc
-
 # - Dotfiles -
 echo "Setting up Dotfiles"
 mkdir $HOME/dotfiles
 git init --bare $HOME/dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' | zsh
-dotfiles config --local status.showUntrackedFiles no
-dotfiles remote add origin git@github.com:nikbrunner/dotfiles-apple.git
-dotfiles pull origin master
+alias df='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' | zsh
+df config --local status.showUntrackedFiles no
+df remote add origin git@github.com:nikbrunner/dotfiles-apple.git
+df pull origin master
 
 # - SSH Setup -
 # Generate a new ssh-keypair
