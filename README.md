@@ -20,16 +20,16 @@ mkdir $HOME/dotfiles
 git init --bare $HOME/dotfiles
 
 # add this alias to .zshrc or .bashrc
-alias c='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Reload shell
 zsh
 
 # hide untracked files
-c config --local status.showUntrackedFiles no
+dotfiles config --local status.showUntrackedFiles no
 
 # Add remote repo
-c remote add origin <repoUrl>
+dotfiles remote add origin git@github.com:nikbrunner/dotfiles-apple.git
 
 # Basic usage example:
 c add /path/to/file

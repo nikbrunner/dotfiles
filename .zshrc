@@ -54,27 +54,8 @@ alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias clr="clear"
 
 # Git dotfiles ===========================================================
-alias c="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
-alias cl="c log --oneline"
-alias cs="c status"
-alias ca="c add"
-alias cau="c add -u"
-alias ccm="c commit -m"
-alias ccam="c commit -a -m"
-alias cpush="c push"
-alias cupdate="ccam \"Updates\" && cpush"
-
-# BRAIN ==================================================================
-alias n="/usr/bin/git --git-dir=$DEV_NOTES_PATH/.git --work-tree=$DEV_NOTES_PATH"
-alias nl="n log --oneline"
-alias ns="n status"
-alias na="n add"
-alias na.="n add $DEV_NOTES_PATH/."
-alias nau="n add -u"
-alias ncm="n commit -m"
-alias ncam="n commit -a -m"
-alias npush="n push"
-alias nupdate="na. && ncm \"Updates\" && npush"
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles-push="dotfiles commit -a -m \"Updates\" && dotfiles push"
 
 # Git commands ===========================================================
 alias gs="git status"

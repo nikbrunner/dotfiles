@@ -31,24 +31,32 @@ brew install --cask spotify
 brew install --cask amethyst
 brew install --cask alfred
 
-# Messenger and their dependencies
+# - Messenger and their dependencies -
 brew install --cask slack
 brew install --cask skype
 brew install --cask telegram
 brew install --cask signal
 brew install --cask camo-studio
 
-# Dev Apps
+# - Development Apps -
 brew install --cask visual-studio-code
 brew install --cask webstorm
 brew install --cask iterm2
 brew install --cask insomnia
 brew install --cask docker
 
-# Design Apps
+# - Design Apps -
 brew install --cask adobe-creative-cloud
 brew install --cask hype
 brew install --cask sketch
+
+# Setup dotfiles
+mkdir $HOME/dotfiles
+git init --bare $HOME/dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+zsh
+dotfiles config --local status.showUntrackedFiles no
+
 
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
