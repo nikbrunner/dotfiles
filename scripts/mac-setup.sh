@@ -39,6 +39,15 @@ ssh -T git@github.com
 echo |"Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | zsh
 
+# - Oh-my-zsh -
+echo "Installing Oh-my-zsh.."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | zsh
+
+# - NVM -
+echo "Installing NVM.."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
+nvm install node
+
 # - Installing Apps -
 echo "Start installing apps with Homebrew"
 
@@ -66,6 +75,17 @@ brew install --cask iterm2
 brew install --cask insomnia
 brew install --cask docker
 
+## Python
+brew install python
+python3 -m pip install --user --upgrade pynvim
+
+## NeoVim
+brew install neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+npm install -g neovim
+echo "Open your init.vim and run :PlugInstall!"
+
 # Design Apps
 brew install --cask adobe-creative-cloud
 brew install --cask hype
@@ -73,20 +93,14 @@ brew install --cask sketch
 
 echo "All Apps installed!"
 
-# - Oh-my-zsh -
-echo "Installing Oh-my-zsh.."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | zsh
-
-# - NVM -
-echo "Installing NVM.."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
-
 # - Create Notes folder -
 mkdir ~/Documents/notes
 git clone git@github.com:nikbrunner/notes.git ~/Documents/notes
+echo "Obsidian must be set up manually!"
+
 
 # Manually install from App Store
-# - Hotkey
+# - Hotkey & Settings
 # - Yoink
 # - Pasta
 
@@ -97,9 +111,8 @@ git clone git@github.com:nikbrunner/notes.git ~/Documents/notes
 
 # Manually Login and Setups
 # - 1Password Settings
+# - iTerm Settings
 # - VSCode Settings
 # - Webstorm Settings
 # - Notes/Obsidian Repo & Settings
 # - Firefox Settings
-
-

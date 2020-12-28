@@ -34,20 +34,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Path Declaration =======================================================
-# APPLICATIONS_PATH="$HOME/Applications"
-DOCUMENTS_PATH="$HOME/Documents"
-NOTES_PATH="$DOCUMENTS_PATH/notes"
-DEV_PATH="$DOCUMENTS_PATH/dev"
-PROJECTS_PATH="$DEV_PATH/projects"
-SCRIPTS_PATH="$DEV_PATH/resources/scripts"
-OWN_PROJECTS_PATH="$PROJECTS_PATH/own"
-COURSE_PROJECTS_PATH="$PROJECTS_PATH/courses"
-WORK_PROJECTS_PATH="$PROJECTS_PATH/work"
-DCD_PROJECTS_PATH="$WORK_PROJECTS_PATH/dcd"
-
-# Aliases ================================================================
-
 # Basics =================================================================
 alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias clr="clear"
@@ -62,17 +48,23 @@ SCIM="scim"
 NVIM_PATH="~/.config/nvim"
 TMUX_PATH="~"
 alias vim="nvim"
-alias v="nvim"
 alias vimconfig="$EDITOR $NVIM_PATH/init.vim"
 alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias npmconfig="$EDITOR ~/.npmrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
 
+# Path Declaration =======================================================
+DOCUMENTS_PATH="$HOME/Documents"
+NOTES_PATH="$DOCUMENTS_PATH/notes"
+DEV_PATH="$DOCUMENTS_PATH/dev"
+REPOSITORIES_PATH="$DEV_PATH/repositories"
+DCD_REPOSITORIES_PATH="$DEV_PATH/dcd"
+OWN_REPOSITORIES_PATH="$DEV_PATH/own"
+
 # Navigation =============================================================
 alias home="cd $HOME"
 alias docs="cd $DOCUMENTS_PATH"
-alias music="cd $MUSIC_PATH"
 alias dev="cd $DEV_PATH"
 alias notes="cd $NOTES_PATH"
 alias projects="cd $PROJECTS_PATH"
@@ -119,3 +111,4 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}" | fzf`'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
