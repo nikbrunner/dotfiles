@@ -39,9 +39,9 @@ alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias clr="clear"
 
 # Dotfiles ===============================================================
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ## dotfiles-push / dfp
-alias dfp="dotfiles commit -a -m \"Updates\" && dotfiles push"
+alias dfp="df commit -a -m \"Updates\" && df push"
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
