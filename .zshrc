@@ -39,7 +39,7 @@ alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias clr="clear"
 
 # Dotfiles ===============================================================
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles-push="dotfiles commit -a -m \"Updates\" && dotfiles push"
 
 # Edit Config Files ======================================================
