@@ -36,10 +36,13 @@ done
 ssh -T git@github.com
 
 # - Homebrew -
+echo |"Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | zsh
 
+# - Installing Apps -
 echo "Start installing apps with Homebrew"
-# - General Apps -
+
+# General Apps
 brew install --cask 1password
 brew install --cask karabiner-elements
 brew install --cask firefox
@@ -49,37 +52,37 @@ brew install --cask spotify
 brew install --cask amethyst
 brew install --cask alfred
 
-# - Messenger and their dependencies -
+# Messenger and their dependencies
 brew install --cask slack
 brew install --cask skype
 brew install --cask telegram
 brew install --cask signal
 brew install --cask camo-studio
 
-# - Development Apps -
+# Development Apps
 brew install --cask visual-studio-code
 brew install --cask webstorm
 brew install --cask iterm2
 brew install --cask insomnia
 brew install --cask docker
 
-# - Design Apps -
+# Design Apps
 brew install --cask adobe-creative-cloud
 brew install --cask hype
 brew install --cask sketch
 
 echo "All Apps installed!"
 
-# Oh-my-zsh
+# - Oh-my-zsh -
 echo "Installing Oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | zsh
 
-# NVM
+# - NVM -
 echo "Installing NVM"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
 
 
-# Install from App Store
+# Manually install from App Store
 # - Hotkey
 # - Yoink
 # - Pasta
