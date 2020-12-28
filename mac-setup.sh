@@ -24,11 +24,11 @@ echo "Your public ssh key is created and copied to your clipboard!"
 # Add public ssh key to GitHub
 echo "Add the ssh-key to your GitHub account from your clipboard. Press any key to continue afterwards."
 while [ true ] ; do
-read -t 3 -n 1
-if [ $? = 0 ] ; then
-exit ;
+    read -t 3 -n 1
+    if [ $? = 0 ] ; then
+    exit ;
 else
-echo "Waiting for the keypress."
+    echo "Waiting for the keypress."
 fi
 done
 
@@ -74,13 +74,16 @@ brew install --cask sketch
 echo "All Apps installed!"
 
 # - Oh-my-zsh -
-echo "Installing Oh-my-zsh"
+echo "Installing Oh-my-zsh.."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | zsh
 
 # - NVM -
-echo "Installing NVM"
+echo "Installing NVM.."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
 
+# - Create Notes folder -
+mkdir ~/Documents/notes
+git clone git@github.com:nikbrunner/notes.git ~/Documents/notes
 
 # Manually install from App Store
 # - Hotkey
@@ -88,6 +91,15 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
 # - Pasta
 
 # Install from Website
-# - pcloud
+# - pCloud
+#   - Ignore Folders
+#   - Sync Folders
+
+# Manually Login and Setups
+# - 1Password Settings
+# - VSCode Settings
+# - Webstorm Settings
+# - Notes/Obsidian Repo & Settings
+# - Firefox Settings
 
 
