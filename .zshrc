@@ -37,9 +37,8 @@ source $ZSH/oh-my-zsh.sh
 # Path Declaration =======================================================
 # APPLICATIONS_PATH="$HOME/Applications"
 DOCUMENTS_PATH="$HOME/Documents"
-# MUSIC_PATH="$DOCUMENTS_PATH/music"
+NOTES_PATH="$DOCUMENTS_PATH/notes"
 DEV_PATH="$DOCUMENTS_PATH/dev"
-DEV_NOTES_PATH="$DOCUMENTS_PATH/dev/notes"
 PROJECTS_PATH="$DEV_PATH/projects"
 SCRIPTS_PATH="$DEV_PATH/resources/scripts"
 OWN_PROJECTS_PATH="$PROJECTS_PATH/own"
@@ -53,39 +52,9 @@ DCD_PROJECTS_PATH="$WORK_PROJECTS_PATH/dcd"
 alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias clr="clear"
 
-# Git dotfiles ===========================================================
+# Dotfiles ===============================================================
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias dotfiles-push="dotfiles commit -a -m \"Updates\" && dotfiles push"
-
-# Git commands ===========================================================
-alias gs="git status"
-alias gpush="git push"
-alias gpushu="git push -u"
-alias gpull="git pull"
-alias gfa="git fetch --all"
-alias gb="git branch"
-alias gbl="git branch -l"
-alias gcob="git checkout -b"
-alias gco="git checkout"
-alias gbd="git branch -d"
-alias ga="git add"
-alias gau="git add -u"
-alias ga.="git add ."
-alias grrc="git rm -r --cached"
-alias grrc.="git rm -r --cached ."
-alias gcm="git commit -m"
-alias gcam="git commit -a -m"
-alias gcane="git commit --amend --no-edit"
-alias gra="git remote add"
-alias grao="git remote add origin"
-alias grr="git remote remove"
-alias grv="git remote -v"
-alias gl="git log --oneline"
-alias greb="git rebase"
-alias grebi="git rebase -i"
-
-# Combined update
-alias xupdate="cupdate && nupdate"
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
@@ -99,14 +68,13 @@ alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias npmconfig="$EDITOR ~/.npmrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
-alias food="$SCIM $BRAIN_PATH/household/food-purchases.csv"
 
 # Navigation =============================================================
 alias home="cd $HOME"
 alias docs="cd $DOCUMENTS_PATH"
 alias music="cd $MUSIC_PATH"
 alias dev="cd $DEV_PATH"
-alias devnotes="cd $DEV_NOTES_PATH"
+alias notes="cd $NOTES_PATH"
 alias projects="cd $PROJECTS_PATH"
 alias own="cd $OWN_PROJECTS_PATH"
 alias courses="cd $COURSE_PROJECTS_PATH"
@@ -145,7 +113,6 @@ export PATH=/usr/bin/python3:$PATH
 # Node ===================================================================
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # fzf ====================================================================
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'

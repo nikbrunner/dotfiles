@@ -1,26 +1,43 @@
 # nibru's Mac Install Script
 
 # TODO
-# - [x] Dotfiles Setup
-# - [x] Karabiner Config
-# - [ ] Research Wait on Input cli command
-#    -  e.g. Print out msg after ssh-keygen & copy and wait on user to add the key to GitHub
-# - [ ] Install Script for Dotfiles
 # - [ ] Clean out zshrc
+
+# - Dotfiles -
+echo "Setting up Dotfiles"
+mkdir $HOME/dotfiles
+git init --bare $HOME/dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' | zsh
+dotfiles config --local status.showUntrackedFiles no
+dotfiles remote add origin git@github.com:nikbrunner/dotfiles-apple.git
+dotfiles pull origin master
 
 # - SSH Setup -
 # Generate a new ssh-keypair
+echo "Setting up SSH Key"
 ssh-keygen -t ed25519 -C "nibru@mbp"
 
 # Add public key to clipboard and add it to GitHub
 pbcopy < ~/.ssh/id_ed25519.pub
+echo "Your public ssh key is created and copied to your clipboard!"
+
+echo "Add the ssh-key to your GitHub account from your clipboard. Press any key to continue afterwards."
+while [ true ] ; do
+read -t 3 -n 1
+if [ $? = 0 ] ; then
+exit ;
+else
+echo "Waiting for the keypress."
+fi
+done
 
 # Test the connection
 ssh -T git@github.com
 
 # - Homebrew -
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | zsh
 
+echo "Start installing apps with Homebrew"
 # - General Apps -
 brew install --cask 1password
 brew install --cask karabiner-elements
@@ -50,17 +67,16 @@ brew install --cask adobe-creative-cloud
 brew install --cask hype
 brew install --cask sketch
 
-# Setup dotfiles
-mkdir $HOME/dotfiles
-git init --bare $HOME/dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-zsh
-dotfiles config --local status.showUntrackedFiles no
-dotfiles remote add origin git@github.com:nikbrunner/dotfiles-apple.git
+echo "All Apps installed!"
 
 # Oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-zsh
+echo "Installing Oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | zsh
+
+# NVM
+echo "Installing NVM"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
+
 
 # Install from App Store
 # - Hotkey
@@ -69,6 +85,5 @@ zsh
 
 # Install from Website
 # - pcloud
-# - nvm
 
 

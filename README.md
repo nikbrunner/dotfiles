@@ -20,7 +20,7 @@ mkdir $HOME/dotfiles
 git init --bare $HOME/dotfiles
 
 # add this alias to your .zshrc or .bashrc
-# Git dotfiles ===========================================================
+# Dotfiles ===============================================================
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias dotfiles-push="dotfiles commit -a -m \"Updates\" && dotfiles push"
 
