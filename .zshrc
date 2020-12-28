@@ -30,10 +30,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
-
-# AutoSuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#b48ead"
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -173,9 +170,4 @@ export NVM_DIR="$HOME/.nvm"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}" | fzf`'
-
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

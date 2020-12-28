@@ -4,6 +4,8 @@
 # - [ ] Dotfiles Setup
 # - [ ] Install Script for Dotfiles
 # - [ ] Install Script for Dotfiles
+# - [ ] Clean out zshrc
+# - [ ] Karabiner Config
 
 # - SSH Setup -
 # Generate a new ssh-keypair
@@ -58,3 +60,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Install from Website
 # - Oh-my-zsh
 # - pcloud
+# - nvm
+
+
