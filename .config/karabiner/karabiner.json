@@ -123,6 +123,14 @@
             "simple_modifications": [
                 {
                     "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": {
+                        "key_code": "escape"
+                    }
+                },
+                {
+                    "from": {
                         "key_code": "escape"
                     },
                     "to": {
@@ -131,10 +139,18 @@
                 },
                 {
                     "from": {
-                        "key_code": "caps_lock"
+                        "key_code": "left_control"
                     },
                     "to": {
-                        "key_code": "escape"
+                        "key_code": "fn"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "fn"
+                    },
+                    "to": {
+                        "key_code": "left_control"
                     }
                 }
             ],

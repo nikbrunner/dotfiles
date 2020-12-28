@@ -1,11 +1,12 @@
 # nibru's Mac Install Script
 
 # TODO
-# - [ ] Dotfiles Setup
-# - [ ] Install Script for Dotfiles
+# - [x] Dotfiles Setup
+# - [x] Karabiner Config
+# - [ ] Research Wait on Input cli command
+#    -  e.g. Print out msg after ssh-keygen & copy and wait on user to add the key to GitHub
 # - [ ] Install Script for Dotfiles
 # - [ ] Clean out zshrc
-# - [ ] Karabiner Config
 
 # - SSH Setup -
 # Generate a new ssh-keypair
@@ -51,6 +52,7 @@ brew install --cask sketch
 
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+zsh
 
 # Install from App Store
 # - Hotkey
@@ -58,7 +60,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # - Pasta
 
 # Install from Website
-# - Oh-my-zsh
 # - pcloud
 # - nvm
 
