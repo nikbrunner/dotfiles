@@ -76,8 +76,14 @@ brew install --cask docker
 brew install python
 python3 -m pip install --user --upgrade pynvim
 
+## fzf
+brew install ripgrep
+brew install the_silver_searcher
+brew install fzf
+
 ## NeoVim
 brew install neovim
+brew install tmux
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 npm install -g neovim
