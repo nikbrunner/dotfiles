@@ -17,10 +17,11 @@ dotfiles pull origin master
 echo "Setting up SSH Key"
 ssh-keygen -t ed25519 -C "nibru@mbp"
 
-# Add public key to clipboard and add it to GitHub
+# Add public ssh key to clipboard
 pbcopy < ~/.ssh/id_ed25519.pub
 echo "Your public ssh key is created and copied to your clipboard!"
 
+# Add public ssh key to GitHub
 echo "Add the ssh-key to your GitHub account from your clipboard. Press any key to continue afterwards."
 while [ true ] ; do
 read -t 3 -n 1
