@@ -45,14 +45,11 @@ alias dfp="df commit -a -m \"Updates\" && df push"
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
-SCIM="scim"
 NVIM_PATH="~/.config/nvim"
 TMUX_PATH="~"
 alias vim="nvim"
 alias vimconfig="$EDITOR $NVIM_PATH/init.vim"
 alias zshconfig="$EDITOR ~/.zshrc"
-alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
-alias npmconfig="$EDITOR ~/.npmrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
 
 # Path Declaration =======================================================
@@ -68,40 +65,18 @@ alias home="cd $HOME"
 alias docs="cd $DOCUMENTS_PATH"
 alias dev="cd $DEV_PATH"
 alias notes="cd $NOTES_PATH"
-alias projects="cd $PROJECTS_PATH"
-alias own="cd $OWN_PROJECTS_PATH"
-alias courses="cd $COURSE_PROJECTS_PATH"
-alias work="cd $WORK_PROJECTS_PATH"
+alias own="cd $OWN_REPOSITORIES_PATH"
 
 # DCD ====================================================================
-alias dcd="cd $DCD_PROJECTS_PATH"
-alias bc-website="cd $DCD_PROJECTS_PATH/bc-homepage"
-alias bc-client="cd $DCD_PROJECTS_PATH/bc-desktop-client"
-alias bc-tools="cd $DCD_PROJECTS_PATH/bc-desktop-tools"
-alias bc-bpc="cd $DCD_PROJECTS_PATH/bc-tools-bikepricecalculator"
-
-# File Explorer ==========================================================
-FILE_EXPLORER="vifm"
-alias e-home="$FILE_EXPLORER $HOME"
-alias e-docs="$FILE_EXPLORER $DOCUMENTS_PATH $BRAIN_PATH"
-alias e-brain="$FILE_EXPLORER $BRAIN_PATH $BRAIN_PATH"
-alias e-dev="$FILE_EXPLORER $DEV_PATH $DEV_PATH"
-alias e-projects="$FILE_EXPLORER $PROJECTS_PATH $PROJECTS_PATH"
-alias e-own="$FILE_EXPLORER $OWN_PROJECTS_PATH $OWN_PROJECTS_PATH"
-alias e-courses="$FILE_EXPLORER $COURSE_PROJECTS_PATH $OWN_PROJECTS_PATH"
-alias e-work="$FILE_EXPLORER $WORK_PROJECTS_PATH $WORK_PROJECTS_PATH"
-
-# Spotify ================================================================
-alias spt="$APPLICATIONS_PATH/./spt"
-
-# Scripts ================================================================
-alias srs="cp $SCRIPTS_PATH/setup-repo.sh ."
+alias dcd="cd $DCD_REPOSITORIES_PATH"
+alias bc-website="cd $DCD_REPOSITORIES_PATH/bc-homepage"
+alias bc-client="cd $DCD_REPOSITORIES_PATH/bc-desktop-client"
+alias bc-tools="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
+alias bc-bpc="cd $DCD_REPOSITORIES_PATH/bc-tools-bikepricecalculator"
 
 # Path Exports ===========================================================
-# export PATH=/opt/firefox/firefox:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
-# export PATH=/usr/bin/snap:$PATH
 
 # Node ===================================================================
 export NVM_DIR="$HOME/.nvm"
