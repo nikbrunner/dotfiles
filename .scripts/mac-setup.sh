@@ -62,6 +62,7 @@ brew install --cask alfred
 brew install --cask slack
 brew install --cask skype
 brew install --cask telegram
+brew install --cask discord
 brew install --cask signal
 brew install --cask camo-studio
 
