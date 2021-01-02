@@ -60,8 +60,8 @@ DOCUMENTS_PATH="$HOME/Documents"
 NOTES_PATH="$DOCUMENTS_PATH/notes"
 DEV_PATH="$DOCUMENTS_PATH/dev"
 REPOSITORIES_PATH="$DEV_PATH/repositories"
-DCD_REPOSITORIES_PATH="$DEV_PATH/dcd"
-OWN_REPOSITORIES_PATH="$DEV_PATH/own"
+DCD_REPOSITORIES_PATH="$REPOSITORIES_PATH/dcd"
+OWN_REPOSITORIES_PATH="$REPOSITORIES_PATH/own"
 
 # Navigation =============================================================
 alias home="cd $HOME"
