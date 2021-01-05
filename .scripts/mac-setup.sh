@@ -1,3 +1,4 @@
+#!/bin/bash
 # nibru's Mac Install Script
 
 # - Dotfiles -
