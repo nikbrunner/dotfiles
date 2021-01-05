@@ -43,9 +43,6 @@ alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ## dotfiles-push / dfp
 alias dfp="df commit -a -m \"Updates\" && df push"
 
-# Morning script
-alias morning="brew update && dfp"
-
 # Edit Config Files ======================================================
 EDITOR="nvim"
 NVIM_PATH="~/.config/nvim"
