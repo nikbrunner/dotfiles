@@ -59,6 +59,9 @@ brew install --cask spotify
 brew install --cask amethyst
 brew install --cask alfred
 
+brew install --cask protonvpn
+brew install --cask protonmail-bridge
+
 # Messenger and their dependencies
 brew install --cask slack
 brew install --cask skype

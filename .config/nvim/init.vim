@@ -24,13 +24,13 @@ set nocompatible
 filetype plugin on
 
 "set colorcolumn=75
-"highlight ColorColumn ctermbg=0 guibg=lightgrey
+"highligHT ColorColumn ctermbg=0 guibg=lightgrey
 
 " Plugin-Manager
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  AUTOcmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Plugins
@@ -76,12 +76,10 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'godlygeek/tabular'
 call plug#end()
 
-
-
 " Remaps
 " general ================================================================
 let mapleader = " "
-nmap <C-r>      :source ~/.config/nvim/init.vim<CR>
+nmap <C-r>             :source ~/.config/nvim/init.vim<CR>
 map <silent><leader>s  :w<CR>
 map <silent><C-s>      :w<CR>
 map <silent><C-w>      :wq<CR>
@@ -90,15 +88,15 @@ map <silent><C-q>      :q<CR>
 nmap Q         <nop>
 xmap K         :move '<-2<CR>gv-gv
 xmap J         :move '>+1<CR>gv-gv
-nmap <leader>l :vsp<CR>
-nmap <leader>j :sp<CR>
+nmap <silent><leader>l :vsp<CR>
+nmap <silent><leader>j :sp<CR>
 
 " Undootree ==============================================================
 nnoremap <leader>u :UndotreeShow<CR>
 
 " Theme ==================================================================
 " Init Theming
-colorscheme nord
+colorscheme gruvbox
 let g:airline_theme='bubblegum'
 
 " Switching themes
@@ -186,7 +184,11 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-css', 
   \ ]
+
+" SCSS files
+autocmd FileType scss setl iskeyword+=@-@
 
 imap <C-l> <Plug>(coc-snippets-expand)
 nmap <silent> gd <Plug>(coc-definition)
