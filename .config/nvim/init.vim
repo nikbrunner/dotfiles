@@ -96,20 +96,19 @@ call plug#begin()
     Plug 'godlygeek/tabular'
 call plug#end()
 
-" Remaps
-" general ================================================================
-let mapleader = " "
-nmap <C-r>                                   :source ~/.config/nvim/init.vim<CR>
-nmap <leader>rr                              :source ~/.config/nvim/init.vim<CR>
-map <silent><C-s>                            :wa<CR>
-map <silent><leader>s                        :wa<CR>
-map <silent><C-w>                            :wq<CR>
-map <silent><C-q>                            :q<CR>
-
-" Unmap this shit
+" Unmaps
 nmap Q         <nop>
 nmap H         <nop>
 nmap L         <nop>
+
+" Remaps
+" general ================================================================
+let mapleader = " "
+" nmap <leader>rr                              :source ~/.config/nvim/init.vim<CR>
+nmap <C-r><C-r>                              :source ~/.config/nvim/init.vim<CR>
+map <silent><C-s>                            :wa<CR>
+map <silent><C-w>                            :wq<CR>
+map <silent><C-q>                            :q<CR>
 
 " Navigation
 " nnoremap <C-,>                           :30winc ><CR>
@@ -179,7 +178,7 @@ let g:user_emmet_leader_key=                 '<C-e>'
 
 " RipGrep ================================================================
 " QuerySearch
-nmap <silent><leader>qs                      :Rg<space>
+nmap <silent><leader>q                       :Rg<space>
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -196,22 +195,25 @@ imap <silent><C-f>                           <Esc><Esc>:BLines!<CR>
 let g:NERDTreeIgnore =                       ['^node_modules$']
 map <C-b>                                    :NERDTreeToggle<CR>
 
+" TODO This made Problems. (Opened sometimes two trees, and there was a delay
+" when navigating from the tree with C-l )
+"
 " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
+" function! IsNERDTreeOpen()        
+"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" endfunction
 
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
+" function! SyncTree()
+"   if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+"     NERDTreeFind
+"     wincmd p
+"   endif
+" endfunction
 
 " Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
+" autocmd BufEnter * call SyncTree()
 
 " nerdtree git============================================================
 let g:NERDTreeGitStatusWithFlags = 1
@@ -233,7 +235,6 @@ let g:coc_global_extensions = [
 " SCSS files
 autocmd FileType scss setl iskeyword+=@-@
 
-imap <C-l>                                   <Plug>(coc-snippets-expand)
 nmap <silent><leader> oi                     :CocCommand tsserver.organizeImports<CR>
 nmap <silent> gd                             <Plug>(coc-definition)
 nmap <silent> gy                             <Plug>(coc-type-definition)
