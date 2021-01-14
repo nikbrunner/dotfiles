@@ -60,9 +60,6 @@ call plug#begin()
     Plug 'tpope/vim-commentary'
     Plug 'junegunn/goyo.vim'
     Plug 'mattn/emmet-vim'
-    Plug 'yuezk/vim-js'
-    Plug 'maxmellon/vim-jsx-pretty'
-    Plug 'HerringtonDarkholme/yats.vim'
     Plug 'chaoren/vim-wordmotion'
     Plug 'djoshea/vim-autoread'
     Plug 'machakann/vim-highlightedyank'
@@ -87,7 +84,10 @@ call plug#begin()
     Plug 'christoomey/vim-tmux-navigator'
 
     " Language specifics
-    Plug 'leafgarland/typescript-vim'
+    Plug 'leafgarland/typescript-vim' 
+    Plug 'yuezk/vim-js'
+    Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'HerringtonDarkholme/yats.vim'
 
     " Formater
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -104,7 +104,6 @@ nmap L         <nop>
 " Remaps
 " general ================================================================
 let mapleader = " "
-" nmap <leader>rr                              :source ~/.config/nvim/init.vim<CR>
 nmap <C-r><C-r>                              :source ~/.config/nvim/init.vim<CR>
 map <silent><C-s>                            :wa<CR>
 map <silent><C-w>                            :wq<CR>
