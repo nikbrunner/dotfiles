@@ -1,13 +1,10 @@
 " TODO Go deeper with vim-fugitive
-" TODO Todo aggregator
+" TODO TODO aggregator plugin
 " TODO Save iTerm config
 " TODO tig/gv.vim
-" TODO Fix "no eslint file" found warning
 " TODO Auto reveal active file
-" TODO Set shortcuts for editor-tabs
-"
-" RESEARCH Terminal in VIM
-" RESEARCH TMUX
+" TODO Ale
+" TODO TMUX / Navigator
 
 syntax on
 
@@ -28,14 +25,14 @@ set incsearch
 set encoding=UTF-8
 set nohlsearch
 set foldmethod=indent
+set scrolloff=16
+set nocompatible
 " set notimeout
-" set scrolloff=999
 " set smartindent
 
-set nocompatible
 filetype plugin on
 
-set colorcolumn=45,85,120
+set colorcolumn=45,75,120
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Plugin-Manager
@@ -97,54 +94,8 @@ call plug#begin()
     Plug 'godlygeek/tabular'
 call plug#end()
 
-" Unmaps
-nmap Q         <nop>
-nmap H         <nop>
-nmap L         <nop>
-
-" Remaps
-" general ================================================================
-let mapleader = " "
-nmap <C-r><C-r>                              :source ~/.config/nvim/init.vim<CR>
-map <silent><C-s>                            :wa<CR>
-map <silent><C-w>                            :wq<CR>
-map <silent><C-q>                            :q<CR>
-
-" Navigation
-" nnoremap <C-,>                           :30winc ><CR>
-" nnoremap <C-.>                           :30winc <<CR>
-
-" New splits
-nnoremap <silent><leader>l                   :vsp<CR>
-nnoremap <silent><leader>j                   :sp<CR>
-
-" Nav Tab
-nnoremap H                                   :tabprevious<CR>
-nnoremap L                                   :tabnext<CR>
-
-" Go to tab by number
-noremap <leader>1                            1gt
-noremap <leader>2                            2gt
-noremap <leader>3                            3gt
-noremap <leader>4                            4gt
-noremap <leader>5                            5gt
-noremap <leader>6                            6gt
-noremap <leader>7                            7gt
-noremap <leader>8                            8gt
-noremap <leader>9                            9gt
-noremap <leader>0                            :tablast<cr>
-
-" WhichKey ===============================================================
-" nnoremap <silent><leader>                    :WhichKeyVisual '<Space>'<CR>
-" nnoremap <silent><leader>                    :<c-u>WhichKeyVisual '<Space>'<CR>
-" nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
-" vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
-
-" Undootree ==============================================================
-nnoremap <leader>u                           :UndotreeShow<CR>
-
-" Theme ==================================================================
-" Init Theming
+" theme ==================================================================
+" Initial theming
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
 
@@ -154,80 +105,144 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" Highlight Yanking
-if !exists('##TextYankPost')
-  map y <Plug>(highlightedyank)
-endif
-
 " Switching themes
 map <F6>                                     :colorscheme nord <bar> let g:airline_theme='bubblegum' <bar> set background=dark<CR>
 map <F7>                                     :colorscheme gruvbox <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
 map <F8>                                     :colorscheme github <bar> let g:airline_theme ='github' <bar> set background=dark<CR>
 
-" spell checking =========================================================
-set spelllang=en_us,de_de
-nmap <silent><F5>                            :set spell!<cr>
+" Remaps
+" General ================================================================
+let mapleader = "\<Space>"
 
-" git-fugitive
-" CheatSheet https://gist.github.com/mikaelz/38600d22b716b39b031165cd6d201a67
-nmap <leader>gs                              :G<CR>
-nmap <leader>gc                              :Gcommit<CR>
-nmap <leader>gpu                             :Gpush<CR>
-nmap <leader>gpl                             :Gpull<CR>
-nmap <leader>gl                              :BCommits!<CR>
+" Unmaps
+nnoremap Q <nop>
+nnoremap H <nop>
+nnoremap L <nop>
 
-" merginal ==============================================================
-nmap <C-g>                                   :MerginalToggle<CR>
+" source, save, quit
+nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
+nnoremap <silent><leader>s                   :wa<CR>
+nnoremap <silent><leader>w                   :wq<CR>
+nnoremap <silent><leader>q                   :q<CR>
 
-" emmet ==================================================================
-let g:user_emmet_leader_key=                 '<C-e>'
+" Navigation
+" New splits
+nnoremap <silent><leader>l                   :vsp<CR>
+nnoremap <silent><leader>j                   :sp<CR>
 
-" RipGrep ================================================================
-" QuerySearch
-nmap <silent><leader>q                       :Rg<space>
+" Resize panes
+nnoremap <silent>∆                           :resize +5<CR>
+nnoremap <silent>˚                           :resize -5<CR>
+nnoremap <silent>¬                           :vertical:resize -5<CR>
+nnoremap <silent>˙                           :vertical:resize +5<CR>
 
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
+" Nav Tab
+nnoremap H                                   :tabprevious<CR>
+nnoremap L                                   :tabnext<CR>
 
-" fzf ====================================================================
-command! -bang -nargs=*  All
-  \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
-map <silent><C-p>                            :All<cr>
-map <silent><leader>p                        <Esc><Esc>:Files!<CR>
-imap <silent><C-f>                           <Esc><Esc>:BLines!<CR>
+" Go to tab by number
+nnoremap <leader>1                           1gt
+nnoremap <leader>2                           2gt
+nnoremap <leader>3                           3gt
+nnoremap <leader>4                           4gt
+nnoremap <leader>5                           5gt
+nnoremap <leader>6                           6gt
+nnoremap <leader>7                           7gt
+nnoremap <leader>8                           8gt
+nnoremap <leader>9                           9gt
+nnoremap <leader>0                           :tablast<CR>
+
+nnoremap <leader>tt :tab term<CR>
+tnoremap <Esc> exit<CR><CR>
 
 " nerdtree ===============================================================
 let g:NERDTreeIgnore =                       ['^node_modules$']
-map <C-b>                                    :NERDTreeToggle<CR>
+let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeGitStatusNodeColorization = 1
+
+map ¡                                        :NERDTreeToggle<CR>
 
 " TODO This made Problems. (Opened sometimes two trees, and there was a delay
 " when navigating from the tree with C-l )
 "
 " Check if NERDTree is open or active
-" function! IsNERDTreeOpen()        
-"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-" endfunction
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
 
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-" function! SyncTree()
-"   if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-"     NERDTreeFind
-"     wincmd p
-"   endif
-" endfunction
+file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
 
 " Highlight currently open buffer in NERDTree
-" autocmd BufEnter * call SyncTree()
+autocmd BufEnter * call SyncTree()
 
-" nerdtree git============================================================
-let g:NERDTreeGitStatusWithFlags = 1
-"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:NERDTreeGitStatusNodeColorization = 1
+" git & vcs ==============================================================
+" git-fugitive
+nnoremap <leader>gs                          :G<CR>
+nnoremap <leader>gc                          :Gcommit<CR>
+nnoremap <leader>gpu                         :Gpush<CR>
+nnoremap <leader>gpl                         :Gpull<CR>
+nnoremap <leader>gl                          :BCommits!<CR>
+nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
+nnoremap <leader>u                           :UndotreeShow<CR>
 
+" fzf/rg - Search & Query ====================================================================
+nnoremap <silent><C-p>                       <Esc><Esc>:ProjectFiles<CR>
+nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
+nnoremap <silent><leader>p                   <Esc><Esc>:All<CR>
+nnoremap <silent><leader>f                   <Esc><Esc>:Rg<space><CR>
+
+command! -bang -nargs=*  All
+  \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
+
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
+" WhichKey ===============================================================
+" nnoremap <silent><leader>                    :WhichKeyVisual '<Space>'<CR>
+" nnoremap <silent><leader>                    :<c-u>WhichKeyVisual '<Space>'<CR>
+" nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
+" vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+
+" highlight uanking
+if !exists('##TextYankPost')
+  map y <Plug>(highlightedyank)
+endif
+
+" spell checking =========================================================
+set spelllang=en_us,de_de
+nmap <silent><F5>                            :set spell!<cr>
+
+" emmet ==================================================================
+let g:user_emmet_leader_key=                 '<C-e>'
 
 " coc ====================================================================
+nnoremap <silent> gd                         <Plug>(coc-definition)
+nnoremap <silent> gy                         <Plug>(coc-type-definition)
+nnoremap <silent> gi                         <Plug>(coc-implementation)
+nnoremap <silent> gr                         <Plug>(coc-references)
+nnoremap <silent><leader>rn                  <Plug>(coc-rename)
+nnoremap <silent> gh                         :call <SID>show_documentation()<CR>
+inoremap <silent><expr><c-space>             coc#refresh()
+inoremap <silent><expr>∆
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr>˚                             pumvisible() ? "\<C-p>" : "\<C-h>"
+
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
@@ -241,15 +256,6 @@ let g:coc_global_extensions = [
 " SCSS files
 autocmd FileType scss setl iskeyword+=@-@
 
-nmap <silent><leader>oi                     :CocCommand tsserver.organizeImports<CR>
-nmap <silent> gd                             <Plug>(coc-definition)
-nmap <silent> gy                             <Plug>(coc-type-definition)
-nmap <silent> gi                             <Plug>(coc-implementation)
-nmap <silent> gr                             <Plug>(coc-references)
-
-" Quick documentation
-nmap <silent> gh                             :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -260,22 +266,10 @@ function! s:show_documentation()
   endif
 endfunction
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB>                       pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr><c-space>             coc#refresh()
-"
-" Remap for rename current word
-nmap <silent><leader>rn                      <Plug>(coc-rename)
 
 " goyo ====================================================================
 nmap <silent><leader>z                       :Goyo<CR>
