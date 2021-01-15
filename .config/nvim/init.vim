@@ -28,13 +28,14 @@ set incsearch
 set encoding=UTF-8
 set nohlsearch
 set foldmethod=indent
+" set notimeout
 " set scrolloff=999
 " set smartindent
 
 set nocompatible
 filetype plugin on
 
-set colorcolumn=45
+set colorcolumn=45,85,120
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Plugin-Manager
@@ -63,6 +64,7 @@ call plug#begin()
     Plug 'chaoren/vim-wordmotion'
     Plug 'djoshea/vim-autoread'
     Plug 'machakann/vim-highlightedyank'
+    Plug 'liuchengxu/vim-which-key'
 
     " File management
     Plug '~/.fzf'
@@ -132,6 +134,12 @@ noremap <leader>7                            7gt
 noremap <leader>8                            8gt
 noremap <leader>9                            9gt
 noremap <leader>0                            :tablast<cr>
+
+" WhichKey ===============================================================
+" nnoremap <silent><leader>                    :WhichKeyVisual '<Space>'<CR>
+" nnoremap <silent><leader>                    :<c-u>WhichKeyVisual '<Space>'<CR>
+" nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
+" vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
 " Undootree ==============================================================
 nnoremap <leader>u                           :UndotreeShow<CR>
@@ -234,7 +242,7 @@ let g:coc_global_extensions = [
 " SCSS files
 autocmd FileType scss setl iskeyword+=@-@
 
-nmap <silent><leader> oi                     :CocCommand tsserver.organizeImports<CR>
+nmap <silent><leader>oi                     :CocCommand tsserver.organizeImports<CR>
 nmap <silent> gd                             <Plug>(coc-definition)
 nmap <silent> gy                             <Plug>(coc-type-definition)
 nmap <silent> gi                             <Plug>(coc-implementation)
