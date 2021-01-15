@@ -64,7 +64,6 @@ call plug#begin()
     Plug 'chaoren/vim-wordmotion'
     Plug 'djoshea/vim-autoread'
     Plug 'machakann/vim-highlightedyank'
-    Plug 'liuchengxu/vim-which-key'
 
     " File management
     Plug '~/.fzf'
