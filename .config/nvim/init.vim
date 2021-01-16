@@ -1,10 +1,11 @@
-" TODO Go deeper with vim-fugitive
-" TODO TODO aggregator plugin
 " TODO Save iTerm config
-" TODO tig/gv.vim
-" TODO Auto reveal active file
-" TODO Ale
 " TODO TMUX / Navigator
+" TODO Make this cool fzf short cuts work https://www.chrisatmachine.com/Neovim/08-fzf/ 
+" TODO vim/ranger
+" TODO vim/sneak
+" TODO Outsource plugin-configs
+
+source $HOME/.config/nvim/plug-config/fzf.vim
 
 syntax on
 
@@ -27,6 +28,7 @@ set nohlsearch
 set foldmethod=indent
 set scrolloff=16
 set nocompatible
+set mouse=a
 " set notimeout
 " set smartindent
 
@@ -61,15 +63,17 @@ call plug#begin()
     Plug 'chaoren/vim-wordmotion'
     Plug 'djoshea/vim-autoread'
     Plug 'machakann/vim-highlightedyank'
-
+ 
     " File management
     Plug '~/.fzf'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-rooter'
     Plug 'preservim/nerdtree'
     Plug 'git@github.com:mbbill/undotree.git'
+    Plug 'junegunn/gv.vim'
 
-    " Code completion 
+    " Code completion
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Git
@@ -82,7 +86,7 @@ call plug#begin()
     Plug 'christoomey/vim-tmux-navigator'
 
     " Language specifics
-    Plug 'leafgarland/typescript-vim' 
+    Plug 'leafgarland/typescript-vim'
     Plug 'yuezk/vim-js'
     Plug 'maxmellon/vim-jsx-pretty'
     Plug 'HerringtonDarkholme/yats.vim'
@@ -152,8 +156,8 @@ nnoremap <leader>8                           8gt
 nnoremap <leader>9                           9gt
 nnoremap <leader>0                           :tablast<CR>
 
-nnoremap <leader>tt :tab term<CR>
-tnoremap <Esc> exit<CR><CR>
+" terminal
+nnoremap `                                   :terminal<CR>jjA
 
 " nerdtree ===============================================================
 let g:NERDTreeIgnore =                       ['^node_modules$']
@@ -162,62 +166,18 @@ let g:NERDTreeGitStatusNodeColorization = 1
 
 map ¡                                        :NERDTreeToggle<CR>
 
-" TODO This made Problems. (Opened sometimes two trees, and there was a delay
-" when navigating from the tree with C-l )
-"
-" Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
-
 " git & vcs ==============================================================
-" git-fugitive
 nnoremap <leader>gs                          :G<CR>
 nnoremap <leader>gc                          :Gcommit<CR>
 nnoremap <leader>gpu                         :Gpush<CR>
 nnoremap <leader>gpl                         :Gpull<CR>
-nnoremap <leader>gl                          :BCommits!<CR>
+nnoremap <leader>gl                          :GV<CR>
+nnoremap <leader>gb                          :GV!<CR>
 nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
 nnoremap <leader>u                           :UndotreeShow<CR>
 
-" fzf/rg - Search & Query ====================================================================
-nnoremap <silent><C-p>                       <Esc><Esc>:ProjectFiles<CR>
-nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
-nnoremap <silent><leader>p                   <Esc><Esc>:All<CR>
-nnoremap <silent><leader>f                   <Esc><Esc>:Rg<space><CR>
 
-command! -bang -nargs=*  All
-  \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
-
-function! s:find_git_root()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
-
-command! ProjectFiles execute 'Files' s:find_git_root()
-
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-
-" WhichKey ===============================================================
-" nnoremap <silent><leader>                    :WhichKeyVisual '<Space>'<CR>
-" nnoremap <silent><leader>                    :<c-u>WhichKeyVisual '<Space>'<CR>
-" nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
-" vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
-
-" highlight uanking
+" highlight yanking
 if !exists('##TextYankPost')
   map y <Plug>(highlightedyank)
 endif
@@ -230,12 +190,22 @@ nmap <silent><F5>                            :set spell!<cr>
 let g:user_emmet_leader_key=                 '<C-e>'
 
 " coc ====================================================================
-nnoremap <silent> gd                         <Plug>(coc-definition)
-nnoremap <silent> gy                         <Plug>(coc-type-definition)
-nnoremap <silent> gi                         <Plug>(coc-implementation)
-nnoremap <silent> gr                         <Plug>(coc-references)
-nnoremap <silent><leader>rn                  <Plug>(coc-rename)
-nnoremap <silent> gh                         :call <SID>show_documentation()<CR>
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \ 'coc-css',
+  \ ]
+
+nmap <silent> gd                         <Plug>(coc-definition)
+nmap <silent> gy                         <Plug>(coc-type-definition)
+nmap <silent> gi                         <Plug>(coc-implementation)
+nmap <silent> gr                         <Plug>(coc-references)
+nmap <silent><leader>rn                  <Plug>(coc-rename)
+nmap <silent> gh                         :call <SID>show_documentation()<CR>
 inoremap <silent><expr><c-space>             coc#refresh()
 inoremap <silent><expr>∆
       \ pumvisible() ? "\<C-n>" :
@@ -243,15 +213,6 @@ inoremap <silent><expr>∆
       \ coc#refresh()
 inoremap <expr>˚                             pumvisible() ? "\<C-p>" : "\<C-h>"
 
-let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-tsserver',
-  \ 'coc-eslint', 
-  \ 'coc-prettier', 
-  \ 'coc-json', 
-  \ 'coc-css', 
-  \ ]
 
 " SCSS files
 autocmd FileType scss setl iskeyword+=@-@
