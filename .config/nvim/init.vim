@@ -118,7 +118,9 @@ nnoremap Q <nop>
 nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>s                   :wa<CR>
 nnoremap <silent><leader>w                   :wq<CR>
-nnoremap <silent><leader>q                   :q<CR>
+nnoremap <silent><leader>qq                  :q<CR>
+nnoremap <silent><leader>qa                  :qa<CR>
+nnoremap <silent><leader>qp                  :tabdo NERDTreeClose<CR>:mksession! workspace.vim<CR>:wa<CR>:qa<CR>
 
 " Navigation
 " New splits
@@ -167,7 +169,6 @@ nnoremap <leader>gl                          :GV<CR>
 nnoremap <leader>gb                          :GV!<CR>
 nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
 nnoremap <leader>u                           :UndotreeShow<CR>
-
 
 " highlight yanking
 if !exists('##TextYankPost')

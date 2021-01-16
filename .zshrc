@@ -72,12 +72,20 @@ alias dev="cd $DEV_PATH"
 alias notes="cd $NOTES_PATH"
 alias own="cd $OWN_REPOSITORIES_PATH"
 
+# Own Projects ============================================================
+alias ndn="cd $OWN_REPOSITORIES_PATH/nibru.dev-next"
+alias vim-ndn="vim -S $OWN_REPOSITORIES_PATH/nibru.dev-next/workspace.vim"
+
 # DCD ====================================================================
 alias dcd="cd $DCD_REPOSITORIES_PATH"
 alias bc-website="cd $DCD_REPOSITORIES_PATH/bc-homepage"
+alias vim-bc-website="vim -S $DCD_REPOSITORIES_PATH/bc-homepage/workspace.vim"
 alias bc-client="cd $DCD_REPOSITORIES_PATH/bc-desktop-client"
+alias vim-bc-client="vim -S $DCD_REPOSITORIES_PATH/bc-desktop-client/workspace.vim"
 alias bc-tools="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
 alias bc-bpc="cd $DCD_REPOSITORIES_PATH/bc-tools-bikepricecalculator"
+alias bc-bergamont="cd $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont"
+alias vim-bc-brandworld-bergamont="vim -S $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont/workspace.vim"
 
 # Path Exports ===========================================================
 export PATH=/usr/bin/python:$PATH
