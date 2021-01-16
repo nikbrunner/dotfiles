@@ -88,11 +88,17 @@ brew install fzf
 
 ## NeoVim
 brew install neovim
-brew install tmux
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 npm install -g neovim
 echo "Open your init.vim and run :PlugInstall!"
+
+## Tmux
+
+brew install tmux
+### https://github.com/tmux-plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Open tmux and press <C-b>I to install the Plugins via TPM"
 
 # Design Apps
 brew install --cask adobe-creative-cloud

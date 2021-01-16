@@ -1,15 +1,3 @@
-" TODO Save iTerm config
-" TODO TMUX / Navigator
-" TODO Make this cool fzf short cuts work https://www.chrisatmachine.com/Neovim/08-fzf/ 
-" TODO vim/ranger
-" TODO vim/sneak
-" TODO Outsource plugin-configs
-"      - CoC
-"        - Create and setup config file
-"        - Completion in SCSS files is strange ( Completes when scrolling
-"        through the suggestions)
-"        - go to defintion
-
 source $HOME/.config/nvim/plug-config/fzf.vim
 
 syntax on
@@ -34,8 +22,7 @@ set foldmethod=indent
 set scrolloff=16
 set nocompatible
 set mouse=a
-" set notimeout
-" set smartindent
+set foldlevel=1
 
 filetype plugin on
 
