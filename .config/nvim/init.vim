@@ -126,10 +126,10 @@ nnoremap <silent><leader>l                   :vsp<CR><C-W><C-l>
 nnoremap <silent><leader>j                   :sp<CR><C-W><C-j>
 
 " Resize panes
-nnoremap <silent>∆                           :resize +5<CR>
-nnoremap <silent>˚                           :resize -5<CR>
-nnoremap <silent>¬                           :vertical:resize -5<CR>
-nnoremap <silent>˙                           :vertical:resize +5<CR>
+nnoremap <silent><M-k>                       :resize +5<CR>
+nnoremap <silent><M-j>                       :resize -5<CR>
+nnoremap <silent><M-l>                       :vertical:resize -5<CR>
+nnoremap <silent><M-h>                       :vertical:resize +5<CR>
 
 " Nav Tab
 nnoremap <S-Tab>                             :tabprevious<CR>
