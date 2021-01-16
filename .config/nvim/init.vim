@@ -4,6 +4,11 @@
 " TODO vim/ranger
 " TODO vim/sneak
 " TODO Outsource plugin-configs
+"      - CoC
+"        - Create and setup config file
+"        - Completion in SCSS files is strange ( Completes when scrolling
+"        through the suggestions)
+"        - go to defintion
 
 source $HOME/.config/nvim/plug-config/fzf.vim
 
@@ -131,8 +136,8 @@ nnoremap <silent><leader>q                   :q<CR>
 
 " Navigation
 " New splits
-nnoremap <silent><leader>l                   :vsp<CR>
-nnoremap <silent><leader>j                   :sp<CR>
+nnoremap <silent><leader>l                   :vsp<CR><C-W><C-l>
+nnoremap <silent><leader>j                   :sp<CR><C-W><C-j>
 
 " Resize panes
 nnoremap <silent>∆                           :resize +5<CR>
@@ -200,18 +205,18 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ ]
 
-nmap <silent> gd                         <Plug>(coc-definition)
-nmap <silent> gy                         <Plug>(coc-type-definition)
-nmap <silent> gi                         <Plug>(coc-implementation)
-nmap <silent> gr                         <Plug>(coc-references)
-nmap <silent><leader>rn                  <Plug>(coc-rename)
-nmap <silent> gh                         :call <SID>show_documentation()<CR>
+nmap <silent> gd                             <Plug>(coc-definition)
+nmap <silent> gy                             <Plug>(coc-type-definition)
+nmap <silent> gi                             <Plug>(coc-implementation)
+nmap <silent> gr                             <Plug>(coc-references)
+nmap <silent><leader>rn                      <Plug>(coc-rename)
+nmap <silent> gh                             :call <SID>show_documentation()<CR>
 inoremap <silent><expr><c-space>             coc#refresh()
-inoremap <silent><expr>∆
+inoremap <silent><expr><C-j>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr>˚                             pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><C-k>                             pumvisible() ? "\<C-p>" : "\<C-h>"
 
 
 " SCSS files
