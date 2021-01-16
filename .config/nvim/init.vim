@@ -36,62 +36,63 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   AUTOcmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Plugins
+" plugins
 call plug#begin()
-    " Themes
+    " themes
     Plug 'arcticicestudio/nord-vim'
     Plug 'morhetz/gruvbox'
     Plug 'cormacrelf/vim-colors-github'
     Plug 'gilgigilgil/anderson.vim'
 
-    " Appearence
+    " appearence
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
-    " General Workflow Enhancements
+    " general workflow 
     Plug 'tpope/vim-commentary'
     Plug 'junegunn/goyo.vim'
     Plug 'mattn/emmet-vim'
     Plug 'chaoren/vim-wordmotion'
     Plug 'djoshea/vim-autoread'
     Plug 'machakann/vim-highlightedyank'
+    Plug 'godlygeek/tabular'
  
-    " File management
+    " file management
     Plug '~/.fzf'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
     Plug 'preservim/nerdtree'
     Plug 'git@github.com:mbbill/undotree.git'
-    Plug 'junegunn/gv.vim'
+    Plug 'francoiscabrol/ranger.vim'
+    Plug 'rbgrouleff/bclose.vim'
 
     " Code completion
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-    " Git
+    " git
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'idanarye/vim-merginal'
+    Plug 'junegunn/gv.vim'
 
-    " Window managment
+    " window managment
     Plug 'christoomey/vim-tmux-navigator'
 
-    " Language specifics
+    " language
     Plug 'leafgarland/typescript-vim'
     Plug 'yuezk/vim-js'
     Plug 'maxmellon/vim-jsx-pretty'
     Plug 'HerringtonDarkholme/yats.vim'
 
-    " Formater
+    " formater
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-
-    " Misc
-    Plug 'godlygeek/tabular'
 call plug#end()
 
 " theme ==================================================================
 " Initial theming
+let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
 
@@ -112,8 +113,6 @@ let mapleader = "\<Space>"
 
 " Unmaps
 nnoremap Q <nop>
-nnoremap H <nop>
-nnoremap L <nop>
 
 " source, save, quit
 nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
@@ -133,8 +132,8 @@ nnoremap <silent>¬                           :vertical:resize -5<CR>
 nnoremap <silent>˙                           :vertical:resize +5<CR>
 
 " Nav Tab
-nnoremap H                                   :tabprevious<CR>
-nnoremap L                                   :tabnext<CR>
+nnoremap <S-Tab>                             :tabprevious<CR>
+nnoremap <Tab>                               :tabnext<CR>
 
 " Go to tab by number
 nnoremap <leader>1                           1gt
@@ -152,11 +151,12 @@ nnoremap <leader>0                           :tablast<CR>
 nnoremap `                                   :terminal<CR>jjA
 
 " nerdtree ===============================================================
-let g:NERDTreeIgnore =                       ['^node_modules$']
-let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeGitStatusNodeColorization = 1
+let g:NERDTreeIgnore=                        ['^node_modules$']
+let g:NERDTreeGitStatusWithFlags=            1
+let g:NERDTreeGitStatusNodeColorization=     1
+let NERDTreeShowHidden=                      1
 
-map ¡                                        :NERDTreeToggle<CR>
+nnoremap <silent><expr><C-\>                 g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " git & vcs ==============================================================
 nnoremap <leader>gs                          :G<CR>
