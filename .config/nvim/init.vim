@@ -1,20 +1,25 @@
+" TODO Auto source this with an Auto cmd
+
 source $HOME/.config/nvim/plug-config/fzf.vim
 
 syntax on
-
 set noerrorbells
-set tabstop=4 softtabstop=4
+set tabstop=4 
+set softtabstop=4
 set shiftwidth=4
+set termguicolors
 set copyindent
 set smarttab
 set cindent
 set expandtab
 set rnu nu
 set nowrap
+set hidden
 set noswapfile
 set nobackup
-set cursorline
+" set cursorline
 set undofile
+set undodir=~/.vim/undodir
 set incsearch
 set encoding=UTF-8
 set nohlsearch
@@ -23,13 +28,15 @@ set scrolloff=16
 set nocompatible
 set mouse=a
 set foldlevel=1
+set cmdheight=2
 
 filetype plugin on
 
 set colorcolumn=45,75,120
+" set signcolumn=yes
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-" Plugin-Manager
+" plugin-manager
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -93,14 +100,18 @@ call plug#end()
 " theme ==================================================================
 " Initial theming
 let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+let g:airline_theme='nord'
+colorscheme nord
+" highlight Normal guibg=none
+hi Normal guibg=NONE ctermbg=NONE
 
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+
+" What is this?
+" if exists('+termguicolors')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
 
 " Switching themes
 map <F6>                                     :colorscheme nord <bar> let g:airline_theme='bubblegum' <bar> set background=dark<CR>
@@ -134,8 +145,8 @@ nnoremap <silent><M-l>                       :vertical:resize -5<CR>
 nnoremap <silent><M-h>                       :vertical:resize +5<CR>
 
 " Nav Tab
-nnoremap <S-Tab>                             :tabprevious<CR>
-nnoremap <Tab>                               :tabnext<CR>
+nnoremap <silent><S-Tab>                             :tabprevious<CR>
+nnoremap <silent><Tab>                               :tabnext<CR>
 
 " Go to tab by number
 nnoremap <leader>1                           1gt
@@ -234,6 +245,7 @@ endfunction
 
 function! s:goyo_leave()
   set scrolloff=5
+  hi Normal guibg=NONE ctermbg=NONE
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
