@@ -4,20 +4,12 @@ source $HOME/.config/nvim/general/sets.vim
 source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/theme.vim
 source $HOME/.config/nvim/general/maps.vim
+source $HOME/.config/nvim/general/autocmd.vim
 source $HOME/.config/nvim/plug-config/vim-fzf.vim
 source $HOME/.config/nvim/plug-config/vim-gitgutter.vim
 source $HOME/.config/nvim/plug-config/vim-fugitive.vim
 source $HOME/.config/nvim/plug-config/vim-coc.vim
 
-if has ('autocmd') " Remain compatible with earlier versions
- augroup vimrc     " Source vim configuration upon save
-    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
-    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
-  augroup END
-endif " has autocmd
-
-" Remaps
-" General ================================================================
 " tree ===============================================================
 let g:NERDTreeIgnore=                        ['^node_modules$']
 let g:NERDTreeGitStatusWithFlags=            1
