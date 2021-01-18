@@ -6,12 +6,11 @@ source $HOME/.config/nvim/general/maps.vim
 source $HOME/.config/nvim/general/autocmd.vim
 
 " plugins
-source $HOME/.config/nvim/plug-config/plugins.vim
-source $HOME/.config/nvim/plug-config/vim-fzf.vim
-source $HOME/.config/nvim/plug-config/vim-gitgutter.vim
-source $HOME/.config/nvim/plug-config/vim-fugitive.vim
-source $HOME/.config/nvim/plug-config/vim-coc.vim
-source $HOME/.config/nvim/plug-config/vim-coc.vim
+source $HOME/.config/nvim/plugins/plugins.vim
+source $HOME/.config/nvim/plugins/vim-fzf.vim
+source $HOME/.config/nvim/plugins/vim-gitgutter.vim
+source $HOME/.config/nvim/plugins/vim-fugitive.vim
+source $HOME/.config/nvim/plugins/vim-coc.vim
 
 " tree ===============================================================
 let g:NERDTreeIgnore=                        ['^node_modules$']
