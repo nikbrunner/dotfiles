@@ -1,8 +1,8 @@
 " This is the default extra key bindings
 nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
 nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
-nnoremap <silent><leader><C-f>               <Esc><Esc>:Rg<space><CR>
-nnoremap <silent><leader><C-b>               <Esc><Esc>:Buffers<CR>
+nnoremap <silent><C-b>                       <Esc><Esc>:Buffers<CR>
+nnoremap <silent><F12>                       <Esc><Esc>:Rg<space><CR>
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -13,7 +13,7 @@ let g:fzf_buffers_jump = 1
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'hghlight': 'Todo', 'border': 'sharp' } }
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'TODO', 'border': 'rounded' } }
 
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
@@ -22,7 +22,7 @@ let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
+  \ 'hl':      ['fg', 'Keyword'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
   \ 'hl+':     ['fg', 'Statement'],

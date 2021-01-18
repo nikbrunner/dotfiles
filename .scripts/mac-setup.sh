@@ -70,12 +70,16 @@ brew install --cask discord
 brew install --cask signal
 brew install --cask camo-studio
 
-# Development Apps
+# development apps
 brew install --cask visual-studio-code
 brew install --cask webstorm
 brew install --cask iterm2
 brew install --cask insomnia
 brew install --cask docker
+
+# dev fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 
 ## Python
 brew install python

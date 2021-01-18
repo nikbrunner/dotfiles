@@ -4,9 +4,9 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 
 syntax on
 set noerrorbells
-set tabstop=4 
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2 
+set softtabstop=2
+set shiftwidth=2
 set termguicolors
 set copyindent
 set smarttab
@@ -23,11 +23,11 @@ set undodir=~/.vim/undodir
 set incsearch
 set encoding=UTF-8
 set nohlsearch
-set foldmethod=indent
 set scrolloff=16
 set nocompatible
 set mouse=a
-set foldlevel=1
+set foldmethod=indent
+set foldlevel=10
 set cmdheight=2
 
 filetype plugin on
@@ -76,6 +76,7 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
     Plug 'preservim/nerdtree'
+    Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
     Plug 'git@github.com:mbbill/undotree.git'
     Plug 'francoiscabrol/ranger.vim'
     Plug 'rbgrouleff/bclose.vim'
@@ -101,6 +102,9 @@ call plug#begin()
 
     " formater
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
+    " icons
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " theme ==================================================================
@@ -131,10 +135,9 @@ nnoremap Q <nop>
 
 " source, save, quit
 nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
-nnoremap <silent><leader>s                   :wa<CR>
-nnoremap <silent><leader>w                   :wq<CR>
-nnoremap <silent><leader>qq                  :q<CR>
-nnoremap <silent><leader>qa                  :qa<CR>
+nnoremap <silent><C-s>                       :wa<CR>
+nnoremap <silent><C-w>                       :wq<CR>
+nnoremap <silent><C-q>                       :q!<CR>
 nnoremap <silent><leader>qp                  :tabdo NERDTreeClose<CR>:mksession! workspace.vim<CR>:wa<CR>:qa<CR>
 
 " Navigation
@@ -143,10 +146,10 @@ nnoremap <silent><leader>l                   :vsp<CR><C-W><C-l>
 nnoremap <silent><leader>j                   :sp<CR><C-W><C-j>
 
 " Resize panes
-nnoremap <silent><M-k>                       :resize +5<CR>
-nnoremap <silent><M-j>                       :resize -5<CR>
-nnoremap <silent><M-l>                       :vertical:resize -5<CR>
-nnoremap <silent><M-h>                       :vertical:resize +5<CR>
+nnoremap <silent>˚                       :resize +5<CR>
+nnoremap <silent>∆                       :resize -5<CR>
+nnoremap <silent>¬                       :vertical:resize -5<CR>
+nnoremap <silent>˙                       :vertical:resize +5<CR>
 
 " Nav Tab
 nnoremap <silent><S-Tab>                             :tabprevious<CR>
@@ -167,13 +170,14 @@ nnoremap <leader>0                           :tablast<CR>
 " terminal
 nnoremap `                                   :terminal<CR>jjA
 
-" nerdtree ===============================================================
+" tree ===============================================================
 let g:NERDTreeIgnore=                        ['^node_modules$']
 let g:NERDTreeGitStatusWithFlags=            1
 let g:NERDTreeGitStatusNodeColorization=     1
 let NERDTreeShowHidden=                      1
 
-nnoremap <silent><expr><C-\>                 g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <silent>™                           <cmd>CHADopen<cr>
 
 " git & vcs ==============================================================
 nnoremap <leader>gs                          :G<CR>
@@ -212,7 +216,7 @@ nmap <silent> gd                             <Plug>(coc-definition)
 nmap <silent> gy                             <Plug>(coc-type-definition)
 nmap <silent> gi                             <Plug>(coc-implementation)
 nmap <silent> gr                             <Plug>(coc-references)
-nmap <silent><leader>rn                      <Plug>(coc-rename)
+nmap <silent><F2>                            <Plug>(coc-rename)
 nmap <silent> gh                             :call <SID>show_documentation()<CR>
 inoremap <silent><expr><c-space>             coc#refresh()
 inoremap <silent><expr><C-j>
