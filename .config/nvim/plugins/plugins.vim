@@ -13,6 +13,7 @@ call plug#begin()
     Plug 'morhetz/gruvbox'
     Plug 'cormacrelf/vim-colors-github'
     Plug 'gilgigilgil/anderson.vim'
+    Plug 'mkitt/tabline.vim.git'
 
     " appearence
     Plug 'vim-airline/vim-airline'
