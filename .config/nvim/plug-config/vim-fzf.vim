@@ -1,7 +1,7 @@
 " This is the default extra key bindings
 nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
 nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
-nnoremap <silent><C-b>                       <Esc><Esc>:Buffers<CR>
+nnoremap <silent><C-e>                       <Esc><Esc>:Buffers<CR>
 nnoremap <silent><F12>                       <Esc><Esc>:Rg<space><CR>
 
 " Enable per-command history.
