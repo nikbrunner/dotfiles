@@ -1,7 +1,8 @@
 " TODO Auto source this with an Auto cmd
 
-source $HOME/.config/nvim/plug-config/fzf.vim
+source $HOME/.config/nvim/plug-config/vim-fzf.vim
 source $HOME/.config/nvim/plug-config/vim-gitgutter.vim
+source $HOME/.config/nvim/plug-config/vim-fugitive.vim
 
 syntax on
 set noerrorbells
@@ -179,16 +180,6 @@ let NERDTreeShowHidden=                      1
 
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 nnoremap <silent>™                           <cmd>CHADopen<cr>
-
-" git & vcs ==============================================================
-nnoremap <leader>gs                          :G<CR>
-nnoremap <leader>gc                          :Gcommit<CR>
-nnoremap <leader>gpu                         :Gpush<CR>
-nnoremap <leader>gpl                         :Gpull<CR>
-nnoremap <leader>gl                          :GV<CR>
-nnoremap <leader>gb                          :GV!<CR>
-nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
-nnoremap <leader>u                           :UndotreeShow<CR>
 
 " highlight yanking
 if !exists('##TextYankPost')
