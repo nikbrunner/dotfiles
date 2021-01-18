@@ -1,42 +1,12 @@
 " TODO Auto source this with an Auto cmd
 
+source $HOME/.config/nvim/general/sets.vim
 source $HOME/.config/nvim/plug-config/vim-fzf.vim
 source $HOME/.config/nvim/plug-config/vim-gitgutter.vim
 source $HOME/.config/nvim/plug-config/vim-fugitive.vim
 source $HOME/.config/nvim/plug-config/vim-coc.vim
 
-syntax on
-set noerrorbells
-set tabstop=2 
-set softtabstop=2
-set shiftwidth=2
-set termguicolors
-set copyindent
-set smarttab
-set cindent
-set expandtab
-set rnu nu
-set nowrap
-set hidden
-set noswapfile
-set nobackup
-set cursorline
-set undofile
-set undodir=~/.vim/undodir
-set incsearch
-set encoding=UTF-8
-set nohlsearch
-set scrolloff=16
-set nocompatible
-set mouse=a
-set foldmethod=indent
-set foldlevel=10
-set cmdheight=2
-
 filetype plugin on
-
-set colorcolumn=45,75,120
-" set signcolumn=yes
 
 " plugin-manager
 if empty(glob('~/.vim/autoload/plug.vim'))
