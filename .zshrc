@@ -88,7 +88,7 @@ alias bc-client="cd $DCD_REPOSITORIES_PATH/bc-desktop-client"
 alias vim-bc-client="vim -S $DCD_REPOSITORIES_PATH/bc-desktop-client/workspace.vim"
 alias bc-tools="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
 alias bc-bpc="cd $DCD_REPOSITORIES_PATH/bc-tools-bikepricecalculator"
-alias bc-bergamont="cd $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont"
+alias bc-brandworld-bergamont="cd $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont"
 alias vim-bc-brandworld-bergamont="vim -S $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont/workspace.vim"
 
 # Path Exports ===========================================================
