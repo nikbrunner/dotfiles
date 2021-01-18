@@ -1,13 +1,16 @@
 " TODO Auto source this with an Auto cmd
 
 source $HOME/.config/nvim/general/sets.vim
-source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/theme.vim
 source $HOME/.config/nvim/general/maps.vim
 source $HOME/.config/nvim/general/autocmd.vim
+
+" plugins
+source $HOME/.config/nvim/plug-config/plugins.vim
 source $HOME/.config/nvim/plug-config/vim-fzf.vim
 source $HOME/.config/nvim/plug-config/vim-gitgutter.vim
 source $HOME/.config/nvim/plug-config/vim-fugitive.vim
+source $HOME/.config/nvim/plug-config/vim-coc.vim
 source $HOME/.config/nvim/plug-config/vim-coc.vim
 
 " tree ===============================================================
@@ -31,18 +34,3 @@ nmap <silent><F5>                            :set spell!<cr>
 
 " emmet ==================================================================
 let g:user_emmet_leader_key=                 '<C-,>'
-
-" goyo ====================================================================
-nmap <silent><leader>z                       :Goyo<CR>
-
-function! s:goyo_enter()
-  set scrolloff=999
-endfunction
-
-function! s:goyo_leave()
-hi Normal guibg=NONE ctermbg=NONE
-  set scrolloff=5
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
