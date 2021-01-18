@@ -15,3 +15,4 @@ source $HOME/.config/nvim/plugins/vim-emmet.vim
 source $HOME/.config/nvim/plugins/vim-nerdtree.vim
 source $HOME/.config/nvim/plugins/vim-highlightedyank.vim
 source $HOME/.config/nvim/plugins/vim-chadtree.vim
+source $HOME/.config/nvim/plugins/vim-devicons.vim
