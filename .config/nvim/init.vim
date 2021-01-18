@@ -17,7 +17,7 @@ set nowrap
 set hidden
 set noswapfile
 set nobackup
-" set cursorline
+set cursorline
 set undofile
 set undodir=~/.vim/undodir
 set incsearch
@@ -32,9 +32,8 @@ set cmdheight=2
 
 filetype plugin on
 
-set colorcolumn=45,75,120
+" set colorcolumn=45,75,120
 " set signcolumn=yes
-highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " plugin-manager
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -42,6 +41,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   AUTOcmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+if has ('autocmd') " Remain compatible with earlier versions
+ augroup vimrc     " Source vim configuration upon save
+    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+  augroup END
+endif " has autocmd
 
 " plugins
 call plug#begin()
@@ -100,11 +106,9 @@ call plug#end()
 " theme ==================================================================
 " Initial theming
 let g:gruvbox_contrast_dark="hard"
-let g:airline_theme='nord'
-colorscheme nord
-" highlight Normal guibg=none
+let g:airline_theme='gruvbox'
+colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
-
 
 " What is this?
 " if exists('+termguicolors')
@@ -244,8 +248,8 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
+hi Normal guibg=NONE ctermbg=NONE
   set scrolloff=5
-  hi Normal guibg=NONE ctermbg=NONE
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

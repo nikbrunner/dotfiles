@@ -72,8 +72,12 @@ alias dev="cd $DEV_PATH"
 alias notes="cd $NOTES_PATH"
 alias own="cd $OWN_REPOSITORIES_PATH"
 
+alias vim-notes="vim -S $NOTES_PATH/workspace.vim"
+
 # Own Projects ============================================================
+alias nd="cd $OWN_REPOSITORIES_PATH/nibru.dev"
 alias ndn="cd $OWN_REPOSITORIES_PATH/nibru.dev-next"
+alias vim-nd="vim -S $OWN_REPOSITORIES_PATH/nibru.dev/workspace.vim"
 alias vim-ndn="vim -S $OWN_REPOSITORIES_PATH/nibru.dev-next/workspace.vim"
 
 # DCD ====================================================================
