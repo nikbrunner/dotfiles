@@ -13,10 +13,5 @@ source $HOME/.config/nvim/plugins/vim-fugitive.vim
 source $HOME/.config/nvim/plugins/vim-coc.vim
 source $HOME/.config/nvim/plugins/vim-emmet.vim
 source $HOME/.config/nvim/plugins/vim-nerdtree.vim
-
-nnoremap <silent>™                           <cmd>CHADopen<cr>
-
-" highlight yanking
-if !exists('##TextYankPost')
-  map y <Plug>(highlightedyank)
-endif
+source $HOME/.config/nvim/plugins/vim-highlightedyank.vim
+source $HOME/.config/nvim/plugins/vim-chadtree.vim
