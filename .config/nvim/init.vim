@@ -1,6 +1,7 @@
 " TODO Auto source this with an Auto cmd
 
 source $HOME/.config/nvim/plug-config/fzf.vim
+source $HOME/.config/nvim/plug-config/vim-gitgutter.vim
 
 syntax on
 set noerrorbells
@@ -32,7 +33,7 @@ set cmdheight=2
 
 filetype plugin on
 
-" set colorcolumn=45,75,120
+set colorcolumn=45,75,120
 " set signcolumn=yes
 
 " plugin-manager
