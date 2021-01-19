@@ -27,5 +27,6 @@ set foldmethod=indent
 set foldlevel=10
 set cmdheight=2
 set conceallevel=3
+set timeoutlen=250
 " set colorcolumn=45,75,120
 " set signcolumn=yes
