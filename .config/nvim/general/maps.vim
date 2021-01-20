@@ -9,6 +9,7 @@ nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>s                   :wa<CR>
 nnoremap <silent><leader>w                   :wq<CR>
 nnoremap <silent><leader>q                   :q!<CR>
+nnoremap <silent><leader>ps                  :Obsess<CR>
 
 " New splits
 nnoremap <silent><leader>l                   :vsp<CR><C-W><C-l>
@@ -42,5 +43,7 @@ map <F7>                                     :colorscheme gruvbox <bar> let g:ai
 map <F8>                                     :colorscheme github <bar> let g:airline_theme ='github' <bar> set background=dark<CR>
 
 " nerdtree
-" nnoremap <silent><leader>pq                  :tabdo NERDTreeClose<CR>:mksession! workspace.vim<CR>:wa<CR>:qa<CR>
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+
+" emmet
+let g:user_emmet_leader_key=                 '<C-y>'

@@ -14,7 +14,7 @@ set nowrap
 set hidden
 set noswapfile
 set nobackup
-set cursorline
+" set cursorline
 set undofile
 set undodir=~/.vim/undodir
 set incsearch
@@ -26,7 +26,6 @@ set mouse=a
 set foldmethod=indent
 set foldlevel=10
 set cmdheight=2
-set conceallevel=3
-set timeoutlen=250
+set timeoutlen=500
 " set colorcolumn=45,75,120
 " set signcolumn=yes
