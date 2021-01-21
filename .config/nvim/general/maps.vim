@@ -45,5 +45,11 @@ map <F8>                                     :colorscheme github <bar> let g:air
 " nerdtree
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
+" fzf
+nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
+nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
+nnoremap <silent><C-e>                       <Esc><Esc>:Buffers<CR>
+nnoremap <silent><F12>                       <Esc><Esc>:Rg<space><CR>
+
 " emmet
-let g:user_emmet_leader_key=                 '<C-y>'
+let g:user_emmet_leader_key=                 '<C-.>'

@@ -1,9 +1,3 @@
-" This is the default extra key bindings
-nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
-nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
-nnoremap <silent><C-e>                       <Esc><Esc>:Buffers<CR>
-nnoremap <silent><F12>                       <Esc><Esc>:Rg<space><CR>
-
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history instead of down and up. If you don't like the change,
