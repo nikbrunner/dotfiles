@@ -47,6 +47,8 @@ alias dfp="df commit -a -m \"Updates\" && df push"
 ## TODO Make this globally available
 alias morning="sh ~/.scripts/morning.sh"
 
+alias ls="ls -a"
+
 # Edit Config Files ======================================================
 EDITOR="nvim"
 NVIM_PATH="~/.config/nvim"
@@ -56,6 +58,7 @@ alias dfconfig="$EDITOR -S ~/df.vim"
 alias vimconfig="$EDITOR $NVIM_PATH/init.vim"
 alias zshconfig="$EDITOR ~/.zshrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
+alias alaconfig="$EDITOR ~/.config/alacritty/alacritty.yml"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
