@@ -14,7 +14,7 @@ set nowrap
 set hidden
 set noswapfile
 set nobackup
-" set cursorline
+set cursorline
 set undofile
 set undodir=~/.vim/undodir
 set incsearch
