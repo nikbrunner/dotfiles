@@ -45,6 +45,9 @@ map <F8>                                     :colorscheme github <bar> let g:air
 " nerdtree
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
+" prettier
+nnoremap <leader>p                           :PrettierAsync<CR>
+
 " fzf
 nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
 nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
