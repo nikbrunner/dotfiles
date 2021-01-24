@@ -13,5 +13,6 @@ alias dfp="df commit -a -m \"Updates\" && df push"
 dfp
 
 #  Update stoic theme
+echo "Updating Obsidian Stoic Theme"
 sh ~/Documents/notes/getStoicTheme.sh
 
