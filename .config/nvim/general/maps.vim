@@ -53,3 +53,13 @@ nnoremap <silent><F12>                       <Esc><Esc>:Rg<space><CR>
 
 " emmet
 let g:user_emmet_leader_key=                 '<C-.>'
+
+" git-fugitive
+nnoremap <leader>gs                          :G<CR>
+nnoremap <leader>gc                          :Gcommit<CR>
+nnoremap <leader>gpu                         :Gpush<CR>
+nnoremap <leader>gpl                         :Gpull<CR>
+nnoremap <leader>gl                          :GV<CR>
+nnoremap <leader>gb                          :GV!<CR>
+nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
+nnoremap <leader>u                           :UndotreeShow<CR>
