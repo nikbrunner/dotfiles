@@ -8,7 +8,6 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ ]
 
-" SCSS files
 autocmd FileType scss setl iskeyword+=@-@
 
 function! s:show_documentation()
