@@ -25,6 +25,6 @@ set nocompatible
 set mouse=a
 set foldmethod=indent
 set foldlevel=10
-set cmdheight=2
+set cmdheight=1
 " set colorcolumn=45,75,120
 " set signcolumn=yes
