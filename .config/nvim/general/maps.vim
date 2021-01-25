@@ -66,3 +66,18 @@ nnoremap <leader>gl                          :GV<CR>
 nnoremap <leader>gb                          :GV!<CR>
 nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
 nnoremap <leader>u                           :UndotreeShow<CR>
+
+" coc
+nmap <silent> gd                             <Plug>(coc-definition)
+nmap <silent> gy                             <Plug>(coc-type-definition)
+nmap <silent> gi                             <Plug>(coc-implementation)
+nmap <silent> gr                             <Plug>(coc-references)
+nmap <silent><F2>                            <Plug>(coc-rename)
+nmap <silent> gh                             :call <SID>show_documentation()<CR>
+nmap <silent> <M-CR>                         :CocAction<CR>
+inoremap <silent><expr><c-space>             coc#refresh()
+inoremap <silent><expr><C-j>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><C-k>                             pumvisible() ? "\<C-p>" : "\<C-h>"
