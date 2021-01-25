@@ -10,6 +10,7 @@ nnoremap <silent><leader>s                   :wa<CR>
 nnoremap <silent><leader>w                   :wq<CR>
 nnoremap <silent><leader>q                   :q!<CR>
 nnoremap <silent><leader>ps                  :Obsess<CR>
+nnoremap <silent>Q                           :Bdelete menu<CR>
 
 " New splits
 nnoremap <silent><leader>l                   :vsp<CR><C-W><C-l>
