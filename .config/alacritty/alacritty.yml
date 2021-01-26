@@ -4,9 +4,9 @@ window:
       y: 5 
   dynamic_padding: true
   decorations: transparent
-  background_opacity: 0.5
   use_thin_strokes: true
 
+background_opacity: 0.85
 
 font:
   normal:
