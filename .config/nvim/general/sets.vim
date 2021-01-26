@@ -4,7 +4,11 @@ set noerrorbells
 set tabstop=2 
 set softtabstop=2
 set shiftwidth=2
-set termguicolors
+" set termguicolors
+" highlight Comment gui=italic
+" highlight Comment cterm=italic
+hi Comment cterm=italic
+hi Conditional cterm=italic,bold
 set copyindent
 set smarttab
 set cindent
@@ -26,5 +30,7 @@ set mouse=a
 set foldmethod=indent
 set foldlevel=10
 set cmdheight=1
+set timeoutlen=750
 " set colorcolumn=45,75,120
 set signcolumn=yes
+

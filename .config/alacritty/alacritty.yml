@@ -4,43 +4,52 @@ window:
       y: 5 
   dynamic_padding: true
   decorations: transparent
+  background_opacity: 0.5
   use_thin_strokes: true
 
 
 font:
   normal:
-    family: "SF Mono"
+    # family: "SF Mono"
+    # family: "Victor Mono"
+    family: "JetBrains Mono"
     style: Regular
 
   bold:
-    family: "SF Mono"
+    # family: "SF Mono"
+    # family: "Victor Mono"
+    family: "JetBrains Mono"
     style: Bold
 
   italic:
-    family: "SF Mono"
+    # family: "SF Mono"
+    # family: "Victor Mono"
+    family: "JetBrains Mono"
     style: Italic
 
   bold_italic:
-    family: "SF Mono"
+    # family: "SF Mono"
+    # family: "Victor Mono"
+    family: "JetBrains Mono"
     style: Bold Italic
 
   size: 14
 
   offset:
     x: 0
-    y: 10
+    y: 14
 
   glyph_offset:
     x: 0
-    y: 0
+    y: 8
 
 # Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
     # hard contrast: background = '0x1d2021'
-    # background: '0x282828'
-    background: '0x1e2a23'
+    background: '0x282828'
+    # background: '0x1e2a23'
     # soft contrast: background = '0x32302f'
     foreground: '0xebdbb2'
 

@@ -38,16 +38,17 @@ nnoremap <leader>8                           8gt
 nnoremap <leader>9                           9gt
 nnoremap <leader>0                           :tablast<CR>
 
-" Switching themes
-map <F6>                                     :colorscheme nord <bar> let g:airline_theme='bubblegum' <bar> set background=dark<CR>
-map <F7>                                     :colorscheme gruvbox <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
-map <F8>                                     :colorscheme github <bar> let g:airline_theme ='github' <bar> set background=dark<CR>
-
 " nerdtree
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
+" ranger
+nnoremap <silent>!                           :Ranger<CR>
+
 " prettier
 nnoremap <leader>p                           :PrettierAsync<CR>
+
+" which-key
+nnoremap <silent> <leader>                   :WhichKey '<Space>'<CR>
 
 " fzf
 nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
@@ -68,6 +69,7 @@ nnoremap <leader>gb                          :GV!<CR>
 nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
 nnoremap <leader>u                           :UndotreeShow<CR>
 
+
 " coc
 nmap <silent> gd                             <Plug>(coc-definition)
 nmap <silent> gy                             <Plug>(coc-type-definition)
@@ -82,3 +84,6 @@ inoremap <silent><expr><C-j>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><C-k>                             pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" goyo
+nmap <silent><leader>z                       :Goyo<CR>
