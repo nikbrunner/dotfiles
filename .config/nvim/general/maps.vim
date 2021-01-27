@@ -78,6 +78,7 @@ nmap <silent> gr                             <Plug>(coc-references)
 nmap <silent><F2>                            <Plug>(coc-rename)
 nmap <silent> gh                             :call <SID>show_documentation()<CR>
 nmap <silent> <M-CR>                         :CocAction<CR>
+nmap <silent>!                               :CocCommand explorer<CR>
 inoremap <silent><expr><c-space>             coc#refresh()
 inoremap <silent><expr><C-j>
       \ pumvisible() ? "\<C-n>" :
