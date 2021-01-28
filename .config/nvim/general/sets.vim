@@ -1,16 +1,15 @@
 syntax on
 
+set clipboard+=unnamedplus
 set noerrorbells
 set tabstop=2 
 set softtabstop=2
 set shiftwidth=2
-" set termguicolors
-" highlight Comment gui=italic
-" highlight Comment cterm=italic
-hi Comment cterm=italic
-hi Conditional cterm=italic,bold
+set termguicolors
 set copyindent
 set smarttab
+set ignorecase
+set smartcase
 set cindent
 set expandtab
 set rnu nu
@@ -19,6 +18,7 @@ set hidden
 set noswapfile
 set nobackup
 set cursorline
+set cursorcolumn
 set undofile
 set undodir=~/.vim/undodir
 set incsearch
@@ -31,6 +31,6 @@ set foldmethod=indent
 set foldlevel=10
 set cmdheight=1
 set timeoutlen=750
-" set colorcolumn=45,75,120
 set signcolumn=yes
-
+set wildmode=longest,list,full
+set splitbelow splitright

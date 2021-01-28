@@ -1,8 +1,8 @@
 " general
-source $HOME/.config/nvim/general/sets.vim
 source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/autocmd.vim
 source $HOME/.config/nvim/general/spellcheck.vim
+source $HOME/.config/nvim/general/sets.vim
 source $HOME/.config/nvim/general/theme.vim
 
 " plugins
