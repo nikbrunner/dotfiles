@@ -17,6 +17,7 @@ source $HOME/.config/nvim/plugins/vim-devicons.vim
 source $HOME/.config/nvim/plugins/vim-goyo.vim
 source $HOME/.config/nvim/plugins/vim-airline.vim
 source $HOME/.config/nvim/plugins/vim-pencil.vim
+source $HOME/.config/nvim/plugins/vim-taboo.vim
 
 " maps
 source $HOME/.config/nvim/general/maps.vim
