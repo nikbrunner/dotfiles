@@ -19,7 +19,7 @@ set nowrap
 set hidden
 set noswapfile
 set nobackup
-set cursorline
+" set cursorline
 " set cursorcolumn
 set undofile
 set undodir=~/.vim/undodir
