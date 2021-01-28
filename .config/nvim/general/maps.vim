@@ -6,15 +6,19 @@ nnoremap Q <nop>
 
 " source, save, quit
 nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
-nnoremap <silent><leader>s                   :wa<CR>
-nnoremap <silent><leader>w                   :wq<CR>
-nnoremap <silent><leader>q                   :q!<CR>
-nnoremap <silent><leader>ps                  :Obsess<CR>
+nnoremap <silent><C-s>                       :wa<CR>
+nnoremap <silent><C-w>                       :wq<CR>
+nnoremap <silent><C-q>                       :q!<CR>
 nnoremap <silent>Q                           :Bdelete menu<CR>
+
+" Sessions
+nnoremap <silent><leader>ps                  :Obsess<CR>
 
 " New splits
 nnoremap <silent><leader>l                   :vsp<CR><C-W><C-l>
 nnoremap <silent><leader>j                   :sp<CR><C-W><C-j>
+
+nnoremap <silent><leader>=                   <C-w><C-=>
 
 " Resize panes
 nnoremap <silent>˚                           :resize +5<CR>
@@ -42,8 +46,11 @@ nnoremap <leader>0                           :tablast<CR>
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " ranger
-" nnoremap <silent>!                           :Ranger<CR>
 nnoremap <leader>n                           :EditVifm .<CR>
+
+" tabs
+nnoremap <leader>to                          :TabooOpen<Space>
+nnoremap <leader>tn                          :TabooRename<Space>
 
 " prettier
 nnoremap <leader>p                           :PrettierAsync<CR>

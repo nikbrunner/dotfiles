@@ -1,16 +1,18 @@
 syntax on
 
 set clipboard+=unnamedplus
+set guioptions-=e
+set termguicolors
+set sessionoptions+=tabpages,globals
 set noerrorbells
 set tabstop=2 
 set softtabstop=2
 set shiftwidth=2
-set termguicolors
-set copyindent
 set smarttab
 set ignorecase
 set smartcase
 set cindent
+set copyindent
 set expandtab
 set rnu nu
 set nowrap
@@ -18,7 +20,7 @@ set hidden
 set noswapfile
 set nobackup
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 set undofile
 set undodir=~/.vim/undodir
 set incsearch

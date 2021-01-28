@@ -6,7 +6,7 @@ window:
   decorations: transparent
   use_thin_strokes: true
 
-background_opacity: .925
+background_opacity: .9
 
 font:
   normal:
