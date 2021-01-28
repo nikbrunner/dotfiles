@@ -43,6 +43,9 @@ font:
     x: 0
     y: 8
 
+scrolling:
+  history: 1000
+
 # Colors (Gruvbox dark)
 colors:
   # Default colors
