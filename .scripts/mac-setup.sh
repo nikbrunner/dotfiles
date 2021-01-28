@@ -76,6 +76,7 @@ brew install --cask webstorm
 brew install --cask iterm2
 brew install --cask insomnia
 brew install --cask docker
+brew install vifm
 
 # dev fonts
 brew tap homebrew/cask-fonts

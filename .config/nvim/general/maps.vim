@@ -42,7 +42,8 @@ nnoremap <leader>0                           :tablast<CR>
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " ranger
-nnoremap <silent>!                           :Ranger<CR>
+" nnoremap <silent>!                           :Ranger<CR>
+nnoremap <leader>n                           :EditVifm .<CR>
 
 " prettier
 nnoremap <leader>p                           :PrettierAsync<CR>
