@@ -5,7 +5,7 @@ let mapleader = "\<Space>"
 nnoremap Q <nop>
 
 " source, save, quit
-nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
+nnoremap <C-r><C-r>                       :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent><C-s>                       :wa<CR>
 nnoremap <silent><C-w>                       :wq<CR>
 nnoremap <silent><C-q>                       :q!<CR>
