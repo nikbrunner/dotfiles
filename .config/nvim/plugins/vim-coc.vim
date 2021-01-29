@@ -26,3 +26,18 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+nmap <silent> gd                             <Plug>(coc-definition)
+nmap <silent> gy                             <Plug>(coc-type-definition)
+nmap <silent> gi                             <Plug>(coc-implementation)
+nmap <silent> gr                             <Plug>(coc-references)
+nmap <silent><F2>                            <Plug>(coc-rename)
+" nmap <silent> gh                             :call <SID>show_documentation()<CR>
+nmap <silent> K                              :call <SID>show_documentation()<CR>
+nmap <silent> <M-CR>                         :CocAction<CR>
+nmap <silent>!                               :CocCommand explorer<CR>
+inoremap <silent><expr><c-space>             coc#refresh()
+inoremap <silent><expr><C-j>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><C-k>                             pumvisible() ? "\<C-p>" : "\<C-h>"

@@ -58,6 +58,7 @@ brew install --cask obsidian
 brew install --cask spotify
 brew install --cask amethyst
 brew install --cask alfred
+brew install --cask microsoft-office
 
 brew install --cask protonvpn
 brew install --cask protonmail-bridge

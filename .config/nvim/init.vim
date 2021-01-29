@@ -1,9 +1,8 @@
 " general
-source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/autocmd.vim
 source $HOME/.config/nvim/general/spellcheck.vim
 source $HOME/.config/nvim/general/sets.vim
-source $HOME/.config/nvim/general/theme.vim
+source $HOME/.config/nvim/general/plugins.vim
 
 " plugins
 source $HOME/.config/nvim/plugins/vim-fzf.vim
@@ -20,6 +19,8 @@ source $HOME/.config/nvim/plugins/vim-pencil.vim
 source $HOME/.config/nvim/plugins/vim-taboo.vim
 
 " maps
+source $HOME/.config/nvim/general/theme.vim
 source $HOME/.config/nvim/general/maps.vim
+source $HOME/.config/nvim/general/autocmd.vim
 
 lua require'colorizer'.setup()
