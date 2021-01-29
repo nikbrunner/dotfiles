@@ -5,5 +5,3 @@ if has ('autocmd') " Remain compatible with earlier versions
   augroup END
 endif " has autocmd
 
-autocmd InsertEnter * norm zz
-

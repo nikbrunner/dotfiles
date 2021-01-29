@@ -78,8 +78,5 @@ nnoremap <leader>gb                          :GV!<CR>
 nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
 nnoremap <leader>u                           :UndotreeShow<CR>
 
-
-" coc
-
 " goyo
 nmap <silent><leader>z                       :Goyo<CR>
