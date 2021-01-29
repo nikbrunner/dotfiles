@@ -32,6 +32,7 @@ call plug#begin()
     Plug 'reedes/vim-pencil'
     Plug 'vifm/vifm.vim'
     Plug 'gcmt/taboo.vim'
+    Plug 'norcalli/nvim-colorizer.lua'
  
     " file management
     Plug '~/.fzf'

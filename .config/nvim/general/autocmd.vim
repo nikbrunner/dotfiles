@@ -6,3 +6,4 @@ if has ('autocmd') " Remain compatible with earlier versions
 endif " has autocmd
 
 autocmd InsertEnter * norm zz
+

@@ -6,9 +6,10 @@ nnoremap Q <nop>
 
 " source, save, quit
 nnoremap <C-r><C-r>                       :source ~/.config/nvim/init.vim<CR>
-nnoremap <silent><C-s>                       :wa<CR>
-nnoremap <silent><C-w>                       :wq<CR>
-nnoremap <silent><C-q>                       :q!<CR>
+nnoremap <leader>w                           :wa<CR>
+nnoremap <leader>wq                          :wq<CR>
+nnoremap <leader>qo                          :wa<CR>:only<CR>
+nnoremap <leader>q                           :q!<CR>
 nnoremap <silent>Q                           :Bdelete menu<CR>
 
 " Sessions
@@ -84,7 +85,7 @@ nmap <silent> gy                             <Plug>(coc-type-definition)
 nmap <silent> gi                             <Plug>(coc-implementation)
 nmap <silent> gr                             <Plug>(coc-references)
 nmap <silent><F2>                            <Plug>(coc-rename)
-nmap <silent> gh                             :call <SID>show_documentation()<CR>
+" nmap <silent> gh                             :call <SID>show_documentation()<CR>
 nmap <silent> <M-CR>                         :CocAction<CR>
 nmap <silent>!                               :CocCommand explorer<CR>
 inoremap <silent><expr><c-space>             coc#refresh()

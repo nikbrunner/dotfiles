@@ -21,3 +21,5 @@ source $HOME/.config/nvim/plugins/vim-taboo.vim
 
 " maps
 source $HOME/.config/nvim/general/maps.vim
+
+lua require'colorizer'.setup()
