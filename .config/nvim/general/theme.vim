@@ -1,6 +1,6 @@
 " let g:gruvbox_contrast_dark="hard"
 
-colorscheme nord
+colorscheme gruvbox
 
 hi Normal            guibg=NONE               ctermbg=NONE
 
