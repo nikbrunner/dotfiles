@@ -11,6 +11,7 @@ call plug#begin()
     " themes
     Plug 'arcticicestudio/nord-vim'
     Plug 'morhetz/gruvbox'
+    Plug 'rakr/vim-one'
     Plug 'mkitt/tabline.vim'
 
     " appearence
