@@ -5,3 +5,9 @@ if has ('autocmd') " Remain compatible with earlier versions
   augroup END
 endif " has autocmd
 
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+autocmd BufRead,BufNewFile *.ts   set filetype typescript
+
+autocmd InsertEnter * set nocul 
+autocmd InsertLeave * set cul 

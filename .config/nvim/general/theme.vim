@@ -1,4 +1,5 @@
-" let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_dark="hard"
+let ayucolor="mirage"
 
 colorscheme gruvbox
 
@@ -16,5 +17,6 @@ hi Conditional                                                  cterm=italic,bol
 hi VertSplit         guibg=NONE guifg=#8fbcbb
 
 " Switching themes
+map <F6>             :colorscheme ayu <bar> let g:airline_theme='ayu' <bar> set background=dark<CR>
 map <F6>             :colorscheme nord <bar> let g:airline_theme='bubblegum' <bar> set background=dark<CR>
-map <F7>             :colorscheme gruvbox <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
+map <F8>             :colorscheme gruvbox <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>

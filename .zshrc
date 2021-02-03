@@ -32,6 +32,8 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+export TERM=screen-256color
+
 source $ZSH/oh-my-zsh.sh
 
 # Basics =================================================================
