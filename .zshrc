@@ -23,7 +23,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="robbyrussel"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -32,7 +32,7 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# export TERM=screen-256color
+export TERM=screen-256color
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,9 +110,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}" | fzf`'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# source /usr/share/fzf/completion.zsh
-# source /usr/share/fzf/key-bindings.zsh
 
 export BAT_THEME="gruvbox"
 
