@@ -4,5 +4,13 @@
   // https://onivim.github.io/docs/configuration/key-bindings
   // Add key bindings here, for example:
   // { "key": "<TAB>", "command": "workbench.action.quickOpen", "when": "editorTextFocus" },
-  // { "key": "jk", "command": "vim.esc", "when": "insertMode" },
+  { "key": "<D-1>", "command": "workbench.view.explorer" },
+
+  { "key": "<leader>l", "command": ":vsplit", "when": "normalMode" },
+  { "key": "<leader>j", "command": ":split", "when": "normalMode" },
+  { "key": "<C-h>", "command": "window.moveLeft", "when": "normalMode" },
+  { "key": "<C-j>", "command": "window.moveDown", "when": "normalMode" },
+  { "key": "<C-k>", "command": "window.moveUp", "when": "normalMode" },
+  { "key": "<C-l>", "command": "window.moveRight", "when": "normalMode" }
+
 ]
