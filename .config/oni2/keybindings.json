@@ -1,16 +1,35 @@
 
 [
-  // See the onivim documentation for details on the format:
-  // https://onivim.github.io/docs/configuration/key-bindings
-  // Add key bindings here, for example:
-  // { "key": "<TAB>", "command": "workbench.action.quickOpen", "when": "editorTextFocus" },
   { "key": "<D-1>", "command": "workbench.view.explorer" },
+  { "key": "<D-4>", "command": "workbench.action.findInFiles" },
+  { "key": "<D-7>", "command": "workbench.view.extensions" },
+  { "key": "<D-9>", "command": "workbench.view.scm" },
+
+  { "key": "<leader>w", "command": ":wa", "when": "normalMode" },
 
   { "key": "<leader>l", "command": ":vsplit", "when": "normalMode" },
   { "key": "<leader>j", "command": ":split", "when": "normalMode" },
   { "key": "<C-h>", "command": "window.moveLeft", "when": "normalMode" },
   { "key": "<C-j>", "command": "window.moveDown", "when": "normalMode" },
   { "key": "<C-k>", "command": "window.moveUp", "when": "normalMode" },
-  { "key": "<C-l>", "command": "window.moveRight", "when": "normalMode" }
+  { "key": "<C-l>", "command": "window.moveRight", "when": "normalMode" },
 
+  { "key": "<A-h>", "command": "vim.decreaseHorizontalWindowSize" },
+  { "key": "<A-l>", "command": "vim.increaseHorizontalWindowSize" },
+  { "key": "<A-j>", "command": "vim.decreaseVerticalWindowSize" },
+  { "key": "<A-k>", "command": "vim.increaseVerticalWindowSize" },
+
+  { "key": "<S-TAB>", "command": ":tabp" },
+  { "key": "<TAB>", "command": ":tabn" },
+
+  { "key": "<leader>to", "command": ":tabnew" },
+  { "key": "<leader>1", "command": "1gt" },
+  { "key": "<leader>2", "command": "2gt" },
+  { "key": "<leader>3", "command": "3gt" },
+  { "key": "<leader>4", "command": "4gt" },
+  { "key": "<leader>5", "command": "5gt" },
+  { "key": "<leader>6", "command": "6gt" },
+  { "key": "<leader>7", "command": "7gt" },
+  { "key": "<leader>8", "command": "8gt" },
+  { "key": "<leader>9", "command": "9gt" }
 ]

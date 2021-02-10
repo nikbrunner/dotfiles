@@ -1,4 +1,6 @@
 {
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.detectIndentation": true,
   "editor.fontFamily": "JetBrainsMono-Regular.ttf",
@@ -29,5 +31,7 @@
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 2,
   "vim.useSystemClipboard": [ "yank" ],
-  "vim.leader": "<space>"
+  "vim.leader": "<space>",
+  "oni.layout.singleTabMode": true,
+  "oni.layout.layoutTabPosition": "top"
 }

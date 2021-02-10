@@ -44,7 +44,6 @@ nnoremap <leader>6                           6gt
 nnoremap <leader>7                           7gt
 nnoremap <leader>8                           8gt
 nnoremap <leader>9                           9gt
-nnoremap <leader>0                           :tablast<CR>
 
 " nerdtree
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
