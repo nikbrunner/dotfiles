@@ -1,7 +1,7 @@
 {
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "git.enableSmartCommit": true,
   "git.autofetch": true,
-  "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.detectIndentation": true,
   "editor.fontFamily": "JetBrainsMono-Regular.ttf",
   "editor.fontSize": 14,
