@@ -1,10 +1,10 @@
 {
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "editor.detectIndentation": true,
   "editor.fontFamily": "JetBrainsMono-Regular.ttf",
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.lineHeight": 24,
   "editor.largeFileOptimizations": true,
   "editor.highlightActiveIndentGuide": true,
@@ -33,5 +33,7 @@
   "vim.useSystemClipboard": [ "yank" ],
   "vim.leader": "<space>",
   "oni.layout.singleTabMode": true,
-  "oni.layout.layoutTabPosition": "top"
+  "oni.layout.layoutTabPosition": "top",
+  "typescript.referencesCodeLens.enabled": true,
+  "javascript.referencesCodeLens.enabled": true
 }
