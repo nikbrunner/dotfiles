@@ -51,7 +51,6 @@ colors:
     # background: '0x32302f'
     # background: '0x1e2a23' # Green
     # background: '#20213B' # Purpi
-    # background: '0x1d2021' # Daark Blue
     foreground: '0xebdbb2'
 
   # Normal colors
