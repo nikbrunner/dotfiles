@@ -1,11 +1,11 @@
 {
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Gruvbox Material Dark",
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "editor.detectIndentation": true,
   "editor.fontFamily": "JetBrainsMono-Regular.ttf",
-  "editor.fontSize": 13,
-  "editor.lineHeight": 24,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 26,
   "editor.largeFileOptimizations": true,
   "editor.highlightActiveIndentGuide": true,
   "editor.indentSize": 4,
@@ -35,5 +35,11 @@
   "oni.layout.singleTabMode": true,
   "oni.layout.layoutTabPosition": "top",
   "typescript.referencesCodeLens.enabled": true,
-  "javascript.referencesCodeLens.enabled": true
+  "javascript.referencesCodeLens.enabled": true,
+  "gruvboxMaterial.darkContrast": "hard",
+  "gruvboxMaterial.darkWorkbench": "high-contrast",
+  "gruvboxMaterial.darkCursor": "yellow",
+  "gruvboxMaterial.italicComments": true,
+  "gruvboxMaterial.italicKeywords": true,
+  "gruvboxMaterial.darkPalette": "material"
 }

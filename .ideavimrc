@@ -3,15 +3,13 @@ let mapleader =               "\<Space>"
 
 " Basic Settings
 set rnu nu
-" set scrolloff=999
 set ideamarks
 set highlightedyank
 set commentary
 set surround
-
-" easymotion
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
 set easymotion
+" set scrolloff=999
+
 nmap s                        <Plug>(easymotion-s)
 
 " Unbind Q
@@ -29,30 +27,28 @@ map <leader>j                 :sp<CR>
 map <leader>s                 :action SaveAll<CR>
 
 " Closers ====================
-map <leader>cc                :action CloseContent<CR>
-map <leader>cg                :action CloseEditorsGroup<CR>
-map <leader>cu                :action CloseAllUnmodifiedEditors<CR>
-map <leader>co                :action CloseAllEditorsButActive<CR>
-map <leader>cpr               :action CloseProject<CR>
+map <leader>qq                :action CloseContent<CR>
+map <leader>qg                :action CloseEditorsGroup<CR>
+map <leader>qu                :action CloseAllUnmodifiedEditors<CR>
+map <leader>qo                :action CloseAllEditorsButActive<CR>
+map <leader>qp                :action CloseProject<CR>
 
 " Window Navigation =========
-" map <C-h>                     :action TabShiftActions.MoveFocusLeft<CR>
-" map <C-j>                     :action TabShiftActions.MoveFocusDown<CR>
-" map <C-k>                     :action TabShiftActions.MoveFocusUp<CR>
-" map <C-l>                     :action TabShiftActions.MoveFocusRight<CR>
+map <C-h>                     :action TabShiftActions.MoveFocusLeft<CR>
+map <C-j>                     :action TabShiftActions.MoveFocusDown<CR>
+map <C-k>                     :action TabShiftActions.MoveFocusUp<CR>
+map <C-l>                     :action TabShiftActions.MoveFocusRight<CR>
 map <leader>m                 :action TabShiftActions.ToggleMaximizeRestore<CR>
 
 " Switch Tabs ================
-nmap H                        :action PreviousTab<CR>
-nmap J                        :action NextTab<CR>
-nmap K                        :action PreviousTab<CR>
-nmap L                        :action NextTab<CR>
+nmap <S-Tab>                        :action PreviousTab<CR>
+nmap <Tab>                        :action NextTab<CR>
 
 " Move Tabs ================
-" nmap <A-h>                    :action TabShiftActions.ShiftLeft<CR>
-" nmap <A-j>                    :action TabShiftActions.ShiftDown<CR>
-" nmap <A-k>                    :action TabShiftActions.ShiftUp<CR>
-" nmap <A-l>                    :action TabShiftActions.ShiftRight<CR>
+nmap <A-h>                    :action TabShiftActions.ShiftLeft<CR>
+nmap <A-j>                    :action TabShiftActions.ShiftDown<CR>
+nmap <A-k>                    :action TabShiftActions.ShiftUp<CR>
+nmap <A-l>                    :action TabShiftActions.ShiftRight<CR>
 
 " Resize Panes ==============
 map <C-A-h>                   :action TabShiftActions.StretchLeft<CR>
