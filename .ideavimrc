@@ -45,26 +45,17 @@ nmap <S-Tab>                        :action PreviousTab<CR>
 nmap <Tab>                        :action NextTab<CR>
 
 " Move Tabs ================
-nmap <A-h>                    :action TabShiftActions.ShiftLeft<CR>
-nmap <A-j>                    :action TabShiftActions.ShiftDown<CR>
-nmap <A-k>                    :action TabShiftActions.ShiftUp<CR>
-nmap <A-l>                    :action TabShiftActions.ShiftRight<CR>
+nmap <C-S-h>                  :action TabShiftActions.ShiftLeft<CR>
+nmap <C-S-j>                  :action TabShiftActions.ShiftDown<CR>
+nmap <C-S-k>                  :action TabShiftActions.ShiftUp<CR>
+nmap <C-S-l>                  :action TabShiftActions.ShiftRight<CR>
 
 " Resize Panes ==============
-map <C-A-h>                   :action TabShiftActions.StretchLeft<CR>
-map <C-A-j>                   :action TabShiftActions.StretchDown<CR>
-map <C-A-k>                   :action TabShiftActions.StretchUp<CR>
-map <C-A-l>                   :action TabShiftActions.StretchRight<CR>
-map <C-A-m>                   :action TabShiftActions.ToggleMaximizeRestore<CR>
-
-" Insert Lines ==============
-" .. above.
-nmap <A-S-o>                  O<esc>0C<esc>j
-" .. below.
-nmap <A-o>                    o<esc>0C<esc>k
-
-" Settings ==================
-map <A-,>                     :action ShowSettings<CR>
+map H                         :action TabShiftActions.StretchLeft<CR>
+map J                         :action TabShiftActions.StretchDown<CR>
+map K                         :action TabShiftActions.StretchUp<CR>
+map L                         :action TabShiftActions.StretchRight<CR>
+map M                         :action TabShiftActions.ToggleMaximizeRestore<CR>
 
 " Folding ===================
 " These do not work properly. I will use the KeyMap from IntelliJ
@@ -73,7 +64,7 @@ nmap zC                       :action CollapseAllRegions<CR>
 nmap zO                       :action ExpandAllRegions<CR>
 
 " VCS =======================
-map <leader>gr                :action Vcs.RollbackChangedLines<CR>
+map <leader>ghu                :action Vcs.RollbackChangedLines<CR>
 map <leader>gb                :action Annotate<CR>
 map <leader>gs                :action Vcs.Show.Local.Changes<CR>
 map <leader>gc                :action ChangesView.ToggleCommitUi<CR>
@@ -86,24 +77,20 @@ map <leader>gup               :action Vcs.UpdateProject<CR>
 map <leader>oa                :action GotoAction<CR>
 
 " Open Tree
-map <leader>ot                :action ActivateProjectToolWindow<CR>
 map <A-1>                     :action ActivateProjectToolWindow<CR>
 
 " Open Project
-map <leader>opp               :action ManageRecentProjects<CR>
-
-" Open Recent
-map <leader>or                :action RecentFiles<CR>
+map <leader>po                :action ManageRecentProjects<CR>
 
 " Find Text
 map <leader>ft                :action FindInPath<CR>
 
 " Quick Docu
-map <leader>i               :action QuickJavaDoc<CR>
-map gh                        :action ShowErrorDescription<CR>
+map gh                        :action QuickJavaDoc<CR>
+map <leader>i                 :action ShowErrorDescription<CR>
 
 " Rename ====================
-map <leader>rn                :action RenameElement<CR>
+map <F2>                      :action RenameElement<CR>
 
 " Run =======================
 map <leader>run               :action RunMenu<CR>
