@@ -19,8 +19,8 @@
   { "key": "<A-j>", "command": "vim.decreaseVerticalWindowSize" },
   { "key": "<A-k>", "command": "vim.increaseVerticalWindowSize" },
 
-  { "key": "<S-TAB>", "command": ":tabp", "when": "normalMode" },
-  { "key": "<TAB>", "command": ":tabn", "when": "normalMode" },
+  { "key": "<S-TAB>", "command": ":tabp" },
+  { "key": "<TAB>", "command": ":tabn" },
 
   { "key": "<leader>to", "command": ":tabnew", "when": "normalMode" },
   { "key": "<leader>1", "command": "1gt", "when": "normalMode" },

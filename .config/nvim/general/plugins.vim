@@ -60,12 +60,12 @@ call plug#begin()
 
     " language
     " Plug 'yuezk/vim-js'
-    Plug 'pangloss/vim-javascript'
+    " Plug 'pangloss/vim-javascript'
     Plug 'leafgarland/typescript-vim'
-    Plug 'maxmellon/vim-jsx-pretty'
-    Plug 'cakebaker/scss-syntax.vim'
-    " Plug 'peitalin/vim-jsx-typescript'
-   " Plug 'HerringtonDarkholme/yats.vim'
+    " Plug 'maxmellon/vim-jsx-pretty'
+    " Plug 'cakebaker/scss-syntax.vim'
+    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'HerringtonDarkholme/yats.vim'
 
     " formater
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
