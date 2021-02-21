@@ -11,6 +11,8 @@ call plug#begin()
     " themes
     Plug 'arcticicestudio/nord-vim'
     Plug 'morhetz/gruvbox'
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'tomasiser/vim-code-dark'
     Plug 'mkitt/tabline.vim'
     Plug 'ryanoasis/vim-devicons'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -59,13 +61,8 @@ call plug#begin()
     Plug 'christoomey/vim-tmux-navigator'
 
     " language
-    " Plug 'yuezk/vim-js'
-    " Plug 'pangloss/vim-javascript'
     Plug 'leafgarland/typescript-vim'
-    " Plug 'maxmellon/vim-jsx-pretty'
-    " Plug 'cakebaker/scss-syntax.vim'
     Plug 'peitalin/vim-jsx-typescript'
-    Plug 'HerringtonDarkholme/yats.vim'
 
     " formater
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
