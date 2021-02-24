@@ -25,10 +25,8 @@ nnoremap <silent><leader>j                   :sp<CR><C-W><C-j>
 nnoremap <silent><leader>=                   <C-w><C-=>
 
 " Resize panes
-nnoremap <silent>˚                           :resize +5<CR>
-nnoremap <silent>∆                           :resize -5<CR>
-nnoremap <silent>¬                           :vertical:resize -5<CR>
-nnoremap <silent>˙                           :vertical:resize +5<CR>
+nnoremap <silent>H                           :vertical:resize +5<CR>
+nnoremap <silent>L                           :vertical:resize -5<CR>
 
 " Nav Tab
 nnoremap <silent><S-Tab>                     :tabprevious<CR>
@@ -73,8 +71,8 @@ let g:user_emmet_leader_key=                 '<C-y>'
 " git-fugitive
 nnoremap <leader>gs                          :G<CR>
 nnoremap <leader>gc                          :Gcommit<CR>
-nnoremap <leader>gpu                         :Gpush<CR>
-nnoremap <leader>gpl                         :Gpull<CR>
+nnoremap <leader>gpu                         :Git push<CR>
+nnoremap <leader>gpl                         :Git pull<CR>
 nnoremap <leader>gl                          :GV<CR>
 nnoremap <leader>gb                          :GV!<CR>
 nnoremap <leader>g<C-b>                      :MerginalToggle<CR>

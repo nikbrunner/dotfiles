@@ -3,6 +3,7 @@ let mapleader =               "\<Space>"
 
 " Basic Settings
 set rnu nu
+set incsearch
 set ideamarks
 set highlightedyank
 set commentary
@@ -88,9 +89,6 @@ nmap <F12>                     :action FindInPath<CR>
 " Quick Docu
 map gh                        :action QuickJavaDoc<CR>
 map <leader>i                 :action ShowErrorDescription<CR>
-
-" Rename ====================
-map <F2>                      :action RenameElement<CR>
 
 " Run =======================
 map <leader>run               :action RunMenu<CR>

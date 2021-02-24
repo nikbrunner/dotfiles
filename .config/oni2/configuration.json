@@ -1,12 +1,11 @@
 {
-  "workbench.colorTheme": "Gruvbox Material Dark",
+  "workbench.colorTheme": "Nord",
   "gruvboxMaterial.darkContrast": "hard",
   "gruvboxMaterial.darkWorkbench": "high-contrast",
   "gruvboxMaterial.darkCursor": "yellow",
   "gruvboxMaterial.italicComments": true,
   "gruvboxMaterial.italicKeywords": true,
   "gruvboxMaterial.darkPalette": "material",
-
   "workbench.activityBar.visible": false,
   "workbench.editor.showTabs": true,
   "workbench.editor.enablePreview": true,
@@ -15,10 +14,8 @@
   "workbench.sideBar.visible": true,
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 2,
-
   "git.enableSmartCommit": true,
   "git.autofetch": true,
-
   "editor.detectIndentation": true,
   "editor.fontFamily": "JetBrainsMono-Regular.ttf",
   "editor.fontSize": 14,
@@ -38,15 +35,11 @@
   "editor.tabSize": 4,
   "editor.zenMode.hideTabs": true,
   "editor.zenMode.singleFile": true,
-
   "files.exclude": [ "_esy", "node_modules", ".git" ],
-
   "vim.useSystemClipboard": [ "yank" ],
   "vim.leader": "<space>",
-
   "oni.layout.singleTabMode": true,
   "oni.layout.layoutTabPosition": "top",
-
   "typescript.referencesCodeLens.enabled": false,
   "javascript.referencesCodeLens.enabled": false
 }

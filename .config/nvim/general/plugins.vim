@@ -10,12 +10,10 @@ endif
 call plug#begin()
     " themes
     Plug 'arcticicestudio/nord-vim'
-    Plug 'morhetz/gruvbox'
     Plug 'sainnhe/gruvbox-material'
-    Plug 'tomasiser/vim-code-dark'
     Plug 'mkitt/tabline.vim'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " Plug 'ryanoasis/vim-devicons'
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
     " appearence
     Plug 'vim-airline/vim-airline'
@@ -36,7 +34,7 @@ call plug#begin()
     Plug 'reedes/vim-pencil'
     Plug 'vifm/vifm.vim'
     Plug 'gcmt/taboo.vim'
-    Plug 'norcalli/nvim-colorizer.lua'
+    " Plug 'norcalli/nvim-colorizer.lua'
  
     " file management
     Plug '~/.fzf'
@@ -61,8 +59,9 @@ call plug#begin()
     Plug 'christoomey/vim-tmux-navigator'
 
     " language
+    Plug 'pangloss/vim-javascript'    " JavaScript support
     Plug 'leafgarland/typescript-vim'
-    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 
     " formater
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
