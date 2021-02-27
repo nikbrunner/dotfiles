@@ -77,9 +77,6 @@ map <leader>gup               :action Vcs.UpdateProject<CR>
 " Open Action
 nmap <leader>oa                :action GotoAction<CR>
 
-" Open Tree
-nmap <A-1>                     :action ActivateProjectToolWindow<CR>
-
 " Open Project
 nmap <leader>po                :action ManageRecentProjects<CR>
 

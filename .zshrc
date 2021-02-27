@@ -30,11 +30,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-vi-mode)
 
 # export TERM=screen-256color
 
 source $ZSH/oh-my-zsh.sh
+
 
 # Basics =================================================================
 alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""

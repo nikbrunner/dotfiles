@@ -19,9 +19,10 @@ hi SignColumn        guibg=NONE
 hi Comment                                                      cterm=italic
 hi Conditional                                                  cterm=italic,bold
 hi VertSplit         guibg=NONE guifg=#8fbcbb
+hi Pmenu             ctermfg=0 ctermbg=13 guibg=NONE
 
 " Switching themes
 map <F6>             :colorscheme gruvbox-material <bar> let g:airline_theme='gruvbox-material' <bar> set background=dark<CR>
 map <F7>             :colorscheme nord <bar> let g:airline_theme='nord' <bar> set background=dark<CR>
 
-" colorscheme nord
+colorscheme gruvbox-material
