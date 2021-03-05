@@ -25,7 +25,7 @@ map <leader>l                 :vsp<CR>
 map <leader>j                 :sp<CR>
 
 " Saving =====================
-map <leader>s                 :action SaveAll<CR>
+nmap <CR>                     :wa<CR>
 
 " Closers ====================
 map <leader>qq                :action CloseContent<CR>

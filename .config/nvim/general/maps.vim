@@ -10,6 +10,7 @@ nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader><C-r>r                      :source ~/.config/nvim/init.vim \| :PlugInstall<CR>
 
 nnoremap <leader>w                           :wa<CR>
+nnoremap <silent><CR>                        :wa<CR>
 nnoremap <leader>wq                          :wq<CR>
 nnoremap <leader>qo                          :wa<CR>:only<CR>
 nnoremap <leader>q                           :q!<CR>
@@ -47,7 +48,7 @@ nnoremap <leader>9                           9gt
 nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " ranger
-nnoremap <leader>n                           :EditVifm .<CR>
+nnoremap <leader>f                           :EditVifm .<CR>
 
 " tabs
 nnoremap <leader>to                          :TabooOpen<Space>
