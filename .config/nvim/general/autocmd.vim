@@ -9,5 +9,5 @@ endif " has autocmd
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd BufRead,BufNewFile *.ts        set filetype=typescript
 
-autocmd InsertEnter * set nocul
-autocmd InsertLeave * set cul 
+" autocmd InsertEnter * set nocul
+" autocmd InsertLeave * set cul 

@@ -11,7 +11,7 @@ augroup nord-theme-overrides
   autocmd ColorScheme nord highlight vimCommentTitle ctermfg=14 guifg=#8FBCBB
 augroup END
 
-hi Normal            guibg=NONE                  ctermbg=NONE
+" hi Normal            guibg=NONE                  ctermbg=NONE
 hi TabLineFill       guibg=NONE                  ctermfg=NONE  ctermbg=NONE      cterm=NONE
 hi TabLine           guibg=NONE                  ctermfg=NONE  ctermbg=NONE      cterm=NONE
 hi TabLineSel        guibg=Yellow guifg=#8fbcbb  ctermfg=Black ctermbg=NONE    cterm=NONE
