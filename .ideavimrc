@@ -9,7 +9,7 @@ set highlightedyank
 set commentary
 set surround
 set easymotion
-" set scrolloff=999
+set scrolloff=999
 
 nmap s                        <Plug>(easymotion-s)
 
@@ -88,11 +88,12 @@ map gh                        :action QuickJavaDoc<CR>
 map <leader>i                 :action ShowErrorDescription<CR>
 
 " Run =======================
-map <leader>run               :action RunMenu<CR>
+map <leader>run               :acion RunMenu<CR>
 
 " Actions ===================
-nmap <leader>clr              ggVGdd<CR>
-nmap <leader>cpa              ggVGy<CR>
+nmap <leader>clr              ggVGdd
+nmap <leader>cpa              ggVGy
+nmap <leader>cpl              ^v$
 
 " YouTrack ==================
 nmap <leader>yt               :action ActivateYouTrackToolWindow<CR>

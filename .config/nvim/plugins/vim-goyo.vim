@@ -1,4 +1,3 @@
-
 function! s:goyo_enter()
   set scrolloff=999
 endfunction

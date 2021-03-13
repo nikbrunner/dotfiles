@@ -1,5 +1,5 @@
 " general remaps
-let mapleader = "\<Space>"
+let mapleader = " "
 
 " Unmaps
 nnoremap Q <nop>
@@ -22,6 +22,12 @@ nnoremap <silent><leader>ps                  :Obsess<CR>
 " New splits
 nnoremap <silent><leader>l                   :vsp<CR><C-W><C-l>
 nnoremap <silent><leader>j                   :sp<CR><C-W><C-j>
+
+" Nav splits
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 nnoremap <silent><leader>=                   <C-w><C-=>
 
@@ -93,7 +99,7 @@ nmap <silent> gd                             <Plug>(coc-definition)
 nmap <silent> gy                             <Plug>(coc-type-definition)
 nmap <silent> gi                             <Plug>(coc-implementation)
 nmap <silent> gr                             <Plug>(coc-references)
-nmap <silent> <M-CR>                         <Plug>(coc-codeaction)
+nmap <silent> ca                             <Plug>(coc-codeaction)
 nmap <silent> <M-.>                          <Plug>(coc-fix-current)
 nmap <silent> <F2>                           <Plug>(coc-rename)
 nmap <silent> gh                             :call <SID>show_documentation()<CR>

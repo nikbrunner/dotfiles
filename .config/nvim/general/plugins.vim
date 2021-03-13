@@ -11,9 +11,9 @@ call plug#begin()
     " themes
     Plug 'arcticicestudio/nord-vim'
     Plug 'sainnhe/gruvbox-material'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'mkitt/tabline.vim'
-    " Plug 'ryanoasis/vim-devicons'
-    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 
     " appearence
     Plug 'vim-airline/vim-airline'
@@ -23,18 +23,13 @@ call plug#begin()
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-obsession'
     Plug 'junegunn/goyo.vim'
-    Plug 'mattn/emmet-vim'
     Plug 'chaoren/vim-wordmotion'
     Plug 'djoshea/vim-autoread'
     Plug 'machakann/vim-highlightedyank'
-    Plug 'godlygeek/tabular'
     Plug 'terryma/vim-multiple-cursors'
-    Plug 'Asheq/close-buffers.vim'
-    Plug 'liuchengxu/vim-which-key'
-    Plug 'reedes/vim-pencil'
     Plug 'vifm/vifm.vim'
     Plug 'gcmt/taboo.vim'
-    " Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'norcalli/nvim-colorizer.lua'
  
     " file management
     Plug '~/.fzf'
@@ -43,9 +38,8 @@ call plug#begin()
     Plug 'airblade/vim-rooter'
     Plug 'preservim/nerdtree'
     Plug 'git@github.com:mbbill/undotree.git'
-    Plug 'rbgrouleff/bclose.vim'
 
-    " Code completion
+    " LSP
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " git
@@ -56,7 +50,7 @@ call plug#begin()
     Plug 'junegunn/gv.vim'
 
     " window managment
-    Plug 'christoomey/vim-tmux-navigator'
+    " Plug 'christoomey/vim-tmux-navigator'
 
     " language
     Plug 'pangloss/vim-javascript'    " JavaScript support
@@ -66,4 +60,4 @@ call plug#begin()
     " formater
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
-call plug#end()
+ call plug#end()

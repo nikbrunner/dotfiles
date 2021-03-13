@@ -25,4 +25,4 @@ hi Pmenu             ctermfg=0 ctermbg=13 guibg=NONE
 map <F6>             :colorscheme gruvbox-material <bar> let g:airline_theme='gruvbox-material' <bar> set background=dark<CR>
 map <F7>             :colorscheme nord <bar> let g:airline_theme='nord' <bar> set background=dark<CR>
 
-colorscheme gruvbox-material
+colorscheme nord
