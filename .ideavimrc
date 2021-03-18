@@ -83,6 +83,10 @@ nmap <leader>po                :action ManageRecentProjects<CR>
 " Find Text
 nmap <F12>                     :action FindInPath<CR>
 
+" Refactor
+nmap rf                       :action Refactorings.QuickListPopupAction<CR>
+nmap rs                       :action SurroundWith<CR>
+
 " Quick Docu
 map gh                        :action QuickJavaDoc<CR>
 map <leader>i                 :action ShowErrorDescription<CR>

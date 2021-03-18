@@ -67,7 +67,7 @@ alias alaconfig="$EDITOR ~/.config/alacritty/alacritty.yml"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
-NOTES_PATH="$DOCUMENTS_PATH/notes"
+NOTES_PATH="/Users/nibru/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
 DEV_PATH="$DOCUMENTS_PATH/dev"
 REPOSITORIES_PATH="$DEV_PATH/repositories"
 DCD_REPOSITORIES_PATH="$REPOSITORIES_PATH/dcd"

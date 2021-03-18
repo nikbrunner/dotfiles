@@ -12,8 +12,11 @@ call plug#begin()
     Plug 'arcticicestudio/nord-vim'
     Plug 'sainnhe/gruvbox-material'
     Plug 'gruvbox-community/gruvbox'
+    Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'doums/darcula'
     Plug 'mkitt/tabline.vim'
-
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 
     " appearence
     Plug 'vim-airline/vim-airline'
@@ -32,15 +35,20 @@ call plug#begin()
     Plug 'norcalli/nvim-colorizer.lua'
  
     " file management
-    Plug '~/.fzf'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
+    " Plug '~/.fzf'
+    " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " Plug 'junegunn/fzf.vim'
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
     Plug 'airblade/vim-rooter'
     Plug 'preservim/nerdtree'
     Plug 'git@github.com:mbbill/undotree.git'
 
     " LSP
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'sheerun/vim-polyglot'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " git
     Plug 'tpope/vim-fugitive'

@@ -51,7 +51,7 @@ nnoremap <leader>8                           8gt
 nnoremap <leader>9                           9gt
 
 " nerdtree
-nnoremap <silent><expr>¡                     g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <expr><C-e>                         g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " ranger
 nnoremap <leader>f                           :EditVifm .<CR>
@@ -67,16 +67,22 @@ nnoremap <leader>p                           :PrettierAsync<CR>
 nnoremap <silent> <leader>                   :WhichKey '<Space>'<CR>
 
 " fzf
-nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
-nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
-nnoremap <silent><C-e>                       <Esc><Esc>:Buffers<CR>
-nnoremap <silent><F12>                       <Esc><Esc>:Rg<space><CR>
+" nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
+" nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
+" nnoremap <silent><C-b>                       <Esc><Esc>:Buffers<CR>
+" nnoremap <silent><F12>                       <Esc><Esc>:Rg<space><CR>
+
+" telescope
+nnoremap <C-p>                               <cmd>Telescope find_files<cr>
+nnoremap <F12>                               <cmd>Telescope live_grep<cr>
+nnoremap <C-b>                               <cmd>Telescope buffers<cr>
+nnoremap <leader>fh                          <cmd>Telescope help_tags<cr>
 
 " emmet
 let g:user_emmet_leader_key=                 '<C-y>'
 
 " git-fugitive
-nnoremap <leader>gs                          :G<CR>
+nnoremap <leader>gs                          :G<CR> \| :resize 15<CR>
 nnoremap <leader>gc                          :Gcommit<CR>
 nnoremap <leader>gpu                         :Git push<CR>
 nnoremap <leader>gpl                         :Git pull<CR>

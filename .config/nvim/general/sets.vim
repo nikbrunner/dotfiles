@@ -21,8 +21,8 @@ set noswapfile
 set nobackup
 set cursorline
 " set cursorcolumn
-set undofile
-set undodir=~/.vim/undodir
+" set undofile
+" set undodir=~/.vim/undodir
 set incsearch
 set encoding=UTF-8
 set nohlsearch
