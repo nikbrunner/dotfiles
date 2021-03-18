@@ -51,7 +51,7 @@ nnoremap <leader>8                           8gt
 nnoremap <leader>9                           9gt
 
 " nerdtree
-nnoremap <expr><C-e>                         g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <expr>¡                         g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " ranger
 nnoremap <leader>f                           :EditVifm .<CR>
