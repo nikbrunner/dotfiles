@@ -35,9 +35,6 @@ call plug#begin()
     Plug 'norcalli/nvim-colorizer.lua'
  
     " file management
-    " Plug '~/.fzf'
-    " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    " Plug 'junegunn/fzf.vim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -47,6 +44,8 @@ call plug#begin()
 
     " LSP
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " Language
     Plug 'sheerun/vim-polyglot'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -58,12 +57,12 @@ call plug#begin()
     Plug 'junegunn/gv.vim'
 
     " window managment
-    " Plug 'christoomey/vim-tmux-navigator'
+    Plug 'christoomey/vim-tmux-navigator'
 
     " language
     Plug 'pangloss/vim-javascript'    " JavaScript support
-    Plug 'leafgarland/typescript-vim'
     Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+    Plug 'HerringtonDarkholme/yats.vim'
 
     " formater
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }

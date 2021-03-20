@@ -32,8 +32,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-vi-mode)
 
-# export TERM=screen-256color
-
 source $ZSH/oh-my-zsh.sh
 
 
@@ -46,24 +44,21 @@ alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ## dotfiles-push / dfp
 alias dfp="df commit -a -m \"Updates\" && df push"
 
-## Morning Script
-## TODO Make this globally available
-alias morning="sh ~/.scripts/morning.sh"
-alias update-stoic="npm run dist && sh ~/Documents/notes/getStoicTheme.sh"
-
 alias ls="ls -a"
 
 # Edit Config Files ======================================================
+CONFIG_PATH=$HOME/.config
 EDITOR="nvim"
-NVIM_PATH="~/.config/nvim"
-TMUX_PATH="~"
+TMUX_PATH=$HOME
+NVIM_PATH="$CONFIG_PATH/nvim"
+ALACRITTY_PATH=$CONFIG_PATH/alacritty
 alias v="nvim"
 alias vim="nvim"
 alias dfconfig="$EDITOR -S ~/df.vim"
-alias vimconfig="$EDITOR $NVIM_PATH/init.vim"
+alias vimconfig="$EDITOR $NVIM_PATH"
 alias zshconfig="$EDITOR ~/.zshrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
-alias alaconfig="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias alaconfig="$EDITOR $ALACRITTY_PATH/alacritty.yml"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
@@ -91,13 +86,10 @@ alias vim-ndn="vim -S $OWN_REPOSITORIES_PATH/nibru.dev-next/workspace.vim"
 # DCD ====================================================================
 alias dcd="cd $DCD_REPOSITORIES_PATH"
 alias bc-website="cd $DCD_REPOSITORIES_PATH/bc-homepage"
-alias vim-bc-website="vim -S $DCD_REPOSITORIES_PATH/bc-homepage/workspace.vim"
 alias bc-client="cd $DCD_REPOSITORIES_PATH/bc-desktop-client"
-alias vim-bc-client="vim -S $DCD_REPOSITORIES_PATH/bc-desktop-client/workspace.vim"
 alias bc-tools="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
 alias bc-bpc="cd $DCD_REPOSITORIES_PATH/bc-tools-bikepricecalculator"
 alias bc-brandworld-bergamont="cd $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont"
-alias vim-bc-brandworld-bergamont="vim -S $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont/workspace.vim"
 
 # Path Exports ===========================================================
 export PATH=/usr/bin/python:$PATH
@@ -116,6 +108,23 @@ alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git
 
 export BAT_THEME="gruvbox"
 
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
+# Scripts I want to have available globally
+SCRIPTS_FOLDER="$HOME/.scripts";
+
+ide () {
+  sh "$SCRIPTS_FOLDER/ide.sh"
+}
+
+morning () {
+  sh "$SCRIPTS_FOLDER/morning.sh"
+}
+
+update-stoic () {
+  # sh "$SCRIPTS_FOLDER/"
+}
+
+# alias update-stoic="npm run dist && sh ~/Documents/notes/getStoicTheme.sh"

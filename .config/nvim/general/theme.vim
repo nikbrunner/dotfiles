@@ -11,16 +11,13 @@ if (has("termguicolors"))
 endif
 
 " gruvbox-material
-let g:gruvbox_contrast_dark="hard"
-let g:gruvbox_material_background = 'hard'
+let g:gruvbox_contrast_dark="medium"
+let g:gruvbox_material_background = 'medium'
 
 " nord
 let g:nord_bold = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
-
-" palenight
-let g:palenight_terminal_italics=1
 
 augroup nord-theme-overrides
   autocmd!
@@ -39,10 +36,12 @@ hi VertSplit         guibg=NONE guifg=#8fbcbb
 hi Pmenu             ctermfg=0 ctermbg=13 guibg=NONE
 
 " Switching themes
-map <F6>             :colorscheme darcula <bar> let g:airline_theme='sol' <bar> set background=dark<CR>
-map <F7>             :colorscheme gruvbox-material <bar> let g:airline_theme='gruvbox-material' <bar> set background=dark<CR>
-map <F8>             :colorscheme nord <bar> let g:airline_theme='nord' <bar> set background=dark<CR>
+map <F6>             :colorscheme nord <bar> let g:airline_theme='nord' <bar> set background=dark<CR>
+map <F7>             :colorscheme gruvbox-material <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
+map <F8>             :colorscheme darcula <bar> let g:airline_theme='sol' <bar> set background=dark<CR>
 
 
-let g:airline_theme='angr'
-colorscheme darcula
+let g:airline_theme='nord'
+colorscheme nord
+" let g:airline_theme='base16'
+" colorscheme gruvbox-material

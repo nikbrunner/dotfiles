@@ -6,12 +6,8 @@ nnoremap Q <nop>
 
 " source, save, quit
 nnoremap <leader><C-r>                       :source ~/.config/nvim/init.vim<CR>
-" Source Vim configuration file and install plugins
-nnoremap <leader><C-r>r                      :source ~/.config/nvim/init.vim \| :PlugInstall<CR>
 
-nnoremap <leader>w                           :wa<CR>
 nnoremap <silent><CR>                        :wa<CR>
-nnoremap <leader>wq                          :wq<CR>
 nnoremap <leader>qo                          :wa<CR>:only<CR>
 nnoremap <leader>q                           :q!<CR>
 nnoremap <silent>Q                           :Bdelete menu<CR>
@@ -23,17 +19,10 @@ nnoremap <silent><leader>ps                  :Obsess<CR>
 nnoremap <silent><leader>l                   :vsp<CR><C-W><C-l>
 nnoremap <silent><leader>j                   :sp<CR><C-W><C-j>
 
-" Nav splits
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
-nnoremap <silent><leader>=                   <C-w><C-=>
-
 " Resize panes
 nnoremap <silent>H                           :vertical:resize +5<CR>
 nnoremap <silent>L                           :vertical:resize -5<CR>
+nnoremap <silent><leader>=                   <C-w><C-=>
 
 " Nav Tab
 nnoremap <silent><S-Tab>                     :tabprevious<CR>
@@ -51,7 +40,7 @@ nnoremap <leader>8                           8gt
 nnoremap <leader>9                           9gt
 
 " nerdtree
-nnoremap <expr>¡                         g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <expr>¡                             g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " ranger
 nnoremap <leader>f                           :EditVifm .<CR>
@@ -63,19 +52,10 @@ nnoremap <leader>tn                          :TabooRename<Space>
 " prettier
 nnoremap <leader>p                           :PrettierAsync<CR>
 
-" which-key
-nnoremap <silent> <leader>                   :WhichKey '<Space>'<CR>
-
-" fzf
-" nnoremap <silent><C-p>                       <Esc><Esc>:Files<CR>
-" nnoremap <silent><C-f>                       <Esc><Esc>:BLines!<CR>
-" nnoremap <silent><C-b>                       <Esc><Esc>:Buffers<CR>
-" nnoremap <silent><F12>                       <Esc><Esc>:Rg<space><CR>
-
 " telescope
 nnoremap <C-p>                               <cmd>Telescope find_files<cr>
-nnoremap <F12>                               <cmd>Telescope live_grep<cr>
-nnoremap <C-b>                               <cmd>Telescope buffers<cr>
+nnoremap <C-f>                               <cmd>Telescope live_grep<cr>
+nnoremap <C-e>                               <cmd>Telescope buffers<cr>
 nnoremap <leader>fh                          <cmd>Telescope help_tags<cr>
 
 " emmet
@@ -88,17 +68,17 @@ nnoremap <leader>gpu                         :Git push<CR>
 nnoremap <leader>gpl                         :Git pull<CR>
 nnoremap <leader>gl                          :GV<CR>
 nnoremap <leader>gb                          :GV!<CR>
-nnoremap <leader>g<C-b>                      :MerginalToggle<CR>
+nnoremap <leader>gm                          :MerginalToggle<CR>
 nnoremap <leader>u                           :UndotreeShow<CR>
 
 " git-gutter
-nmap ]h                                      <Plug>(GitGutterNextHunk) "same as default
-nmap [h                                      <Plug>(GitGutterPrevHunk) "same as default
-nmap ghs                                     <Plug>(GitGutterStageHunk)
-nmap ghu                                     <Plug>(GitGutterUndoHunk)
+nnoremap ]h                                      <Plug>(GitGutterNextHunk) "same as default
+nnoremap [h                                      <Plug>(GitGutterPrevHunk) "same as default
+nnoremap ghs                                     <Plug>(GitGutterStageHunk)
+nnoremap ghu                                     <Plug>(GitGutterUndoHunk)
 
 " goyo
-nmap <silent><leader>z                       :Goyo<CR>
+nnoremap <silent><leader>z                       :Goyo<CR>
 
 " coc
 nmap <silent> gd                             <Plug>(coc-definition)
@@ -109,7 +89,6 @@ nmap <silent> ca                             <Plug>(coc-codeaction)
 nmap <silent> <M-.>                          <Plug>(coc-fix-current)
 nmap <silent> <F2>                           <Plug>(coc-rename)
 nmap <silent> gh                             :call <SID>show_documentation()<CR>
-nmap <silent>!                               :CocCommand explorer<CR>
 inoremap <silent><expr><c-space>             coc#refresh()
 inoremap <silent><expr><C-j>
       \ pumvisible() ? "\<C-n>" :
