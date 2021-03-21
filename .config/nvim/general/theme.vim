@@ -40,7 +40,8 @@ map <F6>             :colorscheme nord <bar> let g:airline_theme='nord' <bar> se
 map <F7>             :colorscheme gruvbox-material <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
 map <F8>             :colorscheme darcula <bar> let g:airline_theme='sol' <bar> set background=dark<CR>
 
-
+" let g:airline_theme='solarized'
+" colorscheme solarized8_high
 let g:airline_theme='nord'
 colorscheme nord
 " let g:airline_theme='base16'
