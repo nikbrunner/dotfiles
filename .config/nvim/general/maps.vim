@@ -62,7 +62,8 @@ nnoremap <leader>fh                          <cmd>Telescope help_tags<cr>
 let g:user_emmet_leader_key=                 '<C-y>'
 
 " git-fugitive
-nnoremap <leader>gs                          :G<CR> \| :resize 15<CR>
+nnoremap <leader>gs                          :Git<CR> \| :resize 25<CR>
+nnoremap <leader>gss                         :Git<CR> \| <C-w>k \| :q<CR> \| :TabooRename Git<CR> \| :echo "Git set up. :)"<CR>
 nnoremap <leader>gc                          :Gcommit<CR>
 nnoremap <leader>gpu                         :Git push<CR>
 nnoremap <leader>gpl                         :Git pull<CR>
@@ -72,10 +73,10 @@ nnoremap <leader>gm                          :MerginalToggle<CR>
 nnoremap <leader>u                           :UndotreeShow<CR>
 
 " git-gutter
-nnoremap ]h                                      <Plug>(GitGutterNextHunk) "same as default
-nnoremap [h                                      <Plug>(GitGutterPrevHunk) "same as default
-nnoremap ghs                                     <Plug>(GitGutterStageHunk)
-nnoremap ghu                                     <Plug>(GitGutterUndoHunk)
+nmap ]h                                      <Plug>(GitGutterNextHunk) "same as default
+nmap [h                                      <Plug>(GitGutterPrevHunk) "same as default
+nmap ghs                                     <Plug>(GitGutterStageHunk)
+nmap ghu                                     <Plug>(GitGutterUndoHunk)
 
 " goyo
 nnoremap <silent><leader>z                       :Goyo<CR>
