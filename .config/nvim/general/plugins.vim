@@ -48,7 +48,7 @@ call plug#begin()
 
     " Language
     Plug 'sheerun/vim-polyglot'
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " git
     Plug 'tpope/vim-fugitive'
