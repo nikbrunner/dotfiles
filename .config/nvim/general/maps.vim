@@ -140,3 +140,15 @@ if has("mac") || has("gui_macvim") || has("gui_mac")
   " directory name (/something/src)
   nnoremap <leader>cd :let @*=expand("%:p:h")<CR>
 endif
+
+" centers the current pane as the middle 2 of 4 imaginary columns
+" should be called in a window with a single pane
+
+ function CenterPane()
+   lefta vnew
+   wincmd w
+   exec 'vertical resize '. string(&columns * 0.65)
+ endfunction
+
+" optionally map it to a key:
+ nnoremap <leader>c :call CenterPane()<cr>

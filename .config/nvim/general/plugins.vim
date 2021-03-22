@@ -14,7 +14,6 @@ call plug#begin()
     Plug 'gruvbox-community/gruvbox'
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'lifepillar/vim-solarized8'
-    Plug 'doums/darcula'
     Plug 'mkitt/tabline.vim'
     Plug 'ryanoasis/vim-devicons'
     Plug 'vwxyutarooo/nerdtree-devicons-syntax'

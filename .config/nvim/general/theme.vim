@@ -15,12 +15,11 @@ let g:gruvbox_contrast_dark="medium"
 let g:gruvbox_material_background = 'medium'
 
 " nord
-let g:nord_bold = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
+" let g:nord_bold = 1
+" let g:nord_italic = 1
+" let g:nord_italic_comments = 1
 
 hi Normal            guibg=NONE                  ctermbg=NONE
-hi NonText           guibg=NONE                  ctermbg=NONE
 hi TabLineFill       guibg=NONE                  ctermfg=NONE  ctermbg=NONE      cterm=NONE
 hi TabLine           guibg=NONE                  ctermfg=NONE  ctermbg=NONE      cterm=NONE
 hi TabLineSel        guibg=Yellow guifg=#8fbcbb  ctermfg=Black ctermbg=NONE    cterm=NONE
@@ -39,11 +38,14 @@ augroup END
 " Switching themes
 map <F6>             :colorscheme nord <bar> let g:airline_theme='nord' <bar> set background=dark<CR>
 map <F7>             :colorscheme gruvbox-material <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
-map <F8>             :colorscheme darcula <bar> let g:airline_theme='sol' <bar> set background=dark<CR>
 
-" let g:airline_theme='solarized'
-" colorscheme solarized8_high
-let g:airline_theme='nord'
-colorscheme nord
+let g:airline_theme='palenight'
+colorscheme palenight
+"
+" let g:airline_theme='nord'
+" colorscheme nord
+
 " let g:airline_theme='base16'
 " colorscheme gruvbox-material
+
+
