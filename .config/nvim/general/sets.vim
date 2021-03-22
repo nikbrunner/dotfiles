@@ -24,7 +24,6 @@ set cursorline
 " set undofile
 " set undodir=~/.vim/undodir
 set incsearch
-set encoding=UTF-8
 set nohlsearch
 set scrolloff=16
 set nocompatible
@@ -36,3 +35,6 @@ set timeoutlen=750
 set signcolumn=yes
 set wildmode=longest,list,full
 set splitbelow splitright
+
+set encoding=UTF-8
+let $LANG='en_US.UTF-8'

@@ -10,6 +10,8 @@ set commentary
 set surround
 set easymotion
 "set scrolloff=999
+set ignorecase
+set smartcase
 
 nmap s                        <Plug>(easymotion-s)
 

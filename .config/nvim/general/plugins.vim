@@ -34,6 +34,7 @@ call plug#begin()
     Plug 'vifm/vifm.vim'
     Plug 'gcmt/taboo.vim'
     Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'reedes/vim-pencil'
  
     " file management
     Plug 'nvim-lua/popup.nvim'
@@ -56,6 +57,7 @@ call plug#begin()
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'idanarye/vim-merginal'
     Plug 'junegunn/gv.vim'
+    Plug 'kdheepak/lazygit.nvim'
 
     " window managment
     Plug 'christoomey/vim-tmux-navigator'

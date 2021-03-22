@@ -12,6 +12,8 @@ nnoremap <leader>qo                          :wa<CR>:only<CR>
 nnoremap <leader>q                           :q!<CR>
 nnoremap <silent>Q                           :Bdelete menu<CR>
 
+nnoremap <C-a>                               ggVG
+
 " Sessions
 nnoremap <silent><leader>ps                  :Obsess<CR>
 
@@ -53,17 +55,17 @@ nnoremap <leader>tn                          :TabooRename<Space>
 nnoremap <leader>p                           :PrettierAsync<CR>
 
 " telescope
-nnoremap <C-p>                               <cmd>Telescope find_files<cr>
-nnoremap <C-f>                               <cmd>Telescope live_grep<cr>
-nnoremap <C-e>                               <cmd>Telescope buffers<cr>
-nnoremap <leader>fh                          <cmd>Telescope help_tags<cr>
+nnoremap <C-p>                               <cmd>Telescope find_files<CR>
+nnoremap <C-f>                               <cmd>Telescope live_grep<CR>
+nnoremap <C-e>                               <cmd>Telescope buffers<CR>
+nnoremap <leader>fh                          <cmd>Telescope help_tags<CR>
 
 " emmet
 let g:user_emmet_leader_key=                 '<C-y>'
 
 " git-fugitive
 nnoremap <leader>gs                          :Git<CR> \| :resize 25<CR>
-nnoremap <leader>gss                         :Git<CR> \| <C-w>k \| :q<CR> \| :TabooRename Git<CR> \| :echo "Git set up. :)"<CR>
+nnoremap <leader>go                          :Git<CR> \| <C-w>k \| :q<CR> \| :TabooRename Git<CR> \| :echo "Git set up. :)"<CR> \| <cmd>Telescope find_files<CR>
 nnoremap <leader>gc                          :Gcommit<CR>
 nnoremap <leader>gpu                         :Git push<CR>
 nnoremap <leader>gpl                         :Git pull<CR>
@@ -72,9 +74,12 @@ nnoremap <leader>gb                          :GV!<CR>
 nnoremap <leader>gm                          :MerginalToggle<CR>
 nnoremap <leader>u                           :UndotreeShow<CR>
 
+" setup mapping to call :LazyGit
+nnoremap ª                                   :LazyGit<CR>
+
 " git-gutter
-nmap ]h                                      <Plug>(GitGutterNextHunk) "same as default
-nmap [h                                      <Plug>(GitGutterPrevHunk) "same as default
+nmap ˚                                       <Plug>(GitGutterPrevHunk)
+nmap ∆                                       <Plug>(GitGutterNextHunk)
 nmap ghs                                     <Plug>(GitGutterStageHunk)
 nmap ghu                                     <Plug>(GitGutterUndoHunk)
 
@@ -120,3 +125,18 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" copy current file name (relative/absolute) to system clipboard
+if has("mac") || has("gui_macvim") || has("gui_mac")
+  " relative path  (src/foo.txt)
+  nnoremap <leader>cp :let @*=expand("%")<CR>
+
+  " absolute path  (/something/src/foo.txt)
+  nnoremap <leader>cP :let @*=expand("%:p")<CR>
+
+  " filename       (foo.txt)
+  nnoremap <leader>cf :let @*=expand("%:t")<CR>
+
+  " directory name (/something/src)
+  nnoremap <leader>cd :let @*=expand("%:p:h")<CR>
+endif
