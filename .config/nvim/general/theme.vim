@@ -39,8 +39,8 @@ augroup END
 map <F6>             :colorscheme nord <bar> let g:airline_theme='nord' <bar> set background=dark<CR>
 map <F7>             :colorscheme gruvbox-material <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
 
-let g:airline_theme='palenight'
-colorscheme palenight
+" let g:airline_theme='palenight'
+" colorscheme palenight
 "
 " let g:airline_theme='nord'
 " colorscheme nord
@@ -48,4 +48,5 @@ colorscheme palenight
 " let g:airline_theme='base16'
 " colorscheme gruvbox-material
 
-
+let g:airline_theme='sol'
+colorscheme desert
