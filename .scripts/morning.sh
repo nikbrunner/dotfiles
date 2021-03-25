@@ -14,6 +14,7 @@ dfp
 
 #  Update stoic theme
 echo ": Updating Obsidian Stoic Theme"
-sh $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notezz/getStoicTheme.sh
-sh $HOME/pCloud\ Drive/Dokumente/nik/work/dev/dev-notes/getStoicTheme.sh
+sh $HOME/.scripts/updateStoicTheme.sh
+# sh $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notezz/getStoicTheme.sh
+# sh $HOME/pCloud\ Drive/Dokumente/nik/work/dev/dev-notes/getStoicTheme.sh
 
