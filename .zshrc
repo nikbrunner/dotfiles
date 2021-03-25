@@ -72,6 +72,7 @@ OWN_REPOSITORIES_PATH="$REPOSITORIES_PATH/own"
 alias home="cd $HOME"
 alias docs="cd $DOCUMENTS_PATH"
 alias dev="cd $DEV_PATH"
+alias repos="cd $DEV_PATH/repositories"
 alias notes="cd $NOTES_PATH"
 alias own="cd $OWN_REPOSITORIES_PATH"
 

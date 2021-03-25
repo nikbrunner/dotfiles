@@ -48,5 +48,5 @@ map <F7>             :colorscheme gruvbox-material <bar> let g:airline_theme='gr
 " let g:airline_theme='base16'
 " colorscheme gruvbox-material
 
-let g:airline_theme='sol'
-colorscheme desert
+let g:airline_theme='codedark'
+colorscheme codedark
