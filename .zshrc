@@ -127,7 +127,6 @@ morning () {
 }
 
 update-stoic () {
-  # sh "$SCRIPTS_FOLDER/"
+  sh "$SCRIPTS_FOLDER/updateStoicTheme.sh"
 }
 
-# alias update-stoic="npm run dist && sh ~/Documents/notes/getStoicTheme.sh"
