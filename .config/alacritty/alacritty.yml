@@ -11,25 +11,21 @@ background_opacity: 1
 font:
   normal:
     family: "JetBrainsMono Nerd Font"
-    # family: "VictorMono Nerd Font"
-    style: Medium
+    style: Regular
 
   bold:
     family: "JetBrainsMono Nerd Font"
-    # family: "VictorMono Nerd Font"
     style: Bold
 
   italic:
     family: "JetBrainsMono Nerd Font"
-    # family: "VictorMono Nerd Font"
     style: Italic
 
   bold_italic:
     family: "JetBrainsMono Nerd Font"
-    # family: "VictorMono Nerd Font"
     style: Bold Italic
 
-  size: 12
+  size: 14
 
   offset:
     x: 0
@@ -75,32 +71,32 @@ scrolling:
 #     cyan:    '0x8ec07c'
 #     white:   '0xebdbb2'
 
-# Colors (Nord)
-colors:
-  # Default colors
-  primary:
-    background: '#2E3440'
-    # background: '#1e2a23'
-    foreground: '#D8dEE9'
+# # Colors (Nord)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#2E3440'
+#     # background: '#1e2a23'
+#     foreground: '#D8dEE9'
 
-  # Normal colors
-  normal:
-    black:   '#3B4252'
-    red:     '#BF616A'
-    green:   '#A3BE8C'
-    yellow:  '#EBCB8B'
-    blue:    '#81A1C1'
-    magenta: '#B48EAD'
-    cyan:    '#88C0D0'
-    white:   '#E5E9F0'
+#   # Normal colors
+#   normal:
+#     black:   '#3B4252'
+#     red:     '#BF616A'
+#     green:   '#A3BE8C'
+#     yellow:  '#EBCB8B'
+#     blue:    '#81A1C1'
+#     magenta: '#B48EAD'
+#     cyan:    '#88C0D0'
+#     white:   '#E5E9F0'
 
-  # Bright colors
-  bright:
-    black:   '#4C566A'
-    red:     '#BF616A'
-    green:   '#A3BE8C'
-    yellow:  '#EBCB8B'
-    blue:    '#81A1C1'
-    magenta: '#B48EAD'
-    cyan:    '#8FBCBB'
-    white:   '#ECEFF4'
+#   # Bright colors
+#   bright:
+#     black:   '#4C566A'
+#     red:     '#BF616A'
+#     green:   '#A3BE8C'
+#     yellow:  '#EBCB8B'
+#     blue:    '#81A1C1'
+#     magenta: '#B48EAD'
+#     cyan:    '#8FBCBB'
+#     white:   '#ECEFF4'

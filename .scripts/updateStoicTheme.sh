@@ -4,9 +4,9 @@ STOIC_REPO="git@github.com:nikbrunner/obsidian-stoic-theme"
 STOIC_BUILD_BRANCH="#main"
 STOIC_REPO_BUILD_PATH="$STOIC_REPO/build"
 
-OBSIDIAN_ICLOUD_PATH="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"
-PRIVATE_NOTES_PATH="$OBSIDIAN_ICLOUD_PATH/notes" 
-DEV_NOTES_PATH="$OBSIDIAN_ICLOUD_PATH/dev-notes" 
+OBSIDIAN_PATH="$HOME/Documents/Obsidian"
+PRIVATE_NOTES_PATH="$OBSIDIAN_PATH/notes" 
+DEV_NOTES_PATH="$OBSIDIAN_PATH/dev-notes" 
 
 THEMES_SUBSTRING=".obsidian/themes"
 STOIC_FILE="Stoic.css"

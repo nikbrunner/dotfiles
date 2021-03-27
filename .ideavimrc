@@ -9,7 +9,7 @@ set highlightedyank
 set commentary
 set surround
 set easymotion
-"set scrolloff=999
+set scrolloff=15
 set ignorecase
 set smartcase
 

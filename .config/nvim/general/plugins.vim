@@ -13,9 +13,11 @@ call plug#begin()
     Plug 'sainnhe/gruvbox-material'
     Plug 'gruvbox-community/gruvbox'
     Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'arcticicestudio/nord-tmux'
     Plug 'tomasiser/vim-code-dark'
     Plug 'mkitt/tabline.vim'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'doums/darcula'
     Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 
     " appearence
@@ -25,6 +27,7 @@ call plug#begin()
     " general workflow 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-obsession'
+    Plug 'tpope/vim-surround'
     Plug 'junegunn/goyo.vim'
     Plug 'chaoren/vim-wordmotion'
     Plug 'djoshea/vim-autoread'

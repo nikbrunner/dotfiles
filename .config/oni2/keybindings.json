@@ -1,5 +1,6 @@
-
 [
+  { "key": "<C-Space>", "command": "editor.action.triggerSuggest" },
+
   { "key": "<D-1>", "command": "workbench.view.explorer" },
   { "key": "<D-4>", "command": "workbench.action.findInFiles" },
   { "key": "<D-7>", "command": "workbench.view.extensions" },
@@ -26,10 +27,11 @@
   { "key": "<leader>1", "command": "1gt", "when": "normalMode" },
   { "key": "<leader>2", "command": "2gt", "when": "normalMode" },
   { "key": "<leader>3", "command": "3gt", "when": "normalMode" },
-  { "key": "<leader>4", "command": "4gt", "when": "normalMode"  },
-  { "key": "<leader>5", "command": "5gt", "when": "normalMode"  },
-  { "key": "<leader>6", "command": "6gt", "when": "normalMode"  },
-  { "key": "<leader>7", "command": "7gt", "when": "normalMode"  },
-  { "key": "<leader>8", "command": "8gt", "when": "normalMode"  },
-  { "key": "<leader>9", "command": "9gt", "when": "normalMode"  }
+  { "key": "<leader>4", "command": "4gt", "when": "normalMode" },
+  { "key": "<leader>5", "command": "5gt", "when": "normalMode" },
+  { "key": "<leader>6", "command": "6gt", "when": "normalMode" },
+  { "key": "<leader>7", "command": "7gt", "when": "normalMode" },
+  { "key": "<leader>8", "command": "8gt", "when": "normalMode" },
+  { "key": "<leader>9", "command": "9gt", "when": "normalMode" }
 ]
+

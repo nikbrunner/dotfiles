@@ -19,6 +19,8 @@ set nowrap
 set hidden
 set noswapfile
 set nobackup
+set lazyredraw
+" set nocursorline
 set cursorline
 " set cursorcolumn
 " set undofile
