@@ -396,6 +396,44 @@
             "type": "basic"
           },
           {
+            "description": "While we disable Hyper + >, just to be complete I also reroute <",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "<",
+                  "modifiers": {
+                    "mandatory": ["command", "control", "option", "shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f14"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Disabling Hyper/command+control+option+shift+>. This triggers WiFi logging also.",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": ">",
+                  "modifiers": {
+                    "mandatory": ["command", "control", "option", "shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f15"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Open Screenshot.app with Print_Screen key",
             "manipulators": [
               {
