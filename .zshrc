@@ -126,7 +126,7 @@ morning () {
   sh "$SCRIPTS_FOLDER/morning.sh"
 }
 
-update-stoic () {
+update-stoic-theme () {
   sh "$SCRIPTS_FOLDER/updateStoicTheme.sh"
 }
 

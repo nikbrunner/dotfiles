@@ -1,5 +1,7 @@
 {
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Darcula",
+  "editor.codeLens": true,
   "gruvboxMaterial.darkContrast": "hard",
   "gruvboxMaterial.darkWorkbench": "high-contrast",
   "gruvboxMaterial.darkCursor": "yellow",
@@ -9,7 +11,6 @@
   "workbench.activityBar.visible": false,
   "workbench.editor.showTabs": true,
   "workbench.editor.enablePreview": true,
-  "workbench.iconTheme": "vs-seti",
   "workbench.sideBar.location": "left",
   "workbench.sideBar.visible": true,
   "workbench.statusBar.visible": true,
@@ -36,8 +37,8 @@
   "editor.tabSize": 4,
   "editor.zenMode.hideTabs": true,
   "editor.zenMode.singleFile": true,
-  "files.exclude": [ "_esy", "node_modules", ".git" ],
-  "vim.useSystemClipboard": [ "yank" ],
+  "files.exclude": ["_esy", "node_modules", ".git"],
+  "vim.useSystemClipboard": ["yank"],
   "vim.leader": "<space>",
   "oni.layout.singleTabMode": true,
   "oni.layout.layoutTabPosition": "top",
@@ -53,7 +54,7 @@
           "settings": { "foreground": "#81a1c1", "fontStyle": "bold" }
         },
         {
-          "scope": [ "support.class", "support.class.component" ],
+          "scope": ["support.class", "support.class.component"],
           "settings": { "foreground": "#f1c264", "fontStyle": "bold" }
         },
         {
@@ -65,7 +66,7 @@
           "settings": { "foreground": "#f1c264" }
         },
         {
-          "scope": [ "variable.other", "const.language.http" ],
+          "scope": ["variable.other", "const.language.http"],
           "settings": { "foreground": "#81a1c1" }
         },
         {
@@ -74,7 +75,8 @@
         },
         {
           "scope": [
-            "variable.other.property.ts", "variable.other.object.property.ts"
+            "variable.other.property.ts",
+            "variable.other.object.property.ts"
           ],
           "settings": { "foreground": "#88c0d0" }
         },
@@ -91,7 +93,8 @@
         },
         {
           "scope": [
-            "keyword.operator.assignment", "punctuation.separator.key-value",
+            "keyword.operator.assignment",
+            "punctuation.separator.key-value",
             "punctuation.terminator.statement"
           ],
           "settings": { "foreground": "#d8dee9", "fontStyle": "bold" }
@@ -102,7 +105,8 @@
         },
         {
           "scope": [
-            "entity.name.type.tsx", "support.type.primitive.tsx",
+            "entity.name.type.tsx",
+            "support.type.primitive.tsx",
             "entity.name.type.alias.tsx"
           ],
           "settings": { "foreground": "#83c4a9" }
@@ -121,7 +125,8 @@
         },
         {
           "scope": [
-            "keyword.control", "keyword.control.flow",
+            "keyword.control",
+            "keyword.control.flow",
             "keyword.control.import"
           ],
           "settings": { "foreground": "#f1c264", "fontStyle": "italic bold" }
@@ -154,8 +159,10 @@
         { "scope": "keyword.control", "settings": { "fontStyle": "italic" } },
         {
           "scope": [
-            "keyword.operator.new", "keyword.operator.expression",
-            "keyword.operator.cast", "keyword.operator.sizeof",
+            "keyword.operator.new",
+            "keyword.operator.expression",
+            "keyword.operator.cast",
+            "keyword.operator.sizeof",
             "keyword.operator.logical.python"
           ],
           "settings": { "fontStyle": "italic" }
@@ -167,11 +174,11 @@
         },
         {
           "name": "@Decorator",
-          "scope": [ "meta.decorator punctuation.decorator" ],
+          "scope": ["meta.decorator punctuation.decorator"],
           "settings": { "fontStyle": "italic" }
         },
         {
-          "scope": [ "punctuation.definition.comment", "comment" ],
+          "scope": ["punctuation.definition.comment", "comment"],
           "settings": { "fontStyle": "italic" }
         }
       ]
