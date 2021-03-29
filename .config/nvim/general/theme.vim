@@ -19,25 +19,16 @@ let g:nord_bold = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
 
-" let g:airline_theme='palenight'
-" colorscheme palenight
-
-let g:airline_theme='nord'
-colorscheme nord
-
 " let g:airline_theme='base16'
 " colorscheme gruvbox-material
 
 " let g:airline_theme='codedark'
 " colorscheme codedark
 
-" let g:airline_theme='sol'
-" colorscheme desert 
+let g:airline_theme='sol'
+colorscheme darcula
 
-" let g:airline_theme='sol'
-" colorscheme darcula
-
-" hi Normal            guibg=NONE                  ctermbg=NONE
+hi Normal            guibg=NONE                  ctermbg=NONE
 hi TabLineFill       guibg=NONE                  ctermfg=NONE  ctermbg=NONE      cterm=NONE
 hi TabLine           guibg=NONE                  ctermfg=NONE  ctermbg=NONE      cterm=NONE
 hi TabLineSel        guibg=Yellow guifg=#8fbcbb  ctermfg=Black ctermbg=NONE    cterm=NONE
