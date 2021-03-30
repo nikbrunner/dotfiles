@@ -434,6 +434,26 @@
             ]
           },
           {
+            "description": "Change hyper+w to F13 (to avoid system binding of hyper-w which creates 500mb wifi diagnostics file in /var/tmp)",
+            "from": {
+              "key_code": "q",
+              "modifiers": {
+                "mandatory": [
+                  "left_shift",
+                  "left_option",
+                  "left_control",
+                  "left_command"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "f11"
+              }
+            ],
+            "type": "basic"
+          },
+          {
             "description": "Open Screenshot.app with Print_Screen key",
             "manipulators": [
               {

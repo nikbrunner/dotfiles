@@ -25,8 +25,11 @@ let g:nord_italic_comments = 1
 " let g:airline_theme='codedark'
 " colorscheme codedark
 
+" let g:airline_theme='sol'
+"  colorscheme darcula
+"
 let g:airline_theme='sol'
-colorscheme darcula
+ colorscheme morning
 
 hi Normal            guibg=NONE                  ctermbg=NONE
 hi TabLineFill       guibg=NONE                  ctermfg=NONE  ctermbg=NONE      cterm=NONE
@@ -45,5 +48,5 @@ augroup nord-theme-overrides
 augroup END
 
 " Switching themes
-map <F6>             :colorscheme nord <bar> let g:airline_theme='nord' <bar> set background=dark<CR>
-map <F7>             :colorscheme gruvbox-material <bar> let g:airline_theme='gruvbox' <bar> set background=dark<CR>
+map <F6>             :colorscheme darcula <bar> let g:airline_theme='sol' <bar> set background=dark<CR>
+map <F7>             :colorscheme morning <bar> let g:airline_theme='sol' <bar> set background=dark<CR>

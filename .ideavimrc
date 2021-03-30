@@ -45,6 +45,7 @@ map <C-l>                     :action TabShiftActions.MoveFocusRight<CR>
 " Switch Tabs ================
 nmap <S-Tab>                  :action PreviousTab<CR>
 nmap <Tab>                    :action NextTab<CR>
+nmap tp                       :action PinActiveTabToggle<CR>
 
 " Move Tabs ================
 nmap <C-S-h>                  :action TabShiftActions.ShiftLeft<CR>
