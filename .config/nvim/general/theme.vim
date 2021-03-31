@@ -25,11 +25,11 @@ let g:nord_italic_comments = 1
 " let g:airline_theme='codedark'
 " colorscheme codedark
 
-" let g:airline_theme='sol'
-"  colorscheme darcula
-"
 let g:airline_theme='sol'
- colorscheme morning
+ colorscheme darcula
+"
+" let g:airline_theme='sol'
+"  colorscheme morning
 
 hi Normal            guibg=NONE                  ctermbg=NONE
 hi TabLineFill       guibg=NONE                  ctermfg=NONE  ctermbg=NONE      cterm=NONE
