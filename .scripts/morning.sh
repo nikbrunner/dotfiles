@@ -15,7 +15,7 @@ dfp
 
 # Update vim config
 NVIM_PATH="$HOME/.config/nvim"
-git -C NVIM_PATH commit -a -m \"Updates\" && git -C NVIM_PATH push
+git -C $NVIM_PATH commit -a -m \"Updates\" && git -C $NVIM_PATH push
 
 #  Update stoic theme
 echo ": Updating Obsidian Stoic Theme"
