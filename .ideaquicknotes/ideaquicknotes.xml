@@ -1,3 +1,8 @@
 <notes createdt="Thu, 21 Jan 2021 2:00 pm" selectednoteindex="0" showlinenumbers="Y" toolbarlocation="0" fontname="JetBrainsMono-Regular" fontsize="16" wordwrap="N" fontColorDefault="N" fontColorRed="193" fontColorGreen="193" fontColorBlue="193" bgColorDefault="N" bgColorRed="49" bgColorGreen="62" bgColorBlue="57" bgLineColorShow="N" bgLineColorDefault="Y" bgLineColorRed="234" bgLineColorGreen="233" bgLineColorBlue="164" lineNumberColorDefault="Y" lineNumberColorRed="234" lineNumberColorGreen="233" lineNumberColorBlue="164">
-  <note title="Jan 21, 2021 2:00 pm" createdt="Thu, 21 Jan 2021 2:00 pm" />
+  <note title="Jan 21, 2021 2:00 pm" createdt="Thu, 21 Jan 2021 2:00 pm">Test Suites: 1 failed, 2 skipped, 64 passed, 65 of 67 total
+Tests:       3 failed, 4 skipped, 640 passed, 647 total
+Snapshots:   3 passed, 3 total
+Time:        12.662 s, estimated 30 s
+Ran all test suites.
+npm ERR! Test failed.  See above for more details.</note>
 </notes>
