@@ -54,8 +54,7 @@ NVIM_PATH="$CONFIG_PATH/nvim"
 ALACRITTY_PATH=$CONFIG_PATH/alacritty
 alias v="nvim"
 alias vim="nvim"
-alias dfconfig="$EDITOR -S ~/df.vim"
-alias vimconfig="$EDITOR $NVIM_PATH"
+alias vimconfig="$EDITOR $NVIM_PATH ."
 alias zshconfig="$EDITOR ~/.zshrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
 alias alaconfig="$EDITOR $ALACRITTY_PATH/alacritty.yml"
@@ -75,8 +74,6 @@ alias dev="cd $DEV_PATH"
 alias repos="cd $DEV_PATH/repositories"
 alias notes="cd $NOTES_PATH"
 alias own="cd $OWN_REPOSITORIES_PATH"
-
-alias vim-notes="vim -S $NOTES_PATH/workspace.vim"
 
 # Own Projects ============================================================
 alias nd="cd $OWN_REPOSITORIES_PATH/nibru.dev"
