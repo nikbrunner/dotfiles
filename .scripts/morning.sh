@@ -14,6 +14,7 @@ brew upgrade
 # Update dotfiles
 echo "${ORANGE}::: Updating dotfiles...${NC}"
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+df submodule update
 df commit -a -m \"Updates\" && df push
 
 # Update vim config
