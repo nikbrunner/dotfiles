@@ -1,5 +1,10 @@
 #!/bin/bash
-echo "Good Morning Nik!"
+
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+# printf "I ${RED}love${NC} Stack Overflow\n"
+
+echo -e "${GREEN}Good Morning Nik!"
 
 # Update Homebrew
 echo "::: Updating Homebrew..."
