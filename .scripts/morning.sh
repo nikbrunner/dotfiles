@@ -11,16 +11,16 @@ echo "${ORANGE}::: Updating Homebrew...${NC}"
 brew update
 brew upgrade
 
+# Update vim config
+echo "${ORANGE}::: Updating NeoVim config...${NC}"
+NVIM_PATH="$HOME/.config/nvim"
+git -C $NVIM_PATH commit -a -m \"Updates\" && git -C $NVIM_PATH push
+
 # Update dotfiles
 echo "${ORANGE}::: Updating dotfiles...${NC}"
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 df submodule update
 df commit -a -m \"Updates\" && df push
-
-# Update vim config
-echo "${ORANGE}::: Updating NeoVim config...${NC}"
-NVIM_PATH="$HOME/.config/nvim"
-git -C $NVIM_PATH commit -a -m \"Updates\" && git -C $NVIM_PATH push
 
 #  Update stoic theme
 echo "${ORANGE}::: Updating Obsidian Stoic Theme${NC}"
