@@ -54,12 +54,14 @@ EDITOR="nvim"
 TMUX_PATH=$HOME
 NVIM_PATH="$CONFIG_PATH/nvim"
 ALACRITTY_PATH=$CONFIG_PATH/alacritty
+KITTY_PATH=$CONFIG_PATH/kitty
 alias v="nvim"
 alias vim="nvim"
 alias vimconfig="$EDITOR $NVIM_PATH ."
 alias zshconfig="$EDITOR ~/.zshrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
 alias alaconfig="$EDITOR $ALACRITTY_PATH/alacritty.yml"
+alias kittyconfig="$EDITOR $KITTY_PATH/kitty.conf"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
@@ -128,4 +130,3 @@ morning () {
 update-stoic-theme () {
   sh "$SCRIPTS_FOLDER/updateStoicTheme.sh"
 }
-
