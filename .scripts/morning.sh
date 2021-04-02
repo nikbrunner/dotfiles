@@ -8,8 +8,9 @@ echo "${GREEN}Good Morning Nik!${NC}"
 
 # Update Homebrew
 echo "${ORANGE}::: Updating Homebrew...${NC}"
-brew update
-brew upgrade
+brew outdated
+# brew update
+# brew upgrade
 
 # Update vim config
 echo "${ORANGE}::: Updating NeoVim config...${NC}"

@@ -105,3 +105,4 @@ nmap <leader>cpl              ^v$
 " YouTrack ==================
 nmap <leader>yt               :action ActivateYouTrackToolWindow<CR>
 
+nnoremap cll                  oconsole.log("LINE: ","")<Esc>F:a
