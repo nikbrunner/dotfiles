@@ -53,6 +53,7 @@ CONFIG_PATH=$HOME/.config
 EDITOR="nvim"
 TMUX_PATH=$HOME
 NVIM_PATH="$CONFIG_PATH/nvim"
+KARABINER_PATH="$CONFIG_PATH/karabiner"
 ALACRITTY_PATH=$CONFIG_PATH/alacritty
 KITTY_PATH=$CONFIG_PATH/kitty
 alias v="nvim"
@@ -62,6 +63,7 @@ alias zshconfig="$EDITOR ~/.zshrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
 alias alaconfig="$EDITOR $ALACRITTY_PATH/alacritty.yml"
 alias kittyconfig="$EDITOR $KITTY_PATH/kitty.conf"
+alias karaconfig="$EDITOR $KARABINER_PATH/karabiner.json"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
@@ -70,6 +72,8 @@ DEV_PATH="$DOCUMENTS_PATH/dev"
 REPOSITORIES_PATH="$DEV_PATH/repositories"
 DCD_REPOSITORIES_PATH="$REPOSITORIES_PATH/dcd"
 OWN_REPOSITORIES_PATH="$REPOSITORIES_PATH/own"
+
+alias lg="lazygit"
 
 # Navigation =============================================================
 alias home="cd $HOME"
