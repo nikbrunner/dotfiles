@@ -6,10 +6,32 @@
 ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # focus window
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+hyper - h : yabai -m window --focus west
+hyper - j : yabai -m window --focus south
+hyper - k : yabai -m window --focus north
+hyper - l : yabai -m window --focus east
+
+# cycle through windows 
+hyper - i : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index" | xargs -I{} yabai -m query --windows --space {} | jq -sre "add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" | xargs -I{} yabai -m window --focus {}
+
+# toggle window split type
+hyper - o : yabai -m window --toggle split
+
+# rotate tree 90
+hyper - r : yabai -m space --rotate 90
+
+# flip the tree vertically
+hyper - y : yabai -m space --mirror y-axis
+
+# flip the tree horizontally
+hyper - x : yabai -m space --mirror x-axis
+
+# toggle window fullscreen zoom
+hyper - f : yabai -m window --toggle zoom-fullscreen
+
+# float / unfloat window and center on screen
+hyper - c : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2
 
 # increase window size
 shift + alt - j : yabai -m window --resize bottom:0:20
@@ -19,6 +41,12 @@ shift + alt - l : yabai -m window --resize right:20:0
 shift + alt - k : yabai -m window --resize bottom:0:-20
 shift + alt - h : yabai -m window --resize right:-20:0
 
+# move floating window
+shift + alt - y : yabai -m window --move rel:-20:0
+shift + alt - u : yabai -m window --move rel:0:20
+shift + alt - i : yabai -m window --move rel:0:-20
+shift + alt - o : yabai -m window --move rel:20:0
+
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
@@ -27,9 +55,6 @@ cmd + alt - h : yabai -m window --swap west
 cmd + alt - j : yabai -m window --swap north
 cmd + alt - k : yabai -m window --swap south 
 cmd + alt - l : yabai -m window --swap east
-
-# toggle window fullscreen zoom
-hyper - f : yabai -m window --toggle zoom-fullscreen
 
 # send window to space
 shift + alt - 1  : yabai -m window --space 1
@@ -46,16 +71,4 @@ ctrl + shift + alt - 2  : yabai -m window --display 2
 ctrl + shift + alt - 3  : yabai -m window --display 3
 ctrl + shift + alt - 4  : yabai -m window --display 4
 
-# move floating window
-shift + alt - a : yabai -m window --move rel:-20:0
-shift + alt - s : yabai -m window --move rel:0:20
 
-# toggle window split type
-shift + alt - o : yabai -m window --toggle split
-
-# cycle through windows 
-shift + alt - i : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index" | xargs -I{} yabai -m query --windows --space {} | jq -sre "add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" | xargs -I{} yabai -m window --focus {}
-
-# float / unfloat window and center on screen
-alt + shift - t : yabai -m window --toggle float;\
-          yabai -m window --grid 4:4:1:1:2:2

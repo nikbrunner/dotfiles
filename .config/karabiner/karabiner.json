@@ -175,36 +175,17 @@
                         ]
                     },
                     {
-                        "description": "Hyper + i/j/k/l == vim directional Keys",
+                        "description": "Change Option + h/j/k/l to Arrows",
                         "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_shift",
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -220,10 +201,10 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -236,57 +217,38 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow"
+                                        "key_code": "up_arrow"
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "semicolon",
+                                    "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open Screenshot.app with Print_Screen key",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "print_screen"
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a screenshot.app"
+                                        "key_code": "right_arrow"
                                     }
                                 ],
                                 "type": "basic"
