@@ -64,10 +64,9 @@ Control-layer for launching and hiding Apps with (currently) [HotKey App](https:
 
 Controlling the tree for [YabaiWM](https://github.com/koekeishiya/yabai).
 
-- Layout
-- Rotate
-- Toggle states
-- Switch windows
+- Layout tree
+- Rotate tree
+- Toggle state of windows
 - Swap and Warp windows
 
 #### <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>A - Z</kbd>
