@@ -16,6 +16,8 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH="$HOME/.scripts:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -123,14 +125,14 @@ export BAT_THEME="gruvbox"
 # Scripts I want to have available globally
 SCRIPTS_FOLDER="$HOME/.scripts";
 
-ide () {
-  sh "$SCRIPTS_FOLDER/ide.sh"
-}
+# ide () {
+#   sh "$SCRIPTS_FOLDER/ide.sh"
+# }
 
-morning () {
-  sh "$SCRIPTS_FOLDER/morning.sh"
-}
+# morning () {
+#   sh "$SCRIPTS_FOLDER/morning.sh"
+# }
 
-update-stoic-theme () {
-  sh "$SCRIPTS_FOLDER/updateStoicTheme.sh"
-}
+# update-stoic-theme () {
+#   sh "$SCRIPTS_FOLDER/updateStoicTheme.sh"
+# }
