@@ -21,7 +21,9 @@ function updateVimDotfiles () {
 # Update dotfiles
 function updateDotfiles () {
     echo -e "${ORANGE}::: Updating dotfiles...${NC}"
-    homeDirGit "add .scripts/*"
+    # Automatically add every script in .scripts/
+    homeDirGit "add .scripts/*" 
+    # Update configured submodules
     homeDirGit "submodule update"
     homeDirGit "commit -a -m \"Updates\""
     homeDirGit "push"
