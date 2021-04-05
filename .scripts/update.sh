@@ -38,7 +38,6 @@ function updateHomebrew () {
     echo -e "${ORANGE}::: Updating Homebrew...${NC}"
     brew update
     brew outdated
-    # brew upgrade
 }
 
 function updateAll () {
@@ -49,23 +48,22 @@ function updateAll () {
 }
 
 case $1 in
-    --dotfiles)
+    "--dotfiles")
         updateVimDotfiles
         updateDotfiles
     ;;
 
-    --stoic)
+    "--stoic")
         updateStoicTheme
     ;;
 
-    --brew)
+    "--brew")
         updateHomebrew
     ;;
 
-    --all)
+    "--all")
         updateAll
     ;;
-
 
     *)
         echo "Unknown argument \"$1\""
