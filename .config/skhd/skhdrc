@@ -3,84 +3,76 @@
 # https://www.notion.so/Yabai-8da3b829872d432fac43181b7ff628fc
 
 # Quickly restart the yabai launch agent
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+ctrl + alt + cmd - r          : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # focus window
-hyper - h : yabai -m window --focus west
-hyper - j : yabai -m window --focus south
-hyper - k : yabai -m window --focus north
-hyper - l : yabai -m window --focus east
+hyper - h                     : yabai -m window --focus west
+hyper - j                     : yabai -m window --focus south
+hyper - k                     : yabai -m window --focus north
+hyper - l                     : yabai -m window --focus east
 
 # cycle through windows 
-hyper - i : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index" | xargs -I{} yabai -m query --windows --space {} | jq -sre "add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" | xargs -I{} yabai -m window --focus {}
+hyper - i                     : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index" | xargs -I{} yabai -m query --windows --space {} | jq -sre "add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" | xargs -I{} yabai -m window --focus {}
 
 # toggle window split type
-hyper - o : yabai -m window --toggle split
+hyper - o                     : yabai -m window --toggle split
 
 # rotate tree 90
-hyper - r : yabai -m space --rotate 90
+hyper - r                     : yabai -m space --rotate 90
 
 # flip the tree vertically
-hyper - y : yabai -m space --mirror y-axis
+hyper - y                     : yabai -m space --mirror y-axis
 
 # flip the tree horizontally
-hyper - x : yabai -m space --mirror x-axis
+hyper - x                     : yabai -m space --mirror x-axis
 
 # toggle window fullscreen zoom
-hyper - f : yabai -m window --toggle zoom-fullscreen
+hyper - f                     : yabai -m window --toggle zoom-fullscreen
 
-# make floating window fill screen
-# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
 
 # float / unfloat window 
-hyper - t : yabai -m window --toggle float;
+hyper - t                     : yabai -m window --toggle float
+
+# make floating window fill screen
+hyper - m                     : yabai -m window --grid 1:1:0:0:1:1
 
 # center 
-hyper - c : yabai -m window --grid 8:8:1:1:6:6
+hyper - c                     : yabai -m window --grid 8:8:1:1:6:6
 
 # increase window size
-shift + alt - j : yabai -m window --resize bottom:0:20
-shift + alt - l : yabai -m window --resize right:20:0
+shift + alt - j               : yabai -m window --resize bottom:0:20
+shift + alt - l               : yabai -m window --resize right:20:0
 
 # decrease window size
-shift + alt - k : yabai -m window --resize bottom:0:-20
-shift + alt - h : yabai -m window --resize right:-20:0
+shift + alt - k               : yabai -m window --resize bottom:0:-20
+shift + alt - h               : yabai -m window --resize right:-20:0
 
 # balance size of windows
-shift + alt - 0 : yabai -m space --balance
+shift + alt - 0               : yabai -m space --balance
 
 # move floating window
-shift + alt - y : yabai -m window --move rel:-20:0
-shift + alt - u : yabai -m window --move rel:0:20
-shift + alt - i : yabai -m window --move rel:0:-20
-shift + alt - o : yabai -m window --move rel:20:0
-
-
-# swap managed window
-# ctrl + shift + alt - h : yabai -m window --swap west
-# ctrl + shift + alt - j : yabai -m window --swap north
-# ctrl + shift + alt - k : yabai -m window --swap south 
-# ctrl + shift + alt - l : yabai -m window --swap east
+left                          : yabai -m window --move rel:-20:0
+down                          : yabai -m window --move rel:0:20
+up                            : yabai -m window --move rel:0:-20
+right                         : yabai -m window --move rel:20:0
 
 # swap managed window
-ctrl + shift + alt - h : yabai -m window --warp west
-ctrl + shift + alt - j : yabai -m window --warp north
-ctrl + shift + alt - k : yabai -m window --warp south 
-ctrl + shift + alt - l : yabai -m window --warp east
+hyper - a                     : yabai -m window --warp west
+hyper - w                     : yabai -m window --warp north
+hyper - s                     : yabai -m window --warp south 
+hyper - d                     : yabai -m window --warp east
 
 # send window to space
-ctrl + shift - 1  : yabai -m window --space 1
-ctrl + shift - 2  : yabai -m window --space 2
-ctrl + shift - 3  : yabai -m window --space 3
-ctrl + shift - 4  : yabai -m window --space 4
-ctrl + shift - 5  : yabai -m window --space 5
-ctrl + shift - 6  : yabai -m window --space 6
-ctrl + shift - 7  : yabai -m window --space 7
+ctrl + shift - 1              : yabai -m window --space 1
+ctrl + shift - 2              : yabai -m window --space 2
+ctrl + shift - 3              : yabai -m window --space 3
+ctrl + shift - 4              : yabai -m window --space 4
+ctrl + shift - 5              : yabai -m window --space 5
+ctrl + shift - 6              : yabai -m window --space 6
+ctrl + shift - 7              : yabai -m window --space 7
 
 # send window to monitor
-ctrl + shift + alt - 1  : yabai -m window --display 1
-ctrl + shift + alt - 2  : yabai -m window --display 2
-ctrl + shift + alt - 3  : yabai -m window --display 3
-ctrl + shift + alt - 4  : yabai -m window --display 4
-
-
+ctrl + shift + alt - 1        : yabai -m window --display 1
+ctrl + shift + alt - 2        : yabai -m window --display 2
+ctrl + shift + alt - 3        : yabai -m window --display 3
+ctrl + shift + alt - 4        : yabai -m window --display 4
