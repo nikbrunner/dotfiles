@@ -18,7 +18,7 @@ hyper - i : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index"
 hyper - o : yabai -m window --toggle split
 
 # rotate tree 90
-# hyper - r : yabai -m space --rotate 90
+hyper - r : yabai -m space --rotate 90
 
 # flip the tree vertically
 hyper - y : yabai -m space --mirror y-axis
