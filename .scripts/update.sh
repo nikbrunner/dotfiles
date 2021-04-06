@@ -4,7 +4,6 @@ GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
 
-
 echo -e "${GREEN}Good Morning Nik!${NC}"
 
 function homeDirGit () {
@@ -23,8 +22,9 @@ function updateDotfiles () {
     echo -e "${ORANGE}::: Updating dotfiles...${NC}"
     # Automatically add every script in .scripts/
     homeDirGit "add .scripts/*" 
-    # Update configured submodules
-    homeDirGit "submodule update"
+    # Update configured submodules 
+    # TODO This is a problem currently, since this always puts my submodule on a detached HEAD state
+    # homeDirGit "submodule update"
     homeDirGit "commit -a -m \"Updates\""
     homeDirGit "push"
 }
