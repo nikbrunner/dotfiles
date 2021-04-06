@@ -38,17 +38,10 @@ plugins=(git zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
-
 # Basics =================================================================
 alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
-alias clr="clear"
-
-# Dotfiles ===============================================================
-alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-## dotfiles-push / dfp
-alias dfp="df commit -a -m \"Updates\" && df push"
-
 alias ls="ls -a"
+alias clr="clear"
 
 # Edit Config Files ======================================================
 CONFIG_PATH=$HOME/.config
@@ -58,8 +51,10 @@ NVIM_PATH="$CONFIG_PATH/nvim"
 KARABINER_PATH="$CONFIG_PATH/karabiner"
 ALACRITTY_PATH=$CONFIG_PATH/alacritty
 KITTY_PATH=$CONFIG_PATH/kitty
+
 alias v="nvim"
 alias vim="nvim"
+alias lg="lazygit"
 alias vimconfig="$EDITOR $NVIM_PATH ."
 alias zshconfig="$EDITOR ~/.zshrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
@@ -74,8 +69,6 @@ DEV_PATH="$DOCUMENTS_PATH/dev"
 REPOSITORIES_PATH="$DEV_PATH/repositories"
 DCD_REPOSITORIES_PATH="$REPOSITORIES_PATH/dcd"
 OWN_REPOSITORIES_PATH="$REPOSITORIES_PATH/own"
-
-alias lg="lazygit"
 
 # Navigation =============================================================
 alias home="cd $HOME"

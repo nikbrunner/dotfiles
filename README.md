@@ -87,4 +87,3 @@ Controlling the branches for [YabaiWM](https://github.com/koekeishiya/yabai).
 
 - [ ] Path auto-completion
 - [ ] Clean up `.zshrc`
-
