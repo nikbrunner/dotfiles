@@ -78,5 +78,13 @@ Controlling the branches for [YabaiWM](https://github.com/koekeishiya/yabai).
 
 ## Todo
 
+### README
+
 - [ ] Write out shortcut philosopy
 - [ ] Update Setup
+
+### ZSH
+
+- [ ] Path auto-completion
+- [ ] Clean up `.zshrc`
+
