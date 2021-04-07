@@ -44,7 +44,10 @@ alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Basics =================================================================
 alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias ls="ls -a"
+
 alias clr="clear"
+
+alias ctags="`brew --prefix`/bin/ctags"
 
 # Edit Config Files ======================================================
 CONFIG_PATH=$HOME/.config

@@ -99,6 +99,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 npm install -g neovim
 echo "Open your init.vim and run :PlugInstall!"
 
+
 ## Tmux
 
 brew install tmux
