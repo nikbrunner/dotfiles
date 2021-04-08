@@ -115,23 +115,15 @@ alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export BAT_THEME="gruvbox"
+# neovim-remote ==========================================================
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    alias nvim=nvr -cc split --remote-wait +'set bufhidden=wipe'
+fi
 
-# Set Spaceship ZSH as a prompt
-# autoload -U promptinit; promptinit
-# prompt spaceship
-
-# Scripts I want to have available globally
-SCRIPTS_FOLDER="$HOME/.scripts";
-
-# ide () {
-#   sh "$SCRIPTS_FOLDER/ide.sh"
-# }
-
-# morning () {
-#   sh "$SCRIPTS_FOLDER/morning.sh"
-# }
-
-# update-stoic-theme () {
-#   sh "$SCRIPTS_FOLDER/updateStoicTheme.sh"
-# }
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+else
+    export VISUAL="nvim"
+    export EDITOR="nvim"
+fi
