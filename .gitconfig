@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+	name = nibru
+	email = nikolaus.brunner@protonmail.ch
+
+[core]
+	editor = nvim
