@@ -44,6 +44,8 @@ For my [NeoVim](https://github.com/nikbrunner/nibru.vim) setup I now have a dedi
 - [YabaiWM](https://github.com/koekeishiya/yabai)
 - [SKHD](https://github.com/koekeishiya/skhd)
 - [HotKey App](https://codenuts.de/en/posts/hotkey/)
+- [Git Completion](https://oliverspryn.medium.com/adding-git-completion-to-zsh-60f3b0e7ffbc)
+  - *Attention*: I put these files in `.config/.zsh/` instead of `.zsh/` like the author suggests
 
 
 ## Shortcut philosophy
