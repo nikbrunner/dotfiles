@@ -25,8 +25,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
+ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -126,3 +125,12 @@ else
     export VISUAL="nvim"
     export EDITOR="nvim"
 fi
+
+# Load Git completion
+zstyle ':completion:*:*:git:*' script ~/.config/.zsh/git-completion.bash
+fpath=(~/.config/.zsh $fpath)
+
+autoload -Uz compinit && compinit
+
+# Fix auto-completion bug (https://github.com/ohmyzsh/ohmyzsh/issues/4632)
+LC_ALL="en_US.UTF-8"
