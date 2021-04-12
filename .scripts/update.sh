@@ -12,14 +12,14 @@ function homeDirGit () {
 
 # Update vim config
 function updateVimDotfiles () {
-    echo -e "${ORANGE}::: Updating NeoVim config...${NC}"
+    echo -e "${ORANGE}::: Updating NeoVim dotfiles...${NC}"
     NVIM_PATH="$HOME/.config/nvim"
     git -C $NVIM_PATH commit -a -m \"Updates\" && git -C $NVIM_PATH push
 }
 
 # Update dotfiles
 function updateDotfiles () {
-    echo -e "${ORANGE}::: Updating dotfiles...${NC}"
+    echo -e "${ORANGE}::: Updating Home-Directory dotfiles...${NC}"
     # Automatically add every script in .scripts/
     homeDirGit "add .scripts/*" 
     # Update configured submodules 
