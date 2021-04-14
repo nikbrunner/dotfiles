@@ -126,15 +126,15 @@
     "name": "www.twitch.tv",
     "sections": [
       {
-        "code": "div[aria-label=\"Recommended Channels\"] {\n    display: none !important;\n}\n\ndiv[data-target=\"channel-header-right\"] {\n    display: none !important;\n}\n\n.top-nav {\n    display: none !important;\n}",
+        "code": "div[aria-label=\"Recommended Channels\"] {\n    display: none !important;\n}\n\ndiv[data-target=\"channel-header-right\"] {\n    display: none !important;\n}\n\n.top-nav, .side-nav {\n    display: none !important;\n}",
         "urlPrefixes": [
           "https://www.twitch.tv/"
         ]
       }
     ],
-    "updateDate": 1618412455619,
+    "updateDate": 1618412758806,
     "_id": "25ca5db5-0753-4fae-8214-2a52d1f3749f",
-    "_rev": 1618412455619,
+    "_rev": 1618412758806,
     "id": 3
   },
   {
