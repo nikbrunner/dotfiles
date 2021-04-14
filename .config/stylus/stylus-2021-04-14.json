@@ -170,5 +170,24 @@
     "_id": "92bd6dd6-a1ef-4511-963e-7059a2d5cc85",
     "_rev": 1618414188673,
     "id": 7
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1618418365788,
+    "name": "old.reddit.com",
+    "sections": [
+      {
+        "code": "* {\n    font-family: Calibri,Candara,Segoe,\"Segoe UI\",Optima,Arial,sans-serif !important;\n}\n\n.side {\n    display: none;\n}\n\nbody {\n    filter: grayscale(100%) contrast(150%);\n}",
+        "urlPrefixes": [
+          "https://old.reddit.com"
+        ]
+      }
+    ],
+    "updateDate": 1618418994119,
+    "_id": "950afd6f-6805-4f65-8626-1bd14855a678",
+    "_rev": 1618418994119,
+    "id": 8
   }
 ]
