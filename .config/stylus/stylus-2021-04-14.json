@@ -1,0 +1,140 @@
+[
+  {
+    "settings": {
+      "openEditInWindow": false,
+      "openEditInWindow.popup": false,
+      "windowPosition": {},
+      "show-badge": true,
+      "disableAll": false,
+      "exposeIframes": false,
+      "newStyleAsUsercss": false,
+      "styleViaXhr": false,
+      "patchCsp": false,
+      "config.autosave": true,
+      "popup.breadcrumbs": true,
+      "popup.breadcrumbs.usePath": false,
+      "popup.enabledFirst": true,
+      "popup.stylesFirst": true,
+      "popup.autoResort": false,
+      "popup.borders": false,
+      "popup.findStylesInline": true,
+      "manage.onlyEnabled": false,
+      "manage.onlyLocal": false,
+      "manage.onlyUsercss": false,
+      "manage.onlyEnabled.invert": false,
+      "manage.onlyLocal.invert": false,
+      "manage.onlyUsercss.invert": false,
+      "manage.actions.expanded": true,
+      "manage.backup.expanded": true,
+      "manage.filters.expanded": true,
+      "manage.newUI": true,
+      "manage.newUI.favicons": false,
+      "manage.newUI.faviconsGray": true,
+      "manage.newUI.targets": 3,
+      "manage.newUI.sort": "title,asc",
+      "editor.options": {},
+      "editor.toc.expanded": true,
+      "editor.options.expanded": true,
+      "editor.lint.expanded": true,
+      "editor.lineWrapping": true,
+      "editor.smartIndent": true,
+      "editor.indentWithTabs": false,
+      "editor.tabSize": 4,
+      "editor.keyMap": "default",
+      "editor.theme": "default",
+      "editor.beautify": {
+        "selector_separator_newline": true,
+        "newline_before_open_brace": false,
+        "newline_after_open_brace": true,
+        "newline_between_properties": true,
+        "newline_before_close_brace": true,
+        "newline_between_rules": false,
+        "preserve_newlines": true,
+        "end_with_newline": false,
+        "indent_conditional": true
+      },
+      "editor.beautify.hotkey": "",
+      "editor.lintDelay": 300,
+      "editor.linter": "csslint",
+      "editor.lintReportDelay": 500,
+      "editor.matchHighlight": "token",
+      "editor.autoCloseBrackets": true,
+      "editor.autocompleteOnTyping": false,
+      "editor.contextDelete": null,
+      "editor.selectByTokens": true,
+      "editor.appliesToLineWidget": true,
+      "editor.livePreview": true,
+      "editor.colorpicker": true,
+      "editor.colorpicker.hexUppercase": false,
+      "editor.colorpicker.hotkey": "",
+      "editor.colorpicker.color": "",
+      "editor.colorpicker.maxHeight": 300,
+      "hotkey._execute_browser_action": "",
+      "hotkey.openManage": "",
+      "hotkey.styleDisableAll": "",
+      "sync.enabled": "none",
+      "iconset": 0,
+      "badgeDisabled": "#8B0000",
+      "badgeNormal": "#006666",
+      "popupWidth": 246,
+      "updateInterval": 24
+    }
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1618315581539,
+    "name": "twitter.com",
+    "sections": [
+      {
+        "code": ".r-1xcajam {\n    display: none;\n}\n\n.r-gtdqiz {\n    display: none;\n}",
+        "urlPrefixes": [
+          "https://twitter.com/"
+        ]
+      }
+    ],
+    "updateDate": 1618315924412,
+    "_id": "70b3b39f-45b8-4056-874e-e6f691526a22",
+    "_rev": 1618315924412,
+    "id": 1
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1618410588574,
+    "name": "youtube.com",
+    "sections": [
+      {
+        "code": ".ytd-metadata-row-container-renderer {\n    display: none;\n}",
+        "domains": [
+          "youtube.com"
+        ]
+      }
+    ],
+    "updateDate": 1618410588574,
+    "_id": "0cec915c-9ffe-4d37-b1df-75e604974428",
+    "_rev": 1618410631994,
+    "id": 2
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1618410877357,
+    "name": "www.twitch.tv",
+    "sections": [
+      {
+        "code": "div[aria-label=\"Recommended Channels\"] {\n  display: none !important;\n}\n\n.top-nav {\n    display: none !important;\n}",
+        "urlPrefixes": [
+          "https://www.twitch.tv/"
+        ]
+      }
+    ],
+    "updateDate": 1618411156463,
+    "_id": "25ca5db5-0753-4fae-8214-2a52d1f3749f",
+    "_rev": 1618411156463,
+    "id": 3
+  }
+]
