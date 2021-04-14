@@ -126,15 +126,15 @@
     "name": "www.twitch.tv",
     "sections": [
       {
-        "code": ".top-nav,\n.side-nav,\n.chat-input,\n.channel-leaderboard,\n.stream-chat-header,\n.community-highlight-stack__card,\n.report-button,\n[data-a-target=\"share-button\"],\ndiv[aria-label=\"Recommended Channels\"],\ndiv[data-target=\"channel-header-right\"] {\n    display: none !important;\n}\n\ndiv[data-test-selector=\"right-column-content__toggle\"] {\n    background-color: var(--color-twitch-purple-8);\n    border-radius: 8px;\n    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.75);\n}\n\n.channel-panels,\n.social-media-space {\n    opacity: 0;\n    transition: opacity 0.5s ease-in-out;\n}\n\n.channel-panels:hover,\n.social-media-space:hover {\n    opacity: 1;\n}\n\n.chat-shell {\n    opacity: 0.35;\n    filter: grayscale(100%);\n    transition: opacity 0.5s ease-in-out;\n}\n\n.chat-shell:hover {\n    opacity: 1;\n}",
+        "code": ".top-nav,\n.side-nav,\n.chat-input,\n.channel-leaderboard,\n.stream-chat-header,\n.community-highlight-stack__card,\n.report-button,\n[data-a-target=\"share-button\"],\ndiv[aria-label=\"Recommended Channels\"],\ndiv[data-target=\"channel-header-right\"] {\n    display: none !important;\n}\n\ndiv[data-test-selector=\"right-column-content__toggle\"] {\n    background-color: var(--color-twitch-purple-8);\n    border-radius: 8px;\n    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.75);\n}\n\n.channel-info-content {\n    opacity: 0;\n    transition: opacity 0.5s ease-in-out;\n}\n\n.channel-info-content:hover {\n    opacity: 1;\n}\n\n.channel-panels,\n.social-media-space {\n    opacity: 0;\n    transition: opacity 0.5s ease-in-out;\n}\n\n.channel-panels:hover,\n.social-media-space:hover {\n    opacity: 1;\n}\n\n.chat-shell {\n    opacity: 0.35;\n    filter: grayscale(100%);\n    transition: opacity 0.5s ease-in-out;\n}\n\n.chat-shell:hover {\n    opacity: 1;\n}",
         "urlPrefixes": [
           "https://www.twitch.tv/"
         ]
       }
     ],
-    "updateDate": 1618414499370,
+    "updateDate": 1618414881274,
     "_id": "25ca5db5-0753-4fae-8214-2a52d1f3749f",
-    "_rev": 1618414499370,
+    "_rev": 1618414881274,
     "id": 3
   },
   {
