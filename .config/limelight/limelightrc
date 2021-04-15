@@ -10,8 +10,8 @@ limelight -m config placement exterior
 # Light Gray
 # limelight -m config active_color 0xFFE3E3E3
 
-# red
-limelight -m config active_color 0xFF575757
+# Github Blue
+limelight -m config active_color 0xFF79C0FF
 
 # Transparent border for non-active windows
 limelight -m config normal_color 0x00FFFFFF
