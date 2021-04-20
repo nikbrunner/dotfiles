@@ -1,8 +1,9 @@
 {
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "Darcula",
   "ui.zoom": 1,
   "workbench.iconTheme": "material-icon-theme",
   "editor.codeLens": true,
+  "explorer.autoReveal": true,
   "gruvboxMaterial.darkContrast": "hard",
   "gruvboxMaterial.darkWorkbench": "high-contrast",
   "gruvboxMaterial.darkCursor": "yellow",
