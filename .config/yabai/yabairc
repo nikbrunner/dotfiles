@@ -75,7 +75,8 @@ yabai -m rule --add app="^Skype$" layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Telegram$" layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Mail$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^GitKraken$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^Spotify$" manage=off grid=4:4:1:1:2:2
+yabai -m rule --add app="^1Password 7$" layer=above manage=off grid=8:8:1:1:6:6
+yabai -m rule --add app="^Spotify$" manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^Logi Options$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Camo Studio$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Docker Desktop$" manage=off grid=4:4:1:1:2:2
