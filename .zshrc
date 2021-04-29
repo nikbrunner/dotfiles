@@ -92,12 +92,12 @@ alias vim-ndn="vim -S $OWN_REPOSITORIES_PATH/nibru.dev-next/workspace.vim"
 # DCD ====================================================================
 alias td="$EDITOR $HOME/Documents/dev/ticket-draft.md"
 alias dcd="cd $DCD_REPOSITORIES_PATH"
-alias bc-homepage="cd $DCD_REPOSITORIES_PATH/bc-homepage"
+alias bc-home="cd $DCD_REPOSITORIES_PATH/bc-homepage"
 alias bc-client="cd $DCD_REPOSITORIES_PATH/bc-desktop-client"
 alias bc-tools="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
 alias bc-scripts="cd $DCD_REPOSITORIES_PATH/bc-business-scripts"
 alias bc-bpc="cd $DCD_REPOSITORIES_PATH/bc-tools-bikepricecalculator"
-alias bc-brandworld-bergamont="cd $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont"
+alias bc-bw-bergamont="cd $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont"
 
 # Path Exports ===========================================================
 export PATH=/usr/bin/python:$PATH
