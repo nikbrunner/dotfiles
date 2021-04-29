@@ -50,13 +50,13 @@ yabai -m config window_gap                   15
 
 # mission-control desktop labels
 # Seems to only work with SIP disabled
-yabai -m space 1 --label web
-yabai -m space 2 --label code
-yabai -m space 3 --label dev
-yabai -m space 4 --label notes
-yabai -m space 5 --label work-com
-yabai -m space 6 --label priv-com
-yabai -m space 7 --label music
+# yabai -m space 1 --label web
+# yabai -m space 2 --label code
+# yabai -m space 3 --label dev
+# yabai -m space 4 --label notes
+# yabai -m space 5 --label work-com
+# yabai -m space 6 --label priv-com
+# yabai -m space 7 --label music
 
 # float system preferences. Most of these just diable Yabai form resizing them.
 # Small Windows
@@ -76,6 +76,7 @@ yabai -m rule --add app="^Logi Options$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^HotKey$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Camo Studio$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Docker Desktop$" manage=off grid=4:4:1:1:2:2
+yabai -m rule --add app="^kitty$" manage=off grid=4:4:1:1:2:2
 
 # Big Windows 
 yabai -m rule --add app="^Spotify$" manage=off grid=8:8:1:1:6:6

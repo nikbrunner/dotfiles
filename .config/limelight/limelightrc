@@ -1,17 +1,17 @@
 #!/usr/bin/env sh
 
-limelight -m config width 3
-limelight -m config radius 8
-limelight -m config placement exterior
+limelight -m config width 1
+limelight -m config radius 5
+limelight -m config placement interior
 
 # VSCode Blue
 # limelight -m config active_color 0xFF569CD6
 
 # Light Gray
-# limelight -m config active_color 0xFFE3E3E3
+limelight -m config active_color 0xFFE3E3E3
 
 # Github Blue
-limelight -m config active_color 0xFF0366D6
+# limelight -m config active_color 0xFF0366D6
 
 # Transparent border for non-active windows
 limelight -m config normal_color 0x00FFFFFF

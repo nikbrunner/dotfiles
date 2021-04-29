@@ -1,6 +1,6 @@
 {
-  "workbench.colorTheme": "Darcula",
-  "ui.zoom": 1,
+  "ui.zoom": 1.0,
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "material-icon-theme",
   "editor.codeLens": true,
   "explorer.autoReveal": true,
