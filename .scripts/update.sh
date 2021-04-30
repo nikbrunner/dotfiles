@@ -20,8 +20,6 @@ function updateVimDotfiles () {
 # Update dotfiles
 function updateDotfiles () {
     echo -e "${ORANGE}::: Updating Home-Directory dotfiles...${NC}"
-    # Automatically add every script in .scripts/
-    homeDirGit "add .scripts/*" 
     # Update configured submodules 
     # TODO This is a problem currently, since this always puts my submodule on a detached HEAD state
     # homeDirGit "submodule update"
@@ -42,7 +40,7 @@ function updateHomebrew () {
     brew outdated
 }
 
-function updateAll () {
+function updateFull () {
     updateVimDotfiles
     updateDotfiles
     updateStoicTheme
@@ -63,8 +61,8 @@ case $1 in
         updateHomebrew
     ;;
 
-    "--all")
-        updateAll
+    "--full")
+        updateFull
     ;;
 
     *)
