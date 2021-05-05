@@ -68,13 +68,13 @@ nmap zC                       :action CollapseAllRegions<CR>
 nmap zO                       :action ExpandAllRegions<CR>
 
 " VCS =======================
-map <leader>ghu                :action Vcs.RollbackChangedLines<CR>
+map <leader>hr                :action Vcs.RollbackChangedLines<CR>
 map <leader>gb                :action Annotate<CR>
 map <leader>gs                :action Vcs.Show.Local.Changes<CR>
 map <leader>gc                :action ChangesView.ToggleCommitUi<CR>
 map <leader>go                :action Vcs.QuickListPopupAction<CR>
-map <leader>gpu               :action Vcs.Push<CR>
-map <leader>gup               :action Vcs.UpdateProject<CR>
+map gp                        :action VcsShowPrevChangeMarker<CR>
+map gn                        :action VcsShowNextChangeMarker<CR>
 
 " Files =====================
 " Open Action
@@ -95,7 +95,7 @@ map gh                        :action QuickJavaDoc<CR>
 map <leader>i                 :action ShowErrorDescription<CR>
 
 " Run =======================
-map <leader>run               :acion RunMenu<CR>
+map <leader>run               :action RunMenu<CR>
 
 " Actions ===================
 nmap <leader>clr              ggVGdd
