@@ -48,7 +48,7 @@ alias clr="clear"
 
 alias ctags="`brew --prefix`/bin/ctags"
 
-alias scratch="vim ~/Desktop/scratchpad.md"
+alias scratch="code ~/Desktop/scratchpad.md"
 
 # Edit Config Files ======================================================
 CONFIG_PATH=$HOME/.config
