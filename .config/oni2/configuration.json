@@ -1,6 +1,6 @@
 {
-  "ui.zoom": 1.5999999999999999,
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "ui.zoom": 1.2,
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "material-icon-theme",
   "editor.codeLens": true,
   "explorer.autoReveal": true,
