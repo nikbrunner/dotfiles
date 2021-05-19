@@ -96,6 +96,7 @@ alias vim-ndn="vim -S $OWN_REPOSITORIES_PATH/nibru.dev-next/workspace.vim"
 # DCD ====================================================================
 alias td="$EDITOR $HOME/Documents/dev/ticket-draft.md"
 alias dcd="cd $DCD_REPOSITORIES_PATH"
+alias dcd-notes="cd $DCD_REPOSITORIES_PATH/dcd-notes"
 alias bc-home="cd $DCD_REPOSITORIES_PATH/bc-homepage"
 alias bc-client="cd $DCD_REPOSITORIES_PATH/bc-desktop-client"
 alias bc-tools="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
