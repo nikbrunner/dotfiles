@@ -14,6 +14,7 @@ function homeDirGit () {
 function updateVimDotfiles () {
     echo -e "${ORANGE}::: Updating NeoVim dotfiles...${NC}"
     NVIM_PATH="$HOME/.config/nvim"
+    git -C $NVIM_PATH add .
     git -C $NVIM_PATH commit -a -m \"Updates\" && git -C $NVIM_PATH push
 }
 
