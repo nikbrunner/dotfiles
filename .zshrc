@@ -90,8 +90,7 @@ alias own="cd $OWN_REPOSITORIES_PATH"
 # Own Projects ============================================================
 alias nd="cd $OWN_REPOSITORIES_PATH/nibru.dev"
 alias ndn="cd $OWN_REPOSITORIES_PATH/nibru.dev-next"
-alias vim-nd="vim -S $OWN_REPOSITORIES_PATH/nibru.dev/workspace.vim"
-alias vim-ndn="vim -S $OWN_REPOSITORIES_PATH/nibru.dev-next/workspace.vim"
+alias sonder="cd $OWN_REPOSITORIES_PATH/sonder"
 
 # DCD ====================================================================
 alias td="$EDITOR $HOME/Documents/dev/ticket-draft.md"
