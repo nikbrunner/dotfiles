@@ -61,7 +61,7 @@ confirmOnQuit: false
 # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
 quitOnTopLevelReturn: false
 disableStartupPopups: false
-notARepository: 'never' # one of: 'prompt' | 'create' | 'skip'
+notARepository: 'skip' # one of: 'prompt' | 'create' | 'skip'
 keybinding:
   universal:
     quit: 'q'
