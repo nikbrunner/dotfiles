@@ -4,7 +4,7 @@ gui:
   # stuff relating to the UI
   scrollHeight: 10 # how many lines you scroll by
   scrollPastBottom: true # enable scrolling past the bottom
-  sidePanelWidth: 0.3333 # number from 0 to 1
+  sidePanelWidth: 0.25 # number from 0 to 1
   expandFocusedSidePanel: false
   mainPanelSplitMode: 'flexible' # one of 'horizontal' | 'flexible' | 'vertical'
   theme:
@@ -35,8 +35,9 @@ git:
       pattern: "^\\w+\\/(\\w+-\\w+).*"
       replace: '$1 — '
   paging:
-    colorArg: always
     useConfig: false
+    colorArg: never
+    pager: delta --dark --paging=never
   merging:
     # only applicable to unix users
     manualCommit: false
