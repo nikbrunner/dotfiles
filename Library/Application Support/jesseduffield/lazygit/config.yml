@@ -36,7 +36,7 @@ git:
       replace: '$1 — '
   paging:
     useConfig: false
-    colorArg: never
+    colorArg: always
     pager: delta --dark --paging=never
   merging:
     # only applicable to unix users
