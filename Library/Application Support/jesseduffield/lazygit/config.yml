@@ -19,7 +19,7 @@ gui:
     selectedLineBgColor:
       - default
     selectedRangeBgColor:
-      - default
+      - reverse
   commitLength:
     show: true
   mouseEvents: true
