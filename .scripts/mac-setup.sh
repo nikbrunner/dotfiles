@@ -34,7 +34,7 @@ done
 ssh -T git@github.com
 
 # - Homebrew -
-echo |"Installing Homebrew"
+echo "Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | zsh
 
 # - Oh-my-zsh -
@@ -77,6 +77,7 @@ brew install --cask webstorm
 brew install --cask iterm2
 brew install --cask insomnia
 brew install --cask docker
+brew install jesseduffield/lazygit/lazygit
 brew install vifm
 
 # dev fonts
