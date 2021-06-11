@@ -63,7 +63,6 @@ yabai -m config window_gap                   15
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
