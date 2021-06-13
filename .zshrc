@@ -73,11 +73,11 @@ alias karaconfig="$EDITOR $KARABINER_PATH/karabiner.json"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
-NOTES_PATH="/Users/nibru/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
 DEV_PATH="$DOCUMENTS_PATH/dev"
 REPOSITORIES_PATH="$DEV_PATH/repositories"
 DCD_REPOSITORIES_PATH="$REPOSITORIES_PATH/dcd"
 OWN_REPOSITORIES_PATH="$REPOSITORIES_PATH/own"
+NOTES_PATH="$OWN_REPOSITORIES_PATH/notes"
 
 # Navigation =============================================================
 alias home="cd $HOME"
