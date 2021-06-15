@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-limelight -m config width 1
+limelight -m config width 3
 limelight -m config radius 10
 limelight -m config placement interior
 
@@ -8,10 +8,13 @@ limelight -m config placement interior
 # limelight -m config active_color 0xFF569CD6
 
 # Light Gray
-limelight -m config active_color 0xFFB4B4B4
+# limelight -m config active_color 0xFFB4B4B4
 
-# Github Blue
-# limelight -m config active_color 0xFF0366D6
+Github Blue
+limelight -m config active_color 0xFF0366D6
+
+# Github Green
+# limelight -m config active_color 0xFF3fb950
 
 # Transparent border for non-active windows
 limelight -m config normal_color 0x00FFFFFF
