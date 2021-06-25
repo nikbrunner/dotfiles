@@ -42,11 +42,11 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  15
-yabai -m config bottom_padding               15
-yabai -m config left_padding                 15
-yabai -m config right_padding                15
-yabai -m config window_gap                   15
+yabai -m config top_padding                  0
+yabai -m config bottom_padding               0
+yabai -m config left_padding                 0
+yabai -m config right_padding                0
+yabai -m config window_gap                   0
 
 # mission-control desktop labels
 # Seems to only work with SIP disabled
