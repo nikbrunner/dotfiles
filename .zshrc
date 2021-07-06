@@ -91,6 +91,7 @@ alias own="cd $OWN_REPOSITORIES_PATH"
 alias nd="cd $OWN_REPOSITORIES_PATH/nibru.dev"
 alias ndn="cd $OWN_REPOSITORIES_PATH/nibru.dev-next"
 alias sonder="cd $OWN_REPOSITORIES_PATH/sonderhaus"
+alias dn="cd $OWN_REPOSITORIES_PATH/dotnotes"
 
 # DCD ====================================================================
 alias td="$EDITOR $HOME/Documents/dev/ticket-draft.md"
