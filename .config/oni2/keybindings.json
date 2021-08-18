@@ -32,9 +32,9 @@
   { "key": "<leader>9", "command": "9gt", "when": "normalMode" },
 
   {
-    "key": "<C-Space>",
+    "key": "<C-space>",
     "command": "editor.action.triggerSuggest",
-    "when": "(normalMode || insertMode) && editorTextFocus && !suggestWidgetAvailable"
+    "when": "(normalMode || insertMode) && editorTextFocus"
   }
 ]
 
