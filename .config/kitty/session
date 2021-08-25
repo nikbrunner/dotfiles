@@ -1,0 +1,12 @@
+new_tab Git
+cd ~/Documents/dev/repositories/
+launch lazygit
+
+new_tab Vim
+cd ~/Documents/dev/repositories/
+launch nvim
+
+new_tab Scripts
+cd ~/Documents/dev/repositories/
+launch zsh
+
