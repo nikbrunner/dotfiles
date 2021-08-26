@@ -1,10 +1,10 @@
 new_tab Term
-cd ~/Documents/dev/repositories/
+cd ~
 launch zsh
 
 new_tab Git
 cd ~/Documents/dev/repositories/
-launch lazygit
+launch zsh
 
 new_tab Scripts
 cd ~/Documents/dev/repositories/

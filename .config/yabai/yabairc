@@ -41,12 +41,17 @@ yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
 # general space settings
-yabai -m config layout                       bsp
-yabai -m config top_padding                  0
-yabai -m config bottom_padding               0
-yabai -m config left_padding                 0
-yabai -m config right_padding                0
-yabai -m config window_gap                   0
+yabai -m config --space 1                    layout bsp
+yabai -m config --space 2                    layout float
+yabai -m config --space 3                    layout float
+yabai -m config --space 4                    layout bsp
+yabai -m config --space 5                    layout float
+
+yabai -m config top_padding                  15
+yabai -m config bottom_padding               15
+yabai -m config left_padding                 15
+yabai -m config right_padding                15
+yabai -m config window_gap                   15
 
 # mission-control desktop labels
 # Seems to only work with SIP disabled
@@ -84,6 +89,7 @@ yabai -m rule --add app="^Mail$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^GitKraken$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^1Password 7$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^Things$" layer=above manage=off grid=8:8:1:1:6:6
+yabai -m rule --add app="^Kitty$" layer=above manage=off grid=1:1:1:1:1:1
 
 # regex that matches JetBrains apps
 apps='^(IntelliJ IDEA|WebStorm|CLion)$'

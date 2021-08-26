@@ -42,7 +42,7 @@ function updateFull () {
 }
 
 case $1 in
-    "--dotfiles")
+    "--dots")
         updateVimDotfiles
         updateDotfiles
     ;;
