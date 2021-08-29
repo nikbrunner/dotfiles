@@ -48,7 +48,7 @@ alias clr="clear"
 
 alias ctags="`brew --prefix`/bin/ctags"
 
-alias scratch="code ~/Desktop/scratchpad.md"
+alias scratch="vim ~/Desktop/scratchpad.md"
 
 alias prune="git fetch --prune && git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
 
@@ -66,6 +66,7 @@ alias vim="nvim"
 alias lg="lazygit"
 alias ld="lazydocker"
 alias nu="npm-upgrade"
+alias config="$EDITOR ~/.config"
 alias vimconfig="$EDITOR $NVIM_PATH ."
 alias zshconfig="$EDITOR ~/.zshrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"

@@ -1,6 +1,9 @@
 # === YabaiRC ===
 # Jesse Skelton's Notion Setup Notes: 
 # https://www.notion.so/Yabai-8da3b829872d432fac43181b7ff628fc
+#
+# Grid Syntax
+# <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
 
 # Quickly restart the yabai launch agent
 ctrl + alt + cmd - r          : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
@@ -36,7 +39,9 @@ hyper - t                     : yabai -m window --toggle float
 hyper - m                     : yabai -m window --grid 1:1:0:0:1:1
 
 # center 
-hyper - c                     : yabai -m window --grid 8:8:1:1:6:6
+hyper - c                     : yabai -m window --grid 8:8:2:1:4:6
+# hyper - ,                     : yabai -m window --grid 8:8:0:0:4:4
+# hyper - .                     : yabai -m window --grid 8:8:4:4:4:4
 
 # increase window size
 shift + alt - j               : yabai -m window --resize bottom:0:20
@@ -62,15 +67,15 @@ hyper - s                     : yabai -m window --warp south
 hyper - d                     : yabai -m window --warp east
 
 # send window to space
-hyper - 1              : yabai -m window --space 1
-hyper - 2              : yabai -m window --space 2
-hyper - 3              : yabai -m window --space 3
-hyper - 4              : yabai -m window --space 4
-hyper - 5              : yabai -m window --space 5
-hyper - 6              : yabai -m window --space 6
-hyper - 7              : yabai -m window --space 7
-hyper - 8              : yabai -m window --space 8
-hyper - 9              : yabai -m window --space 9
+hyper - 1                     : yabai -m window --space 1
+hyper - 2                     : yabai -m window --space 2
+hyper - 3                     : yabai -m window --space 3
+hyper - 4                     : yabai -m window --space 4
+hyper - 5                     : yabai -m window --space 5
+hyper - 6                     : yabai -m window --space 6
+hyper - 7                     : yabai -m window --space 7
+hyper - 8                     : yabai -m window --space 8
+hyper - 9                     : yabai -m window --space 9
 
 # send window to monitor
 ctrl + shift + alt - 1        : yabai -m window --display 1

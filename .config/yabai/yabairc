@@ -34,7 +34,7 @@ yabai -m config active_window_border_color   0xff775759
 yabai -m config normal_window_border_color   0xff555555
 yabai -m config insert_feedback_color        0xffd75f5f
 yabai -m config split_ratio                  0.50
-yabai -m config auto_balance                 off
+yabai -m config auto_balance                 on
 yabai -m config mouse_modifier               ctrl
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
@@ -42,26 +42,16 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config --space 1                    layout bsp
-yabai -m config --space 2                    layout float
-yabai -m config --space 3                    layout float
+yabai -m config --space 2                    layout bsp
+yabai -m config --space 3                    layout bsp
 yabai -m config --space 4                    layout bsp
-yabai -m config --space 5                    layout float
+yabai -m config --space 5                    layout bsp
 
 yabai -m config top_padding                  15
 yabai -m config bottom_padding               15
 yabai -m config left_padding                 15
 yabai -m config right_padding                15
 yabai -m config window_gap                   15
-
-# mission-control desktop labels
-# Seems to only work with SIP disabled
-# yabai -m space 1 --label web
-# yabai -m space 2 --label code
-# yabai -m space 3 --label dev
-# yabai -m space 4 --label notes
-# yabai -m space 5 --label work-com
-# yabai -m space 6 --label priv-com
-# yabai -m space 7 --label music
 
 # float system preferences. Most of these just diable Yabai form resizing them.
 # Small Windows
@@ -72,10 +62,6 @@ yabai -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off 
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Signal$" layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Slack$" layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Skype$" layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Telegram$" layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Logi Options$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^HotKey$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Camo Studio$" manage=off grid=4:4:1:1:2:2
@@ -85,11 +71,9 @@ yabai -m rule --add app="^Docker Desktop$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Spotify$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^Sketch$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^Insomnia$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^Mail$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^GitKraken$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^1Password 7$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^Things$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^Kitty$" layer=above manage=off grid=1:1:1:1:1:1
 
 # regex that matches JetBrains apps
 apps='^(IntelliJ IDEA|WebStorm|CLion)$'
@@ -103,5 +87,3 @@ yabai -m signal --add event=window_created app="${apps}" action='$HOME/.scripts/
 #Limelight addon (Kill it and start it each time Yabai starts)
 killall limelight &>/dev/null
 limelight &>/dev/null &
-
-echo "yabai configuration loaded.."
