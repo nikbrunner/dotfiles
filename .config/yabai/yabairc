@@ -42,10 +42,11 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config --space 1                    layout bsp
-yabai -m config --space 2                    layout bsp
+yabai -m config --space 2                    layout manage
 yabai -m config --space 3                    layout bsp
 yabai -m config --space 4                    layout bsp
 yabai -m config --space 5                    layout bsp
+yabai -m config --space 6                    layout bsp
 
 yabai -m config top_padding                  15
 yabai -m config bottom_padding               15

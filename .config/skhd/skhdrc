@@ -39,9 +39,9 @@ hyper - t                     : yabai -m window --toggle float
 hyper - m                     : yabai -m window --grid 1:1:0:0:1:1
 
 # center 
-hyper - c                     : yabai -m window --grid 8:8:2:1:4:6
-# hyper - ,                     : yabai -m window --grid 8:8:0:0:4:4
-# hyper - .                     : yabai -m window --grid 8:8:4:4:4:4
+hyper - c                     : yabai -m window --grid 8:8:1:1:6:6
+# hyper - z                     : yabai -m window --grid 8:8:0:0:4:8
+# hyper - b                     : yabai -m window --grid 8:8:4:0:4:8
 
 # increase window size
 shift + alt - j               : yabai -m window --resize bottom:0:20
