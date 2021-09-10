@@ -10,3 +10,7 @@ new_tab Scripts
 cd ~/Documents/dev/repositories/
 launch zsh
 
+new_tab Tests
+cd ~/Documents/dev/repositories/
+launch zsh
+
