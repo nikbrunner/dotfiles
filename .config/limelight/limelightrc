@@ -10,8 +10,11 @@ limelight -m config placement interior
 # Light Gray
 # limelight -m config active_color 0xFFB4B4B4
 
-Github Blue
-limelight -m config active_color 0xFF0366D6
+# Github Blue
+# limelight -m config active_color 0xFF0366D6
+
+# TokyoNight
+limelight -m config active_color 0xFF7aa2f7
 
 # Github Green
 # limelight -m config active_color 0xFF3fb950

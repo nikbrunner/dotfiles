@@ -1,12 +1,7 @@
--- TODO
--- Tab for switching Buffers instead of H and L
--- H and L for ^ and $
-
-
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "github"
+lvim.jolorscheme = "github"
 
 -- This is how to create a submenu
 -- lvim.builtin.which_key.mappings["f"] = {
@@ -25,8 +20,6 @@ lvim.leader = "space"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
-
--- edit a default keymapping
 
 -- Go to the beginning and end of a line with H and L
 lvim.keys.normal_mode["<S-h>"] = "^"
@@ -59,7 +52,6 @@ lvim.keys.normal_mode["<Tab>"] = ":BufferNext<CR>"
 --   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 -- }
 
--- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
@@ -68,44 +60,40 @@ lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.auto_open = 1
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.treesitter.ensure_installed = { 
+  'javascript', 
+  'typescript',
+  'html',
+  'css',
+  'scss',
+}
+
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
--- formater typescript
+-- formaters
+lvim.lang.css.formatters = { { exe = "prettier" } }
+-- TODO Scss/Sass
+
 lvim.lang.typescript.formatters = { { exe = "prettier" } }
 lvim.lang.typescriptreact.formatters = lvim.lang.typescript.formatters
 
--- formater javascript
 lvim.lang.javascript.formatters = { { exe = "prettier" } }
 lvim.lang.javascriptreact.formatters = lvim.lang.typescript.formatters
 
--- set an additional linter
--- lvim.lang.python.linters = {
---   {
---     exe = "flake8",
---   }
--- }
-
 -- Additional Plugins
 lvim.plugins = {
-    -- {"folke/tokyonight.nvim"},
-    -- {
-    --   "folke/trouble.nvim",
-    --   cmd = "TroubleToggle",
-    -- },
   { 
     'projekt0n/github-nvim-theme',
     config = function()
       require('github-theme').setup({
         themeStyle = "dark",
-        transparent = true
+        transparent = true,
+        commentStyle = "italic",
+        darkSidebar = false,
+        darkFloat = false,
+        hideEndOfBuffer = true
       })
     end,
   }
 }
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }

@@ -3,19 +3,25 @@
 	name = nibru
 	email = nikolaus.brunner@protonmail.ch
 
+[init]
+	defaultBranch = main
+
 [core]
 	editor = nvim
 
 # Comment: This is to unlock Visual Studio Code as your Git diff and Git merge tool
 [merge]
     tool = vscode
+
 [mergetool "vscode"]
     cmd = code --wait $MERGED
 
 [diff]
     tool = vscode
+
 [difftool "vscode"]
     cmd = code --wait --diff $LOCAL $REMOTE
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

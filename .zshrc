@@ -13,28 +13,20 @@
 # Website: https://nibru.dev
 # E-Mail: nikolaus.brunner@protonmail.ch
 # Repository: https://github.com/nikbrunner/dotfiles-apple
-# If you come from bash you might have to change your $PATH.
+
+# Path Exports ===========================================================
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-
-export PATH="$HOME/.scripts:$PATH"
+export PATH=$HOME/.scripts:$PATH
+export PATH=/usr/bin/python:$PATH
+export PATH=/usr/bin/python3:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
 ZSH_THEME="bira"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-vi-mode)
+plugins=(git zsh-vi-mode zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,21 +46,24 @@ alias scratch="vim ~/Desktop/scratchpad.md"
 alias prune="git fetch --prune && git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
 
 # Edit Config Files ======================================================
-CONFIG_PATH=$HOME/.config
 EDITOR="nvim"
+
+alias vim=$EDITOR
+alias lg="lazygit"
+alias ld="lazydocker"
+alias nu="npm-upgrade"
+
+CONFIG_PATH=$HOME/.config
 TMUX_PATH=$HOME
 NVIM_PATH="$CONFIG_PATH/nvim"
+LVIM_PATH="$CONFIG_PATH/lvim"
 KARABINER_PATH="$CONFIG_PATH/karabiner"
 ALACRITTY_PATH=$CONFIG_PATH/alacritty
 KITTY_PATH=$CONFIG_PATH/kitty
 
-alias v="nvim"
-alias vim="nvim"
-alias lg="lazygit"
-alias ld="lazydocker"
-alias nu="npm-upgrade"
 alias config="$EDITOR ~/.config"
-alias vimconfig="$EDITOR $NVIM_PATH ."
+alias nvimconfig="$EDITOR $NVIM_PATH ."
+alias lvimconfig="$EDITOR $LVIM_PATH ."
 alias zshconfig="$EDITOR ~/.zshrc"
 alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
 alias alaconfig="$EDITOR $ALACRITTY_PATH/alacritty.yml"
@@ -98,21 +93,13 @@ alias sonder="cd $OWN_REPOSITORIES_PATH/sonderhaus"
 alias dn="cd $OWN_REPOSITORIES_PATH/dotnotes"
 
 # DCD ====================================================================
-alias td="$EDITOR $HOME/Documents/dev/ticket-draft.md"
 alias dcd="cd $DCD_REPOSITORIES_PATH"
+alias bctd="$EDITOR $HOME/Documents/dev/ticket-draft.md"
 alias dcd-notes="cd $DCD_REPOSITORIES_PATH/dcd-notes"
 alias bch="cd $DCD_REPOSITORIES_PATH/bc-homepage && nvm use && clear"
-alias bchs="cd $DCD_REPOSITORIES_PATH/bc-homepage && nvm use && clear && code . && lg"
 alias bcc="cd $DCD_REPOSITORIES_PATH/bc-desktop-client && nvm use && clear"
-alias bccs="cd $DCD_REPOSITORIES_PATH/bc-desktop-client && nvm use && clear && code . && lg"
-alias bc-tools="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
-alias bc-scripts="cd $DCD_REPOSITORIES_PATH/bc-business-scripts"
-alias bc-bpc="cd $DCD_REPOSITORIES_PATH/bc-tools-bikepricecalculator"
-alias bc-bw-bergamont="cd $DCD_REPOSITORIES_PATH/bc-brandworld-bergamont"
-
-# Path Exports ===========================================================
-export PATH=/usr/bin/python:$PATH
-export PATH=/usr/bin/python3:$PATH
+alias bct="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
+alias bcs="cd $DCD_REPOSITORIES_PATH/bc-business-scripts"
 
 # Node ===================================================================
 export NVM_DIR="$HOME/.nvm"
