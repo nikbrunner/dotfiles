@@ -6,7 +6,7 @@ new_tab Git
 cd ~/Documents/dev/repositories/
 launch zsh
 
-new_tab Scripts
+new_tab Run
 cd ~/Documents/dev/repositories/
 launch zsh
 
