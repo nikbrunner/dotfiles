@@ -74,6 +74,7 @@ yabai -m rule --add app="^Sketch$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^Insomnia$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^GitKraken$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^1Password 7$" layer=above manage=off grid=8:8:1:1:6:6
+yabai -m rule --add app="^kitty$" layer=above manage=off grid=8:8:1:1:6:6
 
 # regex that matches JetBrains apps
 apps='^(IntelliJ IDEA|WebStorm|CLion)$'
