@@ -67,6 +67,7 @@ yabai -m rule --add app="^Logi Options$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^HotKey$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Camo Studio$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Docker Desktop$" manage=off grid=4:4:1:1:2:2
+yabai -m rule --add app="^Finder$" manage=off grid=4:4:1:1:2:2
 
 # Big Windows 
 yabai -m rule --add app="^Spotify$" layer=above manage=off grid=8:8:1:1:6:6
