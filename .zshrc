@@ -24,6 +24,13 @@ export PATH=/usr/bin/python3:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# BikeCenter IPs
+# Office BC
+export BCO=10.10.2.110
+
+# HOme BC (Tablet)
+export BCO=192.168.2.108
+
 ZSH_THEME="bira"
 # ZSH_THEME="spaceship"
 
