@@ -24,8 +24,8 @@ export PATH=/usr/bin/python3:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# ZSH_THEME="bira"
-ZSH_THEME="spaceship"
+ZSH_THEME="bira"
+# ZSH_THEME="spaceship"
 
 plugins=(git zsh-vi-mode zsh-z)
 
