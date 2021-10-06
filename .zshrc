@@ -29,7 +29,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export BCO=10.10.2.110
 
 # HOme BC (Tablet)
-export BCO=192.168.2.108
+export BCT=192.168.2.108
 
 ZSH_THEME="bira"
 # ZSH_THEME="spaceship"
@@ -56,7 +56,6 @@ alias prune="git fetch --prune && git branch -r | awk '{print $1}' | egrep -v -f
 # Edit Config Files ======================================================
 EDITOR="nvim"
 
-alias vim=$EDITOR
 alias lg="lazygit"
 alias ld="lazydocker"
 alias nu="npm-upgrade"
