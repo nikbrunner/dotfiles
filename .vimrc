@@ -1,6 +1,7 @@
 syntax on
 
 set ru rnu
+set clipboard=unnamed
 
 nnoremap H ^
 nnoremap L $
