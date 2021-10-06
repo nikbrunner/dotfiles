@@ -30,7 +30,7 @@ hyper - y                     : yabai -m space --mirror y-axis
 hyper - x                     : yabai -m space --mirror x-axis
 
 # toggle window fullscreen zoom
-hyper - f                     : yabai -m window --toggle zoom-fullscreen
+hyper - u                     : yabai -m window --toggle zoom-fullscreen
 
 # float / unfloat window 
 hyper - t                     : yabai -m window --toggle float
@@ -55,27 +55,27 @@ shift + alt - h               : yabai -m window --resize right:-20:0
 shift + alt - 0               : yabai -m space --balance
 
 # move floating window
-hyper - left                  : yabai -m window --move rel:-20:0
-hyper - down                  : yabai -m window --move rel:0:20
-hyper - up                    : yabai -m window --move rel:0:-20
-hyper - right                 : yabai -m window --move rel:20:0
+# hyper - left                  : yabai -m window --move rel:-20:0
+# hyper - down                  : yabai -m window --move rel:0:20
+# hyper - up                    : yabai -m window --move rel:0:-20
+# hyper - right                 : yabai -m window --move rel:20:0
 
 # warp managed window
-hyper - a                     : yabai -m window --warp west
-hyper - w                     : yabai -m window --warp north
-hyper - s                     : yabai -m window --warp south 
-hyper - d                     : yabai -m window --warp east
+hyper - left                   : yabai -m window --warp west
+hyper - up                     : yabai -m window --warp north
+hyper - down                   : yabai -m window --warp south 
+hyper - right                  : yabai -m window --warp east
 
 # send window to space
-hyper - 1                     : yabai -m window --space 1
-hyper - 2                     : yabai -m window --space 2
-hyper - 3                     : yabai -m window --space 3
-hyper - 4                     : yabai -m window --space 4
-hyper - 5                     : yabai -m window --space 5
-hyper - 6                     : yabai -m window --space 6
-hyper - 7                     : yabai -m window --space 7
-hyper - 8                     : yabai -m window --space 8
-hyper - 9                     : yabai -m window --space 9
+cmd + shift - 1                : yabai -m window --space 1
+cmd + shift - 2                : yabai -m window --space 2
+cmd + shift - 3                : yabai -m window --space 3
+cmd + shift - 4                : yabai -m window --space 4
+cmd + shift - 5                : yabai -m window --space 5
+cmd + shift - 6                : yabai -m window --space 6
+cmd + shift - 7                : yabai -m window --space 7
+cmd + shift - 8                : yabai -m window --space 8
+cmd + shift - 9                : yabai -m window --space 9
 
 # send window to monitor
 ctrl + shift + alt - 1        : yabai -m window --display 1
