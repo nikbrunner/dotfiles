@@ -2,6 +2,7 @@ syntax on
 
 set ru rnu
 set clipboard=unnamed
+set splitright
 
 nnoremap H ^
 nnoremap L $
