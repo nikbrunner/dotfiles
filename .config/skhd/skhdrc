@@ -14,9 +14,6 @@ hyper - j                     : yabai -m window --focus south
 hyper - k                     : yabai -m window --focus north
 hyper - l                     : yabai -m window --focus east
 
-# cycle through windows 
-hyper - i                     : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index" | xargs -I{} yabai -m query --windows --space {} | jq -sre "add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" | xargs -I{} yabai -m window --focus {}
-
 # toggle window split type
 hyper - o                     : yabai -m window --toggle split
 
@@ -30,7 +27,7 @@ hyper - y                     : yabai -m space --mirror y-axis
 hyper - x                     : yabai -m space --mirror x-axis
 
 # toggle window fullscreen zoom
-hyper - u                     : yabai -m window --toggle zoom-fullscreen
+hyper - f                     : yabai -m window --toggle zoom-fullscreen
 
 # float / unfloat window 
 hyper - t                     : yabai -m window --toggle float
@@ -40,8 +37,6 @@ hyper - m                     : yabai -m window --grid 1:1:0:0:1:1
 
 # center 
 hyper - c                     : yabai -m window --grid 8:8:1:1:6:6
-# hyper - z                     : yabai -m window --grid 8:8:0:0:4:8
-# hyper - b                     : yabai -m window --grid 8:8:4:0:4:8
 
 # increase window size
 shift + alt - j               : yabai -m window --resize bottom:0:20
@@ -61,10 +56,10 @@ shift + alt - 0               : yabai -m space --balance
 # hyper - right                 : yabai -m window --move rel:20:0
 
 # warp managed window
-hyper - left                   : yabai -m window --warp west
-hyper - up                     : yabai -m window --warp north
-hyper - down                   : yabai -m window --warp south 
-hyper - right                  : yabai -m window --warp east
+hyper - left                          : yabai -m window --warp west
+hyper - up                            : yabai -m window --warp north
+hyper - down                          : yabai -m window --warp south 
+hyper - right                         : yabai -m window --warp east
 
 # send window to space
 ctrl + shift + alt - 1                : yabai -m window --space 1
