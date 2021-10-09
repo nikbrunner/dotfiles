@@ -29,7 +29,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export BCO=10.10.2.110
 
 # HOme BC (Tablet)
-export BCT=192.168.2.108
+export BCT=192.168.2.106
 
 ZSH_THEME="bira"
 # ZSH_THEME="spaceship"
