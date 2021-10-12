@@ -70,6 +70,8 @@ yabai -m rule --add app="^Docker Desktop$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Finder$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Signal$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Telegram$" manage=off grid=4:4:1:1:2:2
+yabai -m rule --add app="^WhatsApp$" manage=off grid=4:4:1:1:2:2
+yabai -m rule --add app="^Home$" manage=off grid=4:4:1:1:2:2
 
 # Big Windows 
 ## EDC
@@ -101,4 +103,4 @@ yabai -m signal --add event=window_created action='yabai -m query --windows --wi
 
 #Limelight addon (Kill it and start it each time Yabai starts)
 killall limelight &>/dev/null
-limelight &>/dev/null &
+# limelight &>/dev/null &
