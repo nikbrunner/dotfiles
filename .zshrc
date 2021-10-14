@@ -1,4 +1,5 @@
 # ________________________/\\\______________________________________
+
 #  _______________________\/\\\______________________________________
 #   _________________/\\\__\/\\\______________________________________
 #    __/\\/\\\\\\____\///___\/\\\__________/\\/\\\\\\\____/\\\____/\\\_
@@ -20,6 +21,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.scripts:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
+
+export PATH=$PATH:/.scripts/git
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -50,8 +53,6 @@ alias clr="clear"
 alias ctags="`brew --prefix`/bin/ctags"
 
 alias scratch="vim ~/Desktop/scratchpad.md"
-
-alias prune="git fetch --prune && git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
