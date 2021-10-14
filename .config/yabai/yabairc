@@ -48,11 +48,11 @@ yabai -m config --space 4                    layout bsp
 yabai -m config --space 5                    layout bsp
 yabai -m config --space 6                    layout bsp
 
-yabai -m config top_padding                  15
-yabai -m config bottom_padding               15
-yabai -m config left_padding                 15
-yabai -m config right_padding                15
-yabai -m config window_gap                   15
+yabai -m config top_padding                  0
+yabai -m config bottom_padding               0
+yabai -m config left_padding                 0
+yabai -m config right_padding                0
+yabai -m config window_gap                   0
 
 # float system preferences. Most of these just diable Yabai form resizing them.
 # Small Windows
