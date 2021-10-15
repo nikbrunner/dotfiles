@@ -19,10 +19,10 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.scripts:$PATH
+export PATH=$HOME/.scripts/git:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
 
-export PATH=$PATH:/.scripts/git
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
