@@ -52,7 +52,7 @@ alias clr="clear"
 
 alias ctags="`brew --prefix`/bin/ctags"
 
-alias scratch="vim ~/Desktop/scratchpad.md"
+alias scratch="nvim ~/Desktop/scratchpad.md"
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
@@ -60,23 +60,22 @@ EDITOR="nvim"
 alias lg="lazygit"
 alias ld="lazydocker"
 alias nu="npm-upgrade"
+alias nv="nvim"
 
 CONFIG_PATH=$HOME/.config
 TMUX_PATH=$HOME
 NVIM_PATH="$CONFIG_PATH/nvim"
-LVIM_PATH="$CONFIG_PATH/lvim"
 KARABINER_PATH="$CONFIG_PATH/karabiner"
 ALACRITTY_PATH=$CONFIG_PATH/alacritty
 KITTY_PATH=$CONFIG_PATH/kitty
 
-alias config="$EDITOR ~/.config"
-alias nvimconfig="$EDITOR $NVIM_PATH ."
-alias lvimconfig="$EDITOR $LVIM_PATH ."
-alias zshconfig="$EDITOR ~/.zshrc"
-alias tmuxconfig="$EDITOR $TMUX_PATH/.tmux.conf"
-alias alaconfig="$EDITOR $ALACRITTY_PATH/alacritty.yml"
-alias kittyconfig="$EDITOR $KITTY_PATH/kitty.conf"
-alias karaconfig="$EDITOR $KARABINER_PATH/karabiner.json"
+alias conf="$EDITOR ~/.config"
+alias nvconf="$EDITOR $NVIM_PATH ."
+alias zshconf="$EDITOR ~/.zshrc"
+alias tmuxconf="$EDITOR $TMUX_PATH/.tmux.conf"
+alias alaconf="$EDITOR $ALACRITTY_PATH/alacritty.yml"
+alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
+alias karaconf="$EDITOR $KARABINER_PATH/karabiner.json"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
