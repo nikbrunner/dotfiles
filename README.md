@@ -35,7 +35,7 @@ dfp
 
 ### NeoVim
 
-For my [NeoVim](https://github.com/nikbrunner/nibru.vim) setup I now have a dedicated repository, which is declared in this repository as a submodule.
+For my [NeoVim](https://github.com/nikbrunner/nibru.nvim) setup I now have a dedicated repository, which is declared in this repository as a submodule.
 
 ## Worfklow Tools
 
@@ -46,7 +46,7 @@ For my [NeoVim](https://github.com/nikbrunner/nibru.vim) setup I now have a dedi
 - [HotKey App](https://codenuts.de/en/posts/hotkey/)
 - [Git Completion](https://oliverspryn.medium.com/adding-git-completion-to-zsh-60f3b0e7ffbc)
   - *Attention*: I put these files in `.config/.zsh/` instead of `.zsh/` like the author suggests
-
+- [Delta](https://github.com/dandavison/delta)
 
 ## Shortcut philosophy
 
@@ -79,13 +79,16 @@ Controlling the branches for [YabaiWM](https://github.com/koekeishiya/yabai).
 - Move window
 
 ## Todo
+- [ ] Move LazyGit Config into `.config` 
 
 ### README
-
 - [ ] Write out shortcut philosopy
 - [ ] Update Setup
+- [ ] Clean Up
+
+### NeoVim 
+- [Look here](~/.config/nvim/TODO.md)
 
 ### ZSH
-
 - [ ] Path auto-completion
 - [ ] Clean up `.zshrc`

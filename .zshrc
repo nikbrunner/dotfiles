@@ -140,3 +140,7 @@ autoload -Uz compinit && compinit
 
 # Fix auto-completion bug (https://github.com/ohmyzsh/ohmyzsh/issues/4632)
 LC_ALL="en_US.UTF-8"
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/bit bit
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/bit bit
