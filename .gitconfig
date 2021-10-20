@@ -1,32 +1,32 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Nikolaus Brunner
-	email = nikolaus.brunner@protonmail.ch
+  name = Nikolaus Brunner
+  email = nikolaus.brunner@protonmail.ch
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [core]
-	editor = nvim
+  editor = nvim
 
 # Comment: This is to unlock Visual Studio Code as your Git diff and Git merge tool
 [merge]
-    tool = vscode
+  tool = vscode
 
 [mergetool "vscode"]
-    cmd = code --wait $MERGED
+  cmd = code --wait $MERGED
 
 [diff]
-    tool = vscode
+  tool = vscode
 
 [difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+  cmd = code --wait --diff $LOCAL $REMOTE
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 
 [pager] 
   diff = delta
@@ -38,4 +38,4 @@
   diffFilter = delta --color-only --features=interactive
 
 [delta]
-   side-by-side=true
+  side-by-side=true
