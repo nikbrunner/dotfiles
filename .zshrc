@@ -41,21 +41,18 @@ plugins=(git zsh-vi-mode zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
+# Edit Config Files ======================================================
+EDITOR="nvim"
+
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Basics =================================================================
 alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias ls="ls -a"
-
 alias clr="clear"
+alias scratch="$EDITOR $HOME/scratchpad.md"
 
-alias ctags="`brew --prefix`/bin/ctags"
-
-alias scratch="nvim ~/Desktop/scratchpad.md"
-
-# Edit Config Files ======================================================
-EDITOR="nvim"
 
 alias lg="lazygit"
 alias ld="lazydocker"
