@@ -23,14 +23,11 @@ export PATH=$HOME/.scripts/git:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
 
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# BikeCenter IPs
 # Office BC
 export BCO=10.10.2.110
-
 # HOme BC (Tablet)
 export BCT=192.168.2.106
 
@@ -53,26 +50,19 @@ alias ls="ls -a"
 alias clr="clear"
 alias scratch="$EDITOR $HOME/scratchpad.md"
 
-
 alias lg="lazygit"
 alias ld="lazydocker"
 alias nu="npm-upgrade"
 alias nv="nvim"
 
-CONFIG_PATH=$HOME/.config
-TMUX_PATH=$HOME
+CONFIG_PATH="$HOME/.config"
 NVIM_PATH="$CONFIG_PATH/nvim"
-KARABINER_PATH="$CONFIG_PATH/karabiner"
-ALACRITTY_PATH=$CONFIG_PATH/alacritty
-KITTY_PATH=$CONFIG_PATH/kitty
+KITTY_PATH="$CONFIG_PATH/kitty"
 
 alias conf="$EDITOR ~/.config"
 alias nvconf="$EDITOR $NVIM_PATH ."
 alias zshconf="$EDITOR ~/.zshrc"
-alias tmuxconf="$EDITOR $TMUX_PATH/.tmux.conf"
-alias alaconf="$EDITOR $ALACRITTY_PATH/alacritty.yml"
 alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
-alias karaconf="$EDITOR $KARABINER_PATH/karabiner.json"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
