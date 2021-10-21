@@ -4,15 +4,18 @@ GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
 
+timestamp() {
+  date +"%T" # current time
+}
+
 echo -e "${GREEN}Good Morning Nik!${NC}"
 # Update vim config
 function pushNvDots () {
   echo -e "${ORANGE}::: Pushing NeoVim dotfiles...${NC}"
   NVIM_PATH="$HOME/.config/nvim"
-  timestamp=$(date =%s)
 
   git -C $NVIM_PATH add .
-  git -C $NVIM_PATH commit -a -m "Updates @ $timestamp" && git -C $NVIM_PATH push
+  git -C $NVIM_PATH commit -a -m 'Updates at $timestamp' && git -C $NVIM_PATH push
 }
 
 # Update dotfiles
@@ -23,10 +26,7 @@ function pushDots () {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $1
   }
 
-  timestamp=$(date =%s)
-
-
-  homeDirGit "commit -a -m Updates"
+  homeDirGit "commit -a -m \"$timestamp\""
   homeDirGit "push"
 }
 
