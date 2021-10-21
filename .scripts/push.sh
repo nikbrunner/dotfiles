@@ -9,9 +9,10 @@ echo -e "${GREEN}Good Morning Nik!${NC}"
 function pushNvDots () {
   echo -e "${ORANGE}::: Pushing NeoVim dotfiles...${NC}"
   NVIM_PATH="$HOME/.config/nvim"
+  timestamp=$(date =%s)
 
   git -C $NVIM_PATH add .
-  git -C $NVIM_PATH commit -a -m Updates && git -C $NVIM_PATH push
+  git -C $NVIM_PATH commit -a -m "Updates @ $timestamp" && git -C $NVIM_PATH push
 }
 
 # Update dotfiles
