@@ -23,8 +23,10 @@ function pushDots () {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $1
   }
 
+  timestamp=$(date =%s)
 
-  homeDirGit "commit -a -m \"Updates\""
+
+  homeDirGit "commit -a -m Updates"
   homeDirGit "push"
 }
 
