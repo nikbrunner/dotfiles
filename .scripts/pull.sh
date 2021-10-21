@@ -11,9 +11,7 @@ function pullNv () {
 
   NVIM_PATH="$HOME/.config/nvim"
 
-  git -C $NVIM_PATH stash
   git -C $NVIM_PATH pull --rebase
-  git -C $NVIM_PATH stash pop
 }
 
 
@@ -25,13 +23,11 @@ function  pullDots() {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $1
   } 
 
-  homeDirGit stash
   homeDirGit pull --rebase
-  homeDirGit stash pop
 }
 
 # Update Homebrew
-function pullHomeBrew () {
+function updateBrew () {
   echo -e "${ORANGE}::: Pulling Homebrew...${NC}"
   brew update
   brew outdated
@@ -40,7 +36,7 @@ function pullHomeBrew () {
 function updateFull () {
   pullNv
   pullDots
-  pullHomeBrew
+  [[ $OSTYPE == 'darwin'* ]] && updateBrew
 }
 
 case $1 in
@@ -53,7 +49,7 @@ case $1 in
     ;;
 
   "--brew")
-    pullHomeBrew
+    updateBrew
     ;;
 
   "--full")
