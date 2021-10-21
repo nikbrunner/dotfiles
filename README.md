@@ -39,6 +39,9 @@ For my [NeoVim](https://github.com/nikbrunner/nibru.nvim) setup I have a dedicat
 ## Todo
 - [x] Move LazyGit Config into `.config` 
 
+### Scripts
+- [ ] [Better Automation for Dots](https://stackoverflow.com/questions/3258243/check-if-pull-needed-in-git)
+
 ### README
 - [ ] Write out shortcut philosopy
 - [ ] Update Setup
