@@ -11,7 +11,9 @@ function pullNv () {
 
   NVIM_PATH="$HOME/.config/nvim"
 
+  git -C $NVIM_PATH stash
   git -C $NVIM_PATH pull --rebase
+  git -C $NVIM_PATH stash pop
 }
 
 
