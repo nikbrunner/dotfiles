@@ -21,12 +21,10 @@ function homeDirGit () {
 # Update dotfiles
 function updateDotfiles () {
     echo -e "${ORANGE}::: Updating Home-Directory dotfiles...${NC}"
-    # Update configured submodules 
-    # TODO This is a problem currently, since this always puts my submodule on a detached HEAD state
-    # homeDirGit "submodule update"
-    homeDirGit "pull --rebase"
-    homeDirGit "commit -a -m \"Updates\""
-    homeDirGit "push"
+    DOTS_PATH="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+    git -C $DOTS_PATH pull --rebase
+    git -C $DOTS_PATH commit -a -m "Updates"
+    git -C $DOTS_PATH push
 }
 
 # Update Homebrew
