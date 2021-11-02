@@ -47,6 +47,8 @@ git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 
 For my [NeoVim](https://github.com/nikbrunner/nibru.nvim) setup I have a dedicated repository, which is declared in this repository as a submodule, **but** needs to be cloned seperately.
 
+> Also remember to install `ripgrep` and `fzf`
+
 ## Todo
 - [x] Move LazyGit Config into `.config` 
 
