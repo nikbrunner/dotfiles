@@ -31,8 +31,8 @@ export BCO=10.10.2.110
 # HOme BC (Tablet)
 export BCT=192.168.2.106
 
-ZSH_THEME="bira"
-# ZSH_THEME="spaceship"
+# ZSH_THEME="bira"
+ZSH_THEME="spaceship"
 
 plugins=(git zsh-vi-mode zsh-z)
 
