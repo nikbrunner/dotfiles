@@ -35,7 +35,7 @@
   show = delta
 
 [interactive] 
-  diffFilter = delta --color-only --features=interactive
+  ; diffFilter = delta --color-only --features=interactive
 
 [delta]
-  side-by-side=true
+  ; side-by-side=true
