@@ -35,7 +35,10 @@
   show = delta
 
 [interactive] 
-  ; diffFilter = delta --color-only --features=interactive
+  diffFilter = delta --color-only --features=interactive
 
 [delta]
   ; side-by-side=true
+  
+[alias]
+  diffm = diff HEAD origin/master
