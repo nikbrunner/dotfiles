@@ -39,6 +39,17 @@
 
 [delta]
   ; side-by-side=true
+  ; wrap-max-lines=0
+  ; max-line-length=0
   
 [alias]
   diffm = diff HEAD origin/master
+  graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all -10
+  graphfull = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  last = log -1 HEAD
+  root = rev-parse --show-toplevel
+  all = !git-all
+  dt = difftool
+  df = diff
+  update = !git fetch --all --prune && git town prune-branches && [[ -z $(git status --porcelain) ]] && git pull --rebase
+  fullreset = !git fetch origin && git town prune-branches && git stash --include-untracked && git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)"
