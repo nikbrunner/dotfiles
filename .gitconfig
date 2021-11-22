@@ -38,9 +38,7 @@
   diffFilter = delta --color-only --features=interactive
 
 [delta]
-  ; side-by-side=true
-  ; wrap-max-lines=0
-  ; max-line-length=0
+  side-by-side=true
   
 [alias]
   diffm = diff HEAD origin/master
@@ -53,3 +51,13 @@
   df = diff
   update = !git fetch --all --prune && git town prune-branches && [[ -z $(git status --porcelain) ]] && git pull --rebase
   fullreset = !git fetch origin && git town prune-branches && git stash --include-untracked && git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)"
+	append = town append
+	hack = town hack
+	kill = town kill
+	new-pull-request = town new-pull-request
+	prepend = town prepend
+	prune-branches = town prune-branches
+	rename-branch = town rename-branch
+	repo = town repo
+	ship = town ship
+	sync = town sync
