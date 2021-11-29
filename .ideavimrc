@@ -73,8 +73,8 @@ map <leader>gb                :action Annotate<CR>
 map <leader>gs                :action Vcs.Show.Local.Changes<CR>
 map <leader>gc                :action ChangesView.ToggleCommitUi<CR>
 map <leader>go                :action Vcs.QuickListPopupAction<CR>
-map gp                        :action VcsShowPrevChangeMarker<CR>
-map gn                        :action VcsShowNextChangeMarker<CR>
+map [g                        :action VcsShowPrevChangeMarker<CR>
+map ]g                        :action VcsShowNextChangeMarker<CR>
 
 " Files =====================
 " Open Action
