@@ -6,6 +6,10 @@
 [init]
   defaultBranch = main
 
+[branch]
+  remote = origin
+  rebase = true
+
 [core]
   editor = nvim
 
