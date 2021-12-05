@@ -54,6 +54,7 @@ alias as="echo sys-arch: $(arch) ::: node-arch: $(node -p process.arch)"
 
 alias lg="lazygit"
 alias ld="lazydocker"
+alias ln="lazynpm"
 alias nu="npm-upgrade"
 alias nv="nvim"
 
