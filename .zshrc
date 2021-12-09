@@ -50,7 +50,7 @@ alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias ls="ls -a"
 alias clr="clear"
 alias scratch="$EDITOR $HOME/scratchpad.md"
-alias as="echo sys-arch: $(arch) ::: node-arch: $(node -p process.arch)"
+alias archi="echo sys-arch: $(arch) ::: node-arch: $(node -p process.arch)"
 
 alias lg="lazygit"
 alias ld="lazydocker"
