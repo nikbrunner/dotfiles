@@ -64,6 +64,9 @@ alias ln="lazynpm"
 alias nu="npm-upgrade"
 alias nv="nvim"
 
+# this is sadly needed somehow for ssh with kitty
+alias ssh="kitty +kitten ssh"
+
 CONFIG_PATH="$HOME/.config"
 NVIM_PATH="$CONFIG_PATH/nvim"
 KITTY_PATH="$CONFIG_PATH/kitty"
