@@ -31,10 +31,6 @@ export PATH=/usr/bin/python3:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Office BC
-export BCO=10.10.2.110
-# HOme BC (Tablet)
-export BCT=192.168.2.106
 
 ZSH_THEME="robbyrussell"
 # ZSH_THEME="bira"
@@ -75,6 +71,15 @@ alias conf="$EDITOR ~/.config"
 alias nvconf="$EDITOR $NVIM_PATH ."
 alias zshconf="$EDITOR ~/.zshrc"
 alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
+
+# Digital DealerCenter
+# Office BC
+export BCO=10.10.2.110
+alias HBCO="HOST=$BCO"
+
+# Home BC (Tablet)
+export BCT=192.168.2.106
+alias HBCT="HOST=$BCT"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"
