@@ -77,6 +77,10 @@ alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 export BCO=10.10.2.194
 alias HBCO="HOST=$BCO"
 
+# Home BC
+export BCH=192.168.2.115
+alias HBCH="HOST=$BCH"
+
 # Home BC (Tablet)
 export BCT=192.168.2.106
 alias HBCT="HOST=$BCT"
