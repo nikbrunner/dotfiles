@@ -74,7 +74,7 @@ alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 
 # Digital DealerCenter
 # Office BC
-export BCO=10.10.2.81
+export BCO=10.10.2.21
 alias HBCO="HOST=$BCO"
 
 # Home BC
