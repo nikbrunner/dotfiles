@@ -32,9 +32,10 @@ export PATH=/usr/bin/python3:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
 
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="bira"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="bira"
 # ZSH_THEME="spaceship"
+# ZSH_THEME="amuse"
 
 plugins=(git zsh-vi-mode zsh-z)
 
