@@ -3,6 +3,11 @@
 # Please make sure this block is at the start of this file.
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
 #### END FIG ENV VARIABLES ####
+
+
+
+
+
 # ________________________/\\\______________________________________
 
 #  _______________________\/\\\______________________________________
@@ -75,7 +80,7 @@ alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 
 # Digital DealerCenter
 # Office BC
-export BCO=10.10.2.21
+export BCO=192.168.2.140
 alias HBCO="HOST=$BCO"
 
 # Home BC
@@ -153,6 +158,11 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
+
+
+
+
+
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
