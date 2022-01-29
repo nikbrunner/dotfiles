@@ -65,6 +65,7 @@ alias ld="lazydocker"
 alias ln="lazynpm"
 alias nu="npm-upgrade"
 alias nv="nvim"
+alias vin="nvim"
 
 # this is sadly needed somehow for ssh with kitty
 alias ssh="kitty +kitten ssh"
@@ -80,7 +81,7 @@ alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 
 # Digital DealerCenter
 # Office BC
-export BCO=192.168.2.140
+export BCO=192.168.0.169
 alias HBCO="HOST=$BCO"
 
 # Home BC
