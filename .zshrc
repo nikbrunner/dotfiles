@@ -57,7 +57,7 @@ alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias ls="ls -a"
 alias clr="clear"
 alias scratch="$EDITOR $HOME/scratchpad.md"
-alias archi="echo sys-arch: $(arch) ::: node-arch: $(node -p process.arch)"
+# alias archi="echo sys-arch: $(arch) ::: node-arch: $(node -p process.arch)"
 alias clearpacker="rm -rf ~/.local/share/nvim/site && rm -rf ~/.config/nvim/plugin"
 
 alias lg="lazygit"
