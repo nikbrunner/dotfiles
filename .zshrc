@@ -38,10 +38,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
-# ZSH_THEME="spaceship"
+# ZSH_THEME="bira"
+ZSH_THEME="spaceship"
 # ZSH_THEME="amuse"
-
 plugins=(git zsh-vi-mode zsh-z)
 
 source $ZSH/oh-my-zsh.sh
@@ -169,3 +168,7 @@ complete -o nospace -C /usr/local/bin/bit bit
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
