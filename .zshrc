@@ -39,7 +39,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="bira"
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 # ZSH_THEME="amuse"
 plugins=(git zsh-vi-mode zsh-z)
 
@@ -158,11 +158,6 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
-
-
-
-
-
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
