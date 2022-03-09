@@ -32,19 +32,19 @@
   process = git-lfs filter-process
   required = true
 
-[pager] 
+[pager]
   diff = delta
   log = delta
   reflog = delta
   show = delta
 
-[interactive] 
+[interactive]
   diffFilter = delta --color-only --features=interactive
 
 [delta]
   side-by-side=true
   wrap-max-lines=0
-  
+
 [alias]
   graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all -10
   graphfull = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
