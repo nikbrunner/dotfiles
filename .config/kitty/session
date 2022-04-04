@@ -2,6 +2,10 @@ new_tab Term
 cd ~
 launch zsh
 
+new_tab Vim
+cd ~/Documents/dev/repositories/
+launch zsh
+
 new_tab Git
 cd ~/Documents/dev/repositories/
 launch zsh
