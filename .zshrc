@@ -57,6 +57,7 @@ alias lg="lazygit"
 alias ld="lazydocker"
 alias ln="lazynpm"
 alias nu="npm-upgrade"
+alias v="nvim"
 alias nv="nvim"
 alias vin="nvim"
 
