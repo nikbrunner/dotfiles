@@ -1,15 +1,17 @@
 let mapleader =               "\<Space>"
 
 Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'machakann/vim-highlightedyank'
 
 " Basic Settings
 set rnu nu
 set incsearch
 set ideamarks
-set highlightedyank
+" set highlightedyank
 " set surround
 " set easymotion
-set scrolloff=15
+set scrolloff=18
 set ignorecase
 set smartcase
 set notimeout
@@ -19,6 +21,9 @@ set notimeout
 set which-key
 let g:WhichKey_ShowVimActions =                         "true"
 let g:WhichKey_DefaultDelay =                           250
+
+" NERDTree
+set NERDTree
 
 " Unbind Q
 map Q                                                   <nop>
@@ -70,8 +75,14 @@ nmap <C-S-l>                                            :action TabShiftActions.
 " map L                                                 :action TabShiftActions.StretchRight<CR>
 
 " Next / Prev
-map [g                        :action VcsShowPrevChangeMarker<CR>
-map ]g                        :action VcsShowNextChangeMarker<CR>
+map [g                                                  :action VcsShowPrevChangeMarker<CR>
+map ]g                                                  :action VcsShowNextChangeMarker<CR>
+
+map [q                                                  :action PreviousOccurence<CR>
+map ]q                                                  :action NextOccurence<CR>
+
+nmap [e                                                 :action GotoPreviousError<CR>
+nmap ]e                                                 :action GotoNextError<CR>
 
 " View
 let g:WhichKeyDesc_view =                               "<leader>v View"
@@ -101,6 +112,9 @@ nmap <leader>fp                                         :action ManageRecentProj
 let g:WhichKeyDesc_find_project =                       "<leader>fp Project"
 
 nmap <leader>ft                                         :action FindInPath<CR>
+let g:WhichKeyDesc_find_text =                          "<leader>ft Text"
+
+vmap <leader>ft                                         :action FindInPath<CR>
 let g:WhichKeyDesc_find_text =                          "<leader>ft Text"
 
 " Quit
@@ -147,9 +161,11 @@ let g:WhichKeyDesc_git_hunk_reset =                     "<leader>ghr Reset Hunk"
 let g:WhichKeyDesc_lsp =                                "<leader>l LSP"
 
 nmap <leader>la                                         :action Refactorings.QuickListPopupAction<CR>
+vmap <leader>la                                         :action Refactorings.QuickListPopupAction<CR>
 let g:WhichKeyDesc_lsp_action =                         "<leader>la Action"
 
 nmap <leader>lc                                         :action ShowIntentionActions<CR>
+vmap <leader>lc                                         :action ShowIntentionActions<CR>
 let g:WhichKeyDesc_lsp_context =                         "<leader>lc Context"
 
 nmap <leader>lr                                         :action GotoDeclaration<CR>
