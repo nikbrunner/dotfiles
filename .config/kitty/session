@@ -1,15 +1,20 @@
-new_tab Term
+new_tab Home
 cd ~
-launch zsh
-
-new_tab Vim
-cd ~/Documents/dev/repositories/
 launch zsh
 
 new_tab Git
 cd ~/Documents/dev/repositories/
-launch zsh
+launch lazygit
+focus
 
 new_tab Run
+cd ~/Documents/dev/repositories/
+launch zsh
+
+new_tab Storybook
+cd ~/Documents/dev/repositories/
+launch zsh
+
+new_tab Tests
 cd ~/Documents/dev/repositories/
 launch zsh

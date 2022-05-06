@@ -59,9 +59,6 @@ alias v="nvim"
 alias nv="nvim"
 alias vin="nvim"
 
-# this is sadly needed somehow for ssh with kitty
-alias ssh="kitty +kitten ssh"
-
 CONFIG_PATH="$HOME/.config"
 NVIM_PATH="$CONFIG_PATH/nvim"
 KITTY_PATH="$CONFIG_PATH/kitty"
@@ -153,7 +150,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
 
 # begin the empty window at the bottom
-tput cup "$LINES"
+# tput cup "$LINES"
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
