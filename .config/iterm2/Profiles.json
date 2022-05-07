@@ -17,13 +17,16 @@
     "Green Component" : 0.70196078431372544
   },
   "Use Italic Font" : true,
+  "HotKey Characters" : "\u0000",
   "Foreground Color" : {
     "Red Component" : 0.78823529411764703,
     "Color Space" : "sRGB",
     "Blue Component" : 0.85098039215686272,
     "Green Component" : 0.81960784313725488
   },
+  "HotKey Window Floats" : false,
   "Right Option Key Sends" : 0,
+  "Show Status Bar" : true,
   "Character Encoding" : 4,
   "Selection Color" : {
     "Red Component" : 0.086274509803921595,
@@ -53,7 +56,72 @@
   ],
   "Non-ASCII Ligatures" : true,
   "Scrollback Lines" : 1000,
+  "HotKey Window Reopens On Activation" : false,
   "Draw Powerline Glyphs" : true,
+  "Status Bar Layout" : {
+    "components" : [
+      {
+        "class" : "iTermStatusBarCPUUtilizationComponent",
+        "configuration" : {
+          "knobs" : {
+            "base: priority" : 5,
+            "shared text color" : {
+              "Red Component" : 0.90000000000000002,
+              "Color Space" : "sRGB",
+              "Blue Component" : 0.63,
+              "Alpha Component" : 1,
+              "Green Component" : 0.63
+            },
+            "base: compression resistance" : 1
+          },
+          "layout advanced configuration dictionary value" : {
+            "remove empty components" : true,
+            "font" : "JetBrainsMono-Regular 12",
+            "algorithm" : 0,
+            "auto-rainbow style" : 0
+          }
+        }
+      },
+      {
+        "class" : "iTermStatusBarGitComponent",
+        "configuration" : {
+          "knobs" : {
+            "iTermStatusBarGitComponentPollingIntervalKey" : 2,
+            "base: priority" : 5,
+            "base: compression resistance" : 1,
+            "minwidth" : 0,
+            "maxwidth" : 1.7976931348623157e+308
+          },
+          "layout advanced configuration dictionary value" : {
+            "remove empty components" : false,
+            "auto-rainbow style" : 0,
+            "algorithm" : 0
+          }
+        }
+      },
+      {
+        "class" : "iTermStatusBarClockComponent",
+        "configuration" : {
+          "knobs" : {
+            "base: priority" : 5,
+            "format" : "M\/dd h:mm",
+            "base: compression resistance" : 1
+          },
+          "layout advanced configuration dictionary value" : {
+            "remove empty components" : false,
+            "auto-rainbow style" : 0,
+            "algorithm" : 0
+          }
+        }
+      }
+    ],
+    "advanced configuration" : {
+      "remove empty components" : true,
+      "font" : "JetBrainsMono-Regular 12",
+      "algorithm" : 0,
+      "auto-rainbow style" : 0
+    }
+  },
   "Brighten Bold Text" : false,
   "Flashing Bell" : false,
   "Cursor Guide Color" : {
@@ -71,9 +139,6 @@
     "Blue Component" : 0.1333333333333333,
     "Green Component" : 0.59999999999999998
   },
-  "Use Non-ASCII Font" : false,
-  "Use Custom Tab Title" : false,
-  "Shortcut" : "D",
   "Link Color" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
@@ -81,6 +146,9 @@
     "Alpha Component" : 1,
     "Green Component" : 0.35916060209274292
   },
+  "Use Non-ASCII Font" : true,
+  "Shortcut" : "",
+  "Use Custom Tab Title" : false,
   "Bold Color" : {
     "Red Component" : 0.78823529411764703,
     "Color Space" : "sRGB",
@@ -90,6 +158,7 @@
   "Unlimited Scrollback" : false,
   "Custom Command" : "No",
   "AWDS Tab Option" : "No",
+  "HotKey Key Code" : 49,
   "Keyboard Map" : {
     "0xf700-0x260000" : {
       "Action" : 10,
@@ -285,12 +354,15 @@
   },
   "Window Type" : 12,
   "Use Bright Bold" : true,
+  "Has Hotkey" : false,
+  "HotKey Modifier Activation" : 0,
   "Cursor Text Color" : {
     "Red Component" : 0.050980392156862703,
     "Color Space" : "sRGB",
     "Blue Component" : 0.090196078431372506,
     "Green Component" : 0.066666666666666693
   },
+  "HotKey Window Dock Click Action" : 0,
   "Default Bookmark" : "No",
   "Cursor Color" : {
     "Red Component" : 0.45098039215686281,
@@ -307,19 +379,19 @@
   "Name" : "nibru (Dark)",
   "Blinking Cursor" : true,
   "Guid" : "553AF39A-E43A-47BA-8DFF-0491F8A923D8",
-  "Idle Code" : 0,
-  "Ansi 10 Color" : {
-    "Red Component" : 0.33725490196078428,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.39215686274509798,
-    "Green Component" : 0.82745098039215681
-  },
   "Ansi 8 Color" : {
     "Red Component" : 0.43137254901960792,
     "Color Space" : "sRGB",
     "Blue Component" : 0.50588235294117645,
     "Green Component" : 0.46274509803921571
   },
+  "Ansi 10 Color" : {
+    "Red Component" : 0.33725490196078428,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.39215686274509798,
+    "Green Component" : 0.82745098039215681
+  },
+  "Idle Code" : 0,
   "Badge Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -339,7 +411,7 @@
   },
   "AWDS Pane Directory" : "",
   "Blur" : true,
-  "Normal Font" : "JetBrainsMonoNerdFontComplete-Regular 14",
+  "Normal Font" : "JetBrainsMonoNerdFontComplete-Regular 12",
   "Vertical Spacing" : 1.25,
   "Ansi 7 Color" : {
     "Red Component" : 0.69411764705882351,
@@ -347,21 +419,24 @@
     "Blue Component" : 0.7686274509803922,
     "Green Component" : 0.72941176470588232
   },
-  "Space" : -1,
+  "Space" : 0,
   "AWDS Tab Directory" : "",
   "AWDS Pane Option" : "Recycle",
+  "HotKey Window AutoHides" : true,
   "Command" : "",
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
   "Option Key Sends" : 0,
   "Only The Default BG Color Uses Transparency" : false,
   "Minimum Contrast" : 0,
+  "HotKey Modifier Flags" : 1966080,
   "Ansi 15 Color" : {
     "Red Component" : 0.94117647058823528,
     "Color Space" : "sRGB",
     "Blue Component" : 0.9882352941176471,
     "Green Component" : 0.96470588235294119
   },
+  "HotKey Window Animates" : false,
   "Ansi 6 Color" : {
     "Red Component" : 0.22352941176470589,
     "Color Space" : "sRGB",
@@ -376,9 +451,11 @@
     "Blue Component" : 0.090196078431372506,
     "Green Component" : 0.066666666666666693
   },
+  "HotKey Activated By Modifier" : false,
   "Screen" : -1,
   "AWDS Window Option" : "No",
-  "Non Ascii Font" : "JetBrainsMonoNerdFontComplete-Regular 16",
+  "HotKey Characters Ignoring Modifiers" : " ",
+  "Non Ascii Font" : "JetBrainsMonoNerdFontComplete-Regular 12",
   "Ansi 13 Color" : {
     "Red Component" : 0.82352941176470584,
     "Color Space" : "sRGB",
@@ -387,6 +464,9 @@
   },
   "Columns" : 80,
   "Use Tab Color" : false,
+  "HotKey Alternate Shortcuts" : [
+
+  ],
   "Visual Bell" : true,
   "Custom Directory" : "Advanced",
   "Ansi 5 Color" : {
@@ -797,7 +877,7 @@
   "ASCII Ligatures" : true
 },
 {
-  "ASCII Ligatures" : true,
+  "Thin Strokes" : 4,
   "Working Directory" : "\/Users\/nibru",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -823,6 +903,7 @@
   },
   "HotKey Window Floats" : false,
   "Right Option Key Sends" : 0,
+  "Show Status Bar" : false,
   "Character Encoding" : 4,
   "Selection Color" : {
     "Red Component" : 0.086274509803921595,
@@ -854,6 +935,17 @@
   "Scrollback Lines" : 1000,
   "HotKey Window Reopens On Activation" : false,
   "Draw Powerline Glyphs" : true,
+  "Status Bar Layout" : {
+    "components" : [
+
+    ],
+    "advanced configuration" : {
+      "remove empty components" : false,
+      "font" : ".AppleSystemUIFont 12",
+      "algorithm" : 0,
+      "auto-rainbow style" : 0
+    }
+  },
   "Brighten Bold Text" : true,
   "Flashing Bell" : false,
   "Cursor Guide Color" : {
@@ -866,15 +958,6 @@
   "BM Growl" : true,
   "AWDS Window Directory" : "",
   "Icon" : 0,
-  "Ansi 3 Color" : {
-    "Red Component" : 0.82352941176470584,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.1333333333333333,
-    "Green Component" : 0.59999999999999998
-  },
-  "Use Non-ASCII Font" : false,
-  "Shortcut" : "",
-  "Use Custom Tab Title" : false,
   "Link Color" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
@@ -882,6 +965,15 @@
     "Alpha Component" : 1,
     "Green Component" : 0.35916060209274292
   },
+  "Use Non-ASCII Font" : false,
+  "Shortcut" : "",
+  "Ansi 3 Color" : {
+    "Red Component" : 0.82352941176470584,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.1333333333333333,
+    "Green Component" : 0.59999999999999998
+  },
+  "Use Custom Tab Title" : false,
   "Bold Color" : {
     "Red Component" : 0.78823529411764703,
     "Color Space" : "sRGB",
@@ -1094,7 +1186,7 @@
   },
   "Window Type" : 12,
   "Use Bright Bold" : true,
-  "Has Hotkey" : true,
+  "Has Hotkey" : false,
   "HotKey Modifier Activation" : 0,
   "Cursor Text Color" : {
     "Red Component" : 0.050980392156862703,
@@ -1117,8 +1209,8 @@
     "Green Component" : 0.4823529411764706
   },
   "Name" : "Git",
-  "Blinking Cursor" : true,
   "Guid" : "F020677E-C2EE-4E0A-8528-4946BE5103A1",
+  "Blinking Cursor" : true,
   "Ansi 8 Color" : {
     "Red Component" : 0.43137254901960792,
     "Color Space" : "sRGB",
@@ -1159,7 +1251,7 @@
     "Blue Component" : 0.7686274509803922,
     "Green Component" : 0.72941176470588232
   },
-  "Space" : -1,
+  "Space" : 0,
   "AWDS Tab Directory" : "",
   "AWDS Pane Option" : "Recycle",
   "HotKey Window AutoHides" : true,
@@ -1176,7 +1268,7 @@
     "Blue Component" : 0.9882352941176471,
     "Green Component" : 0.96470588235294119
   },
-  "HotKey Window Animates" : true,
+  "HotKey Window Animates" : false,
   "Blink Allowed" : true,
   "Ansi 6 Color" : {
     "Red Component" : 0.22352941176470589,
@@ -1193,6 +1285,7 @@
     "Green Component" : 0.066666666666666693
   },
   "HotKey Activated By Modifier" : false,
+  "Open Toolbelt" : false,
   "Screen" : -1,
   "AWDS Window Option" : "No",
   "Initial Use Transparency" : true,
@@ -1210,14 +1303,14 @@
 
   ],
   "Visual Bell" : true,
-  "Custom Directory" : "No",
-  "Thin Strokes" : 4,
+  "ASCII Ligatures" : true,
   "Ansi 5 Color" : {
     "Red Component" : 0.73725490196078436,
     "Color Space" : "sRGB",
     "Blue Component" : 1,
     "Green Component" : 0.5490196078431373
-  }
+  },
+  "Custom Directory" : "No"
 }
 ]
 }
