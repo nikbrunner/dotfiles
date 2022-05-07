@@ -25,17 +25,24 @@ export PATH=$HOME/.scripts/git:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
 
-export PATH=/opt/homebrew/bin:$PATH
+# HomeBrew
+local brew_path="/opt/homebrew/bin"
+local brew_opt_path="/opt/homebrew/opt"
+export PATH="${brew_path}:${PATH}"
+[ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh" 
+
+# Node / NVM
+local nvm_path="$HOME/.nvm"
+export NVM_DIR="${nvm_path}"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 # ZSH_THEME="bira"
-# ZSH_THEME="spaceship"
+ZSH_THEME="spaceship"
 # ZSH_THEME="amuse"
-# plugins=(git zsh-vi-mode zsh-z)
-plugins=(git)
+plugins=(git zsh-vi-mode zsh-z)
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
@@ -52,8 +59,6 @@ alias scratch="$EDITOR $HOME/scratchpad.md"
 alias clearpacker="rm -rf ~/.local/share/nvim/site && rm -rf ~/.config/nvim/plugin"
 
 alias lg="lazygit"
-alias ld="lazydocker"
-alias ln="lazynpm"
 alias nu="npm-upgrade"
 alias v="nvim"
 alias nv="nvim"
@@ -112,9 +117,6 @@ alias bcc="cd $DCD_REPOSITORIES_PATH/bc-desktop-client && clear"
 alias bct="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
 alias bcs="cd $DCD_REPOSITORIES_PATH/bc-business-scripts"
 
-# Node ===================================================================
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # fzf ====================================================================
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
