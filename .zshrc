@@ -15,7 +15,7 @@
 # System: MacOS
 # Website: https://nibru.dev
 # E-Mail: nikolaus.brunner@protonmail.ch
-# Repository: https://github.com/nikbrunner/dotfiles-apple
+# Repository: https://github.com/nikbrunner/dotfiles
 
 # Path Exports ===========================================================
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -25,17 +25,17 @@ export PATH=$HOME/.scripts/git:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
 
+export PATH=/opt/homebrew/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="bira"
 # ZSH_THEME="spaceship"
 # ZSH_THEME="amuse"
-plugins=(git zsh-vi-mode zsh-z)
-
-source $ZSH/oh-my-zsh.sh
+# plugins=(git zsh-vi-mode zsh-z)
+plugins=(git)
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
@@ -153,8 +153,10 @@ complete -o nospace -C /usr/local/bin/bit bit
 # tput cup "$LINES"
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+# autoload -U promptinit; promptinit
+# prompt spaceship
 
 # Fig post block. Keep at the bottom of this file.
 . "$HOME/.fig/shell/zshrc.post.zsh"
+
+source $ZSH/oh-my-zsh.sh
