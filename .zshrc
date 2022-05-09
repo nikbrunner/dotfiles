@@ -158,7 +158,7 @@ complete -o nospace -C /usr/local/bin/bit bit
 # autoload -U promptinit; promptinit
 # prompt spaceship
 
+source $ZSH/oh-my-zsh.sh
+
 # Fig post block. Keep at the bottom of this file.
 . "$HOME/.fig/shell/zshrc.post.zsh"
-
-source $ZSH/oh-my-zsh.sh
