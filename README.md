@@ -27,21 +27,9 @@ df pull origin master
 push.sh --dots
 ```
 
-### Oh my zsh
-#### Oh my zsh
-```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
+## Homebrew
 
-#### `zsh-vi-mode`
-```sh
-git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH/custom/plugins/zsh-vi-mode
-```
-
-#### `zsh-z`
-```sh
-git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
-```
+Run `brew bundle` from the location folder of the `Brewfile` to install apps
 
 ## NeoVim
 
@@ -49,17 +37,3 @@ For my [NeoVim](https://github.com/nikbrunner/nibru.nvim) setup I have a dedicat
 
 > Also remember to install `ripgrep` and `fzf`
 
-## Todo
-- [x] Move LazyGit Config into `.config` 
-
-### Scripts
-- [ ] [Better Automation for Dots](https://stackoverflow.com/questions/3258243/check-if-pull-needed-in-git)
-
-### README
-- [x] Update Setup
-- [x] Clean Up
-- [ ] Write out shortcut philosopy
-
-### ZSH
-- [ ] Path auto-completion
-- [ ] Clean up `.zshrc`
