@@ -34,6 +34,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>548D08B3-EBB2-47CF-8C63-0D69CEB431AC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BEFD85BB-B6EA-436B-A7F7-F2BDC05684CB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>793130B4-17D2-4941-A949-BB429A1BD346</key>
 		<array>
 			<dict>
@@ -148,6 +161,54 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Insomnia.app</string>
+				</array>
+				<key>toggle</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>AE1B4409-46D5-47E0-9543-05262513734B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>6</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>Z</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>0DD444BC-50D2-4F5A-A9B9-0EA3E4878EFE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -190,6 +251,54 @@
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
 			<string>4C6C4F8A-F4CF-404A-9ADF-BCCFCA39DA3F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>11</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>B</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>548D08B3-EBB2-47CF-8C63-0D69CEB431AC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>~/Documents/dev/repos/dcd/bc-desktop-client/node_modules/electron/dist/Electron.app</string>
+				</array>
+				<key>toggle</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>BEFD85BB-B6EA-436B-A7F7-F2BDC05684CB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -294,54 +403,6 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/Insomnia.app</string>
-				</array>
-				<key>toggle</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>AE1B4409-46D5-47E0-9543-05262513734B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>6</integer>
-				<key>hotmod</key>
-				<integer>1966080</integer>
-				<key>hotstring</key>
-				<string>Z</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>2</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>0DD444BC-50D2-4F5A-A9B9-0EA3E4878EFE</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
 					<string>/Applications/1Password.app</string>
 				</array>
 				<key>toggle</key>
@@ -408,7 +469,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>xpos</key>
 			<integer>510</integer>
 			<key>ypos</key>
-			<integer>635</integer>
+			<integer>55</integer>
 		</dict>
 		<key>25801B59-6058-459F-9C0F-E56B0B267327</key>
 		<dict>
@@ -440,6 +501,15 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>500</integer>
 		</dict>
+		<key>548D08B3-EBB2-47CF-8C63-0D69CEB431AC</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>215</integer>
+		</dict>
 		<key>793130B4-17D2-4941-A949-BB429A1BD346</key>
 		<dict>
 			<key>colorindex</key>
@@ -463,7 +533,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>xpos</key>
 			<integer>785</integer>
 			<key>ypos</key>
-			<integer>635</integer>
+			<integer>55</integer>
 		</dict>
 		<key>B5178872-6BB1-44B3-A579-FFAAE117BE2C</key>
 		<dict>
@@ -482,6 +552,13 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>500</integer>
+		</dict>
+		<key>BEFD85BB-B6EA-436B-A7F7-F2BDC05684CB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>775</integer>
+			<key>ypos</key>
+			<integer>215</integer>
 		</dict>
 		<key>FE597553-AFB7-4DD7-AB0A-4F3B3EDC1123</key>
 		<dict>
