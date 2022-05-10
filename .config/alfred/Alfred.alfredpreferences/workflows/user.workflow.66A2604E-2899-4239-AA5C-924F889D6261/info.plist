@@ -34,19 +34,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>4CE65D8E-C5AD-480E-B3CD-0739A4AAB52F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FA0DD5EE-946F-48C8-B1DC-9C1B5A50EDF0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>548D08B3-EBB2-47CF-8C63-0D69CEB431AC</key>
 		<array>
 			<dict>
@@ -78,6 +65,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>FE597553-AFB7-4DD7-AB0A-4F3B3EDC1123</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A7D41ECB-3B0F-4000-847C-F5DA598D7B2B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD97B610-AD1A-499F-9857-5685611B992D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -125,6 +125,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E25268F4-2096-444A-A10E-83C5234F3541</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D757C50A-0BF8-4CF6-BC10-CF91A5A79A41</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Vero Pepperrell</string>
@@ -136,23 +149,6 @@
 	<string>App Launcher</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/iTerm.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>FE597553-AFB7-4DD7-AB0A-4F3B3EDC1123</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -183,6 +179,23 @@
 			<string>7F06D968-A68C-481E-83C0-7B45F509D2D1</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/iTerm.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>FE597553-AFB7-4DD7-AB0A-4F3B3EDC1123</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -235,6 +248,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Firefox.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>4C6C4F8A-F4CF-404A-9ADF-BCCFCA39DA3F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -268,7 +298,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/Firefox.app</string>
+					<string>~/Documents/dev/repos/dcd/bc-desktop-client/node_modules/electron/dist/Electron.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -276,7 +306,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>4C6C4F8A-F4CF-404A-9ADF-BCCFCA39DA3F</string>
+			<string>BEFD85BB-B6EA-436B-A7F7-F2BDC05684CB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -310,23 +340,6 @@
 			<string>548D08B3-EBB2-47CF-8C63-0D69CEB431AC</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>~/Documents/dev/repos/dcd/bc-desktop-client/node_modules/electron/dist/Electron.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>BEFD85BB-B6EA-436B-A7F7-F2BDC05684CB</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -379,6 +392,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Spotify.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>FBB473F7-3461-4456-AFA6-6249A2A06B49</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -412,7 +442,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/Spotify.app</string>
+					<string>/Applications/Visual Studio Code.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -420,7 +450,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>FBB473F7-3461-4456-AFA6-6249A2A06B49</string>
+			<string>51942787-2E9B-485A-8572-56E4EBE6A914</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -468,7 +498,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>FA0DD5EE-946F-48C8-B1DC-9C1B5A50EDF0</string>
+			<string>D757C50A-0BF8-4CF6-BC10-CF91A5A79A41</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -499,7 +529,7 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>4CE65D8E-C5AD-480E-B3CD-0739A4AAB52F</string>
+			<string>E25268F4-2096-444A-A10E-83C5234F3541</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -508,7 +538,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/Visual Studio Code.app</string>
+					<string>/Applications/1Password.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -516,7 +546,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>51942787-2E9B-485A-8572-56E4EBE6A914</string>
+			<string>4693A877-EADF-4613-99E8-C9D4DEEDF60A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -556,7 +586,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/1Password.app</string>
+					<string>/Applications/Slack.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -564,9 +594,40 @@
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>4693A877-EADF-4613-99E8-C9D4DEEDF60A</string>
+			<string>BD97B610-AD1A-499F-9857-5685611B992D</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>15</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>R</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>A7D41ECB-3B0F-4000-847C-F5DA598D7B2B</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -616,15 +677,6 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>205</integer>
 		</dict>
-		<key>4CE65D8E-C5AD-480E-B3CD-0739A4AAB52F</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>505</integer>
-			<key>ypos</key>
-			<integer>500</integer>
-		</dict>
 		<key>51942787-2E9B-485A-8572-56E4EBE6A914</key>
 		<dict>
 			<key>xpos</key>
@@ -659,6 +711,15 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
+		<key>A7D41ECB-3B0F-4000-847C-F5DA598D7B2B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>495</integer>
+			<key>ypos</key>
+			<integer>655</integer>
+		</dict>
 		<key>AE1B4409-46D5-47E0-9543-05262513734B</key>
 		<dict>
 			<key>xpos</key>
@@ -674,6 +735,13 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>205</integer>
+		</dict>
+		<key>BD97B610-AD1A-499F-9857-5685611B992D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>770</integer>
+			<key>ypos</key>
+			<integer>655</integer>
 		</dict>
 		<key>BE051128-2086-4459-AE29-42D671D6DC05</key>
 		<dict>
@@ -700,12 +768,21 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>370</integer>
 		</dict>
-		<key>FA0DD5EE-946F-48C8-B1DC-9C1B5A50EDF0</key>
+		<key>D757C50A-0BF8-4CF6-BC10-CF91A5A79A41</key>
 		<dict>
 			<key>xpos</key>
-			<integer>780</integer>
+			<integer>775</integer>
 			<key>ypos</key>
+			<integer>515</integer>
+		</dict>
+		<key>E25268F4-2096-444A-A10E-83C5234F3541</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
 			<integer>500</integer>
+			<key>ypos</key>
+			<integer>515</integer>
 		</dict>
 		<key>FBB473F7-3461-4456-AFA6-6249A2A06B49</key>
 		<dict>

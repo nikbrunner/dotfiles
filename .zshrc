@@ -63,6 +63,7 @@ alias nu="npm-upgrade"
 alias v="nvim"
 alias nv="nvim"
 alias vin="nvim"
+alias vim="nvim"
 
 CONFIG_PATH="$HOME/.config"
 NVIM_PATH="$CONFIG_PATH/nvim"
