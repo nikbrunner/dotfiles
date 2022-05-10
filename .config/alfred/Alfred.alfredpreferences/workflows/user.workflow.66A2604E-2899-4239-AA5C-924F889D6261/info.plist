@@ -144,7 +144,7 @@
 					<string>/Applications/iTerm.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
@@ -192,7 +192,7 @@
 					<string>/Applications/Insomnia.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
@@ -271,7 +271,7 @@
 					<string>/Applications/Firefox.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
@@ -319,7 +319,7 @@
 					<string>~/Documents/dev/repos/dcd/bc-desktop-client/node_modules/electron/dist/Electron.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
@@ -336,7 +336,7 @@
 					<string>/Applications/Obsidian.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
@@ -415,7 +415,7 @@
 					<string>/Applications/Spotify.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
@@ -427,19 +427,33 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Visual Studio Code.app</string>
-				</array>
-				<key>toggle</key>
-				<true/>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>14</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>E</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>51942787-2E9B-485A-8572-56E4EBE6A914</string>
+			<string>BE051128-2086-4459-AE29-42D671D6DC05</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -449,7 +463,7 @@
 					<string>/Applications/Google Chrome.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
@@ -492,33 +506,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Visual Studio Code.app</string>
+				</array>
+				<key>toggle</key>
 				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>14</integer>
-				<key>hotmod</key>
-				<integer>1966080</integer>
-				<key>hotstring</key>
-				<string>E</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>2</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>BE051128-2086-4459-AE29-42D671D6DC05</string>
+			<string>51942787-2E9B-485A-8572-56E4EBE6A914</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -559,7 +559,7 @@
 					<string>/Applications/1Password.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
