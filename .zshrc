@@ -73,7 +73,7 @@ alias conf="$EDITOR ~/.config"
 alias nvconf="$EDITOR $NVIM_PATH ."
 alias zshconf="$EDITOR ~/.zshrc"
 alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
-alias lgconf="$EDITOR ~/Library/Application Support/lazygit/config.yml"
+alias lgconf="$EDITOR ~/Library/Application\ Support/lazygit/config.yml"
 
 # Digital DealerCenter
 # Office BC
