@@ -28,12 +28,12 @@ gui:
   showFileTree: false # for rendering changes files in a tree format
 git:
   commitPrefixes:
-    # bc-desktop-client: # This is repository folder name
-    #   pattern: "^\\w+\\/(\\w+-\\w+).*"
-    #   replace: "${${1}^^}"
-    # bc-homepage: # This is repository folder name
-    #   pattern: "^\\w+\\/(\\w+-\\w+).*"
-    #   replace: "$1"
+    bc-desktop-client: # This is repository folder name
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: "${1}"
+    bc-homepage: # This is repository folder name
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: "$1"
   paging:
     useConfig: false
     colorArg: always
