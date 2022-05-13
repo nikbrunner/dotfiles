@@ -8,19 +8,6 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>0B01E63C-9BA8-448C-93D7-96CA879E5F26</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FB01D429-1DE7-4BFF-9557-CE5033EF5F7A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>0DD444BC-50D2-4F5A-A9B9-0EA3E4878EFE</key>
 		<array>
 			<dict>
@@ -703,54 +690,6 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Microsoft Teams.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>FB01D429-1DE7-4BFF-9557-CE5033EF5F7A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>17</integer>
-				<key>hotmod</key>
-				<integer>1966080</integer>
-				<key>hotstring</key>
-				<string>T</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>2</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>0B01E63C-9BA8-448C-93D7-96CA879E5F26</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Use hotkeys to launch actions by pressing a key combination. You can connect one or more actions to be performed.
@@ -766,15 +705,6 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>790</integer>
 			<key>ypos</key>
 			<integer>285</integer>
-		</dict>
-		<key>0B01E63C-9BA8-448C-93D7-96CA879E5F26</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>50</integer>
-			<key>ypos</key>
-			<integer>1100</integer>
 		</dict>
 		<key>0DD444BC-50D2-4F5A-A9B9-0EA3E4878EFE</key>
 		<dict>
@@ -930,13 +860,6 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>415</integer>
-		</dict>
-		<key>FB01D429-1DE7-4BFF-9557-CE5033EF5F7A</key>
-		<dict>
-			<key>xpos</key>
-			<integer>320</integer>
-			<key>ypos</key>
-			<integer>1100</integer>
 		</dict>
 		<key>FBB473F7-3461-4456-AFA6-6249A2A06B49</key>
 		<dict>
