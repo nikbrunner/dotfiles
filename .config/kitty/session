@@ -1,11 +1,11 @@
 new_tab Home
 cd ~
 launch zsh
+focus
 
 new_tab Git
 cd ~/Documents/dev/repositories/
-launch lazygit
-focus
+launch zsh
 
 new_tab Run
 cd ~/Documents/dev/repositories/
