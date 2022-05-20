@@ -75,6 +75,9 @@ alias zshconf="$EDITOR ~/.zshrc"
 alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 alias lgconf="$EDITOR ~/Library/Application\ Support/lazygit/config.yml"
 
+# myip
+myip=$(ipconfig getifaddr en0)
+
 # Digital DealerCenter
 # Office BC
 export BCO=10.2.0.153
@@ -87,6 +90,8 @@ alias HBCH="HOST=$BCH"
 # Home BC (Tablet)
 export BCT=192.168.2.106
 alias HBCT="HOST=$BCT"
+
+export BAT_THEME="Nord"
 
 # Path Declaration =======================================================
 DOCUMENTS_PATH="$HOME/Documents"

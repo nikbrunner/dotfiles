@@ -125,19 +125,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>C01095A0-00F9-4CBF-96D1-5CCD74FA1217</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>EBD1EBA4-16AD-49E0-B933-12E501C3CEFB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>D4247D18-545F-4D7C-9BA4-A1AD10A7CD53</key>
 		<array>
 			<dict>
@@ -466,23 +453,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/kitty.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>EBD1EBA4-16AD-49E0-B933-12E501C3CEFB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -516,7 +486,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/iTerm.app</string>
+					<string>/Applications/kitty.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -544,37 +514,6 @@
 			<string>AE1B4409-46D5-47E0-9543-05262513734B</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>9</integer>
-				<key>hotmod</key>
-				<integer>1966080</integer>
-				<key>hotstring</key>
-				<string>V</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>2</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>C01095A0-00F9-4CBF-96D1-5CCD74FA1217</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -897,15 +836,6 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>765</integer>
 		</dict>
-		<key>C01095A0-00F9-4CBF-96D1-5CCD74FA1217</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>4</integer>
-			<key>xpos</key>
-			<integer>990</integer>
-			<key>ypos</key>
-			<integer>640</integer>
-		</dict>
 		<key>D4247D18-545F-4D7C-9BA4-A1AD10A7CD53</key>
 		<dict>
 			<key>colorindex</key>
@@ -930,15 +860,6 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>415</integer>
-		</dict>
-		<key>EBD1EBA4-16AD-49E0-B933-12E501C3CEFB</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>4</integer>
-			<key>xpos</key>
-			<integer>1260</integer>
-			<key>ypos</key>
-			<integer>640</integer>
 		</dict>
 		<key>FBB473F7-3461-4456-AFA6-6249A2A06B49</key>
 		<dict>
