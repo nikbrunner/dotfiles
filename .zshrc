@@ -75,6 +75,8 @@ alias zshconf="$EDITOR ~/.zshrc"
 alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 alias lgconf="$EDITOR ~/Library/Application\ Support/lazygit/config.yml"
 
+alias update-snapshots="gh workflow run pull-request-update-snapshots.yml --ref" 
+
 # myip
 myip=$(ipconfig getifaddr en0)
 
