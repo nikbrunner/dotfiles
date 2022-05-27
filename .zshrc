@@ -33,15 +33,18 @@ export PATH=$HOME/.scripts/git:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
 
-# HomeBrew
-local brew_path="/opt/homebrew/bin"
-local brew_opt_path="/opt/homebrew/opt"
-export PATH="${brew_path}:${PATH}"
-[ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh" 
+# HomeBrew && NVM
+export NVM_DIR="$HOME/.nvm"
 
-# Node / NVM
-local nvm_path="$HOME/.nvm"
-export NVM_DIR="${nvm_path}"
+if [[ $unamestr == "Darwin" ]]; then
+  local brew_path="/opt/homebrew/bin"
+  local brew_opt_path="/opt/homebrew/opt"
+  export PATH="${brew_path}:${PATH}"
+  [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh" 
+elif [[ $unamestr == "Linux" ]]; then
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
