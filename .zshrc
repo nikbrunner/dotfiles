@@ -3,6 +3,9 @@ unamestr=$(uname)
 if [[ $unamestr == "Darwin" ]]; then
     # Fig pre block. Keep at the top of this file.
     . "$HOME/.fig/shell/zshrc.pre.zsh"
+
+    # myip
+    myip=$(ipconfig getifaddr en0)
 fi
 
 # ________________________/\\\______________________________________
@@ -80,15 +83,7 @@ alias zshconf="$EDITOR ~/.zshrc"
 alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 alias lgconf="$EDITOR ~/Library/Application\ Support/lazygit/config.yml"
 
-# get_current_branch () {
-#   return $(git rev-parse --abbrev-ref HEAD)
-# }
-#
-
 alias update-snapshots="gh workflow run pull-request-update-snapshots.yml --ref"
-
-# myip
-myip=$(ipconfig getifaddr en0)
 
 # Digital DealerCenter
 # Office BC
