@@ -1,5 +1,10 @@
-# Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+unamestr=$(uname)
+
+if [[ $unamestr == "Darwin" ]]; then
+    # Fig pre block. Keep at the top of this file.
+    . "$HOME/.fig/shell/zshrc.pre.zsh"
+fi
+
 # ________________________/\\\______________________________________
 
 #  _______________________\/\\\______________________________________
@@ -75,7 +80,12 @@ alias zshconf="$EDITOR ~/.zshrc"
 alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 alias lgconf="$EDITOR ~/Library/Application\ Support/lazygit/config.yml"
 
-alias update-snapshots="gh workflow run pull-request-update-snapshots.yml --ref" 
+# get_current_branch () {
+#   return $(git rev-parse --abbrev-ref HEAD)
+# }
+#
+
+alias update-snapshots="gh workflow run pull-request-update-snapshots.yml --ref"
 
 # myip
 myip=$(ipconfig getifaddr en0)
@@ -169,5 +179,7 @@ complete -o nospace -C /usr/local/bin/bit bit
 
 source $ZSH/oh-my-zsh.sh
 
-# Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+if [[ $unamestr == "Darwin" ]]; then
+  # Fig post block. Keep at the bottom of this file.
+  . "$HOME/.fig/shell/zshrc.post.zsh"
+fi
