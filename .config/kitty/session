@@ -4,17 +4,17 @@ launch zsh
 focus
 
 new_tab Git
-cd ~/Documents/dev/repos/
+cd ~
 launch zsh
 
 new_tab Run
-cd ~/Documents/dev/repos/
+cd ~
 launch zsh
 
 new_tab Storybook
-cd ~/Documents/dev/repos/
+cd ~
 launch zsh
 
 new_tab Tests
-cd ~/Documents/dev/repos/
+cd ~
 launch zsh
