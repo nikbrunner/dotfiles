@@ -1,29 +1,5 @@
-unamestr=$(uname)
-
-if [[ $unamestr == "Darwin" ]]; then
-    # Fig pre block. Keep at the top of this file.
-    . "$HOME/.fig/shell/zshrc.pre.zsh"
-
-    # myip
-    myip=$(ipconfig getifaddr en0)
-fi
-
-# ________________________/\\\______________________________________
-
-#  _______________________\/\\\______________________________________
-#   _________________/\\\__\/\\\______________________________________
-#    __/\\/\\\\\\____\///___\/\\\__________/\\/\\\\\\\____/\\\____/\\\_
-#     _\/\\\////\\\____/\\\__\/\\\\\\\\\___\/\\\/////\\\__\/\\\___\/\\\_
-#      _\/\\\__\//\\\__\/\\\__\/\\\////\\\__\/\\\___\///___\/\\\___\/\\\_
-#       _\/\\\___\/\\\__\/\\\__\/\\\__\/\\\__\/\\\__________\/\\\___\/\\\_
-#        _\/\\\___\/\\\__\/\\\__\/\\\\\\\\\___\/\\\__________\//\\\\\\\\\__
-#         _\///____\///___\///___\/////////____\///____________\/////////___
-#
-# These are my dotfiles
-# System: MacOS
-# Website: https://nibru.dev
-# E-Mail: nikolaus.brunner@protonmail.ch
-# Repository: https://github.com/nikbrunner/dotfiles
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 
 # Path Exports ===========================================================
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -34,17 +10,13 @@ export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
 
 # HomeBrew && NVM
-export NVM_DIR="$HOME/.nvm"
+local brew_path="/opt/homebrew/bin"
+local brew_opt_path="/opt/homebrew/opt"
 
-if [[ $unamestr == "Darwin" ]]; then
-  local brew_path="/opt/homebrew/bin"
-  local brew_opt_path="/opt/homebrew/opt"
-  export PATH="${brew_path}:${PATH}"
-  [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh" 
-elif [[ $unamestr == "Linux" ]]; then
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
+export NVM_DIR="$HOME/.nvm"
+export PATH="${brew_path}:${PATH}"
+
+[ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh" 
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -87,6 +59,9 @@ alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
 alias lgconf="$EDITOR ~/Library/Application\ Support/lazygit/config.yml"
 
 alias update-snapshots="gh workflow run pull-request-update-snapshots.yml --ref"
+
+# myip
+myip=$(ipconfig getifaddr en0)
 
 # Digital DealerCenter
 # Office BC
@@ -177,7 +152,5 @@ complete -o nospace -C /usr/local/bin/bit bit
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ $unamestr == "Darwin" ]]; then
-  # Fig post block. Keep at the bottom of this file.
-  . "$HOME/.fig/shell/zshrc.post.zsh"
-fi
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
