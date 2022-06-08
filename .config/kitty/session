@@ -9,6 +9,7 @@ launch zsh
 
 new_tab Run
 cd ~
+layout tall
 launch zsh
 
 new_tab Storybook
