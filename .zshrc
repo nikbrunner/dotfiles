@@ -65,16 +65,13 @@ myip=$(ipconfig getifaddr en0)
 
 # Digital DealerCenter
 # Office BC
-export BCO=10.2.0.153
-alias HBCO="HOST=$BCO"
+export BCO_IP=10.2.0.153
+alias HBCO="HOST=$BCO_IP"
 
 # Home BC
-export BCH=192.168.2.115
-alias HBCH="HOST=$BCH"
-
-# Home BC (Tablet)
-export BCT=192.168.2.106
-alias HBCT="HOST=$BCT"
+export BCH_IP=192.168.2.115
+export BCH_ST=CG7L9R2
+alias HBCH="HOST=$BCH_IP"
 
 export BAT_THEME="Nord"
 
