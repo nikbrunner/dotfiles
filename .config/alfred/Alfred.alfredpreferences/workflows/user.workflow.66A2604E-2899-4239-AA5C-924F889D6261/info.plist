@@ -21,6 +21,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>211C308F-64FF-4908-B7A7-7E3555F0813F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9F1A827-F3A6-4061-AFF7-72B93F396FD1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>25801B59-6058-459F-9C0F-E56B0B267327</key>
 		<array>
 			<dict>
@@ -486,6 +499,23 @@
 			<dict>
 				<key>paths</key>
 				<array>
+					<string>/Applications/Docker.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>B9F1A827-F3A6-4061-AFF7-72B93F396FD1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
 					<string>/Applications/kitty.app</string>
 				</array>
 				<key>toggle</key>
@@ -543,6 +573,37 @@
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>0DD444BC-50D2-4F5A-A9B9-0EA3E4878EFE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>8</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>C</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>211C308F-64FF-4908-B7A7-7E3555F0813F</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -715,6 +776,15 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>640</integer>
 		</dict>
+		<key>211C308F-64FF-4908-B7A7-7E3555F0813F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>990</integer>
+			<key>ypos</key>
+			<integer>640</integer>
+		</dict>
 		<key>25801B59-6058-459F-9C0F-E56B0B267327</key>
 		<dict>
 			<key>colorindex</key>
@@ -812,6 +882,13 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>285</integer>
+		</dict>
+		<key>B9F1A827-F3A6-4061-AFF7-72B93F396FD1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1265</integer>
+			<key>ypos</key>
+			<integer>640</integer>
 		</dict>
 		<key>BD97B610-AD1A-499F-9857-5685611B992D</key>
 		<dict>
