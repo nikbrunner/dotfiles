@@ -47,6 +47,7 @@ alias v="nvim"
 alias nv="nvim"
 alias vin="nvim"
 alias vim="nvim"
+alias cd="z"
 
 CONFIG_PATH="$HOME/.config"
 NVIM_PATH="$CONFIG_PATH/nvim"
