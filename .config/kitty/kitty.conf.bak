@@ -19,7 +19,7 @@ macos_custom_beam_cursor yes
 macos_colorspace srgb
 
 # Fonts
-font_size 18
+font_size 16
 adjust_line_height  125%
 
 ## JetBrainsMono
@@ -117,7 +117,7 @@ map cmd+j neighboring_window down
 
 # Shapes
 cursor_shape block
-ab_bar_edge bottom
+tab_bar_edge top
 tab_bar_style powerline
 tab_powerline_style slanted
 active_tab_font_style normal
