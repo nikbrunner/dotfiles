@@ -130,7 +130,7 @@ allow_remote_control socket-only
 listen_on unix:/tmp/kitty
 
 # Decoration
-window_padding_width 0 25 0
+window_padding_width 10 25 10
 hide_window_decorations titlebar-only
 
 # background_image ~/Pictures/wallpapers/nord/nord_mojave_blurred.png
@@ -151,6 +151,6 @@ watcher ${HOME}/.fig/tools/kitty-integration.py
 # End of Fig Kitty Integration
 
 # BEGIN_KITTY_THEME
-# Terra Spring
+# Terra Spring Night
 include current-theme.conf
 # END_KITTY_THEME
