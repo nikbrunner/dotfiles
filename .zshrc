@@ -48,6 +48,8 @@ alias nv="nvim"
 alias vin="nvim"
 alias vim="nvim"
 alias j="z"
+alias theme="kitty +kitten themes --reload-in=all "
+alias themes="kitty +kitten themes"
 
 CONFIG_PATH="$HOME/.config"
 NVIM_PATH="$CONFIG_PATH/nvim"
