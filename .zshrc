@@ -1,5 +1,10 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+
+# HomeBrew
+local brew_path="/opt/homebrew/bin"
+local brew_opt_path="/opt/homebrew/opt"
+
 # Path Exports ===========================================================
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
@@ -8,13 +13,11 @@ export PATH=$HOME/.scripts/git:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
 
-# HomeBrew && NVM
-local brew_path="/opt/homebrew/bin"
-local brew_opt_path="/opt/homebrew/opt"
+export NVM_DIR=$HOME/.nvm
+export PATH=${brew_path}:${PATH}
+export PATH=${brew_opt_path}/python@3.10/bin/python3:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-export PATH="${brew_path}:${PATH}"
-
+# NVM
 [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh" 
 
 # Path to your oh-my-zsh installation.
