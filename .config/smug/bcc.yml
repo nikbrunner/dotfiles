@@ -18,6 +18,7 @@ windows:
     layout: main-horizontal
     commands:
       - nvm use
+      - clear
   - name: kiosk
     commands:
       - nvm use
