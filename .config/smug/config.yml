@@ -1,0 +1,17 @@
+session: config
+
+root: ~/config
+
+windows:
+  - name: config
+    layout: main-horizontal
+    commands:
+      - $EDITOR .
+  - name: nvim
+    layout: main-horizontal
+    commands:
+      - $EDITOR .config/nvim
+  - name: nvim
+    layout: main-horizontal
+    commands:
+      - $EDITOR .config/nvim

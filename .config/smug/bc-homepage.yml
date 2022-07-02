@@ -1,0 +1,25 @@
+session: bc-homepage
+
+root: ~/Documents/dev/repos/dcd/bc-homepage
+
+before_start:
+  - git checkout master
+
+stop:
+  - killall node; true
+
+windows:
+  - name: code
+    layout: main-horizontal
+    commands:
+      - $EDITOR ./pages/index.tsx
+  - name: run
+    layout: main-horizontal
+    commands:
+      - nvm use
+      - clear
+  - name: dev-server
+    commands:
+      - nvm use
+      - clear
+      - npm run dev

@@ -1,0 +1,21 @@
+session: terra-vscode
+
+root: ~/Documents/dev/repos/personal/terra-theme
+
+windows:
+  - name: index
+    layout: main-horizontal
+    commands:
+      - $EDITOR ./.github
+  - name: nvim
+    layout: main-horizontal
+    commands:
+      - $EDITOR ./nvim
+  - name: terminal
+    layout: main-horizontal
+    commands:
+      - $EDITOR ./terminal
+  - name: vscode
+    layout: main-horizontal
+    commands:
+      - $EDITOR ./vscode
