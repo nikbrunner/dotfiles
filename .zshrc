@@ -10,6 +10,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.scripts:$PATH
 export PATH=$HOME/.scripts/git:$PATH
+export PATH=$HOME/Applications:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
 
@@ -49,6 +50,7 @@ alias v="nvim"
 alias nv="nvim"
 alias vin="nvim"
 alias vim="nvim"
+alias neovide="open -a Neovide"
 alias j="z"
 alias theme="kitty +kitten themes --reload-in=all "
 alias themes="kitty +kitten themes"
@@ -70,7 +72,8 @@ myip=$(ipconfig getifaddr en0)
 
 # Digital DealerCenter
 # Office BC
-export BCO_IP=10.2.0.153
+export BCO_IP=10.2.0.155
+export BCO_ST=4WSMH53
 alias HBCO="HOST=$BCO_IP"
 
 # Home BC
