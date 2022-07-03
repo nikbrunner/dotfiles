@@ -20,7 +20,7 @@ macos_colorspace srgb
 
 # Fonts
 font_size 16
-adjust_line_height  135%
+adjust_line_height  150%
 
 font_family        JetBrainsMono Nerd Font
 # font_family        Comic Code Ligatures
@@ -116,7 +116,7 @@ background_opacity 1
 inactive_text_alpha 0.9
 
 # Session
-startup_session ./session
+# startup_session ./session
 
 # Fig
 allow_remote_control true
@@ -126,6 +126,6 @@ watcher ${HOME}/.fig/tools/kitty-integration.py
 # End of Fig Kitty Integration
 
 # BEGIN_KITTY_THEME
-# GitHub Dark Default
+# Terra Spring Night
 include current-theme.conf
 # END_KITTY_THEME
