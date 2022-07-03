@@ -1,6 +1,6 @@
 session: config
 
-root: ~/config
+root: ~/.config
 
 windows:
   - name: config
@@ -10,8 +10,12 @@ windows:
   - name: nvim
     layout: main-horizontal
     commands:
-      - $EDITOR .config/nvim
-  - name: nvim
+      - $EDITOR ./nvim
+  - name: kitty
     layout: main-horizontal
     commands:
-      - $EDITOR .config/nvim
+      - $EDITOR ./kitty/kitty.conf
+  - name: tmux
+    layout: main-horizontal
+    commands:
+      - $EDITOR ./tmux/tmux.conf

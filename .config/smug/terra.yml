@@ -11,11 +11,11 @@ windows:
     layout: main-horizontal
     commands:
       - $EDITOR ./nvim
-  - name: terminal
-    layout: main-horizontal
-    commands:
-      - $EDITOR ./terminal
   - name: vscode
     layout: main-horizontal
     commands:
       - $EDITOR ./vscode
+  - name: terminal
+    layout: main-horizontal
+    commands:
+      - $EDITOR ./terminal
