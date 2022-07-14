@@ -1,20 +1,17 @@
-new_tab Home
+new_tab term
 cd ~
+launch zsh
+
+new_tab git
+cd ~/Documents/dev/repos/
+launch zsh
+
+new_tab code
+cd ~/Documents/dev/repos/
 launch zsh
 focus
 
-new_tab Git
-cd ~
+new_tab server
+cd ~/Documents/dev/repos/
 launch zsh
-
-new_tab Run
-cd ~
-launch zsh
-
-new_tab Storybook
-cd ~
-launch zsh
-
-new_tab Tests
-cd ~
 launch zsh
