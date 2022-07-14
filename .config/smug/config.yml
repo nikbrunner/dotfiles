@@ -3,6 +3,8 @@ session: config
 root: ~/.config
 
 windows:
+  - name: term
+    layout: main-horizontal
   - name: config
     layout: main-horizontal
     commands:
@@ -19,3 +21,7 @@ windows:
     layout: main-horizontal
     commands:
       - $EDITOR ./tmux/tmux.conf
+  - name: smug
+    layout: main-horizontal
+    commands:
+      - $EDITOR ./smug
