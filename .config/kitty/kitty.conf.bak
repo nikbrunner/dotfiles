@@ -37,6 +37,8 @@ map cmd+w close_tab
 map cmd+shift+w close_window
 map cmd+shift+i set_tab_title
 
+map cmd+shift+k clear_terminal to_cursor active 🍎
+
 map cmd+1 goto_tab 1
 map cmd+2 goto_tab 2
 map cmd+3 goto_tab 3
