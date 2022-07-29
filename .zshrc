@@ -25,8 +25,8 @@ export PATH=${brew_opt_path}/python@3.10/bin/python3:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="robbyrussell"
-# ZSH_THEME="bira"
-ZSH_THEME="nicoulaj"
+ZSH_THEME="bira"
+# ZSH_THEME="nicoulaj"
 # ZSH_THEME="amuse"
 # ZSH_THEME="bureau"
 plugins=(git zsh-vi-mode zsh-z)
