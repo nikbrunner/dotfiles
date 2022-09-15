@@ -15,10 +15,12 @@ lvim.colorscheme = "terra"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
+vim.opt.timeoutlen = 0
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<CR>"] = ":w<cr>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -160,6 +162,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   { "terra-theme/nvim" },
+  { 'folke/trouble.nvim' }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

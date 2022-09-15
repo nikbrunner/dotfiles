@@ -11,7 +11,16 @@ cd ~/Documents/dev/repos/
 launch zsh
 focus
 
-new_tab server
+new_tab kiosk
 cd ~/Documents/dev/repos/
 launch zsh
+launch zsh
+
+new_tab mobile
+cd ~/Documents/dev/repos/
+launch zsh
+launch zsh
+
+new_tab storybook
+cd ~/Documents/dev/repos/
 launch zsh
