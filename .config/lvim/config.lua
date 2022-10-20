@@ -11,16 +11,16 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "terra"
+lvim.colorscheme = "onedarker"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
-
-vim.opt.timeoutlen = 0
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<CR>"] = ":w<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+-- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+-- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -53,7 +53,7 @@ lvim.keys.normal_mode["<CR>"] = ":w<cr>"
 --   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
 --   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
 --   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
+--   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 -- }
 
 -- TODO: User Config for predefined plugins
@@ -101,7 +101,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- ---@usage disable automatic installation of servers
--- lvim.lsp.automatic_servers_installation = false
+-- lvim.lsp.installer.setup.automatic_installation = false
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
@@ -111,7 +111,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
--- vim.tbl_map(function(server)
+-- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 --   return server ~= "emmet_ls"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
@@ -160,10 +160,13 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- Additional Plugins
-lvim.plugins = {
-  { "terra-theme/nvim" },
-  { 'folke/trouble.nvim' }
-}
+-- lvim.plugins = {
+--     {"folke/tokyonight.nvim"},
+--     {
+--       "folke/trouble.nvim",
+--       cmd = "TroubleToggle",
+--     },
+-- }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {

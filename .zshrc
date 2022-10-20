@@ -53,10 +53,6 @@ alias clearpacker="rm -rf ~/.local/share/nvim/site && rm -rf ~/.config/nvim/plug
 
 alias lg="lazygit"
 alias nu="npm-upgrade"
-alias v="nvim"
-alias nv="nvim"
-alias vin="nvim"
-alias vim="nvim"
 alias tn="tmux new"
 alias ta="tmux attach"
 alias neovide="open -a Neovide"

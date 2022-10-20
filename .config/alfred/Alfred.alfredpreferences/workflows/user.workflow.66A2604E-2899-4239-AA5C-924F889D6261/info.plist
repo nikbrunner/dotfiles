@@ -60,6 +60,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3FFD2E31-4325-484B-B4FF-10441DD8D0A9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B7F5C33A-DB96-4247-AF99-E25D1EE11606</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>548D08B3-EBB2-47CF-8C63-0D69CEB431AC</key>
 		<array>
 			<dict>
@@ -350,7 +363,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/Firefox.app</string>
+					<string>/Applications/DuckDuckGo.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -453,6 +466,37 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
+				<integer>7</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>X</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>3FFD2E31-4325-484B-B4FF-10441DD8D0A9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
 				<integer>17</integer>
 				<key>hotmod</key>
 				<integer>1966080</integer>
@@ -486,6 +530,23 @@
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
 			<string>5D112D8F-F472-4224-888F-FBB05F86C4C6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/DeepL.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>B7F5C33A-DB96-4247-AF99-E25D1EE11606</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -934,6 +995,15 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
+		<key>3FFD2E31-4325-484B-B4FF-10441DD8D0A9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>985</integer>
+			<key>ypos</key>
+			<integer>410</integer>
+		</dict>
 		<key>4693A877-EADF-4613-99E8-C9D4DEEDF60A</key>
 		<dict>
 			<key>xpos</key>
@@ -1038,6 +1108,13 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>285</integer>
+		</dict>
+		<key>B7F5C33A-DB96-4247-AF99-E25D1EE11606</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1260</integer>
+			<key>ypos</key>
+			<integer>410</integer>
 		</dict>
 		<key>B9F1A827-F3A6-4061-AFF7-72B93F396FD1</key>
 		<dict>

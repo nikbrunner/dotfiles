@@ -20,7 +20,7 @@ set notimeout
 " WhichKey
 set which-key
 let g:WhichKey_ShowVimActions =                         "true"
-let g:WhichKey_DefaultDelay =                           250
+let g:WhichKey_DefaultDelay =                           0
 
 " NERDTree
 set NERDTree

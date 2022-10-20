@@ -17,25 +17,30 @@ scrollback_lines   10000
 macos_thicken_font 0.25
 macos_custom_beam_cursor yes
 macos_colorspace srgb
-
+macos_option_as_alt yes
 # Fonts
-font_size 16
+font_size 14
 adjust_line_height  135%
 
 font_family        JetBrainsMono Nerd Font
+# font_family        Iosevka Nerd Font
+# font_family        Iosevka Term SS14
+# font_family        Iosevka Term Slab
+# font_family        Victor Mono
 # font_family        Comic Code Ligatures
 # font_family        Operator Mono
 # font_family        Operator Mono Lig
-# font_family        SF Mono
-bold_font          auto
+# font_family        SFMono Nerd Font
+# italic_font        Operator Mono Book Italic
 italic_font        auto
+bold_font          auto
+# bold_italic_font   Operator Mono Bold Italic
 bold_italic_font   auto
 
 # https://sw.kovidgoyal.net/kitty/conf/#keyboard-shortcuts
 map cmd+t new_tab
 map cmd+w close_tab
 map cmd+shift+w close_window
-map cmd+shift+i set_tab_title
 
 map cmd+shift+k clear_terminal to_cursor active 🍎
 
@@ -131,6 +136,6 @@ watcher ${HOME}/.fig/tools/kitty-integration.py
 # End of Fig Kitty Integration
 
 # BEGIN_KITTY_THEME
-# Github Light Default
+# GitHub Dark
 include current-theme.conf
 # END_KITTY_THEME
