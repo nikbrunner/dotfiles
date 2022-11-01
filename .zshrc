@@ -34,8 +34,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="bira"
 # ZSH_THEME="nicoulaj"
 # ZSH_THEME="amuse"
-# plugins=(git zsh-vi-mode zsh-z)
-plugins=(git zsh-z)
+plugins=(git zsh-vi-mode zsh-z)
 
 # Edit Config Files ======================================================
 EDITOR="nvim"
@@ -77,7 +76,7 @@ myip=$(ipconfig getifaddr en0)
 
 # Digital DealerCenter
 # Office BC
-export BCO_IP=10.2.0.155
+export BCO_IP=10.2.0.153
 export BCO_ST=4WSMH53
 alias HBCO="HOST=$BCO_IP"
 

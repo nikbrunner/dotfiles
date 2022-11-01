@@ -37,6 +37,8 @@ bold_font          auto
 # bold_italic_font   Operator Mono Bold Italic
 bold_italic_font   auto
 
+disable_ligatures always
+
 # https://sw.kovidgoyal.net/kitty/conf/#keyboard-shortcuts
 map cmd+t new_tab
 map cmd+w close_tab
@@ -132,10 +134,10 @@ startup_session ./session
 allow_remote_control true
 
 # Fig Kitty Integration: Enabled
-watcher ${HOME}/.fig/tools/kitty-integration.py
+
 # End of Fig Kitty Integration
 
 # BEGIN_KITTY_THEME
-# GitHub Dark
+# GitHub Dark Default
 include current-theme.conf
 # END_KITTY_THEME
