@@ -3,19 +3,23 @@ session: terra-vscode
 root: ~/Documents/dev/repos/personal/terra-theme
 
 windows:
-  - name: index
+  - name: hq
     layout: main-horizontal
     commands:
-      - $EDITOR ./.github
+      - lvim ./hq
   - name: nvim
     layout: main-horizontal
     commands:
-      - $EDITOR ./nvim
+      - lvim ./nvim
   - name: vscode
     layout: main-horizontal
     commands:
-      - $EDITOR ./vscode
+      - lvim ./vscode
   - name: terminal
     layout: main-horizontal
     commands:
-      - $EDITOR ./terminal
+      - lvim ./terminal
+  - name: .github
+    layout: main-horizontal
+    commands:
+      - lvim ./.github

@@ -2,9 +2,6 @@ session: bc-desktop-client
 
 root: ~/Documents/dev/repos/dcd/bc-desktop-client
 
-before_start:
-  - git checkout master
-
 stop:
   - docker kill $(docker ps -q); true
   - killall node; true
@@ -13,7 +10,7 @@ windows:
   - name: code
     layout: main-horizontal
     commands:
-      - $EDITOR .
+      - lvim .
   - name: run
     layout: main-horizontal
     commands:
@@ -43,5 +40,5 @@ windows:
   #         - SERVICE_URL=http://$myip:8002/service npm run dev:mobile
   - name: ssh
     # commands:
-      # Use BC_IP=10.0.2.125 when starting smug
-      # - ssh root@${BC_IP}
+    # Use BC_IP=10.0.2.125 when starting smug
+    # - ssh root@${BC_IP}

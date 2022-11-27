@@ -2,9 +2,6 @@ session: bc-homepage
 
 root: ~/Documents/dev/repos/dcd/bc-homepage
 
-before_start:
-  - git checkout master
-
 stop:
   - killall node; true
 
@@ -12,7 +9,7 @@ windows:
   - name: code
     layout: main-horizontal
     commands:
-      - $EDITOR ./pages/index.tsx
+      - lvim ./pages/index.tsx
   - name: run
     layout: main-horizontal
     commands:

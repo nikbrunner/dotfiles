@@ -30,14 +30,15 @@ export PATH=${brew_opt_path}/python@3.10/bin/python3:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="bira"
 # ZSH_THEME="nicoulaj"
 # ZSH_THEME="amuse"
-plugins=(git zsh-vi-mode zsh-z)
+# plugins=(git zsh-vi-mode zsh-z)
+plugins=(git zsh-z)
 
 # Edit Config Files ======================================================
-EDITOR="nvim"
+EDITOR="lvim"
 
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -56,8 +57,11 @@ alias tn="tmux new"
 alias ta="tmux attach"
 alias neovide="open -a Neovide"
 alias j="z"
+
+# Kitty
 alias theme="kitty +kitten themes --reload-in=all "
 alias themes="kitty +kitten themes"
+alias ssh='env TERM=xterm-256color ssh' # allows kitty to work with ssh
 
 CONFIG_PATH="$HOME/.config"
 NVIM_PATH="$CONFIG_PATH/nvim"
@@ -86,38 +90,6 @@ export BCH_ST=CG7L9R2
 alias HBCH="HOST=$BCH_IP"
 
 export BAT_THEME="Nord"
-
-# Path Declaration =======================================================
-DOCUMENTS_PATH="$HOME/Documents"
-DEV_PATH="$DOCUMENTS_PATH/dev"
-REPOSITORIES_PATH="$DEV_PATH/repositories"
-DCD_REPOSITORIES_PATH="$REPOSITORIES_PATH/dcd"
-OWN_REPOSITORIES_PATH="$REPOSITORIES_PATH/own"
-NOTES_PATH="$OWN_REPOSITORIES_PATH/notes"
-
-# Navigation =============================================================
-alias home="cd $HOME"
-alias docs="cd $DOCUMENTS_PATH"
-alias dev="cd $DEV_PATH"
-alias repos="cd $DEV_PATH/repositories"
-alias notes="cd $NOTES_PATH"
-alias own="cd $OWN_REPOSITORIES_PATH"
-
-# Own Projects ============================================================
-alias nd="cd $OWN_REPOSITORIES_PATH/nibru.dev"
-alias ndn="cd $OWN_REPOSITORIES_PATH/nibru.dev-next"
-alias sonder="cd $OWN_REPOSITORIES_PATH/sonderhaus"
-alias dn="cd $OWN_REPOSITORIES_PATH/dotnotes"
-
-# DCD ====================================================================
-alias dcd="cd $DCD_REPOSITORIES_PATH"
-alias bctd="$EDITOR $HOME/Documents/dev/ticket-draft.md"
-alias dcd-notes="cd $DCD_REPOSITORIES_PATH/dcd-notes"
-alias bch="cd $DCD_REPOSITORIES_PATH/bc-homepage && clear"
-alias bcc="cd $DCD_REPOSITORIES_PATH/bc-desktop-client && clear"
-alias bct="cd $DCD_REPOSITORIES_PATH/bc-desktop-tools"
-alias bcs="cd $DCD_REPOSITORIES_PATH/bc-business-scripts"
-
 
 # fzf ====================================================================
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'

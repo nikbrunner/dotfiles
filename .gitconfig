@@ -11,7 +11,7 @@
   rebase = true
 
 [core]
-  editor = nvim
+  editor = lvim
   pager = delta
 
 # Comment: This is to unlock Visual Studio Code as your Git diff and Git merge tool

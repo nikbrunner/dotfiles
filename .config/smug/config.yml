@@ -8,20 +8,20 @@ windows:
   - name: config
     layout: main-horizontal
     commands:
-      - $EDITOR .
-  - name: nvim
+      - lvim .
+  - name: lvim
     layout: main-horizontal
     commands:
-      - $EDITOR ./nvim
+      - lvim ./lvim
   - name: kitty
     layout: main-horizontal
     commands:
-      - $EDITOR ./kitty/kitty.conf
+      - lvim ./kitty/kitty.conf
   - name: tmux
     layout: main-horizontal
     commands:
-      - $EDITOR ./tmux/tmux.conf
+      - lvim ./tmux/tmux.conf
   - name: smug
     layout: main-horizontal
     commands:
-      - $EDITOR ./smug
+      - lvim ./smug
