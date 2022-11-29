@@ -15,18 +15,16 @@ windows:
     layout: main-horizontal
     commands:
       - nvm use
-      - clear
-  - name: kiosk
+  - name: kiosk-server
     commands:
       - nvm use
-      - clear
-      - npm run dev:docker dev:services:kiosk
+      # - npm run dev:docker dev:services:kiosk
     panes:
       - type: horizontal
         commands:
           - nvm use
           - clear
-          - npm run dev:app
+          # - npm run dev:app
   # - name: mobile
   #   commands:
   #     - nvm use
