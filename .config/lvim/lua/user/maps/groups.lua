@@ -87,6 +87,7 @@ M.search = {
     w = { cmd.telescope.find_word, "Find File" },
     t = { cmd.telescope.find_text, "Text" },
     M = { "<cmd>Telescope man_pages<CR>", "Man Pages" },
+    m = { "<cmd>Telescope marks<CR>", "Marks" },
     h = { "<cmd>Telescope oldfiles<CR>", "Open Recent File" },
     a = {
         name = "Advanced",
@@ -163,6 +164,7 @@ M.marks = {
     name = "Marks",
     a = { mark.add_file, "  Add File" },
     m = { ui.toggle_quick_menu, "  Menu" },
+    s = { "<cmd>Telescope marks<CR>", "  Search" },
     ["1"] = {
         function()
             ui.nav_file(1)

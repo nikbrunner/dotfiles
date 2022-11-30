@@ -10,14 +10,23 @@ n_map["<S-h>"] = "^"
 n_map["vv"] = ":norm ^v$<CR>"
 n_map["n"] = "nzzzv"
 n_map["N"] = "Nzzzv"
-n_map["<M-h>"] = ":bprevious<CR>"
-n_map["<M-l>"] = ":bnext<CR>"
 n_map["<C-f>"] = cmd.nav.pick_window
+
+--NOTE: Currently disabled because used for TMUX navigation
+-- n_map["<M-h>"] = ":bprevious<CR>"
+-- n_map["<M-l>"] = ":bnext<CR>"
 
 -- Function Keys
 n_map["<F7>"] = "<cmd>CccPick<CR>"
 n_map["<F8>"] = ":call QuickFixToggle()<CR>"
 n_map["<F9>"] = "<cmd>TroubleToggle<CR>"
+
+-- FIX: Unfortunately this doesnt work atm
+-- vim.cmd("let g:tmux_navigator_no_mappings = 1")
+-- n_map["<C-h>"] = ":TmuxNavigateLeft<CR>"
+-- n_map["<C-j>"] = ":TmuxNavigateDown<CR>"
+-- n_map["<C-k>"] = ":TmuxNavigateUp<CR>"
+-- n_map["<C-l>"] = ":TmuxNavigateRight<CR>"
 
 -- Buffer Maps
 local n_buffer_map = lvim.lsp.buffer_mappings.normal_mode
