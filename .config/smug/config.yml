@@ -3,8 +3,6 @@ session: config
 root: ~/.config
 
 windows:
-  - name: term
-    layout: main-horizontal
   - name: config
     layout: main-horizontal
     commands:
@@ -13,10 +11,6 @@ windows:
     layout: main-horizontal
     commands:
       - lvim ./lvim
-  - name: kitty
-    layout: main-horizontal
-    commands:
-      - lvim ./kitty/kitty.conf
   - name: tmux
     layout: main-horizontal
     commands:
