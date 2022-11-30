@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -38,7 +36,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git zsh-z)
 
 # Edit Config Files ======================================================
-EDITOR="lvim"
+EDITOR="vim"
 
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -85,7 +83,7 @@ export BCO_ST=4WSMH53
 alias HBCO="HOST=$BCO_IP"
 
 # Home BC
-export BCH_IP=192.168.2.115
+export BCH_IP=192.168.2.111
 export BCH_ST=CG7L9R2
 alias HBCH="HOST=$BCH_IP"
 
@@ -131,6 +129,3 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
