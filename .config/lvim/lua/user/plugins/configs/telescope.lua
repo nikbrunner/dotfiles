@@ -68,3 +68,13 @@ lvim.builtin.telescope.defaults.mappings = {
         ["?"] = actions.which_key,
     },
 }
+
+lvim.builtin.telescope.on_config_done = function(telescope)
+    pcall(telescope.load_extension, "ui-select")
+end
+
+lvim.builtin.telescope.extensions = {
+    ["ui-select"] = {
+        require("telescope.themes").get_cursor({}),
+    },
+}

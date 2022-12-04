@@ -13,6 +13,8 @@ windows:
       - lvim .
   - name: run
     layout: main-horizontal
+    commands:
+      - nvm use
   - name: kiosk-server
     commands:
       - nvm use
@@ -30,6 +32,10 @@ windows:
         commands:
           - nvm use
           - clear
+  - name: storybook
+    layout: main-horizontal
+    commands:
+      - nvm use
   - name: device
     # commands:
     # Use BC_IP=10.0.2.125 when starting smug

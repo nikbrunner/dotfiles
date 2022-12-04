@@ -10,6 +10,8 @@ n_map["<S-h>"] = "^"
 n_map["vv"] = ":norm ^v$<CR>"
 n_map["n"] = "nzzzv"
 n_map["N"] = "Nzzzv"
+n_map["j"] = "gj"
+n_map["k"] = "gk"
 n_map["<C-f>"] = cmd.nav.pick_window
 
 --NOTE: Currently disabled because used for TMUX navigation
@@ -31,6 +33,7 @@ n_map["<F9>"] = "<cmd>TroubleToggle<CR>"
 -- Buffer Maps
 local n_buffer_map = lvim.lsp.buffer_mappings.normal_mode
 
+-- G-Maps
 -- Trouble
 -- n_buffer_map["gd"] = { "<cmd>Trouble lsp_definitions<CR>", "LSP Definitons" }
 -- n_buffer_map["gr"] = { "<cmd>Trouble lsp_references<CR>", "LSP References" }
@@ -40,6 +43,8 @@ n_buffer_map["gr"] = { "<cmd>Glance references<CR>", "LSP References" }
 n_buffer_map["gd"] = { "<cmd>Glance definitions<CR>", "LSP Definitons" }
 n_buffer_map["gy"] = { "<cmd>Glance type_definitions<CR>", "LSP Type Definitons" }
 n_buffer_map["gi"] = { "<cmd>Glance implementations<CR>", "LSP Implementations" }
+
+n_buffer_map["gm"] = { "<cmd>Telescope marks theme=cursor<CR>", "LSP Implementations" }
 
 ----------------------------------------------------------- With Leader
 lvim.leader = "space"
@@ -56,6 +61,8 @@ wk.mappings["f"] = { cmd.fzflua.find_files_without_preview, "Find Files" }
 wk.mappings["F"] = { cmd.telescope.find_files_with_preview, "Find Files with Preview" }
 wk.mappings["/"] = { cmd.telescope.find_in_file, "Find Text in File" }
 wk.mappings[" "] = { cmd.telescope.find_open_buffer, "Open Buffers" }
+wk.mappings["M"] = { "<C-w>|", "  Maximize Split" }
+wk.mappings["r"] = { "<C-w>=", "  Restore Splits" }
 
 -- Groups
 wk.mappings.t = groups.tabs
