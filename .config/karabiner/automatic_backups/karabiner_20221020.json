@@ -11,13 +11,13 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_alone_timeout_milliseconds": 0,
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
-                        "description": "Right CMD to HYPER (SHIFT+OPT+CTRL+CMD)",
+                        "description": "Right Command to HYPER (SHIFT+COMMAND+OPTION+CONTROL)",
                         "manipulators": [
                             {
                                 "from": {
@@ -37,7 +37,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Disable HYPER + ',",
+                                "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
                                 "from": {
                                     "key_code": "comma",
                                     "modifiers": {
@@ -53,8 +53,8 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Disable HYPER + '/",
                                 "from": {
+                                    "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
                                     "key_code": "slash",
                                     "modifiers": {
                                         "mandatory": [
@@ -69,8 +69,8 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Disable HYPER + '.",
                                 "from": {
+                                    "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
                                     "key_code": "period",
                                     "modifiers": {
                                         "mandatory": [
@@ -85,55 +85,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Disable HYPER + '<'",
-                                "manipulators": [
-                                    {
-                                        "from": {
-                                            "key_code": "<",
-                                            "modifiers": {
-                                                "mandatory": [
-                                                    "command",
-                                                    "control",
-                                                    "option",
-                                                    "shift"
-                                                ]
-                                            }
-                                        },
-                                        "to": [
-                                            {
-                                                "key_code": "f14"
-                                            }
-                                        ],
-                                        "type": "basic"
-                                    }
-                                ]
-                            },
-                            {
-                                "description": "Disable HYPER + '>'",
-                                "manipulators": [
-                                    {
-                                        "from": {
-                                            "key_code": ">",
-                                            "modifiers": {
-                                                "mandatory": [
-                                                    "command",
-                                                    "control",
-                                                    "option",
-                                                    "shift"
-                                                ]
-                                            }
-                                        },
-                                        "to": [
-                                            {
-                                                "key_code": "f15"
-                                            }
-                                        ],
-                                        "type": "basic"
-                                    }
-                                ]
-                            },
-                            {
-                                "description": "Reroute HYPER + W to 'F13'",
+                                "description": "Change hyper+w to F13 (to avoid system binding of hyper-w which creates 500mb wifi diagnostics file in /var/tmp)",
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -155,19 +107,9 @@
                         ]
                     },
                     {
-                        "description": "Right OPT to MEH (SHIFT+OPT+CTRL)",
+                        "description": "Right Option to MEH (SHIFT++OPTION+CONTROL)",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "vendor_id": 12951
-                                            }
-                                        ],
-                                        "type": "device_unless"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "right_option",
                                     "modifiers": {}
@@ -179,6 +121,70 @@
                                             "left_control",
                                             "left_option"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "While we disable Hyper + >, just to be complete I also reroute <",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "<",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f14"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disabling Hyper/command+control+option+shift+>. This triggers WiFi logging also.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": ">",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f15"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open Screenshot.app with Print_Screen key",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "print_screen"
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a screenshot.app"
                                     }
                                 ],
                                 "type": "basic"
@@ -489,48 +495,6 @@
                         "is_pointing_device": true,
                         "product_id": 834,
                         "vendor_id": 1452
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 45091,
-                        "vendor_id": 1133
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 6505,
-                        "vendor_id": 12951
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 6505,
-                        "vendor_id": 12951
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
