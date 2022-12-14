@@ -1,18 +1,8 @@
-new_tab term
+new_tab home
 cd ~
 launch zsh
 
-new_tab git
-cd ~/Documents/dev/repos/
-launch zsh
-
-new_tab code
-cd ~/Documents/dev/repos/
-launch zsh
-focus
-
-new_tab server
-cd ~/Documents/dev/repos/
-launch zsh
+new_tab tmux
+cd ~
 launch zsh
 

@@ -118,7 +118,8 @@ M.git = {
         end,
         "Lazygit",
     },
-    o = { cmd.telescope.find_changed_files, "Open changed file" },
+    -- o = { cmd.telescope.find_changed_files, "Open changed file" },
+    o = { cmd.fzflua.find_modified_files_with_preview, "Open changed file" },
     C = {
         "<cmd>Telescope git_bcommits<cr>",
         "Checkout commit(for current file)",
@@ -221,11 +222,6 @@ M.marks = {
     },
 }
 
-M.insert = {
-    name = "Insert",
-    l = { cmd.edit.log_word, "Log Word" },
-}
-
 M.terra = {
     name = "Terra",
     s = {
@@ -248,4 +244,24 @@ M.copy = {
     r = { cmd.copy.relativePath, "Relative Path" },
     n = { cmd.copy.fileName, "File Name" },
 }
+
+M.buffers = {
+    name = "Buffers",
+    p = { "<cmd>BufferLinePick<CR>", "Pick" },
+    o = { "<cmd>Telescope buffers<CR>", "Open" },
+    h = { "<cmd>BufferLineCyclePrev<CR>", "< Previous" },
+    l = { "<cmd>BufferLineCycleNext<CR>", "Next >" },
+    c = {
+        name = "Close",
+        h = { "<cmd>BufferLineCloseLeft<CR>", "Close all to the left" },
+        l = { "<cmd>BufferLineCloseRight<CR>", "Close all to the right" },
+        p = { "<cmd>BufferLinePickClose<CR>", "Pick which buffer to close" },
+    },
+    s = {
+        name = "Sort",
+        d = { "<cmd>BufferLineSortByDirectory<CR>", "Sort by directory" },
+        l = { "<cmd>BufferLineSortByExtension<CR>", "Sort by language" },
+    },
+}
+
 return M

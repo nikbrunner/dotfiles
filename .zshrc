@@ -15,7 +15,7 @@ local brew_opt_path="/opt/homebrew/opt"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.scripts:$PATH
-export PATH=$HOME/.scripts/git:$PATH
+export PATH=$HOME/.scripts/bin:$PATH
 export PATH=$HOME/Applications:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH
@@ -51,6 +51,7 @@ alias ls="ls -a"
 alias clr="clear"
 alias scratch="$EDITOR $HOME/scratchpad.md"
 alias clearpacker="rm -rf ~/.local/share/nvim/site && rm -rf ~/.config/nvim/plugin"
+alias clearpackerlvim="rm -rf ~/.local/share/lvim/site && rm -rf ~/.config/lvim/plugin"
 
 alias lg="lazygit"
 alias nu="npm-upgrade"

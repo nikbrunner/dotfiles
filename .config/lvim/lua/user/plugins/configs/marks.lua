@@ -17,9 +17,9 @@ marks.setup({
     -- while lower values may cause performance penalties. default 150.
     refresh_interval = 250,
     -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
-    -- marks, and bookmarks.
+    -- marks, and bookmarks.marks
     -- can be either a table with all/none of the keys, or a single number, in which case
-    -- the priority applies to all marks.
+    -- the priority applies to all marks.marks
     -- default 10.
     sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
     -- disables mark tracking for specific filetypes. default {}
@@ -37,5 +37,8 @@ marks.setup({
         -- defaults to false.
         annotate = false,
     },
-    mappings = {},
+    mappings = {
+        prev = "[m",
+        next = "]m",
+    },
 })

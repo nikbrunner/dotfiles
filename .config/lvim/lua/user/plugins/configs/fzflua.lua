@@ -112,18 +112,18 @@ fzf.setup({
         fzf = {
             -- fzf '--bind=' options
             ["ctrl-z"] = "abort",
-            ["ctrl-u"] = "unix-line-discard",
+            -- ["ctrl-u"] = "unix-line-discard",
             ["ctrl-f"] = "half-page-down",
             ["ctrl-b"] = "half-page-up",
             ["ctrl-a"] = "beginning-of-line",
             ["ctrl-e"] = "end-of-line",
-            ["alt-a"] = "toggle-all",
+            -- ["alt-a"] = "toggle-all",
             -- Only valid with fzf previewers (bat/cat/git/etc)
             ["f3"] = "toggle-preview-wrap",
             ["f4"] = "toggle-preview",
-            ["shift-down"] = "preview-page-down",
-            ["shift-up"] = "preview-page-up",
-            ["ctrl-q"] = "select-all+accept",
+            ["ctrl-d"] = "preview-page-down",
+            ["ctrl-u"] = "preview-page-up",
+            ["alt-a"] = "select-all+accept",
         },
     },
     actions = {
@@ -145,6 +145,7 @@ fzf.setup({
             ["ctrl-v"] = actions.file_vsplit,
             ["ctrl-t"] = actions.file_tabedit,
             ["alt-q"] = actions.file_sel_to_qf,
+            ["alt-a"] = "select-all+accept",
             ["alt-l"] = actions.file_sel_to_ll,
         },
         buffers = {
