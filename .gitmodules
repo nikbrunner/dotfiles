@@ -5,4 +5,3 @@
 [submodule ".config/lvim"]
 	path = .config/lvim
 	url = git@github.com:nikbrunner/lvim.git
-	branch = main

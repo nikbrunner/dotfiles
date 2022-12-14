@@ -1,6 +1,0 @@
-reload("user.options")
-reload("user.plugins")
-reload("user.lib")
-reload("user.cmd")
-reload("user.maps")
-reload("user.lsp")
