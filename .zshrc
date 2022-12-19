@@ -57,6 +57,7 @@ alias lg="lazygit"
 alias nu="npm-upgrade"
 alias tn="tmux new"
 alias ta="tmux attach"
+alias vin="nvim"
 alias neovide="open -a Neovide"
 alias j="z"
 

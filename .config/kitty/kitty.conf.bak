@@ -133,13 +133,13 @@ startup_session ./session
 # Fig
 allow_remote_control true
 
-term xterm-256color
+# term xterm-256color
 
 # Fig Kitty Integration: Enabled
 
 # End of Fig Kitty Integration
 
 # BEGIN_KITTY_THEME
-# Terra Spring Night
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME
