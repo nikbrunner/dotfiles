@@ -11,13 +11,13 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "basic.to_if_alone_timeout_milliseconds": 1001,
+                    "basic.to_if_held_down_threshold_milliseconds": 250,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
-                        "description": "Right CMD to HYPER (SHIFT+OPT+CTRL+CMD)",
+                        "description": "Right CMD to HYPER (SHIFT+OPT+CTRL+CMD) / Tab to Esc",
                         "manipulators": [
                             {
                                 "from": {
@@ -25,6 +25,11 @@
                                     "modifiers": {}
                                 },
                                 "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "to_if_held_down": [
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [
@@ -464,7 +469,7 @@
                             },
                             "to": [
                                 {
-                                    "key_code": "escape"
+                                    "key_code": "left_control"
                                 }
                             ]
                         },
