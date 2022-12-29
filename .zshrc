@@ -50,7 +50,7 @@ alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
 alias ls="ls -a"
 alias clr="clear"
 alias scratch="$EDITOR $HOME/scratchpad.md"
-alias clearpacker="rm -rf ~/.local/share/nvim/site && rm -rf ~/.config/nvim/plugin"
+alias clearlazy="rm -rf ~/.local/share/nvim"
 alias clearpackerlvim="rm -rf ~/.local/share/lvim/site && rm -rf ~/.config/lvim/plugin"
 
 alias lg="lazygit"
