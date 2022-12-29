@@ -113,6 +113,18 @@ nnoremap <C-l> <C-w>l
 
 " Explorer
 let g:NetrwIsOpen=0
+" Keep the current directory and the browsing directory synced to avoid file move errors 
+let g:netrw_keepdir = 0
+" Hide the banner
+let g:netrw_banner = 0
+" Change list style to tree
+let g:netrw_liststyle = 3
+" Open files in another split
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+" narrow the file browser split
+let g:netrw_winsize = 33
+
 
 function! ToggleNetrw()
     if g:NetrwIsOpen
