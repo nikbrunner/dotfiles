@@ -11,7 +11,7 @@
   rebase = true
 
 [core]
-  editor = lvim
+  editor = nvim
   pager = delta
 
 # Comment: This is to unlock Visual Studio Code as your Git diff and Git merge tool
@@ -37,7 +37,7 @@
 [delta]
   navigate = true
   side-by-side = true
-  ; wrap-max-lines=0
+  wrap-max-lines=0
 
 [pager]
   diff = delta
