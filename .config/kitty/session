@@ -2,7 +2,7 @@ new_tab home
 cd ~
 launch zsh
 
-new_tab tmux
+new_tab code
 cd ~
 launch zsh
 
