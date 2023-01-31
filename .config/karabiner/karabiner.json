@@ -1,5 +1,6 @@
 {
     "global": {
+        "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
         "show_in_menu_bar": true,
         "show_profile_name_in_menu_bar": true,
@@ -11,8 +12,8 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1001,
-                    "basic.to_if_held_down_threshold_milliseconds": 175,
+                    "basic.to_if_alone_timeout_milliseconds": 175,
+                    "basic.to_if_held_down_threshold_milliseconds": 125,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
