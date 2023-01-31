@@ -35,28 +35,32 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME="bira"
 # ZSH_THEME="nicoulaj"
 # ZSH_THEME="amuse"
-# plugins=(git zsh-vi-mode zsh-z)
-plugins=(git zsh-z)
+plugins=(git zsh-vi-mode zsh-z zsh-autosuggestions)
 
 # Edit Config Files ======================================================
-EDITOR="lvim"
+export EDITOR="nvim"
+alias clear_nvim_cache="rm -rf ~/.cache/nvim"
+alias clear_nvim_data="rm -rf ~/.local/share/nvim"
+alias clear_nvim_state="rm -rf ~/.local/state/nvim"
+alias clear_nvim_all="clear_nvim_cache; clear_nvim_data; clear_nvim_state"
 
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfu='df add -u'
 
 # Basics =================================================================
-alias list="ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep \"^l\""
-alias ls="ls -a"
-alias clr="clear"
-alias scratch="$EDITOR $HOME/scratchpad.md"
-alias clearlazy="rm -rf ~/.local/share/nvim"
-alias clearpackerlvim="rm -rf ~/.local/share/lvim/site && rm -rf ~/.config/lvim/plugin"
+# This is necessary because it sets an alias for ls, which I want to build myself
+DISABLE_LS_COLORS="true"
+
+# alias ls="ls -a"
+alias bls="exa --all --oneline --long --icons --sort=type"
+alias blt="exa --all --tree --icons --sort=type --level=1 --ignore-glob=\"node_modules|.git\""
 
 alias lg="lazygit"
 alias nu="npm-upgrade"
 alias tn="tmux new"
 alias ta="tmux attach"
+alias zj="zellij"
 alias vin="nvim"
 alias neovide="open -a Neovide"
 alias j="z"
@@ -66,22 +70,14 @@ alias theme="kitty +kitten themes --reload-in=all "
 alias themes="kitty +kitten themes"
 alias ssh='env TERM=xterm-256color ssh' # allows kitty to work with ssh
 
-CONFIG_PATH="$HOME/.config"
-NVIM_PATH="$CONFIG_PATH/nvim"
-KITTY_PATH="$CONFIG_PATH/kitty"
-
-alias conf="$EDITOR ~/.config"
-alias nvconf="$EDITOR $NVIM_PATH ."
-alias zshconf="$EDITOR ~/.zshrc"
-alias kittyconf="$EDITOR $KITTY_PATH/kitty.conf"
-alias lgconf="$EDITOR ~/Library/Application\ Support/lazygit/config.yml"
-
-alias update-snapshots="gh workflow run pull-request-update-snapshots.yml --ref"
+alias scratch="$EDITOR $HOME/scratchpad.md"
 
 # myip
 myip=$(ipconfig getifaddr en0)
 
 # Digital DealerCenter
+alias update-snapshots="gh workflow run pull-request-update-snapshots.yml --ref"
+
 # Office BC
 export BCO_IP=10.2.0.153
 export BCO_ST=4WSMH53
