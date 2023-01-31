@@ -1338,7 +1338,7 @@
 				<real>0.1059383824467659</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string>/Users/nikolausbrunner/Pictures/wallpapers/spacescapes/1560613290037.jpg</string>
+			<string>/Users/nikolausbrunner/Pictures/wallpapers/themes/tokyo/tokyo-night24.png</string>
 			<key>Background Image Mode</key>
 			<integer>2</integer>
 			<key>Badge Color</key>
@@ -1355,7 +1355,7 @@
 				<real>0.20784313976764679</real>
 			</dict>
 			<key>Blend</key>
-			<real>0.15081380208333334</real>
+			<real>0.1004472373188406</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -1840,7 +1840,7 @@
 			<key>Use Non-ASCII Font</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.25</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -3314,10 +3314,12 @@
 				<key>Red Component</key>
 				<real>0.41885295510292053</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.30227864583333336</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>DoomTerm</string>
+			<string>Server</string>
 			<key>Non Ascii Font</key>
 			<string>JetBrainsMonoNerdFontComplete-Regular 12</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -3331,7 +3333,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>40</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -3390,7 +3392,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.29999999999999999</real>
+			<real>0.24921043882978725</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
