@@ -9,7 +9,7 @@ windows:
   - name: code
     layout: main-horizontal
     commands:
-      - lvim ./pages/index.tsx
+      - nvim ./pages/index.tsx
   - name: run
     layout: main-horizontal
     commands:

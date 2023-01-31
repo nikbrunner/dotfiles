@@ -10,23 +10,14 @@ windows:
   - name: code
     layout: main-horizontal
     commands:
-      - lvim .
+      - nvim .
   - name: run
     layout: main-horizontal
     commands:
       - nvm use
-  - name: kiosk-server
+  - name: dev-server
     commands:
       - nvm use
-    panes:
-      - type: horizontal
-        commands:
-          - nvm use
-          - clear
-  - name: mobile-server
-    commands:
-      - nvm use
-      - clear
     panes:
       - type: horizontal
         commands:

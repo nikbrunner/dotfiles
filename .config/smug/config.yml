@@ -6,16 +6,16 @@ windows:
   - name: config
     layout: main-horizontal
     commands:
-      - lvim .
-  - name: lvim
+      - nvim .
+  - name: nvim
     layout: main-horizontal
     commands:
-      - lvim ./lvim
+      - nvim ./nvim
   - name: tmux
     layout: main-horizontal
     commands:
-      - lvim ./tmux/tmux.conf
+      - nvim ./tmux/tmux.conf
   - name: smug
     layout: main-horizontal
     commands:
-      - lvim ./smug
+      - nvim ./smug
