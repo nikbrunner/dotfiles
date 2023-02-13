@@ -17,7 +17,7 @@ gui:
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - underline # set to `default` to have no background colour
+      - bold # set to `default` to have no background colour
     selectedRangeBgColor:
       - black
     cherryPickedCommitBgColor:
