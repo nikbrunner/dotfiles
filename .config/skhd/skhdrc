@@ -10,22 +10,22 @@ ctrl + alt - s              : brew services start yabai
 ctrl + alt - r              : brew services restart yabai
 
 # focus window
-meh - h                     : yabai -m window --focus west
-meh - j                     : yabai -m window --focus south
-meh - k                     : yabai -m window --focus north
-meh - l                     : yabai -m window --focus east
+alt - h                     : yabai -m window --focus west
+alt - j                     : yabai -m window --focus south
+alt - k                     : yabai -m window --focus north
+alt - l                     : yabai -m window --focus east
 
-# warp managed window
-meh - left                  : yabai -m window --warp west
-meh - up                    : yabai -m window --warp north
-meh - down                  : yabai -m window --warp south 
-meh - right                 : yabai -m window --warp east
+# warp managed window (I am not sure what this does)
+# meh - h                    : yabai -m window --warp west
+# meh - j                    : yabai -m window --warp north
+# meh - k                    : yabai -m window --warp south 
+# meh - l                    : yabai -m window --warp east
 
 # swap windows
-lctrl + lshift - j          : yabai -m window --swap south
-lctrl + lshift - k          : yabai -m window --swap north
-lctrl + lshift - h          : yabai -m window --swap west
-lctrl + lshift - l          : yabai -m window --swap east
+meh - j                     : yabai -m window --swap south
+meh - k                     : yabai -m window --swap north
+meh - h                     : yabai -m window --swap west
+meh - l                     : yabai -m window --swap east
 
 # increase window size
 lctrl + alt - j             : yabai -m window --resize bottom:0:20; yabai -m window --resize top:0:20
