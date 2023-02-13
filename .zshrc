@@ -25,6 +25,8 @@ export NVM_DIR=$HOME/.nvm
 export PATH=${brew_path}:${PATH}
 export PATH=${brew_opt_path}/python@3.10/bin/python3:$PATH
 
+export OPENAI_API_KEY=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 
+
 # NVM
 [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh" 
 
@@ -55,8 +57,8 @@ alias dfc='df commit -m'
 DISABLE_LS_COLORS="true"
 
 # alias ls="ls -a"
-alias bls="exa --all --oneline --long --icons --sort=type"
-alias blt="exa --all --tree --icons --sort=type --level=1 --ignore-glob=\"node_modules|.git\""
+alias ls="exa --all --oneline --long --icons --sort=type"
+alias lt="exa --all --tree --icons --sort=type --level=1 --ignore-glob=\"node_modules|.git\""
 
 alias lg="lazygit"
 alias nu="npm-upgrade"
