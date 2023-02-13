@@ -1,79 +1,74 @@
 # === YabaiRC ===
-# Jesse Skelton's Notion Setup Notes: 
-# https://www.notion.so/Yabai-8da3b829872d432fac43181b7ff628fc
+# https://www.josean.com/posts/yabai-setup
 #
 # Grid Syntax
 # <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
 
 # Quickly restart the yabai launch agent
-ctrl + alt + cmd - r          : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+ctrl + alt - q              : brew services stop yabai
+ctrl + alt - s              : brew services start yabai
+ctrl + alt - r              : brew services restart yabai
 
 # focus window
-hyper - h                     : yabai -m window --focus west
-hyper - j                     : yabai -m window --focus south
-hyper - k                     : yabai -m window --focus north
-hyper - l                     : yabai -m window --focus east
-
-# toggle window split type
-hyper - o                     : yabai -m window --toggle split
-
-# rotate tree 90
-hyper - r                     : yabai -m space --rotate 90
-
-# flip the tree vertically
-hyper - y                     : yabai -m space --mirror y-axis
-
-# flip the tree horizontally
-hyper - x                     : yabai -m space --mirror x-axis
-
-# toggle window fullscreen zoom
-hyper - f                     : yabai -m window --toggle zoom-fullscreen
-
-# float / unfloat window 
-hyper - t                     : yabai -m window --toggle float
-
-# make floating window fill screen
-hyper - m                     : yabai -m window --grid 1:1:0:0:1:1
-
-# center 
-hyper - c                     : yabai -m window --grid 8:8:1:1:6:6
-
-# increase window size
-shift + alt - j               : yabai -m window --resize bottom:0:20
-shift + alt - l               : yabai -m window --resize right:20:0
-
-# decrease window size
-shift + alt - k               : yabai -m window --resize bottom:0:-20
-shift + alt - h               : yabai -m window --resize right:-20:0
-
-# balance size of windows
-shift + alt - 0               : yabai -m space --balance
-
-# move floating window
-# hyper - left                  : yabai -m window --move rel:-20:0
-# hyper - down                  : yabai -m window --move rel:0:20
-# hyper - up                    : yabai -m window --move rel:0:-20
-# hyper - right                 : yabai -m window --move rel:20:0
+meh - h                     : yabai -m window --focus west
+meh - j                     : yabai -m window --focus south
+meh - k                     : yabai -m window --focus north
+meh - l                     : yabai -m window --focus east
 
 # warp managed window
-hyper - left                          : yabai -m window --warp west
-hyper - up                            : yabai -m window --warp north
-hyper - down                          : yabai -m window --warp south 
-hyper - right                         : yabai -m window --warp east
+meh - left                  : yabai -m window --warp west
+meh - up                    : yabai -m window --warp north
+meh - down                  : yabai -m window --warp south 
+meh - right                 : yabai -m window --warp east
+
+# swap windows
+lctrl + lshift - j          : yabai -m window --swap south
+lctrl + lshift - k          : yabai -m window --swap north
+lctrl + lshift - h          : yabai -m window --swap west
+lctrl + lshift - l          : yabai -m window --swap east
+
+# increase window size
+lctrl + alt - j             : yabai -m window --resize bottom:0:20; yabai -m window --resize top:0:20
+lctrl + alt - l             : yabai -m window --resize right:20:0; yabai -m window --resize left:20:0
+
+# decrease window size
+lctrl + alt - k             : yabai -m window --resize bottom:0:-20; yabai -m window --resize top:0:-20
+lctrl + alt - h             : yabai -m window --resize right:-20:0; yabai -m window --resize left:-20:0 
+
+# balance out tree of windows (resize to occupy same area)
+meh - e                     : yabai -m space --balance
+
+# rotate tree 90
+meh - r                     : yabai -m space --rotate 270
+
+# toggle window split type
+meh - o                     : yabai -m window --toggle split
+
+# flip the tree vertically
+meh - y                     : yabai -m space --mirror y-axis
+
+# flip the tree horizontally
+meh - x                     : yabai -m space --mirror x-axis
+
+# toggle window fullscreen zoom
+meh - f                     : yabai -m window --toggle zoom-fullscreen
+
+# float / unfloat window 
+meh - t                     : yabai -m window --toggle float
+
+# make floating window fill screen
+meh - m                     : yabai -m window --grid 1:1:0:0:1:1
+
+# center 
+meh - c                     : yabai -m window --grid 8:8:1:1:6:6
 
 # send window to space
-ctrl + shift + alt - 1                : yabai -m window --space 1
-ctrl + shift + alt - 2                : yabai -m window --space 2
-ctrl + shift + alt - 3                : yabai -m window --space 3
-ctrl + shift + alt - 4                : yabai -m window --space 4
-ctrl + shift + alt - 5                : yabai -m window --space 5
-ctrl + shift + alt - 6                : yabai -m window --space 6
-ctrl + shift + alt - 7                : yabai -m window --space 7
-ctrl + shift + alt - 8                : yabai -m window --space 8
-ctrl + shift + alt - 9                : yabai -m window --space 9
-
-# send window to monitor
-# ctrl + shift + alt - 1        : yabai -m window --display 1
-# ctrl + shift + alt - 2        : yabai -m window --display 2
-# ctrl + shift + alt - 3        : yabai -m window --display 3
-# ctrl + shift + alt - 4        : yabai -m window --display 4
+meh - 1                : yabai -m window --space 1
+meh - 2                : yabai -m window --space 2
+meh - 3                : yabai -m window --space 3
+meh - 4                : yabai -m window --space 4
+meh - 5                : yabai -m window --space 5
+meh - 6                : yabai -m window --space 6
+meh - 7                : yabai -m window --space 7
+meh - 8                : yabai -m window --space 8
+meh - 9                : yabai -m window --space 9
