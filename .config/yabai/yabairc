@@ -19,34 +19,35 @@
 # yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
-yabai -m config mouse_follows_focus          on #SIP/Off only?
-yabai -m config focus_follows_mouse          off #SIP/Off only?
-yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
-yabai -m config window_shadow                on
-yabai -m config window_opacity               on
-yabai -m config window_opacity_duration      0.0 #SIP/Off only?
-yabai -m config active_window_opacity        1.0 #SIP/Off only?
-yabai -m config normal_window_opacity        0.75 #SIP/Off only?
+yabai -m config                              layout bsp
+
 yabai -m config window_border                off
 yabai -m config window_border_width          6
+yabai -m config window_placement             second_child
+yabai -m config window_shadow                on
+yabai -m config window_topmost               off
+
 yabai -m config active_window_border_color   0xff775759
 yabai -m config normal_window_border_color   0xff555555
 yabai -m config insert_feedback_color        0xffd75f5f
+
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 on
-yabai -m config mouse_modifier               ctrl
-yabai -m config mouse_action1                move
-yabai -m config mouse_action2                resize
-yabai -m config mouse_drop_action            swap
+#
+# center mouse on window with focus
+yabai -m config mouse_follows_focus          on
 
-# general space settings
-yabai -m config --space 1                    layout bsp
-yabai -m config --space 2                    layout bsp
-yabai -m config --space 3                    layout bsp
-yabai -m config --space 4                    layout bsp
-yabai -m config --space 5                    layout bsp
-yabai -m config --space 6                    layout bsp
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier              alt
+
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1               move
+
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2               resize
+
+# when window is dropped in center of another window, swap them (on edges it will split it)
+yabai -m config mouse_drop_action           swap
 
 yabai -m config top_padding                  15
 yabai -m config bottom_padding               15
@@ -59,13 +60,12 @@ yabai -m config window_gap                   15
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
+yabai -m rule --add app="^Raycast$" layer=above manage=off 
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Logi Options$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^HotKey$" manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Camo Studio$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Docker Desktop$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Finder$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Home$" manage=off grid=4:4:1:1:2:2
@@ -83,15 +83,12 @@ yabai -m rule --add app="^Mail$" layer=above manage=off grid=8:8:1:1:6:6
 ## EDC
 yabai -m rule --add app="^Calendar$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^Things$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^Obsidian$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^1Password 7$" layer=above manage=off grid=8:8:1:1:6:6
 yabai -m rule --add app="^Spotify$" layer=above manage=off grid=8:8:1:1:6:6
 
 ## Dev
 yabai -m rule --add app="^Insomnia$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^Cacher$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^kitty$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^Sketch$" layer=above manage=off grid=8:8:1:1:6:6
+# yabai -m rule --add app="^Sketch$" layer=above manage=off grid=8:8:1:1:6:6
 
 # regex that matches JetBrains apps
 apps='^(IntelliJ IDEA|WebStorm|CLion)$'
@@ -100,9 +97,9 @@ apps='^(IntelliJ IDEA|WebStorm|CLion)$'
 yabai -m rule --add app="${apps}" manage=off
 
 # add a signal that floats a window created by these apps when it's the only window
-yabai -m signal --add event=window_created app="${apps}" action='$HOME/.scripts/yabai-jetbrains-fix.sh'
+yabai -m signal --add event=window_created app="${apps}" action="$HOME/.scripts/yabai-jetbrains-fix.sh"
 
-yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".resizable == 0 and .floating == 0" && yabai -m window $YABAI_WINDOW_ID --toggle float'
+yabai -m signal --add event=window_created action="yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".resizable == 0 and .floating == 0" && yabai -m window $YABAI_WINDOW_ID --toggle float"
 
 #Limelight addon (Kill it and start it each time Yabai starts)
 killall limelight &>/dev/null
