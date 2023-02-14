@@ -57,10 +57,10 @@ yabai -m config window_gap                   15
 
 # float system preferences. Most of these just diable Yabai form resizing them.
 # Small Windows
-yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
+yabai -m rule --add app="^System Settings$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Raycast$" layer=above manage=off 
+yabai -m rule --add app="^Raycast$" manage=off 
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off grid=4:4:1:1:2:2
@@ -69,15 +69,6 @@ yabai -m rule --add app="^HotKey$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Docker Desktop$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Finder$" manage=off grid=4:4:1:1:2:2
 yabai -m rule --add app="^Home$" manage=off grid=4:4:1:1:2:2
-
-
-## Messengers
-yabai -m rule --add app="^Signal$" layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Telegram$" layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^WhatsApp$" layer=above manage=off grid=4:4:1:1:2:2
-yabai -m rule --add app="^Slack$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^Microsoft Teams$" layer=above manage=off grid=8:8:1:1:6:6
-yabai -m rule --add app="^Mail$" layer=above manage=off grid=8:8:1:1:6:6
 
 # Big Windows 
 ## EDC
