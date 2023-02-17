@@ -25,8 +25,6 @@ export NVM_DIR=$HOME/.nvm
 export PATH=${brew_path}:${PATH}
 export PATH=${brew_opt_path}/python@3.10/bin/python3:$PATH
 
-export OPENAI_API_KEY=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 
-
 # NVM
 [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh" 
 
@@ -97,7 +95,9 @@ export BAT_THEME="Nord"
 # fzf ====================================================================
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}" | fzf`'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
