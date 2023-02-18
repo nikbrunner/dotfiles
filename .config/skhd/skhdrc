@@ -13,22 +13,43 @@ ctrl + alt - s              : brew services start yabai
 ctrl + alt - r              : brew services restart yabai
 
 # focus window
-hyper - h                     : yabai -m window --focus west
-hyper - j                     : yabai -m window --focus south
-hyper - k                     : yabai -m window --focus north
-hyper - l                     : yabai -m window --focus east
+hyper - h                   : yabai -m window --focus west
+hyper - j                   : yabai -m window --focus south
+hyper - k                   : yabai -m window --focus north
+hyper - l                   : yabai -m window --focus east
 
-# warp managed window (I am not sure what this does)
-alt + shift - h                    : yabai -m window --warp west
-alt + shift - j                    : yabai -m window --warp north
-alt + shift - k                    : yabai -m window --warp south 
-alt + shift - l                    : yabai -m window --warp east
+# Focus display
+hyper - 1                   : yabai -m display --focus 1
+hyper - 2                   : yabai -m display --focus 2
+hyper - 3                   : yabai -m display --focus 3
 
 # swap windows
 meh - j                     : yabai -m window --swap south
 meh - k                     : yabai -m window --swap north
 meh - h                     : yabai -m window --swap west
 meh - l                     : yabai -m window --swap east
+
+# warp managed window (I am not sure what this does)
+alt + shift - h             : yabai -m window --warp west
+alt + shift - j             : yabai -m window --warp north
+alt + shift - k             : yabai -m window --warp south 
+alt + shift - l             : yabai -m window --warp east
+
+# Throw window to space
+ctrl + alt - 1              : yabai -m window --space 1
+ctrl + alt - 2              : yabai -m window --space 2
+ctrl + alt - 3              : yabai -m window --space 3
+ctrl + alt - 4              : yabai -m window --space 4
+ctrl + alt - 5              : yabai -m window --space 5
+ctrl + alt - 6              : yabai -m window --space 6
+ctrl + alt - 7              : yabai -m window --space 7
+ctrl + alt - 8              : yabai -m window --space 8
+ctrl + alt - 9              : yabai -m window --space 9
+
+# Throw window to display
+meh - 1                     : ~/.scripts/bin/yabai-throw-window.sh 1 
+meh - 2                     : ~/.scripts/bin/yabai-throw-window.sh 2 
+meh - 3                     : ~/.scripts/bin/yabai-throw-window.sh 3 
 
 # increase window size
 lctrl + alt - j             : yabai -m window --resize bottom:0:20; yabai -m window --resize top:0:20
@@ -65,24 +86,3 @@ meh - m                     : yabai -m window --grid 1:1:0:0:1:1
 # center 
 meh - c                     : yabai -m window --grid 8:8:1:1:6:6
 
-# send window to space
-meh - 1                     : yabai -m window --space 1
-meh - 2                     : yabai -m window --space 2
-meh - 3                     : yabai -m window --space 3
-meh - 4                     : yabai -m window --space 4
-meh - 5                     : yabai -m window --space 5
-meh - 6                     : yabai -m window --space 6
-meh - 7                     : yabai -m window --space 7
-meh - 8                     : yabai -m window --space 8
-meh - 9                     : yabai -m window --space 9
-
-# change focus between external displays (left and right)
-# NOTE: these do not work atm
-# ctrl - 1: yabai -m display --focus 1
-# ctrl - 2: yabai -m display --focus 2
-# ctrl + alt - x  : yabai -m display --focus recent
-# ctrl + alt - z  : yabai -m display --focus prev
-# ctrl + alt - c  : yabai -m display --focus next
-# ctrl + alt - 1  : yabai -m display --focus 1
-# ctrl + alt - 2  : yabai -m display --focus 2
-# ctrl + alt - 3  : yabai -m display --focus 3
