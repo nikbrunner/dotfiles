@@ -1,18 +1,12 @@
-# === YabaiRC ===
-#
-# Configs: 
 # https://www.josean.com/posts/yabai-setup
 # https://jasoneckert.github.io/myblog/customizing-macos-for-development/skhdrc.txt
-#
-# Grid Syntax:
-# <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
 
 # Quickly restart the yabai launch agent
 ctrl + alt - q              : brew services stop yabai
 ctrl + alt - s              : brew services start yabai
 ctrl + alt - r              : brew services restart yabai
 
-# focus window
+# Focus window
 hyper - h                   : yabai -m window --focus west
 hyper - j                   : yabai -m window --focus south
 hyper - k                   : yabai -m window --focus north
@@ -23,13 +17,13 @@ hyper - 1                   : yabai -m display --focus 1
 hyper - 2                   : yabai -m display --focus 2
 hyper - 3                   : yabai -m display --focus 3
 
-# swap windows
+# Swap windows
 meh - j                     : yabai -m window --swap south
 meh - k                     : yabai -m window --swap north
 meh - h                     : yabai -m window --swap west
 meh - l                     : yabai -m window --swap east
 
-# warp managed window (I am not sure what this does)
+# Warp managed window
 alt + shift - h             : yabai -m window --warp west
 alt + shift - j             : yabai -m window --warp north
 alt + shift - k             : yabai -m window --warp south 
@@ -52,12 +46,12 @@ meh - 2                     : ~/.scripts/bin/yabai-throw-window.sh 2
 meh - 3                     : ~/.scripts/bin/yabai-throw-window.sh 3 
 
 # increase window size
-lctrl + alt - j             : yabai -m window --resize bottom:0:20; yabai -m window --resize top:0:20
-lctrl + alt - l             : yabai -m window --resize right:20:0; yabai -m window --resize left:20:0
+ctrl + alt - j              : yabai -m window --resize bottom:0:20; yabai -m window --resize top:0:20
+ctrl + alt - l              : yabai -m window --resize right:20:0; yabai -m window --resize left:20:0
 
 # decrease window size
 lctrl + alt - k             : yabai -m window --resize bottom:0:-20; yabai -m window --resize top:0:-20
-lctrl + alt - h             : yabai -m window --resize right:-20:0; yabai -m window --resize left:-20:0 
+ctrl + alt - h              : yabai -m window --resize right:-20:0; yabai -m window --resize left:-20:0 
 
 # balance out tree of windows (resize to occupy same area)
 meh - e                     : yabai -m space --balance
