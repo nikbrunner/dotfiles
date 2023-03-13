@@ -17,12 +17,12 @@ remember_window_size  no
 initial_window_width  1024
 initial_window_height 768
 window_padding_width 15 25 10
-inactive_text_alpha 0.9
-background_opacity 0.9
+inactive_text_alpha 0.75
+background_opacity 1
 disable_ligatures cursor
 window_border_width 1pt
 scrollback_lines   10000
-# hide_window_decorations titlebar-only
+hide_window_decorations titlebar-only
 
 cursor_shape beam
 tab_bar_edge top
@@ -46,11 +46,11 @@ macos_option_as_alt yes
 sync_to_monitor yes
 
 # Fonts
-font_size 12
+font_size 18
 adjust_line_height  120%
 
-# font_family        JetBrainsMono Nerd Font
-font_family        Comic Code Ligatures
+font_family        JetBrainsMono Nerd Font
+# font_family        Comic Code Ligatures
 # font_family        Operator Mono Lig
 # font_family        SFMono Nerd Font
 italic_font        auto
@@ -79,16 +79,7 @@ map cmd+7 goto_tab 7
 map cmd+8 goto_tab 8
 map cmd+9 goto_tab 9
 
-# map ctrl+1 first_window
-# map ctrl+2 second_window
-# map ctrl+3 third_window
-# map ctrl+4 fourth_window
-# map ctrl+5 fifth_window
-# map ctrl+6 sixth_window
-# map ctrl+7 seventh_window
-# map ctrl+8 eighth_window
-# map ctrl+9 ninth_window
-
+# Map ctrl+number to send text codes to the terminal
 map ctrl+1 send_text application \x14\x31
 map ctrl+2 send_text application \x14\x32
 map ctrl+3 send_text application \x14\x33
@@ -98,6 +89,16 @@ map ctrl+6 send_text application \x14\x36
 map ctrl+7 send_text application \x14\x37
 map ctrl+8 send_text application \x14\x38
 map ctrl+9 send_text application \x14\x39
+
+# map ctrl+1 first_window
+# map ctrl+2 second_window
+# map ctrl+3 third_window
+# map ctrl+4 fourth_window
+# map ctrl+5 fifth_window
+# map ctrl+6 sixth_window
+# map ctrl+7 seventh_window
+# map ctrl+8 eighth_window
+# map ctrl+9 ninth_window
 
 # # Move the active window in the indicated direction
 # map ctrl+shift+k move_window up
@@ -129,6 +130,6 @@ map cmd+shift+m toggle_maximized
 allow_remote_control true
 
 # BEGIN_KITTY_THEME
-# Terra Fall Night
+# terafox
 include current-theme.conf
 # END_KITTY_THEME
