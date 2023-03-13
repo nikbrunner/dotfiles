@@ -64,6 +64,7 @@ alias tn="tmux new"
 alias ta="tmux attach"
 alias zj="zellij"
 alias vin="nvim"
+alias v="nvim"
 alias neovide="open -a Neovide"
 alias j="z"
 
