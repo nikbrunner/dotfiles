@@ -30,6 +30,7 @@
             "g": "vim::StartOfDocument",
             "d": "editor::GoToDefinition",
             "r": "editor::FindAllReferences",
+            "t": "editor::GoToTypeDefinition",
             "f": "file_finder::Toggle"
         }
     },

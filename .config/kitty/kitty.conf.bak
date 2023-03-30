@@ -17,7 +17,7 @@ remember_window_size  no
 initial_window_width  1024
 initial_window_height 768
 window_padding_width 15 25 10
-inactive_text_alpha 0.75
+inactive_text_alpha 0.9
 background_opacity 1
 disable_ligatures cursor
 window_border_width 1pt
@@ -46,7 +46,7 @@ macos_option_as_alt yes
 sync_to_monitor yes
 
 # Fonts
-font_size 18
+font_size 12
 adjust_line_height  120%
 
 font_family        JetBrainsMono Nerd Font
@@ -130,6 +130,6 @@ map cmd+shift+m toggle_maximized
 allow_remote_control true
 
 # BEGIN_KITTY_THEME
-# terafox
+# Default
 include current-theme.conf
 # END_KITTY_THEME
