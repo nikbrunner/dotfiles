@@ -37,7 +37,7 @@
 [delta]
   navigate = true
   side-by-side = true
-  wrap-max-lines=0
+  wrap-max-lines = 0
 
 [pager]
   diff = delta

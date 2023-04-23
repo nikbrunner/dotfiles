@@ -3,10 +3,23 @@
     "buffer_font_size": 18,
     "vim_mode": true,
     "buffer_font_family": "JetBrains Mono",
-    "theme": "Atelier Savanna Dark",
+    "theme": "Ayu Dark",
     "default_dock_anchor": "expanded",
     "show_completions_on_input": true,
     "git": {
         "git_gutter": "tracked_files"
+    },
+    "language_overrides": {
+        "JavaScript": {
+            "format_on_save": {
+                "external": {
+                    "command": "prettier",
+                    "arguments": [
+                        "--stdin-filepath",
+                        "{buffer_path}"
+                    ]
+                }
+            }
+        }
     }
 }
