@@ -1,5 +1,5 @@
 os:
-  openCommand: "code -rg {{filename}}"
+  open: "code -rg {{filename}}"
 gui:
   # stuff relating to the UI
   scrollHeight: 10 # how many lines you scroll by

@@ -68,6 +68,9 @@ alias v="nvim"
 alias neovide="open -a Neovide"
 alias j="z"
 
+alias python="python3"
+alias pip="pip3"
+
 # Kitty
 alias theme="kitty +kitten themes --reload-in=all "
 alias themes="kitty +kitten themes"
@@ -87,7 +90,7 @@ export BCO_ST=4WSMH53
 alias HBCO="HOST=$BCO_IP"
 
 # Home BC
-export BCH_IP=192.168.2.111
+export BCH_IP=192.168.2.108
 export BCH_ST=CG7L9R2
 alias HBCH="HOST=$BCH_IP"
 

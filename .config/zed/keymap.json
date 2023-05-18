@@ -51,7 +51,7 @@
         "bindings": {
             "c": "vim::VisualChange",
             "d": "vim::VisualDelete",
-            "x": "vim::VisualDelete",
+            "x": "vim::VisualDelete"
         }
     },
     {

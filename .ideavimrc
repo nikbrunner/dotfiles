@@ -11,7 +11,7 @@ set ideamarks
 " set highlightedyank
 " set surround
 " set easymotion
-set scrolloff=18
+set scrolloff=8
 set ignorecase
 set smartcase
 set notimeout
@@ -47,6 +47,9 @@ let g:WhichKeyDesc_quick_doc =                          "gh QuickDoc"
 nmap gl                                                  :action ShowErrorDescription<CR>
 let g:WhichKeyDesc_quick_error =                        "gl QuickError"
 
+nmap gr                                                 :action GotoDeclaration<CR>
+let g:WhichKeyDesc_lsp_references =                     "gr References"
+
 vmap S                                                 :action SurroundWith<CR>
 let g:WhichKeyDesc_surround =                           "gs SurroundWith"
 
@@ -66,7 +69,6 @@ nmap <C-S-h>                                            :action TabShiftActions.
 nmap <C-S-j>                                            :action TabShiftActions.ShiftDown<CR>
 nmap <C-S-k>                                            :action TabShiftActions.ShiftUp<CR>
 nmap <C-S-l>                                            :action TabShiftActions.ShiftRight<CR>
-
 
 " Resize Splits
 " map H                                                 :action TabShiftActions.StretchLeft<CR>
@@ -158,15 +160,10 @@ map <leader>ghr                                         :action Vcs.RollbackChan
 let g:WhichKeyDesc_git_hunk_reset =                     "<leader>ghr Reset Hunk"
 
 " LSP
-let g:WhichKeyDesc_lsp =                                "<leader>l LSP"
+let g:WhichKeyDesc_lsp =                                "<leader>a Actions"
 
-nmap <leader>la                                         :action Refactorings.QuickListPopupAction<CR>
-vmap <leader>la                                         :action Refactorings.QuickListPopupAction<CR>
-let g:WhichKeyDesc_lsp_action =                         "<leader>la Action"
+nmap <leader>ac                                         :action Refactorings.QuickListPopupAction<CR>
+let g:WhichKeyDesc_lsp_action =                         "<leader>ac Action"
 
-nmap <leader>lc                                         :action ShowIntentionActions<CR>
-vmap <leader>lc                                         :action ShowIntentionActions<CR>
-let g:WhichKeyDesc_lsp_context =                         "<leader>lc Context"
-
-nmap <leader>lr                                         :action GotoDeclaration<CR>
-let g:WhichKeyDesc_lsp_references =                     "<leader>lr References"
+nmap <leader>aC                                         :action ShowIntentionActions<CR>
+let g:WhichKeyDesc_lsp_context =                         "<leader>aC Context"

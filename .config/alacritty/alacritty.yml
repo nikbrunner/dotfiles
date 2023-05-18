@@ -7,8 +7,6 @@ window:
   use_thin_strokes: true
   opacity: 1
 
-alt_send_esc: true
-
 font:
   normal:
     family: "JetBrainsMono Nerd Font"

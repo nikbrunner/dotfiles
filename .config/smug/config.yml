@@ -8,14 +8,17 @@ windows:
     commands:
       - nvim .
   - name: nvim
+    root: nvim
     layout: main-horizontal
     commands:
-      - nvim ./nvim
+      - nvim .
   - name: tmux
     layout: main-horizontal
     commands:
-      - nvim ./tmux/tmux.conf
+      - cd tmux
+      - nvim .
   - name: smug
     layout: main-horizontal
     commands:
-      - nvim ./smug
+      - cd smug
+      - nvim .

@@ -16,7 +16,7 @@ editor /opt/homebrew/bin/nvim
 remember_window_size  no
 initial_window_width  1024
 initial_window_height 768
-window_padding_width 15 25 10
+window_padding_width 15 25 15
 inactive_text_alpha 0.9
 background_opacity 1
 disable_ligatures cursor
@@ -40,15 +40,15 @@ tab_title_template "{index}:{title.split('/')[-1]}"
 # enabled_layouts splits:split_axis=horizontal
 
 # MacOS
-macos_thicken_font 0.15
+# macos_thicken_font 0.15
 macos_custom_beam_cursor yes
 macos_colorspace srgb
 macos_option_as_alt yes
 sync_to_monitor yes
 
 # Fonts
-font_size 16
-adjust_line_height  120%
+font_size 18
+adjust_line_height  110%
 
 font_family        JetBrainsMono Nerd Font
 # font_family        Comic Code Ligatures
@@ -115,11 +115,11 @@ map cmd+j neighboring_window down
 
 # Create a new window splitting the space used by the existing one so that
 # the two windows are placed one above the other
-map cmd+shift+j launch --location=hsplit
+map cmd+d launch --location=hsplit
 
 # Create a new window splitting the space used by the existing one so that
 # the two windows are placed side by side
-map cmd+shift+l launch --location=vsplit
+map cmd+shift+d launch --location=vsplit
 
 # temporarily maximize kitty window
 map cmd+shift+m toggle_maximized
@@ -131,6 +131,6 @@ map cmd+shift+m toggle_maximized
 allow_remote_control true
 
 # BEGIN_KITTY_THEME
-# Terra Winter Night
+# Terra Summer Night
 include current-theme.conf
 # END_KITTY_THEME
