@@ -35,7 +35,7 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME="bira"
 # ZSH_THEME="nicoulaj"
 # ZSH_THEME="amuse"
-plugins=(git zsh-vi-mode zsh-z zsh-autosuggestions)
+plugins=(git zsh-vi-mode zsh-z zsh-autosuggestions zsh-syntax-highlighting)
 
 # Edit Config Files ======================================================
 export EDITOR="nvim"
@@ -70,6 +70,8 @@ alias j="z"
 
 alias python="python3"
 alias pip="pip3"
+
+alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
 
 # Kitty
 alias theme="kitty +kitten themes --reload-in=all "
