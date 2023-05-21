@@ -1,6 +1,6 @@
 session: terra
 
-root: ~/Documents/dev/repos/personal/terra-theme
+root: ~/Documents/dev/repos/terra-theme
 
 windows:
   - name: hq
@@ -10,15 +10,15 @@ windows:
   - name: nvim
     layout: main-horizontal
     commands:
-      - nvim ./nvim
+      - nvim ./core.nvim
   - name: vscode
     layout: main-horizontal
     commands:
-      - nvim ./vscode
+      - nvim ./terra.vscode
   - name: terminal
     layout: main-horizontal
     commands:
-      - nvim ./terminal
+      - nvim ./terra.term
   - name: .github
     layout: main-horizontal
     commands:

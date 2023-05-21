@@ -65,18 +65,20 @@ alias ta="tmux attach"
 alias zj="zellij"
 alias vin="nvim"
 alias v="nvim"
-alias neovide="open -a Neovide"
+# alias neovide="open -a Neovide"
 alias j="z"
 
 alias python="python3"
 alias pip="pip3"
 
 alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
+alias checkout="gh pr list -s open | fzf --preview 'gh pr view {1}' | awk '{print $1}' | xargs gh pr checkout"
+alias ts="smug list | fzf | xargs smug start"
 
 # Kitty
 alias theme="kitty +kitten themes --reload-in=all "
 alias themes="kitty +kitten themes"
-alias ssh='env TERM=xterm-256color ssh' # allows kitty to work with ssh
+# alias ssh='env TERM=xterm-256color ssh' # allows kitty to work with ssh
 
 alias scratch="$EDITOR $HOME/scratchpad.md"
 
