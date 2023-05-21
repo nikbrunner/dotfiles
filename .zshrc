@@ -46,9 +46,8 @@ alias clear_nvim_all="clear_nvim_cache; clear_nvim_data; clear_nvim_state"
 
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dfa='df add -u'
-alias dfs='df status'
-alias dfc='df commit -m'
+alias dfu='df add -u && df commit -m "Update dotfiles" && df push'
+alias dfs='df status -s'
 
 # Basics =================================================================
 # This is necessary because it sets an alias for ls, which I want to build myself

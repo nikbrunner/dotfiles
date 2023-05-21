@@ -18,6 +18,7 @@ while (( ${#pids[@]} > idx )); do
   pid=${pids[idx++]}; pids+=( ${children[pid]-} )
 done
 
-# Check whether any child pids are vim
-ps -o state= -o comm= -p "${pids[@]}" | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'
+# Check whether any child pids are vim or lazygit
+ps -o state= -o comm= -p "${pids[@]}" | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?(g?(view|n?vim?x?)(diff)?|lazygit)$'
 exit $?
+
