@@ -63,6 +63,7 @@ alias tn="tmux new"
 alias ta="tmux attach"
 alias zj="zellij"
 alias vin="nvim"
+alias lazyvim='NVIM_APPNAME="lazyvim" nvim'
 alias v="nvim"
 # alias neovide="open -a Neovide"
 alias j="z"
