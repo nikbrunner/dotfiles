@@ -3,18 +3,21 @@ session: terra
 root: ~/Documents/dev/repos/terra-theme
 
 windows:
-  - name: hq
+  - name: terra-colors
     layout: main-horizontal
     commands:
-      - nvim ./hq
-  - name: nvim
+      - cd ./terra-colors
+      - nvim .
+  - name: terra-core.nvim
     layout: main-horizontal
     commands:
-      - nvim ./core.nvim
+      - cd ./terra-core.nvim
+      - nvim .
   - name: vscode
     layout: main-horizontal
     commands:
-      - nvim ./terra.vscode
+      - cd ./terra.vscode
+      - nvim .
   - name: terminal
     layout: main-horizontal
     commands:
