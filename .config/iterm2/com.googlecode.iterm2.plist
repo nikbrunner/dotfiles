@@ -1617,6 +1617,8 @@
 	<false/>
 	<key>DimOnlyText</key>
 	<false/>
+	<key>DisableWindowSizeSnap</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideScrollbar</key>
@@ -2293,7 +2295,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>JetBrainsMonoNF-Regular 20</string>
+			<string>ComicCodeLigaturesNF-Regular 16</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
