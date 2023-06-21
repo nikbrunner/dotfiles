@@ -23,6 +23,7 @@
   cmd = code --wait $MERGED
 
 [diff]
+  tool = vscode
   colorMoved = default
 
 [difftool "vscode"]

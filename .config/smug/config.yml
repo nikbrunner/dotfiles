@@ -8,7 +8,6 @@ windows:
     commands:
       - nvim .
   - name: nvim
-    root: nvim
     layout: main-horizontal
     commands:
       - nvim .

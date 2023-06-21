@@ -12,8 +12,7 @@ export PATH=$HOME/.scripts:$PATH
 export PATH=$HOME/.scripts/bin:$PATH
 export PATH=$HOME/Applications:$PATH
 export PATH=/usr/bin/python:$PATH
-export PATH=/usr/bin/python3:$PATH
-export PATH=$HOME/.deno/bin:$PATH
+export PATH=/usr/bin/python3:$PATH export PATH=$HOME/.deno/bin:$PATH
 
 export NVM_DIR=$HOME/.nvm
 export PATH=${brew_path}:${PATH}
@@ -60,9 +59,9 @@ alias v="nvim"
 alias j="z"
 
 # Vim
-alias vin='NVIM_APPNAME="nvim" nvim'
-alias lazyvim='NVIM_APPNAME="lazyvim" nvim'
-alias astrovim='NVIM_APPNAME="astrovim" nvim'
+alias v='NVIM_APPNAME="nvim" nvim'
+alias lv='NVIM_APPNAME="lazyvin" nvim'
+alias av='NVIM_APPNAME="astrovim" nvim'
 # alias neovide="open -a Neovide"
 
 alias python="python3"
@@ -91,6 +90,9 @@ alias HBCO="HOST=$BCO_IP"
 export BCH_IP=192.168.2.108
 export BCH_ST=CG7L9R2
 alias HBCH="HOST=$BCH_IP"
+
+export BCK_IP=10.2.0.179
+alias HBCK="HOST=$BCK_IP"
 
 export BAT_THEME="Nord"
 

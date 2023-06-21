@@ -3,7 +3,7 @@
   "buffer_font_size": 18,
   "vim_mode": true,
   "buffer_font_family": "JetBrains Mono",
-  "theme": "Atelier Savanna Dark",
+  "theme": "One Dark",
   "default_dock_anchor": "expanded",
   "show_completions_on_input": true,
   "git": {

@@ -83,8 +83,8 @@ map ]g                                                  :action VcsShowNextChang
 map [q                                                  :action PreviousOccurence<CR>
 map ]q                                                  :action NextOccurence<CR>
 
-nmap [e                                                 :action GotoPreviousError<CR>
-nmap ]e                                                 :action GotoNextError<CR>
+nmap [d                                                 :action GotoPreviousError<CR>
+nmap ]d                                                 :action GotoNextError<CR>
 
 " View
 let g:WhichKeyDesc_view =                               "<leader>v View"
@@ -101,23 +101,20 @@ let g:WhichKeyDesc_view_maximize =                      "<leader>vm Maximize/Res
 " Find
 let g:WhichKeyDesc_find =                               "<leader>f Find"
 
-nmap <leader>ff                                         :action GotoFile<CR>
-let g:WhichKeyDesc_find_file =                          "<leader>ff File"
+nmap <leader>f                                         :action GotoFile<CR>
+let g:WhichKeyDesc_find_file =                          "<leader>f File"
 
-nmap <leader>fc                                         :action GotoAction<CR>
-let g:WhichKeyDesc_find_command =                       "<leader>fc Command"
+nmap <leader>sc                                         :action GotoAction<CR>
+let g:WhichKeyDesc_find_command =                       "<leader>sc Command"
 
-nmap <leader>fs                                         :action GotoSymbol<CR>
-let g:WhichKeyDesc_find_symbol =                        "<leader>fs Symbol"
+nmap <leader>ss                                         :action GotoSymbol<CR>
+let g:WhichKeyDesc_find_symbol =                        "<leader>ss Symbol"
 
-nmap <leader>fp                                         :action ManageRecentProjects<CR>
-let g:WhichKeyDesc_find_project =                       "<leader>fp Project"
+nmap <leader>sp                                         :action ManageRecentProjects<CR>
+let g:WhichKeyDesc_find_project =                       "<leader>sp Project"
 
-nmap <leader>ft                                         :action FindInPath<CR>
-let g:WhichKeyDesc_find_text =                          "<leader>ft Text"
-
-vmap <leader>ft                                         :action FindInPath<CR>
-let g:WhichKeyDesc_find_text =                          "<leader>ft Text"
+nmap <leader>st                                         :action FindInPath<CR>
+let g:WhichKeyDesc_find_text =                          "<leader>st Text"
 
 " Quit
 let g:WhichKeyDesc_quit =                               "<leader>q Quit"
