@@ -55,14 +55,11 @@ alias nu="npm-upgrade"
 alias tn="tmux new"
 alias ta="tmux attach"
 alias zj="zellij"
-alias v="nvim"
-alias j="z"
 
 # Vim
-alias v='NVIM_APPNAME="nvim" nvim'
-alias lv='NVIM_APPNAME="lazyvin" nvim'
-alias av='NVIM_APPNAME="astrovim" nvim'
-# alias neovide="open -a Neovide"
+alias vin='NVIM_APPNAME="vin" nvim'
+alias lv='NVIM_APPNAME="nvim" nvim'
+alias neovide="open -a Neovide"
 
 alias python="python3"
 alias pip="pip3"
