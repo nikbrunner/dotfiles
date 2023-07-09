@@ -40,9 +40,8 @@ tab_title_template "{index}:{title.split('/')[-1]}"
 # enabled_layouts splits:split_axis=horizontal
 
 # MacOS
-# macos_thicken_font 0.15
+macos_thicken_font 0.1
 macos_custom_beam_cursor yes
-macos_colorspace srgb
 macos_option_as_alt yes
 sync_to_monitor yes
 
@@ -50,13 +49,18 @@ sync_to_monitor yes
 font_size 16
 adjust_line_height  120%
 
-font_family        JetBrainsMono Nerd Font
+# font_family        JetBrainsMono Nerd Font
 # font_family        ComicCodeLigatures Nerd Font
 # font_family        OperatorMono Nerd Font Regular
 # font_family        SFMono Nerd Font
-italic_font        auto
-bold_font          auto
-bold_italic_font   auto
+# italic_font        auto
+# bold_font          auto
+# bold_italic_font   auto
+#
+font_family        JetBrainsMono Nerd Font Light
+italic_font        JetBrainsMono Nerd Font Light Italic 
+bold_font          JetBrainsMono Nerd Font Bold
+bold_italic_font   JetBrainsMono Nerd Font Bold Italic
 
 # font_family        Operator Mono Book
 # italic_font        Operator Mono Book Italic
@@ -131,6 +135,6 @@ map cmd+shift+m toggle_maximized
 allow_remote_control true
 
 # BEGIN_KITTY_THEME
-# Terra Spring Night
+# Terra Summer Night
 include current-theme.conf
 # END_KITTY_THEME

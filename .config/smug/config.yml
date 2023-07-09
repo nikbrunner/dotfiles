@@ -7,17 +7,16 @@ windows:
     layout: main-horizontal
     commands:
       - nvim .
-  - name: lazyvin/vin
+  - name: lazyvin
     commands:
       - cd nvim
       - clear
       - nvim .
-    panes:
-      - type: horizontal
-        commands:
-          - cd vin
-          - clear
-          - nvim .
+  - name: vin
+    commands:
+      - cd vin
+      - clear
+      - nvim .
   - name: LazyVim
     commands:
       - cd ~/Documents/dev/repos/other/LazyVim
@@ -27,6 +26,11 @@ windows:
     layout: main-horizontal
     commands:
       - cd tmux
+      - nvim .
+  - name: kitty
+    layout: main-horizontal
+    commands:
+      - cd kitty
       - nvim .
   - name: smug
     layout: main-horizontal
