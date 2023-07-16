@@ -52,15 +52,15 @@ adjust_line_height  120%
 # font_family        JetBrainsMono Nerd Font
 # font_family        ComicCodeLigatures Nerd Font
 # font_family        OperatorMono Nerd Font Regular
-# font_family        SFMono Nerd Font
-# italic_font        auto
-# bold_font          auto
-# bold_italic_font   auto
-#
-font_family        JetBrainsMono Nerd Font Light
-italic_font        JetBrainsMono Nerd Font Light Italic
-bold_font          JetBrainsMono Nerd Font Bold
-bold_italic_font   JetBrainsMono Nerd Font Bold Italic
+font_family        SFMono Nerd Font
+italic_font        auto
+bold_font          auto
+bold_italic_font   auto
+
+# font_family        JetBrainsMono Nerd Font Light
+# italic_font        JetBrainsMono Nerd Font Light Italic
+# bold_font          JetBrainsMono Nerd Font Bold
+# bold_italic_font   JetBrainsMono Nerd Font Bold Italic
 
 # font_family        OperatorMono Nerd Font Regular
 # italic_font        OperatorMono Nerd Font Italic
