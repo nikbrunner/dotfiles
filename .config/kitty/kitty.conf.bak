@@ -28,7 +28,7 @@ cursor_blink_interval 0
 cursor_shape beam
 tab_bar_edge top
 tab_bar_style powerline
-tab_powerline_style slanted
+tab_powerline_style round
 tab_bar_margin_width 3
 
 tab_bar_margin_height 0 5
@@ -40,7 +40,7 @@ tab_title_template "{index}:{title.split('/')[-1]}"
 # enabled_layouts splits:split_axis=horizontal
 
 # MacOS
-macos_thicken_font 0.1
+# macos_thicken_font 0.1
 macos_custom_beam_cursor yes
 macos_option_as_alt yes
 sync_to_monitor yes
@@ -49,23 +49,25 @@ sync_to_monitor yes
 font_size 16
 adjust_line_height  120%
 
-# font_family        JetBrainsMono Nerd Font
 # font_family        ComicCodeLigatures Nerd Font
-# font_family        OperatorMono Nerd Font Regular
-font_family        SFMono Nerd Font
-italic_font        auto
-bold_font          auto
-bold_italic_font   auto
+# italic_font        auto
+# bold_font          auto
+# bold_italic_font   auto
 
-# font_family        JetBrainsMono Nerd Font Light
-# italic_font        JetBrainsMono Nerd Font Light Italic
-# bold_font          JetBrainsMono Nerd Font Bold
-# bold_italic_font   JetBrainsMono Nerd Font Bold Italic
+# font_family        SFMono Nerd Font
+# italic_font        auto
+# bold_font          auto
+# bold_italic_font   auto
 
-# font_family        OperatorMono Nerd Font Regular
-# italic_font        OperatorMono Nerd Font Italic
-# bold_font          OperatorMono Nerd Font Medium
-# bold_italic_font   OperatorMono Nerd Font Medium Italic
+# font_family        JetBrainsMono Nerd Font
+# italic_font        auto
+# bold_font          auto
+# bold_italic_font   auto
+
+font_family        OperatorMono Nerd Font Regular
+italic_font        OperatorMono Nerd Font Italic
+bold_font          OperatorMono Nerd Font Bold
+bold_italic_font   OperatorMono Nerd Font Bold Italic
 
 # https://sw.kovidgoyal.net/kitty/conf/#keyboard-shortcuts
 map cmd+t new_tab
@@ -135,6 +137,6 @@ map cmd+shift+m toggle_maximized
 allow_remote_control true
 
 # BEGIN_KITTY_THEME
-# GitHub Dimmed
+# Everforest Light Medium
 include current-theme.conf
 # END_KITTY_THEME
