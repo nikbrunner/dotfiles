@@ -19,7 +19,7 @@ windows:
     commands:
       - nvm use
     panes:
-      - type: horizontal
+      - type: vertical
         commands:
           - nvm use
           - clear

@@ -59,15 +59,15 @@ adjust_line_height  120%
 # bold_font          auto
 # bold_italic_font   auto
 
-# font_family        JetBrainsMono Nerd Font
-# italic_font        auto
-# bold_font          auto
-# bold_italic_font   auto
+font_family        JetBrainsMono Nerd Font
+italic_font        auto
+bold_font          auto
+bold_italic_font   auto
 
-font_family        OperatorMono Nerd Font Regular
-italic_font        OperatorMono Nerd Font Italic
-bold_font          OperatorMono Nerd Font Bold
-bold_italic_font   OperatorMono Nerd Font Bold Italic
+# font_family        OperatorMono Nerd Font Regular
+# italic_font        OperatorMono Nerd Font Italic
+# bold_font          OperatorMono Nerd Font Bold
+# bold_italic_font   OperatorMono Nerd Font Bold Italic
 
 # https://sw.kovidgoyal.net/kitty/conf/#keyboard-shortcuts
 map cmd+t new_tab
@@ -137,6 +137,6 @@ map cmd+shift+m toggle_maximized
 allow_remote_control true
 
 # BEGIN_KITTY_THEME
-# Everforest Light Medium
+# Nordic
 include current-theme.conf
 # END_KITTY_THEME

@@ -12,6 +12,11 @@ windows:
       - cd nvim
       - clear
       - nvim .
+  - name: wezterm
+    commands:
+      - cd wezterm
+      - clear
+      - nvim ./wezterm.lua
   - name: LazyVim
     commands:
       - cd ~/.local/share/nvim/lazy/LazyVim
