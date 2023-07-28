@@ -13,7 +13,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "kanagawa (Gogh)"
+config.color_scheme = "Tokyo Night"
 
 config.font = wezterm.font({
 	family = "JetBrains Mono",
@@ -55,9 +55,13 @@ config.colors = {
 }
 
 config.window_decorations = "RESIZE"
+config.force_reverse_video_cursor = true
 
--- config.enable_tab_bar = false
+config.enable_tab_bar = false
 
-config.command_palette_font_size = 16.0
+config.command_palette_font_size = 18.0
+
+config.window_background_opacity = 0.95
+config.macos_window_background_blur = 25
 
 return config

@@ -3,7 +3,7 @@
   "buffer_font_size": 18,
   "vim_mode": true,
   "buffer_font_family": "JetBrains Mono",
-  "theme": "Rosé Pine",
+  "theme": "Gruvbox Dark Hard",
   "show_completions_on_input": true,
   "git": {
     "git_gutter": "tracked_files"

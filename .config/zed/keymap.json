@@ -1,92 +1,93 @@
 [
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "escape": "editor::Cancel",
-      "enter": "workspace::Save",
-      "shift-h": "editor::MoveToBeginningOfLine",
-      "shift-l": "vim::EndOfLine",
-      "c": [
-        "vim::PushOperator",
-        "Change"
-      ],
-      "g": [
-        "vim::PushOperator",
-        "Go To"
-      ],
-      "d": [
-        "vim::PushOperator",
-        "Delete"
-      ],
-      "i": [
-        "vim::SwitchMode",
-        "Insert"
-      ]
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal && vim_operator == g",
-    "bindings": {
-      "g": "vim::StartOfDocument",
-      "d": "editor::GoToDefinition",
-      "r": "editor::FindAllReferences",
-      "t": "editor::GoToTypeDefinition",
-      "f": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal && vim_operator == c",
-    "bindings": {
-      "c": "vim::CurrentLine"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal && vim_operator == d",
-    "bindings": {
-      "d": "vim::CurrentLine"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == visual",
-    "bindings": {
-      "c": "vim::VisualChange",
-      "d": "vim::VisualDelete",
-      "x": "vim::VisualDelete"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      "escape": "vim::NormalBefore",
-      "ctrl-c": "vim::NormalBefore"
-    }
-  },
-  {
-    "context": "Editor && mode == singleline",
-    "bindings": {
-      "escape": "editor::Cancel"
-    }
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      "h": "project_panel::CollapseSelectedEntry",
-      "l": "project_panel::ExpandSelectedEntry",
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrev",
-      "o": "menu::Confirm",
-      "r": "project_panel::Rename",
-      "z c": "project_panel::CollapseSelectedEntry",
-      "z o": "project_panel::ExpandSelectedEntry",
-      "shift-o": "project_panel::RevealInFinder",
-      "x": "project_panel::Cut",
-      "c": "project_panel::Copy",
-      "p": "project_panel::Paste",
-      "d": "project_panel::Delete",
-      "a": "project_panel::NewFile",
-      "shift-a": "project_panel::NewDirectory",
-      "shift-y": "project_panel::CopyRelativePath",
-      "g y": "project_panel::CopyPath"
-    }
-  }
+  // {
+  //   "context": "Editor && vim_mode == normal",
+  //   "bindings": {
+  //     "escape": "editor::Cancel",
+  //     "enter": "workspace::Save",
+  //     "shift-h": "editor::MoveToBeginningOfLine",
+  //     "shift-l": "vim::EndOfLine",
+  //     "c": [
+  //       "vim::PushOperator",
+  //       "Change"
+  //     ],
+  //     "g": [
+  //       "vim::PushOperator",
+  //       "Go To"
+  //     ],
+  //     "d": [
+  //       "vim::PushOperator",
+  //       "Delete"
+  //     ],
+  //     "i": [
+  //       "vim::SwitchMode",
+  //       "Insert"
+  //     ]
+  //   }
+  // },
+  // {
+  //   "context": "Editor && vim_mode == normal && vim_operator == g",
+  //   "bindings": {
+  //     "g": "vim::StartOfDocument",
+  //     "d": "editor::GoToDefinition",
+  //     "r": "editor::FindAllReferences",
+  //     "t": "editor::GoToTypeDefinition",
+  //     "f": "file_finder::Toggle",
+  //     ".": "editor::ToggleCodeActions"
+  //   }
+  // },
+  // {
+  //   "context": "Editor && vim_mode == normal && vim_operator == c",
+  //   "bindings": {
+  //     "c": "vim::CurrentLine"
+  //   }
+  // },
+  // {
+  //   "context": "Editor && vim_mode == normal && vim_operator == d",
+  //   "bindings": {
+  //     "d": "vim::CurrentLine"
+  //   }
+  // },
+  // {
+  //   "context": "Editor && vim_mode == visual",
+  //   "bindings": {
+  //     "c": "vim::VisualChange",
+  //     "d": "vim::VisualDelete",
+  //     "x": "vim::VisualDelete"
+  //   }
+  // },
+  // {
+  //   "context": "Editor && vim_mode == insert",
+  //   "bindings": {
+  //     "escape": "vim::NormalBefore",
+  //     "ctrl-c": "vim::NormalBefore"
+  //   }
+  // },
+  // {
+  //   "context": "Editor && mode == singleline",
+  //   "bindings": {
+  //     "escape": "editor::Cancel"
+  //   }
+  // },
+  // {
+  //   "context": "ProjectPanel",
+  //   "bindings": {
+  //     "h": "project_panel::CollapseSelectedEntry",
+  //     "l": "project_panel::ExpandSelectedEntry",
+  //     "j": "menu::SelectNext",
+  //     "k": "menu::SelectPrev",
+  //     "o": "menu::Confirm",
+  //     "r": "project_panel::Rename",
+  //     "z c": "project_panel::CollapseSelectedEntry",
+  //     "z o": "project_panel::ExpandSelectedEntry",
+  //     "shift-o": "project_panel::RevealInFinder",
+  //     "x": "project_panel::Cut",
+  //     "c": "project_panel::Copy",
+  //     "p": "project_panel::Paste",
+  //     "d": "project_panel::Delete",
+  //     "a": "project_panel::NewFile",
+  //     "shift-a": "project_panel::NewDirectory",
+  //     "shift-y": "project_panel::CopyRelativePath",
+  //     "g y": "project_panel::CopyPath"
+  //   }
+  // }
 ]
