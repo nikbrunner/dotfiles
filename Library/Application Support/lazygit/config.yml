@@ -1,5 +1,6 @@
 os:
   open: "code -rg {{filename}}"
+  # open: "zed {{filename}}"
 gui:
   # stuff relating to the UI
   scrollHeight: 10 # how many lines you scroll by
