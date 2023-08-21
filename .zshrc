@@ -84,7 +84,7 @@ export BCO_ST=4WSMH53
 alias HBCO="HOST=$BCO_IP"
 
 # Home BC
-export BCH_IP=192.168.2.108
+export BCH_IP=192.168.2.107
 export BCH_ST=CG7L9R2
 alias HBCH="HOST=$BCH_IP"
 

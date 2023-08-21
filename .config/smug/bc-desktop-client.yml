@@ -28,6 +28,9 @@ windows:
     commands:
       - nvm use
   - name: device
+    layout: main-horizontal
+    commands:
+      - nvm use
     # commands:
     # Use BC_IP=10.0.2.125 when starting smug
     # - ssh root@${BC_IP}

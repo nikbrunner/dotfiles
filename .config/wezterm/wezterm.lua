@@ -4,6 +4,9 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
+-- local font_family = "JetBrainsMono Nerd Font"
+local font_family = "BerkeleyMono Nerd Font"
+
 -- This table will hold the configuration.
 local config = {}
 
@@ -13,11 +16,15 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Tokyo Night"
+-- config.color_scheme = "Tokyo Night"
+-- config.color_scheme = "Kanagawa (Gogh)"
+-- config.color_scheme = "terafox"
+config.color_scheme = "carbonfox"
+-- config.color_scheme = "GitHub Dark"
+-- config.color_scheme = "nord"
 
 config.font = wezterm.font({
-	family = "JetBrains Mono",
-	-- family = "OperatorMono Nerd Font",
+	family = font_family,
 	weight = "Regular",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
@@ -32,7 +39,7 @@ config.window_frame = {
 	-- Whatever font is selected here, it will have the
 	-- main font setting appended to it to pick up any
 	-- fallback fonts you may have used there.
-	font = wezterm.font({ family = "JetBrains Mono", weight = "Bold" }),
+	font = wezterm.font({ family = font_family, weight = "Bold" }),
 
 	-- The size of the font in the tab bar.
 	-- Default to 10.0 on Windows but 12.0 on other systems
@@ -54,14 +61,49 @@ config.colors = {
 	},
 }
 
+config.keys = {
+	{
+		key = "d",
+		mods = "CMD",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "D",
+		mods = "CMD",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+}
+
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
 
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 
 config.command_palette_font_size = 18.0
 
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 25
+-- Use the defaults as a base
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
+
+-- make task numbers clickable
+-- the first matched regex group is captured in $1.
+table.insert(config.hyperlink_rules, {
+	regex = [[\b(BCD-\d{4})\b]],
+	format = "https://dcd.myjetbrains.com/youtrack/issue/$1",
+})
+
+-- make username/project paths clickable. this implies paths like the following are for github.
+-- ( "nvim-treesitter/nvim-treesitter" | wbthomason/packer.nvim | wez/wezterm | "wez/wezterm.git" )
+-- as long as a full url hyperlink regex exists above this it should not match a full url to
+-- github or gitlab / bitbucket (i.e. https://gitlab.com/user/project.git is still a whole clickable url)
+table.insert(config.hyperlink_rules, {
+	regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?]],
+	format = "https://www.github.com/$1/$3",
+})
+
+-- make urls clickable by bypassing the mouse reporting modifiers
+config.bypass_mouse_reporting_modifiers = "CMD"
+
+-- config.window_background_opacity = 0.95
+-- config.macos_window_background_blur = 25
 
 return config
