@@ -91,6 +91,8 @@ alias HBCH="HOST=$BCH_IP"
 export BCK_IP=10.2.0.179
 alias HBCK="HOST=$BCK_IP"
 
+
+
 export BAT_THEME="Nord"
 
 # fzf ====================================================================
