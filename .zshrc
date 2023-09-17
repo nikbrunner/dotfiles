@@ -1,6 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 # HomeBrew
 local brew_path="/opt/homebrew/bin"
 local brew_opt_path="/opt/homebrew/opt"
@@ -73,23 +70,25 @@ alias theme="kitty +kitten themes --reload-in=all "
 alias themes="kitty +kitten themes"
 # alias ssh='env TERM=xterm-256color ssh' # allows kitty to work with ssh
 
-alias scratch="$EDITOR $HOME/scratchpad.md"
+alias scratch="code $HOME/scratchpad.md"
 
 # myip
 myip=$(ipconfig getifaddr en0)
 
-# Office BC
-export BCO_IP=10.2.0.153
-export BCO_ST=4WSMH53
-alias HBCO="HOST=$BCO_IP"
+# BikeCenter
+export BC_OFFICE_IP=10.2.0.154
+export BC_OFFICE_ST=4WSMH53
 
-# Home BC
-export BCH_IP=192.168.2.107
-export BCH_ST=CG7L9R2
-alias HBCH="HOST=$BCH_IP"
+export BC_HOME_IP=192.168.2.107
+export BC_HOME_ST=CG7L9R2
 
-export BCK_IP=10.2.0.179
-alias HBCK="HOST=$BCK_IP"
+export BC_JULIA_IP=10.2.0.71
+export BC_JULIA_ST=8RBL9R2
+
+export BC_CONSTANTIN_IP=10.2.0.187
+export BC_CONSTANTIN_ST=CNRFGQ2
+
+# Bat
 
 export BAT_THEME="Nord"
 
@@ -132,6 +131,3 @@ complete -o nospace -C /usr/local/bin/bit bit
 # tput cup "$LINES"
 
 source $ZSH/oh-my-zsh.sh
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

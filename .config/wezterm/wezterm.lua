@@ -4,8 +4,8 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- local font_family = "JetBrainsMono Nerd Font"
-local font_family = "BerkeleyMono Nerd Font"
+local font_family = "JetBrainsMono Nerd Font"
+-- local font_family = "BerkeleyMono Nerd Font"
 
 -- This table will hold the configuration.
 local config = {}
@@ -22,6 +22,26 @@ end
 config.color_scheme = "carbonfox"
 -- config.color_scheme = "GitHub Dark"
 -- config.color_scheme = "nord"
+
+config.window_background_opacity = 0.95
+config.macos_window_background_blur = 65
+
+local WALLPAPER_FOLDER = "/Users/nikolausbrunner/Pictures/wallpapers"
+
+config.background = {
+
+	{
+		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night32 blur.png" },
+		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night24.png" },
+		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_4.jpg" },
+		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_17.jpg" },
+		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
+		source = { File = WALLPAPER_FOLDER .. "/vibrant/polyblack.jpg" },
+		hsb = {
+			brightness = 0.3,
+		},
+	},
+}
 
 config.font = wezterm.font({
 	family = font_family,
@@ -77,7 +97,7 @@ config.keys = {
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
 
-config.enable_tab_bar = true
+config.enable_tab_bar = false
 
 config.command_palette_font_size = 18.0
 
@@ -102,8 +122,5 @@ table.insert(config.hyperlink_rules, {
 
 -- make urls clickable by bypassing the mouse reporting modifiers
 config.bypass_mouse_reporting_modifiers = "CMD"
-
--- config.window_background_opacity = 0.95
--- config.macos_window_background_blur = 25
 
 return config
