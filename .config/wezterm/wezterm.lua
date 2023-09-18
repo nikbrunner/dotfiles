@@ -4,8 +4,8 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
-local font_family = "JetBrainsMono Nerd Font"
--- local font_family = "BerkeleyMono Nerd Font"
+-- local font_family = "JetBrainsMono Nerd Font"
+local font_family = "BerkeleyMono Nerd Font"
 
 -- This table will hold the configuration.
 local config = {}
@@ -38,7 +38,7 @@ config.background = {
 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
 		source = { File = WALLPAPER_FOLDER .. "/vibrant/polyblack.jpg" },
 		hsb = {
-			brightness = 0.3,
+			brightness = 0.2,
 		},
 	},
 }
