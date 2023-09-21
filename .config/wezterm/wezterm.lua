@@ -4,8 +4,8 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
-local font_family = "JetBrainsMono Nerd Font"
--- local font_family = "BerkeleyMono Nerd Font"
+-- local font_family = "JetBrainsMono Nerd Font"
+local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "SFMono Nerd Font"
 
 -- This table will hold the configuration.
@@ -19,18 +19,17 @@ end
 
 -- config.color_scheme = "Tokyo Night"
 -- config.color_scheme = "Kanagawa (Gogh)"
-config.color_scheme = "terafox"
+-- config.color_scheme = "terafox"
 -- config.color_scheme = "carbonfox"
 -- config.color_scheme = "GitHub Dark"
--- config.color_scheme = "nord"
+config.color_scheme = "nord"
 
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 65
+-- config.window_background_opacity = 0.95
+-- config.macos_window_background_blur = 65
 
 local WALLPAPER_FOLDER = "/Users/nikolausbrunner/Pictures/wallpapers"
 
 config.background = {
-
 	{
 		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night32 blur.png" },
 		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night24.png" },
@@ -39,7 +38,8 @@ config.background = {
 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/polyblack.jpg" },
 		hsb = {
-			brightness = 0.025,
+			-- brightness = 0.2,
+			brightness = 0.05,
 		},
 	},
 }

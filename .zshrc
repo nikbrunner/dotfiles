@@ -95,6 +95,8 @@ export BC_JULIA_ST=8RBL9R2
 export BC_CONSTANTIN_IP=10.2.0.187
 export BC_CONSTANTIN_ST=CNRFGQ2
 
+
+
 # Bat
 
 export BAT_THEME="Nord"
@@ -103,7 +105,13 @@ export BAT_THEME="Nord"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}" | fzf`'
+alias find-nvim="fd --type f --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . /Users/nikolausbrunner/Documents/dev/repos | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
+alias find-cd-nvim="fd --type d --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . /Users/nikolausbrunner/Documents/dev/repos | fzf | xargs -I % sh -c 'cd % && nvim .'"
+alias find-dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
+
+bindkey -s '^[p' 'find-nvim\n'
+bindkey -s '^[d' 'find-cd-nvim\n'
+bindkey -s '^[g' 'find-dotfiles\n'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

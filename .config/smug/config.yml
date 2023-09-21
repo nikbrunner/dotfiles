@@ -12,6 +12,16 @@ windows:
       - cd nvim
       - clear
       - nvim .
+  - name: lazyvin
+    commands:
+      - cd nvim
+      - clear
+      - nvim .
+  - name: vin
+    commands:
+      - cd vin
+      - clear
+      - nvim .
   - name: wezterm
     commands:
       - cd wezterm
