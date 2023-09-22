@@ -25,13 +25,9 @@ export PATH=${brew_opt_path}/python@3.10/bin/python3:$PATH
 # NVM
 [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
 
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="bira"
-# ZSH_THEME="nicoulaj"
-# ZSH_THEME="amuse"
 plugins=(git zsh-vi-mode zsh-z zsh-autosuggestions zsh-syntax-highlighting)
 
 # Edit Config Files ======================================================
@@ -95,23 +91,37 @@ export BC_JULIA_ST=8RBL9R2
 export BC_CONSTANTIN_IP=10.2.0.187
 export BC_CONSTANTIN_ST=CNRFGQ2
 
-
-
 # Bat
-
 export BAT_THEME="Nord"
 
 # fzf ====================================================================
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias find-nvim="fd --type f --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . /Users/nikolausbrunner/Documents/dev/repos | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
-alias find-cd-nvim="fd --type d --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . /Users/nikolausbrunner/Documents/dev/repos | fzf | xargs -I % sh -c 'cd % && nvim .'"
-alias find-dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
 
-bindkey -s '^[p' 'find-nvim\n'
-bindkey -s '^[d' 'find-cd-nvim\n'
-bindkey -s '^[g' 'find-dotfiles\n'
+function start-smug-session {
+  # Fetch smug sessions and feed them into fzf
+  session=$(smug list | fzf --height 40% --layout=reverse)
+
+  # Start the selected smug session
+  if [[ -n "$session" ]]; then
+    smug start "$session"
+  fi
+}
+
+# alias find-nvim="fd --type f --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
+alias find-nvim="fd --type f --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % $HOME/.scripts/open_in_git_root.sh %"
+alias find-cd-nvim="fd --type d --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf | xargs -I % sh -c 'cd % && nvim .'"
+alias find-dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :501 {}' | xargs -I % nvim %"
+alias ses="start-smug-session"
+
+# [CTRL+R is overwritten · Issue #242 · jeffreytse/zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode/issues/242)
+# Set this bindings after the plugin loader from oh-my-zsh
+function zvm_after_init() {
+    bindkey -s '^[p' 'find-nvim\n'
+    bindkey -s '^[d' 'find-cd-nvim\n'
+    bindkey -s '^[g' 'find-dotfiles\n'
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -149,6 +159,7 @@ unset ZSH_AUTOSUGGEST_USE_ASYNC
 # tput cup "$LINES"
 
 source $ZSH/oh-my-zsh.sh
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

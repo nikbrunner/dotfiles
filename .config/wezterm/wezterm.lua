@@ -4,8 +4,8 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- local font_family = "JetBrainsMono Nerd Font"
-local font_family = "BerkeleyMono Nerd Font"
+local font_family = "JetBrainsMono Nerd Font"
+-- local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "SFMono Nerd Font"
 
 -- This table will hold the configuration.
