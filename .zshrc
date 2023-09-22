@@ -109,10 +109,18 @@ function start-smug-session {
   fi
 }
 
+
+function find-dotfiles {
+  pushd . > /dev/null
+  cd $HOME
+  git --git-dir=$HOME/.dotfiles --work-tree=$HOME ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %
+  popd > /dev/null
+}
+
 # alias find-nvim="fd --type f --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
 alias find-nvim="fd --type f --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % $HOME/.scripts/open_in_git_root.sh %"
 alias find-cd-nvim="fd --type d --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf | xargs -I % sh -c 'cd % && nvim .'"
-alias find-dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :501 {}' | xargs -I % nvim %"
+alias find-dotfiles=" cd $HOME && git --git-dir=$HOME/.dotfiles --work-tree=$HOME ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :501 {}' | xargs -I % nvim %"
 alias ses="start-smug-session"
 
 # [CTRL+R is overwritten · Issue #242 · jeffreytse/zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode/issues/242)
