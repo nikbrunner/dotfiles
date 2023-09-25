@@ -4,8 +4,8 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
-local font_family = "JetBrainsMono Nerd Font"
--- local font_family = "BerkeleyMono Nerd Font"
+-- local font_family = "JetBrainsMono Nerd Font"
+local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "SFMono Nerd Font"
 
 -- This table will hold the configuration.
@@ -21,28 +21,37 @@ end
 -- config.color_scheme = "Kanagawa (Gogh)"
 -- config.color_scheme = "terafox"
 -- config.color_scheme = "carbonfox"
+config.color_scheme = "nordfox"
 -- config.color_scheme = "GitHub Dark"
-config.color_scheme = "nord"
+
+config.colors = {
+	background = "#151a1c",
+	tab_bar = {
+		-- The color of the inactive tab bar edge/divider
+		inactive_tab_edge = "#575757",
+	},
+}
 
 -- config.window_background_opacity = 0.95
 -- config.macos_window_background_blur = 65
 
 local WALLPAPER_FOLDER = "/Users/nikolausbrunner/Pictures/wallpapers"
 
-config.background = {
-	{
-		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night32 blur.png" },
-		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night24.png" },
-		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_4.jpg" },
-		source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_17.jpg" },
-		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
-		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/polyblack.jpg" },
-		hsb = {
-			-- brightness = 0.2,
-			brightness = 0.05,
-		},
-	},
-}
+-- config.background = {
+-- 	{
+-- 		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night32 blur.png" },
+-- 		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night24.png" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_4.jpg" },
+-- 		source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_13.jpg" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_17.jpg" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/polyblack.jpg" },
+-- 		hsb = {
+-- 			-- brightness = 0.2,
+-- 			brightness = 0.05,
+-- 		},
+-- 	},
+-- }
 
 config.font = wezterm.font({
 	family = font_family,
@@ -73,13 +82,6 @@ config.window_frame = {
 	-- The overall background color of the tab bar when
 	-- the window is not focused
 	inactive_titlebar_bg = "#333333",
-}
-
-config.colors = {
-	tab_bar = {
-		-- The color of the inactive tab bar edge/divider
-		inactive_tab_edge = "#575757",
-	},
 }
 
 config.keys = {
