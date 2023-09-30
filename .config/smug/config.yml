@@ -17,13 +17,19 @@ windows:
       - cd vin
       - clear
       - nvim .
-  - name: wezterm
+  - name: term
     commands:
       - cd wezterm
       - clear
       - nvim ./wezterm.lua
-  - name: LazyVim
+    panes:
+      - type: vertical
+        commands:
+          - cd tmux
+          - clear
+          - nvim ./tmux.conf
+  - name: smug
     commands:
-      - cd ~/.local/share/nvim/lazy/LazyVim
+      - cd smug
       - clear
       - nvim .

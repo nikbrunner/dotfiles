@@ -17,15 +17,17 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- config.color_scheme = "Tokyo Night"
+-- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
+-- config.color_scheme = "Tokyo Night Moon"
 -- config.color_scheme = "Kanagawa (Gogh)"
 -- config.color_scheme = "terafox"
 -- config.color_scheme = "carbonfox"
-config.color_scheme = "nordfox"
--- config.color_scheme = "GitHub Dark"
+-- config.color_scheme = "nordfox"
+config.color_scheme = "Gruvbox Dark (Gogh)"
 
 config.colors = {
-	background = "#151a1c",
+	-- background = "#151a1c", -- Nordfox
+	-- background = "#1d232b",
 	tab_bar = {
 		-- The color of the inactive tab bar edge/divider
 		inactive_tab_edge = "#575757",
@@ -42,17 +44,17 @@ local WALLPAPER_FOLDER = "/Users/nikolausbrunner/Pictures/wallpapers"
 -- 		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night32 blur.png" },
 -- 		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night24.png" },
 -- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_4.jpg" },
--- 		source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_13.jpg" },
--- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_17.jpg" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_13.jpg" },
+-- 		source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_17.jpg" },
 -- 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
 -- 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/polyblack.jpg" },
 -- 		hsb = {
 -- 			-- brightness = 0.2,
--- 			brightness = 0.05,
+-- 			brightness = 0.1,
 -- 		},
 -- 	},
 -- }
-
+--
 config.font = wezterm.font({
 	family = font_family,
 	weight = "Regular",

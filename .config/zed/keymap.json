@@ -5,6 +5,22 @@
       "escape": "editor::Cancel",
       "shift-h": "editor::MoveToBeginningOfLine",
       "shift-l": "vim::EndOfLine",
+      "ctrl-h": [
+        "workspace::ActivatePaneInDirection",
+        "Left"
+      ],
+      "ctrl-l": [
+        "workspace::ActivatePaneInDirection",
+        "Right"
+      ],
+      "ctrl-k": [
+        "workspace::ActivatePaneInDirection",
+        "Up"
+      ],
+      "ctrl-j": [
+        "workspace::ActivatePaneInDirection",
+        "Down"
+      ],
       "c": [
         "vim::PushOperator",
         "Change"
@@ -74,7 +90,8 @@
       "l": "project_panel::ExpandSelectedEntry",
       "j": "menu::SelectNext",
       "k": "menu::SelectPrev",
-      "o": "menu::Confirm",
+      // "o": "menu::Confirm",
+      "enter": "project_panel::Open",
       "r": "project_panel::Rename",
       "z c": "project_panel::CollapseSelectedEntry",
       "z o": "project_panel::ExpandSelectedEntry",
