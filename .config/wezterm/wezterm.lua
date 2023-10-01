@@ -27,7 +27,9 @@ config.color_scheme = "Gruvbox Dark (Gogh)"
 
 config.colors = {
 	-- background = "#151a1c", -- Nordfox
-	-- background = "#1d232b",
+	background = "#232323", -- Terra Fall Night
+	-- background = "#1c2a23", -- Terra Spring Night
+	-- background = "#070b0d", -- Terra Control Night
 	tab_bar = {
 		-- The color of the inactive tab bar edge/divider
 		inactive_tab_edge = "#575757",
