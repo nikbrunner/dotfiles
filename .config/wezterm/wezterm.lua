@@ -23,7 +23,7 @@ end
 -- config.color_scheme = "terafox"
 -- config.color_scheme = "carbonfox"
 -- config.color_scheme = "nordfox"
-config.color_scheme = "Gruvbox Dark (Gogh)"
+config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.colors = {
 	-- background = "#151a1c", -- Nordfox
