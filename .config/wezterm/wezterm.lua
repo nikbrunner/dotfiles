@@ -14,17 +14,19 @@ if wezterm.config_builder then
 end
 
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
-config.color_scheme = "Tokyo Night Storm"
+-- config.color_scheme = "Tokyo Night Storm"
 -- config.color_scheme = "Kanagawa (Gogh)"
--- config.color_scheme = "terafox"
+config.color_scheme = "terafox"
 -- config.color_scheme = "carbonfox"
 -- config.color_scheme = "nordfox"
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.colors = {
+	-- background = "#0a1214",
+	background = "#0d1011",
 	-- background = "#151a1c", -- Nordfox
 	-- background = "#141414", -- Terra Fall Night
-	-- background = "#1c2a23", -- Terra Spring Night
+	-- background = "#2c2a23", -- Terra Spring Night
 	-- background = "#070b0d", -- Terra Control Night
 	-- background = "#17193c", -- Terra Kurzgesagt Night
 	tab_bar = {
