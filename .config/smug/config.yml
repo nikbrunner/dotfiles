@@ -3,39 +3,23 @@ session: config
 root: ~/.config
 
 windows:
-  - name: config
-    layout: main-horizontal
-    commands:
-      - nvim .
   - name: lazyvin
     commands:
       - cd nvim
-      - clear
       - nvim .
   - name: vin
     commands:
       - cd vin
-      - clear
       - nvim .
     panes:
       - type: vertical
         commands:
-          - cd /Users/nikolausbrunner/.local/share/nvim/lazy/LazyVim
-          - clear
+          - cd $HOME/.local/share/nvim/lazy/LazyVim
           - nvim .
   - name: term
     commands:
-      - cd wezterm
-      - clear
-      - nvim ./wezterm.lua
-    panes:
-      - type: vertical
-        commands:
-          - cd tmux
-          - clear
-          - nvim ./tmux.conf
+      - nvim -O ./wezterm/wezterm.lua ./tmux/tmux.conf
   - name: smug
     commands:
       - cd smug
-      - clear
       - nvim .

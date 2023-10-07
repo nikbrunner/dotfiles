@@ -22,8 +22,6 @@ config.color_scheme = "Tokyo Night Storm"
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.colors = {
-	-- background = "#000000", -- Black
-	background = "#10121b",
 	-- background = "#151a1c", -- Nordfox
 	-- background = "#141414", -- Terra Fall Night
 	-- background = "#1c2a23", -- Terra Spring Night
@@ -35,8 +33,8 @@ config.colors = {
 	},
 }
 
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 65
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 65
 
 local WALLPAPER_FOLDER = "/Users/nikolausbrunner/Pictures/wallpapers"
 
