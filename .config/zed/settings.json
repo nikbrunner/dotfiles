@@ -2,8 +2,9 @@
   "base_keymap": "VSCode",
   "buffer_font_size": 18,
   "vim_mode": true,
-  "buffer_font_family": "BerkeleyMono Nerd Font",
-  "theme": "Atelier Savanna Dark",
+  // "buffer_font_family": "BerkeleyMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "theme": "Gruvbox Dark Hard",
   "show_completions_on_input": true,
   "git": {
     "git_gutter": "tracked_files"
@@ -17,13 +18,23 @@
   "relative_line_numbers": true,
   "language_overrides": {
     "JavaScript": {
-      "format_on_save": {
+      "format_on_save": "on",
+      "formatter": {
         "external": {
-          "command": "prettier",
+          "command": "node_modules/.bin/prettier",
           "arguments": [
             "--stdin-filepath",
             "{buffer_path}"
           ]
+        }
+      }
+    }
+  },
+  "lsp": {
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "importModuleSpecifierPreference": "relative"
         }
       }
     }

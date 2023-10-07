@@ -17,6 +17,12 @@ windows:
       - cd vin
       - clear
       - nvim .
+    panes:
+      - type: vertical
+        commands:
+          - cd /Users/nikolausbrunner/.local/share/nvim/lazy/LazyVim
+          - clear
+          - nvim .
   - name: term
     commands:
       - cd wezterm

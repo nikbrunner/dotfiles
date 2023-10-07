@@ -1,10 +1,30 @@
 [
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
-      "escape": "editor::Cancel",
-      "shift-h": "editor::MoveToBeginningOfLine",
+      // put key-bindings here if you want them to work in normal & visual mode
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      "g r": "editor::FindAllReferences",
       "shift-l": "vim::EndOfLine",
+      "shift-h": "vim::StartOfLine",
+      "shift-k": "editor::Hover",
+      "g c c": "editor::ToggleComments",
+      "space c n": "editor::Rename",
+      "space c c r": "editor::CopyRelativePath",
+      "space f f": "file_finder::Toggle",
+      "] g": "editor::GoToHunk",
+      "[ g": "editor::GoToPrevHunk",
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPrevDiagnostic",
+      "z a": "editor::Fold",
+      "z o": "editor::UnfoldLines",
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePrevItem",
       "ctrl-h": [
         "workspace::ActivatePaneInDirection",
         "Left"
@@ -20,90 +40,19 @@
       "ctrl-j": [
         "workspace::ActivatePaneInDirection",
         "Down"
-      ],
-      "c": [
-        "vim::PushOperator",
-        "Change"
-      ],
-      "g": [
-        "vim::PushOperator",
-        "Go To"
-      ],
-      "d": [
-        "vim::PushOperator",
-        "Delete"
-      ],
-      "i": [
-        "vim::SwitchMode",
-        "Insert"
       ]
     }
   },
   {
-    "context": "Editor && vim_mode == normal && vim_operator == g",
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
-      "g": "vim::StartOfDocument",
-      "d": "editor::GoToDefinition",
-      "r": "editor::FindAllReferences",
-      "t": "editor::GoToTypeDefinition",
-      "f": "file_finder::Toggle",
-      ".": "editor::ToggleCodeActions"
+      // visual, visual line & visual block modes
     }
   },
   {
-    "context": "Editor && vim_mode == normal && vim_operator == c",
+    "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      "c": "vim::CurrentLine"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal && vim_operator == d",
-    "bindings": {
-      "d": "vim::CurrentLine"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == visual",
-    "bindings": {
-      "c": "vim::VisualChange",
-      "d": "vim::VisualDelete",
-      "x": "vim::VisualDelete"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      "escape": "vim::NormalBefore",
-      "ctrl-c": "vim::NormalBefore"
-    }
-  },
-  {
-    "context": "Editor && mode == singleline",
-    "bindings": {
-      "escape": "editor::Cancel"
-    }
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      "h": "project_panel::CollapseSelectedEntry",
-      "l": "project_panel::ExpandSelectedEntry",
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrev",
-      // "o": "menu::Confirm",
-      "enter": "project_panel::Open",
-      "r": "project_panel::Rename",
-      "z c": "project_panel::CollapseSelectedEntry",
-      "z o": "project_panel::ExpandSelectedEntry",
-      "shift-o": "project_panel::RevealInFinder",
-      "x": "project_panel::Cut",
-      "c": "project_panel::Copy",
-      "p": "project_panel::Paste",
-      "d": "project_panel::Delete",
-      "a": "project_panel::NewFile",
-      "shift-a": "project_panel::NewDirectory",
-      "shift-y": "project_panel::CopyRelativePath",
-      "g y": "project_panel::CopyPath"
+      // put key-bindings here if you want them to work in insert mode
     }
   }
 ]

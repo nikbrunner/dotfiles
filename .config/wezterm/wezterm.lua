@@ -4,10 +4,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- local font_family = "JetBrainsMono Nerd Font"
-local font_family = "BerkeleyMono Nerd Font"
--- local font_family = "SFMono Nerd Font"
-
 -- This table will hold the configuration.
 local config = {}
 
@@ -18,48 +14,58 @@ if wezterm.config_builder then
 end
 
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
--- config.color_scheme = "Tokyo Night Moon"
+config.color_scheme = "Tokyo Night Storm"
 -- config.color_scheme = "Kanagawa (Gogh)"
 -- config.color_scheme = "terafox"
 -- config.color_scheme = "carbonfox"
 -- config.color_scheme = "nordfox"
-config.color_scheme = "Gruvbox Material (Gogh)"
+-- config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.colors = {
+	-- background = "#000000", -- Black
+	background = "#10121b",
 	-- background = "#151a1c", -- Nordfox
-	background = "#232323", -- Terra Fall Night
+	-- background = "#141414", -- Terra Fall Night
 	-- background = "#1c2a23", -- Terra Spring Night
 	-- background = "#070b0d", -- Terra Control Night
+	-- background = "#17193c", -- Terra Kurzgesagt Night
 	tab_bar = {
 		-- The color of the inactive tab bar edge/divider
 		inactive_tab_edge = "#575757",
 	},
 }
 
--- config.window_background_opacity = 0.95
--- config.macos_window_background_blur = 65
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 65
 
 local WALLPAPER_FOLDER = "/Users/nikolausbrunner/Pictures/wallpapers"
 
 -- config.background = {
 -- 	{
--- 		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night32 blur.png" },
--- 		-- 	source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night24.png" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night32 blur.png" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night24.png" },
 -- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_4.jpg" },
 -- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_13.jpg" },
--- 		source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_17.jpg" },
--- 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_17.jpg" },
+-- 		source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
 -- 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/polyblack.jpg" },
+-- 		-- source = { File = WALLPAPER_FOLDER .. "/landscapes/landscapes_18.jpg" },
 -- 		hsb = {
 -- 			-- brightness = 0.2,
 -- 			brightness = 0.1,
+-- 			-- brightness = 0.035,
 -- 		},
 -- 	},
 -- }
---
+
+local font_family = "JetBrainsMono Nerd Font"
+-- local font_family = "BerkeleyMono Nerd Font"
+-- local font_family = "ComicCodeLigatures Nerd Font"
+-- local font_family = "SFMono Nerd Font"
+
 config.font = wezterm.font({
 	family = font_family,
-	weight = "Regular",
+	weight = 400,
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
 
@@ -86,6 +92,13 @@ config.window_frame = {
 	-- The overall background color of the tab bar when
 	-- the window is not focused
 	inactive_titlebar_bg = "#333333",
+}
+
+config.window_padding = {
+	left = 50,
+	right = 50,
+	top = 50,
+	bottom = 50,
 }
 
 config.keys = {

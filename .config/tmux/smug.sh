@@ -46,7 +46,7 @@ fi
 
 # Use fzf within a tmux popup to select a session, output to a temp file
 temp_file=$(mktemp)
-tmux popup -E -d '#{pane_current_path}' "echo \"$sessions\" | fzf --prompt='Start a new preconfigured tmux session:' > $temp_file"
+tmux popup -E -d '#{pane_current_path}' "echo \"$sessions\" | fzf --prompt='Start a new preconfigured tmux session: ' > $temp_file"
 
 # Read the selected session from the temp file
 selected_session=$(cat $temp_file)
