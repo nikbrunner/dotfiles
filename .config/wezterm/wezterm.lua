@@ -1,19 +1,15 @@
--- [Configuration - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/files.html)
--- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
-
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This table will hold the configuration.
 local config = {}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- [Configuration - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/files.html)
+-- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
+
 -- config.color_scheme = "Tokyo Night Storm"
 -- config.color_scheme = "Kanagawa (Gogh)"
 config.color_scheme = "terafox"
@@ -23,12 +19,19 @@ config.color_scheme = "terafox"
 
 config.colors = {
 	-- background = "#0a1214",
-	background = "#0d1011",
+	-- background = "#0d1011",
+	-- background = "#192123",
+	-- background = "#222c2f",
+
+	-- background = "#152A1F", -- TeraFox (Custom)
+	background = "#18271f", -- TeraFox (Custom)
+
 	-- background = "#151a1c", -- Nordfox
 	-- background = "#141414", -- Terra Fall Night
 	-- background = "#2c2a23", -- Terra Spring Night
 	-- background = "#070b0d", -- Terra Control Night
 	-- background = "#17193c", -- Terra Kurzgesagt Night
+
 	tab_bar = {
 		-- The color of the inactive tab bar edge/divider
 		inactive_tab_edge = "#575757",
@@ -38,27 +41,8 @@ config.colors = {
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 65
 
-local WALLPAPER_FOLDER = "/Users/nikolausbrunner/Pictures/wallpapers"
-
--- config.background = {
--- 	{
--- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night32 blur.png" },
--- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/tokyo/tokyo-night24.png" },
--- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_4.jpg" },
--- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_13.jpg" },
--- 		-- source = { File = WALLPAPER_FOLDER .. "/themes/nord/nord_17.jpg" },
--- 		source = { File = WALLPAPER_FOLDER .. "/vibrant/blue.jpg" },
--- 		-- source = { File = WALLPAPER_FOLDER .. "/vibrant/polyblack.jpg" },
--- 		-- source = { File = WALLPAPER_FOLDER .. "/landscapes/landscapes_18.jpg" },
--- 		hsb = {
--- 			-- brightness = 0.2,
--- 			brightness = 0.1,
--- 			-- brightness = 0.035,
--- 		},
--- 	},
--- }
-
-local font_family = "JetBrainsMono Nerd Font"
+-- local font_family = "JetBrainsMono Nerd Font"
+local font_family = "MapleMono Nerd Font"
 -- local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "ComicCodeLigatures Nerd Font"
 -- local font_family = "SFMono Nerd Font"
@@ -73,25 +57,11 @@ config.font_size = 16
 config.line_height = 1.2
 
 config.window_frame = {
-	-- The font used in the tab bar.
-	-- Roboto Bold is the default; this font is bundled
-	-- with wezterm.
-	-- Whatever font is selected here, it will have the
-	-- main font setting appended to it to pick up any
-	-- fallback fonts you may have used there.
-	font = wezterm.font({ family = font_family, weight = "Bold" }),
-
-	-- The size of the font in the tab bar.
-	-- Default to 10.0 on Windows but 12.0 on other systems
+	font = wezterm.font({
+		family = font_family,
+		weight = "Bold",
+	}),
 	font_size = 16.0,
-
-	-- The overall background color of the tab bar when
-	-- the window is focused
-	active_titlebar_bg = "#333333",
-
-	-- The overall background color of the tab bar when
-	-- the window is not focused
-	inactive_titlebar_bg = "#333333",
 }
 
 config.window_padding = {
