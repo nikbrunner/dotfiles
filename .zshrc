@@ -135,17 +135,17 @@ function zvm_after_init() {
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # neovim-remotee==========================================================
-if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-    alias nvim=nvr -cc split --remote-wait +'set bufhidden=wipe'
-fi
-
-if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-    export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-    export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-else
-    export VISUAL="nvim"
-    export EDITOR="nvim"
-fi
+# if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+#     alias nvim=nvr -cc split --remote-wait +'set bufhidden=wipe'
+# fi
+#
+# if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+#     export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+#     export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+# else
+#     export VISUAL="nvim"
+#     export EDITOR="nvim"
+# fi
 
 # Load Git completion
 zstyle ':completion:*:*:git:*' script ~/.config/.zsh/git-completion.bash

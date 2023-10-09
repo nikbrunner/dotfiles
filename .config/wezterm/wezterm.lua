@@ -41,8 +41,8 @@ config.colors = {
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 65
 
--- local font_family = "JetBrainsMono Nerd Font"
-local font_family = "MapleMono Nerd Font"
+local font_family = "JetBrainsMono Nerd Font"
+-- local font_family = "MapleMono Nerd Font"
 -- local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "ComicCodeLigatures Nerd Font"
 -- local font_family = "SFMono Nerd Font"
