@@ -22,6 +22,8 @@ export NVM_DIR=$HOME/.nvm
 export PATH=${brew_path}:${PATH}
 export PATH=${brew_opt_path}/python@3.10/bin/python3:$PATH
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # NVM
 [ -s "${brew_opt_path}/nvm/nvm.sh" ] && . "${brew_opt_path}/nvm/nvm.sh"
 

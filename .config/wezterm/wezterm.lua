@@ -41,8 +41,8 @@ config.colors = {
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 65
 
-local font_family = "JetBrainsMono Nerd Font"
--- local font_family = "MapleMono Nerd Font"
+-- local font_family = "JetBrainsMono Nerd Font"
+local font_family = "MapleMono Nerd Font"
 -- local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "ComicCodeLigatures Nerd Font"
 -- local font_family = "SFMono Nerd Font"
@@ -70,6 +70,14 @@ config.window_padding = {
 	top = 50,
 	bottom = 50,
 }
+
+local function isViProcess(pane)
+	-- get_foreground_process_name On Linux, macOS and Windows,
+	-- the process can be queried to determine this path. Other operating systems
+	-- (notably, FreeBSD and other unix systems) are not currently supported
+	return pane:get_foreground_process_name():find("n?vim") ~= nil
+	-- return pane:get_title():find("n?vim") ~= nil
+end
 
 config.keys = {
 	{
