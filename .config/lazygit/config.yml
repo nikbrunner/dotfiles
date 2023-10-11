@@ -26,6 +26,8 @@ gui:
   skipDiscardChangeWarning: false
   skipStashWarning: true
   showFileTree: false # for rendering changes files in a tree format
+  nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
+  border: "rounded" # one of 'single' | 'double' | 'rounded' | 'hidden'
 git:
   commitPrefixes:
     bc-desktop-client: # This is repository folder name
@@ -153,8 +155,8 @@ keybinding:
     markCommitAsFixup: "f"
     createFixupCommit: "F" # create fixup commit for this commit
     squashAboveCommits: "S"
-    moveDownCommit: "<c-n>" # move commit down one
-    moveUpCommit: "<c-p>" # move commit up one
+    moveDownCommit: "<c-j>" # move commit down one
+    moveUpCommit: "<c-k>" # move commit up one
     amendToCommit: "A"
     pickCommit: "p" # pick commit (when mid-rebase)
     revertCommit: "t"
