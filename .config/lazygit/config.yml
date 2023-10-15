@@ -1,14 +1,13 @@
 os:
-  openCommand: "code -rg {{filename}}"
+  open: "code -rg {{filename}}"
 gui:
   # stuff relating to the UI
   scrollHeight: 10 # how many lines you scroll by
   scrollPastBottom: true # enable scrolling past the bottom
-  sidePanelWidth: 0.2 # number from 0 to 1
-  expandFocusedSidePanel: false
+  sidePanelWidth: 0.3 # number from 0 to 1
+  expandFocusedSidePanel: true
   mainPanelSplitMode: "flexible" # one of 'horizontal' | 'flexible' | 'vertical'
   theme:
-    lightTheme: false # For terminals with a light background
     activeBorderColor:
       - green
       - bold
@@ -17,7 +16,7 @@ gui:
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - default
+      - underline
     selectedRangeBgColor:
       - reverse
   commitLength:
@@ -25,17 +24,20 @@ gui:
   mouseEvents: true
   skipDiscardChangeWarning: false
   skipStashWarning: true
-  showFileTree: false # for rendering changes files in a tree format
+  showFileTree: true # for rendering changes files in a tree format
   nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
   border: "rounded" # one of 'single' | 'double' | 'rounded' | 'hidden'
 git:
   commitPrefixes:
-    bc-desktop-client: # This is repository folder name
-      pattern: "^\\w+\\/(\\w+-\\w+).*"
-      replace: "$1"
-    bc-homepage: # This is repository folder name
-      pattern: "^\\w+\\/(\\w+-\\w+).*"
-      replace: "$1"
+    bc-desktop-client:
+      pattern: "^bcd-(\\d{4}).*"
+      replace: "BCD-$1 "
+    bc-homepage:
+      pattern: "^bcd-(\\d{4}).*"
+      replace: "BCD-$1 "
+    terra-core.nvim:
+      pattern: "^feature/dev-(\\d{3}).*"
+      replace: "DEV-$1 "
   paging:
     useConfig: false
     colorArg: always
@@ -45,10 +47,11 @@ git:
     manualCommit: false
     # extra args passed to `git merge`, e.g. --no-ff
     args: ""
-  pull:
-    mode: "merge" # one of 'merge' | 'rebase' | 'ff-only'
   skipHookPrefix: WIP
   autoFetch: true
+  # The main branches. We colour commits green if they belong to one of these branches,
+  # so that you can easily see which commits are unique to your branch (coloured in yellow)
+  mainBranches: [master, main]
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --"
   allBranchesLogCmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium"
   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
@@ -59,7 +62,6 @@ refresher:
 update:
   method: prompt # can be: prompt | background | never
   days: 14 # how often an update is checked for
-reporting: "undetermined" # one of: 'on' | 'off' | 'undetermined'
 confirmOnQuit: false
 # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
 quitOnTopLevelReturn: false
@@ -86,12 +88,10 @@ keybinding:
     nextBlock-alt: "l" # goto the next block / panel
     nextMatch: "n"
     prevMatch: "N"
-    optionMenu: "x" # show help menu
     optionMenu-alt1: "?" # show help menu
     select: "<space>"
     goInto: "<enter>"
     confirm: "<enter>"
-    confirm-alt1: "y"
     remove: "d"
     new: "n"
     edit: "e"
@@ -119,7 +119,6 @@ keybinding:
     diffingMenu-alt: "<c-e>" # deprecated
     copyToClipboard: "<c-o>"
     submitEditorText: "<enter>"
-    appendNewline: "<tab>"
   status:
     checkForUpdate: "u"
     recentRepos: "<enter>"

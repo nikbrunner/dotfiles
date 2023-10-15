@@ -10,7 +10,7 @@ end
 -- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
 
--- config.color_scheme = "Tokyo Night Storm"
+-- config.color_scheme = "tokyonight_storm"
 -- config.color_scheme = "Kanagawa (Gogh)"
 config.color_scheme = "terafox"
 -- config.color_scheme = "carbonfox"
@@ -20,15 +20,17 @@ config.color_scheme = "terafox"
 config.colors = {
 	-- background = "#0a1214",
 	-- background = "#0d1011",
-	-- background = "#192123",
+	-- background = "#181b1d",
 	-- background = "#222c2f",
 
 	-- background = "#152A1F", -- TeraFox (Custom)
-	background = "#18271f", -- TeraFox (Custom)
+	-- background = "#18271f", -- TeraFox (Custom)
+
+	background = "#171d1b", -- Mini Hues
 
 	-- background = "#151a1c", -- Nordfox
-	-- background = "#141414", -- Terra Fall Night
-	-- background = "#2c2a23", -- Terra Spring Night
+	-- background = "#232323", -- Terra Fall Night
+	-- background = "#1c2a23", -- Terra Spring Night
 	-- background = "#070b0d", -- Terra Control Night
 	-- background = "#17193c", -- Terra Kurzgesagt Night
 
@@ -41,8 +43,8 @@ config.colors = {
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 65
 
--- local font_family = "JetBrainsMono Nerd Font"
-local font_family = "MapleMono Nerd Font"
+local font_family = "JetBrainsMono Nerd Font"
+-- local font_family = "MapleMono Nerd Font"
 -- local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "ComicCodeLigatures Nerd Font"
 -- local font_family = "SFMono Nerd Font"
