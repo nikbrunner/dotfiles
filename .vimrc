@@ -41,6 +41,11 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set noshiftround
+set noswapfile
+
+set path+=**
+set wildmenu
+set wildignore+=comma,separated,list,of,file,patterns
 
 " Cursor motion
 set scrolloff=3
@@ -116,31 +121,12 @@ let g:NetrwIsOpen=0
 " Keep the current directory and the browsing directory synced to avoid file move errors 
 let g:netrw_keepdir = 0
 " Hide the banner
-let g:netrw_banner = 0
+let g:netrw_banner = 1
 " Change list style to tree
 let g:netrw_liststyle = 3
 " Open files in another split
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 0
 let g:netrw_altv = 1
 " narrow the file browser split
-let g:netrw_winsize = 33
+let g:netrw_winsize = 20 
 
-
-function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Lexplore
-    endif
-endfunction
-
-" Add your own mapping. For example:
-noremap <silent> <leader>e :call ToggleNetrw()<CR>

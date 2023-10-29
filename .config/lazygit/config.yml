@@ -4,7 +4,7 @@ gui:
   # stuff relating to the UI
   scrollHeight: 10 # how many lines you scroll by
   scrollPastBottom: true # enable scrolling past the bottom
-  sidePanelWidth: 0.3 # number from 0 to 1
+  sidePanelWidth: 0.2 # number from 0 to 1
   expandFocusedSidePanel: true
   mainPanelSplitMode: "flexible" # one of 'horizontal' | 'flexible' | 'vertical'
   theme:
@@ -26,7 +26,7 @@ gui:
   skipStashWarning: true
   showFileTree: true # for rendering changes files in a tree format
   nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
-  border: "rounded" # one of 'single' | 'double' | 'rounded' | 'hidden'
+  border: "single" # one of 'single' | 'double' | 'rounded' | 'hidden'
 git:
   commitPrefixes:
     bc-desktop-client:

@@ -61,6 +61,8 @@ alias zj="zellij"
 # Vim
 alias vin='NVIM_APPNAME="vin" nvim'
 alias lv='NVIM_APPNAME="nvim" nvim'
+alias lazyvin='NVIM_APPNAME="nvim" nvim'
+alias lvin='NVIM_APPNAME="nvim" nvim'
 alias neovide="open -a Neovide"
 
 alias python="python3"
@@ -83,6 +85,9 @@ myip=$(ipconfig getifaddr en0)
 # BikeCenter
 export BC_OFFICE_IP=10.2.0.154
 export BC_OFFICE_ST=4WSMH53
+
+export BC_DANIEL_IP=10.2.0.128
+export BC_BEN_IP=10.2.0.94
 
 export BC_HOME_IP=192.168.2.107
 export BC_HOME_ST=CG7L9R2
@@ -135,19 +140,6 @@ function zvm_after_init() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# neovim-remotee==========================================================
-# if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-#     alias nvim=nvr -cc split --remote-wait +'set bufhidden=wipe'
-# fi
-#
-# if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-#     export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-#     export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-# else
-#     export VISUAL="nvim"
-#     export EDITOR="nvim"
-# fi
 
 # Load Git completion
 zstyle ':completion:*:*:git:*' script ~/.config/.zsh/git-completion.bash

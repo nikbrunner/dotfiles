@@ -10,12 +10,22 @@ end
 -- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
 
+-- TODO:
+config.color_schemes = {
+	["Terra Summer Night"] = {
+		background = "#1d232b",
+		foreground = "#ded9d3",
+	},
+}
+
 -- config.color_scheme = "tokyonight_storm"
 -- config.color_scheme = "Kanagawa (Gogh)"
-config.color_scheme = "terafox"
+-- config.color_scheme = "terafox"
 -- config.color_scheme = "carbonfox"
 -- config.color_scheme = "nordfox"
--- config.color_scheme = "Gruvbox Material (Gogh)"
+config.color_scheme = "Gruvbox Material (Gogh)"
+-- config.color_scheme = "Terra Summer Night"
+-- config.color_scheme = "GitHub Dark"
 
 config.colors = {
 	-- background = "#0a1214",
@@ -23,21 +33,23 @@ config.colors = {
 	-- background = "#181b1d",
 	-- background = "#222c2f",
 
+	-- background = "#22272E", -- Github Dimmed Dark
+
 	-- background = "#152A1F", -- TeraFox (Custom)
 	-- background = "#18271f", -- TeraFox (Custom)
 
-	background = "#171d1b", -- Mini Hues
+	-- background = "#171d1b", -- mini_slime
+	-- background = "#191C22", -- mini_blue
 
 	-- background = "#151a1c", -- Nordfox
-	-- background = "#232323", -- Terra Fall Night
-	-- background = "#1c2a23", -- Terra Spring Night
-	-- background = "#070b0d", -- Terra Control Night
-	-- background = "#17193c", -- Terra Kurzgesagt Night
 
-	tab_bar = {
-		-- The color of the inactive tab bar edge/divider
-		inactive_tab_edge = "#575757",
-	},
+	-- background = "#232323", -- Terra Fall Night
+
+	-- background = "#1c2a23", -- Terra Spring Night
+
+	-- Terra Summer Night
+	background = "#1d232b",
+	foreground = "#ded9d3",
 }
 
 -- config.window_background_opacity = 0.9
@@ -45,13 +57,14 @@ config.colors = {
 
 local font_family = "JetBrainsMono Nerd Font"
 -- local font_family = "MapleMono Nerd Font"
+-- local font_family = "OperatorMono Nerd Font"
 -- local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "ComicCodeLigatures Nerd Font"
 -- local font_family = "SFMono Nerd Font"
 
 config.font = wezterm.font({
 	family = font_family,
-	weight = 400,
+	-- weight = "regular",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
 
@@ -67,10 +80,10 @@ config.window_frame = {
 }
 
 config.window_padding = {
-	left = 50,
-	right = 50,
-	top = 50,
-	bottom = 50,
+	left = 25,
+	right = 25,
+	top = 25,
+	bottom = 25,
 }
 
 local function isViProcess(pane)
@@ -97,7 +110,8 @@ config.keys = {
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
 
-config.enable_tab_bar = false
+config.enable_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
 
 config.command_palette_font_size = 18.0
 
