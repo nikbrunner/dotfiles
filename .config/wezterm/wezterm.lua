@@ -10,14 +10,6 @@ end
 -- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
 
--- TODO:
-config.color_schemes = {
-	["Terra Summer Night"] = {
-		background = "#1d232b",
-		foreground = "#ded9d3",
-	},
-}
-
 -- config.color_scheme = "tokyonight_storm"
 -- config.color_scheme = "Kanagawa (Gogh)"
 -- config.color_scheme = "terafox"
@@ -43,28 +35,28 @@ config.colors = {
 
 	-- background = "#151a1c", -- Nordfox
 
-	-- background = "#232323", -- Terra Fall Night
+	background = "#252221", -- Terra Fall Night
 
 	-- background = "#1c2a23", -- Terra Spring Night
 
 	-- Terra Summer Night
-	background = "#1d232b",
-	foreground = "#ded9d3",
+	-- background = "#1d232b",
+	-- foreground = "#ded9d3",
 }
 
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 65
 
 local font_family = "JetBrainsMono Nerd Font"
+-- local font_family = "Geist Mono"
 -- local font_family = "MapleMono Nerd Font"
--- local font_family = "OperatorMono Nerd Font"
 -- local font_family = "BerkeleyMono Nerd Font"
 -- local font_family = "ComicCodeLigatures Nerd Font"
 -- local font_family = "SFMono Nerd Font"
 
 config.font = wezterm.font({
 	family = font_family,
-	-- weight = "regular",
+	weight = 400,
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
 
