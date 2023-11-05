@@ -15,7 +15,7 @@ windows:
     commands:
       - nvm use
       - clear
-  - name: dev
+  - name: server
     commands:
       - nvm use
       - clear

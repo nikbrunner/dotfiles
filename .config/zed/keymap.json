@@ -10,8 +10,6 @@
     "bindings": {
       // put key-bindings here if you want them to work only in normal mode
       "g r": "editor::FindAllReferences",
-      "shift-l": "vim::EndOfLine",
-      "shift-h": "vim::StartOfLine",
       "shift-k": "editor::Hover",
       "g c c": "editor::ToggleComments",
       "space c n": "editor::Rename",

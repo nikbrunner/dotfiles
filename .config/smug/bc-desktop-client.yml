@@ -15,7 +15,7 @@ windows:
     layout: main-horizontal
     commands:
       - nvm use
-  - name: dev
+  - name: server
     commands:
       - nvm use
     panes:
