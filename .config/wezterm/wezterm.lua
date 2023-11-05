@@ -1,3 +1,7 @@
+-- [Configuration - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/files.html)
+-- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
+-- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
+
 local wezterm = require("wezterm")
 
 local config = {}
@@ -6,25 +10,16 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- [Configuration - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/files.html)
--- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
--- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
+-- Terra Fall Night
+-- config.color_scheme = "Gruvbox Material (Gogh)"
+-- config.colors = { background = "#252221"}
 
-config.color_scheme = "Gruvbox Material (Gogh)"
+-- Terra Winter Night
+config.color_scheme = "nord"
+config.colors = { background = "#232427" }
 
-config.colors = {
-	-- background = "#252221", -- Terra Fall Night
-	background = "#232427", -- Terra Winter Night
-}
-
--- config.window_background_opacity = 0.9
--- config.macos_window_background_blur = 65
-
+---@type "JetBrainsMono Nerd Font" | "MapleMono Nerd Font" | "BerkeleyMono Nerd Font" | "ComicCodeLigatures Nerd Font" | "SFMono Nerd Font"
 local font_family = "JetBrainsMono Nerd Font"
--- local font_family = "MapleMono Nerd Font"
--- local font_family = "BerkeleyMono Nerd Font"
--- local font_family = "ComicCodeLigatures Nerd Font"
--- local font_family = "SFMono Nerd Font"
 
 config.font = wezterm.font({
 	family = font_family,
@@ -65,6 +60,9 @@ config.keys = {
 
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
+
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 65
 
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
