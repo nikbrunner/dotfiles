@@ -4,7 +4,7 @@
   "vim_mode": true,
   // "buffer_font_family": "BerkeleyMono Nerd Font",
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "theme": "Andromeda",
+  "theme": "One Dark",
   "show_completions_on_input": true,
   "git": {
     "git_gutter": "tracked_files"

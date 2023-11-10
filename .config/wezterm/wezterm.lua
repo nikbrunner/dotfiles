@@ -18,7 +18,7 @@ end
 config.color_scheme = "nord"
 config.colors = { background = "#232427" }
 
----@type "JetBrainsMono Nerd Font" | "MapleMono Nerd Font" | "BerkeleyMono Nerd Font" | "ComicCodeLigatures Nerd Font" | "SFMono Nerd Font"
+---@type "JetBrainsMono Nerd Font" | "MapleMono Nerd Font" | "BerkeleyMono Nerd Font" | "ComicCodeLigatures Nerd Font" | "SFMono Nerd Font" | "Iosevka Nerd Font"
 local font_family = "JetBrainsMono Nerd Font"
 
 config.font = wezterm.font({
