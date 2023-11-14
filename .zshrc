@@ -49,6 +49,7 @@ alias dfs='df status -s'
 DISABLE_LS_COLORS="true"
 
 # alias ls="ls -a"
+alias g="git"
 alias ls="exa --all --oneline --long --icons --sort=type"
 alias lt="exa --all --tree --icons --sort=type --level=1 --ignore-glob=\"node_modules|.git\""
 

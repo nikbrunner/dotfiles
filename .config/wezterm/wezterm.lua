@@ -19,6 +19,10 @@ end
 config.color_scheme = "nord"
 config.colors = { background = "#232427" }
 
+-- Solarized Osaka
+-- config.color_scheme = "solarized"
+-- config.colors = { background = "#041419" }
+
 local JetBrainsMono = "JetBrainsMono Nerd Font"
 local MapleMono = "MapleMono Nerd Font"
 local BerkeleyMono = "BerkeleyMono Nerd Font"
