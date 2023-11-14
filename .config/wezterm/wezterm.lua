@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 -- [Configuration - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/files.html)
 -- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
@@ -12,19 +13,45 @@ end
 
 -- Terra Fall Night
 -- config.color_scheme = "Gruvbox Material (Gogh)"
--- config.colors = { background = "#252221"}
+-- config.colors = { background = "#252221" }
 
 -- Terra Winter Night
 config.color_scheme = "nord"
 config.colors = { background = "#232427" }
 
----@type "JetBrainsMono Nerd Font" | "MapleMono Nerd Font" | "BerkeleyMono Nerd Font" | "ComicCodeLigatures Nerd Font" | "SFMono Nerd Font" | "Iosevka Nerd Font"
-local font_family = "JetBrainsMono Nerd Font"
+local JetBrainsMono = "JetBrainsMono Nerd Font"
+local MapleMono = "MapleMono Nerd Font"
+local BerkeleyMono = "BerkeleyMono Nerd Font"
+local ComicCodeLigatures = "ComicCodeLigatures Nerd Font"
+local SFMono = "SFMono Nerd Font"
+local Iosevka = "Iosevka Nerd Font"
+local MonaspaceNeon = "Monaspace Neon"
+local MonaspaceArgon = "Monaspace Argon"
+local MonaspaceXenon = "Monaspace Xenon"
+local MonaspaceRadon = "Monaspace Radon"
+local MonaspaceKrypton = "Monaspace Krypton"
+local CommitMono = "CommitMono"
+
+local font_family = JetBrainsMono
 
 config.font = wezterm.font({
 	family = font_family,
 	weight = 400,
-	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+	harfbuzz_features = {
+		"calt=0",
+		"clig=0",
+		"liga=0",
+		"ss01",
+		"ss02",
+		"ss03",
+		"ss04",
+		"ss05",
+		"ss06",
+		"ss07",
+		"ss08",
+		"calt",
+		"dlig",
+	},
 })
 
 config.font_size = 16

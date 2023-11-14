@@ -92,11 +92,11 @@ export BC_BEN_IP=10.2.0.94
 export BC_HOME_IP=192.168.2.107
 export BC_HOME_ST=CG7L9R2
 
-export BC_JULIA_IP=10.2.0.71
+export BC_JULIA_IP=10.2.0.187
 export BC_JULIA_ST=8RBL9R2
 
-export BC_CONSTANTIN_IP=10.2.0.187
-export BC_CONSTANTIN_ST=CNRFGQ2
+# export BC_CONSTANTIN_IP=10.2.0.187
+# export BC_CONSTANTIN_ST=CNRFGQ2
 
 # Bat
 export BAT_THEME="Nord"
@@ -165,3 +165,10 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/Users/nikolausbrunner/.bun/_bun" ] && source "/Users/nikolausbrunner/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
