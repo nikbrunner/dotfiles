@@ -1,0 +1,140 @@
+#!/bin/bash
+# nibru's Mac Install Script
+
+# - Dotfiles -
+echo "Setting up Dotfiles"
+mkdir $HOME/dotfiles
+git init --bare $HOME/dotfiles
+alias df='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' | zsh
+df config --local status.showUntrackedFiles no
+df remote add origin git@github.com:nikbrunner/dotfiles-apple.git
+df pull origin master
+
+# - SSH Setup -
+# Generate a new ssh-keypair
+echo "Setting up SSH Key"
+ssh-keygen -t ed25519 -C "nibru@mbp"
+
+# Add public ssh key to clipboard
+pbcopy < ~/.ssh/id_ed25519.pub
+echo "Your public ssh key is created and copied to your clipboard!"
+
+# Add public ssh key to GitHub
+echo "Add the ssh-key to your GitHub account from your clipboard. Press any key to continue afterwards."
+while [ true ] ; do
+    read -t 3 -n 1
+    if [ $? = 0 ] ; then
+    exit ;
+else
+    echo "Waiting for the keypress."
+fi
+done
+
+# Test the connection
+ssh -T git@github.com
+
+# - Homebrew -
+echo "Installing Homebrew"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | zsh
+
+# - Oh-my-zsh -
+echo "Installing Oh-my-zsh.."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | zsh
+
+# - NVM -
+echo "Installing NVM.."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
+nvm install node
+
+# - Installing Apps -
+echo "Start installing apps with Homebrew"
+
+# General Apps
+brew install --cask 1password
+brew install --cask karabiner-elements
+brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask obsidian
+brew install --cask spotify
+brew install --cask amethyst
+brew install --cask alfred
+brew install --cask microsoft-office
+
+brew install --cask protonvpn
+brew install --cask protonmail-bridge
+
+# Messenger and their dependencies
+brew install --cask slack
+brew install --cask skype
+brew install --cask telegram
+brew install --cask discord
+brew install --cask signal
+brew install --cask camo-studio
+
+# development apps
+brew install --cask visual-studio-code
+brew install --cask webstorm
+brew install --cask iterm2
+brew install --cask insomnia
+brew install --cask docker
+brew install jesseduffield/lazygit/lazygit
+brew install vifm
+
+# dev fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+
+## Python
+brew install python
+python3 -m pip install --user --upgrade pynvim
+
+## fzf
+brew install ripgrep
+brew install the_silver_searcher
+brew install fzf
+
+## NeoVim
+brew install neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+npm install -g neovim
+echo "Open your init.vim and run :PlugInstall!"
+
+
+## Tmux
+
+brew install tmux
+### https://github.com/tmux-plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Open tmux and press <C-b>I to install the Plugins via TPM"
+
+# Design Apps
+brew install --cask adobe-creative-cloud
+brew install --cask hype
+brew install --cask sketch
+
+echo "All Apps installed!"
+
+# - Create Notes folder -
+mkdir ~/Documents/notes
+git clone git@github.com:nikbrunner/notes.git ~/Documents/notes
+echo "Obsidian must be set up manually!"
+
+
+# Manually install from App Store
+# - Hotkey & Settings
+# - Yoink
+# - Pasta
+
+# Install from Website
+# - pCloud
+#   - Ignore Folders
+#   - Sync Folders
+
+# Manually Login and Setups
+# - 1Password Settings
+# - iTerm Settings
+# - VSCode Settings
+# - Webstorm Settings
+# - Notes/Obsidian Repo & Settings
+# - Firefox Settings
