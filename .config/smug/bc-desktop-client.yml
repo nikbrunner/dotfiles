@@ -11,23 +11,6 @@ windows:
     layout: main-horizontal
     commands:
       - nvim .
-  - name: run
-    layout: main-horizontal
-    commands:
-      - nvm use
   - name: server
     commands:
-      - nvm use
-    panes:
-      - type: vertical
-        commands:
-          - nvm use
-          - clear
-  - name: storybook
-    layout: main-horizontal
-    commands:
-      - nvm use
-  - name: device
-    layout: main-horizontal
-    commands:
-      - nvm use
+      - tmux-server-setup

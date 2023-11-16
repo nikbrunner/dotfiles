@@ -12,12 +12,12 @@ if wezterm.config_builder then
 end
 
 -- Terra Fall Night
--- config.color_scheme = "Gruvbox Material (Gogh)"
--- config.colors = { background = "#252221" }
+config.color_scheme = "Gruvbox Material (Gogh)"
+config.colors = { background = "#252221" }
 
 -- Terra Winter Night
-config.color_scheme = "nord"
-config.colors = { background = "#232427" }
+-- config.color_scheme = "nord"
+-- config.colors = { background = "#232427" }
 
 -- Solarized Osaka
 -- config.color_scheme = "solarized"
@@ -92,8 +92,8 @@ config.keys = {
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
 
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 65
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 65
 
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
