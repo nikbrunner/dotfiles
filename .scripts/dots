@@ -87,33 +87,39 @@ case $1 in
 "--push")
     push
     ;;
+
 "--status")
     status
     ;;
+
 "--add")
     add "$@"
     ;;
-"--rm")
+
+"--remove")
     remove "$@"
     ;;
+
 "--pull")
     pull
     ;;
+
 "--reset")
     reset
     ;;
+
 "--submodules")
     list_submodules
     ;;
-"--sync-submodules")
-    sync_submodules
-    ;;
-"--add-submodule")
+
+"--submodules-add")
     add_submodule "$2" "$3"
     ;;
-"--rm-submodule")
+
+"--submodules-remove")
     remove_submodule "$2"
     ;;
+
 *)
     echo "Unknown argument \"$1\""
     ;;

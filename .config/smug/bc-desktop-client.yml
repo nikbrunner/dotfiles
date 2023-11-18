@@ -1,6 +1,6 @@
 session: bc-desktop-client
 
-root: ~/Documents/dev/repos/dcd/bc-desktop-client
+root: ~/Documents/dev/repos/dealercenter-digital@bc-desktop-client/
 
 stop:
   - docker kill $(docker ps -q); true
