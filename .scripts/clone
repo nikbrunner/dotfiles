@@ -1,0 +1,26 @@
+#!/bin/bash
+# vim: set filetype=sh:
+
+clone_repo() {
+	local gitUrl=$1
+	local basePath="/Users/nikolausbrunner/Documents/dev/repos"
+
+	local repoDetails
+	local username
+	local repoName
+
+	repoDetails=$(echo "$gitUrl" | awk -F '[/:]' '{print $(NF-1)"/"$NF}' | sed 's/.git$//')
+	username=$(echo "$repoDetails" | cut -d '/' -f 1)
+	repoName=$(echo "$repoDetails" | cut -d '/' -f 2)
+
+	local fullPath="$basePath/${username}@${repoName}"
+
+	git clone "$gitUrl" "$fullPath"
+}
+
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 <git-repository-url>"
+	exit 1
+fi
+
+clone_repo "$1"

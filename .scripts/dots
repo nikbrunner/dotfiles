@@ -1,0 +1,106 @@
+#!/bin/bash
+# vim: set filetype=sh:
+
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+NC='\033[0m' # No Color
+
+echo -e "${GREEN}Good Morning Nik!${NC}"
+
+function dotfiles() {
+	/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"
+}
+
+# Update dotfiles
+function push() {
+	echo -e "${ORANGE}::: Pushing dotfiles...${NC}"
+	dotfiles commit -a -m "Updates"
+	dotfiles push
+}
+
+# Check the status of dotfiles
+function status() {
+	echo -e "${ORANGE}::: Checking status of dotfiles...${NC}"
+	dotfiles status
+}
+
+# Add a file or folder
+function add() {
+	if [ -z "$2" ]; then
+		echo "Please specify a file or folder to add."
+		return 1
+	fi
+	echo -e "${ORANGE}::: Adding $2 to dotfiles...${NC}"
+	dotfiles add "$2"
+}
+
+# Remove a file or folder
+function remove() {
+	if [ -z "$2" ]; then
+		echo "Please specify a file or folder to remove."
+		return 1
+	fi
+	echo -e "${ORANGE}::: Removing $2 from dotfiles...${NC}"
+	dotfiles rm "$2"
+}
+
+# Pull changes from the remote repository
+function pull() {
+	echo -e "${ORANGE}::: Pulling changes from remote...${NC}"
+	dotfiles pull
+}
+
+# Reset local changes and set to latest from remote
+function reset() {
+	echo -e "${ORANGE}::: Resetting to latest remote state...${NC}"
+	dotfiles fetch --all
+	dotfiles reset --hard origin/master
+}
+
+# List submodules
+function list_submodules() {
+	echo -e "${ORANGE}::: Listing submodules...${NC}"
+	dotfiles submodule
+}
+
+# Push changes in submodules
+function push_submodules() {
+	echo -e "${ORANGE}::: Pushing changes in submodules...${NC}"
+	for submodule in $(dotfiles submodule | awk '{ print $2 }'); do
+		echo "Pushing changes in $submodule..."
+		(cd "$submodule" && git add -A && git commit -m "Update submodule" && git push)
+	done
+	dotfiles add .
+	dotfiles commit -m "Update submodule references"
+	dotfiles push
+}
+
+case $1 in
+"--push")
+	push
+	;;
+"--status")
+	status
+	;;
+"--add")
+	add "$@"
+	;;
+"--rm")
+	remove "$@"
+	;;
+"--pull")
+	pull
+	;;
+"--reset")
+	reset
+	;;
+"--submodules")
+	list_submodules
+	;;
+"--push-submodules")
+	push_submodules
+	;;
+*)
+	echo "Unknown argument \"$1\""
+	;;
+esac
