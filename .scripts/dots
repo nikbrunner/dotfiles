@@ -47,6 +47,12 @@ function pull() {
     dotfiles pull
 }
 
+# Log the last changes in a pretty format for the dotfiles
+function log() {
+    echo -e "${ORANGE}::: Logging changes...${NC}"
+    dotfiles log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+}
+
 # Reset local changes and set to latest from remote
 function reset() {
     echo -e "${ORANGE}::: Resetting to latest remote state...${NC}"
@@ -94,6 +100,10 @@ case $1 in
 
 "--add")
     add "$@"
+    ;;
+
+"--log")
+    log
     ;;
 
 "--remove")
