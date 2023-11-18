@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 # vim: set filetype=sh:
 
 tmux send-keys "nvim ." Enter

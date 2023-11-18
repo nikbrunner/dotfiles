@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 # vim: set filetype=sh:
 
 ORANGE='\033[0;33m'

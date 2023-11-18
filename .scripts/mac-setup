@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 # vim: set filetype=sh:
 
 # - Dotfiles -
@@ -22,12 +22,12 @@ echo "Your public ssh key is created and copied to your clipboard!"
 # Add public ssh key to GitHub
 echo "Add the ssh-key to your GitHub account from your clipboard. Press any key to continue afterwards."
 while [ true ]; do
-	read -t 3 -n 1
-	if [ $? = 0 ]; then
-		exit
-	else
-		echo "Waiting for the keypress."
-	fi
+    read -t 3 -n 1
+    if [ $? = 0 ]; then
+        exit
+    else
+        echo "Waiting for the keypress."
+    fi
 done
 
 # Test the connection

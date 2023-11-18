@@ -4,15 +4,13 @@
 # Define the repos directory
 repos_path="$HOME/Documents/dev/repos"
 
-repos_path="$HOME/Documents/dev/repos"
-
 select_repo() {
     local IFS=$'\n' dirs names selected_name full_path
     # Use mapfile to read the full directory paths into an array
-    mapfile -t dirs < <(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path")
+    mapfile -t dirs < <(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | sort)
 
     # Use mapfile to read the directory names into an array, converting full paths to basenames
-    mapfile -t names < <(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" -exec basename {} +)
+    mapfile -t names < <(printf '%s\n' "${dirs[@]}" | xargs -I {} basename {} | sort)
 
     # Let the user select a directory name
     selected_name=$(printf '%s\n' "${names[@]}" | fzf --prompt='Select a repository: ')
