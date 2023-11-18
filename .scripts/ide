@@ -1,4 +1,5 @@
 #!/bin/bash
+# vim: set filetype=sh:
 
 tmux send-keys "nvim ." Enter
 tmux split-window -v -p 30 \; send-keys "nvm use" Enter \; send-keys "clear" Enter

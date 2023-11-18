@@ -28,12 +28,6 @@ local MapleMono = "MapleMono Nerd Font"
 local BerkeleyMono = "BerkeleyMono Nerd Font"
 local ComicCodeLigatures = "ComicCodeLigatures Nerd Font"
 local SFMono = "SFMono Nerd Font"
-local Iosevka = "Iosevka Nerd Font"
-local MonaspaceNeon = "Monaspace Neon"
-local MonaspaceArgon = "Monaspace Argon"
-local MonaspaceXenon = "Monaspace Xenon"
-local MonaspaceRadon = "Monaspace Radon"
-local MonaspaceKrypton = "Monaspace Krypton"
 local CommitMono = "CommitMono"
 
 local font_family = JetBrainsMono

@@ -1,5 +1,5 @@
 #!/bin/bash
-# nibru's Mac Install Script
+# vim: set filetype=sh:
 
 # - Dotfiles -
 echo "Setting up Dotfiles"
@@ -16,18 +16,18 @@ echo "Setting up SSH Key"
 ssh-keygen -t ed25519 -C "nibru@mbp"
 
 # Add public ssh key to clipboard
-pbcopy < ~/.ssh/id_ed25519.pub
+pbcopy <~/.ssh/id_ed25519.pub
 echo "Your public ssh key is created and copied to your clipboard!"
 
 # Add public ssh key to GitHub
 echo "Add the ssh-key to your GitHub account from your clipboard. Press any key to continue afterwards."
-while [ true ] ; do
-    read -t 3 -n 1
-    if [ $? = 0 ] ; then
-    exit ;
-else
-    echo "Waiting for the keypress."
-fi
+while [ true ]; do
+	read -t 3 -n 1
+	if [ $? = 0 ]; then
+		exit
+	else
+		echo "Waiting for the keypress."
+	fi
 done
 
 # Test the connection
@@ -100,7 +100,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 npm install -g neovim
 echo "Open your init.vim and run :PlugInstall!"
 
-
 ## Tmux
 
 brew install tmux
@@ -119,7 +118,6 @@ echo "All Apps installed!"
 mkdir ~/Documents/notes
 git clone git@github.com:nikbrunner/notes.git ~/Documents/notes
 echo "Obsidian must be set up manually!"
-
 
 # Manually install from App Store
 # - Hotkey & Settings
