@@ -5,3 +5,6 @@
 [submodule ".config/lvim"]
 	path = .config/lvim
 	url = git@github.com:nikbrunner/lvim.git
+[submodule "/Users/nikolausbrunner/.config/nvim"]
+	path = /Users/nikolausbrunner/.config/nvim
+	url = git@github.com:nikbrunner/lazyvin
