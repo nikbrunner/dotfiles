@@ -1,11 +1,8 @@
 #!/bin/bash
 # vim: set filetype=sh:
 
-GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
-
-echo -e "${GREEN}Good Morning Nik!${NC}"
 
 function dotfiles() {
     /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"
@@ -61,30 +58,6 @@ function reset() {
 function list_submodules() {
     echo -e "${ORANGE}::: Listing submodules...${NC}"
     dotfiles submodule
-}
-
-# Sync submodules
-function sync_submodules() {
-    echo -e "${ORANGE}::: Syncing submodules...${NC}"
-    local clean=true
-
-    for submodule in $(dotfiles submodule | awk '{ print $2 }'); do
-        echo "Checking $submodule for uncommitted changes..."
-        (cd "$submodule" && git status --porcelain)
-        if [ -n "$(cd "$submodule" && git status --porcelain)" ]; then
-            echo -e "${ORANGE}Uncommitted changes found in $submodule. Please commit them manually.${NC}"
-            clean=false
-        fi
-    done
-
-    if [ "$clean" = true ]; then
-        echo "Updating submodule references in dotfiles..."
-        dotfiles add .
-        dotfiles commit -m "Update submodule references"
-        dotfiles push
-    else
-        echo -e "${ORANGE}Please resolve the uncommitted changes in submodules before syncing.${NC}"
-    fi
 }
 
 # Add a submodule
