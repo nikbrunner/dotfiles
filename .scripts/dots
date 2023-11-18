@@ -8,99 +8,140 @@ NC='\033[0m' # No Color
 echo -e "${GREEN}Good Morning Nik!${NC}"
 
 function dotfiles() {
-	/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"
+    /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"
 }
 
 # Update dotfiles
 function push() {
-	echo -e "${ORANGE}::: Pushing dotfiles...${NC}"
-	dotfiles commit -a -m "Updates"
-	dotfiles push
+    echo -e "${ORANGE}::: Pushing dotfiles...${NC}"
+    dotfiles commit -a -m "Updates"
+    dotfiles push
 }
 
 # Check the status of dotfiles
 function status() {
-	echo -e "${ORANGE}::: Checking status of dotfiles...${NC}"
-	dotfiles status
+    echo -e "${ORANGE}::: Checking status of dotfiles...${NC}"
+    dotfiles status
 }
 
 # Add a file or folder
 function add() {
-	if [ -z "$2" ]; then
-		echo "Please specify a file or folder to add."
-		return 1
-	fi
-	echo -e "${ORANGE}::: Adding $2 to dotfiles...${NC}"
-	dotfiles add "$2"
+    if [ -z "$2" ]; then
+        echo "Please specify a file or folder to add."
+        return 1
+    fi
+    echo -e "${ORANGE}::: Adding $2 to dotfiles...${NC}"
+    dotfiles add "$2"
 }
 
 # Remove a file or folder
 function remove() {
-	if [ -z "$2" ]; then
-		echo "Please specify a file or folder to remove."
-		return 1
-	fi
-	echo -e "${ORANGE}::: Removing $2 from dotfiles...${NC}"
-	dotfiles rm "$2"
+    if [ -z "$2" ]; then
+        echo "Please specify a file or folder to remove."
+        return 1
+    fi
+    echo -e "${ORANGE}::: Removing $2 from dotfiles...${NC}"
+    dotfiles rm "$2"
 }
 
 # Pull changes from the remote repository
 function pull() {
-	echo -e "${ORANGE}::: Pulling changes from remote...${NC}"
-	dotfiles pull
+    echo -e "${ORANGE}::: Pulling changes from remote...${NC}"
+    dotfiles pull
 }
 
 # Reset local changes and set to latest from remote
 function reset() {
-	echo -e "${ORANGE}::: Resetting to latest remote state...${NC}"
-	dotfiles fetch --all
-	dotfiles reset --hard origin/master
+    echo -e "${ORANGE}::: Resetting to latest remote state...${NC}"
+    dotfiles fetch --all
+    dotfiles reset --hard origin/master
 }
 
 # List submodules
 function list_submodules() {
-	echo -e "${ORANGE}::: Listing submodules...${NC}"
-	dotfiles submodule
+    echo -e "${ORANGE}::: Listing submodules...${NC}"
+    dotfiles submodule
 }
 
-# Push changes in submodules
-function push_submodules() {
-	echo -e "${ORANGE}::: Pushing changes in submodules...${NC}"
-	for submodule in $(dotfiles submodule | awk '{ print $2 }'); do
-		echo "Pushing changes in $submodule..."
-		(cd "$submodule" && git add -A && git commit -m "Update submodule" && git push)
-	done
-	dotfiles add .
-	dotfiles commit -m "Update submodule references"
-	dotfiles push
+# Sync submodules
+function sync_submodules() {
+    echo -e "${ORANGE}::: Syncing submodules...${NC}"
+    local clean=true
+
+    for submodule in $(dotfiles submodule | awk '{ print $2 }'); do
+        echo "Checking $submodule for uncommitted changes..."
+        (cd "$submodule" && git status --porcelain)
+        if [ -n "$(cd "$submodule" && git status --porcelain)" ]; then
+            echo -e "${ORANGE}Uncommitted changes found in $submodule. Please commit them manually.${NC}"
+            clean=false
+        fi
+    done
+
+    if [ "$clean" = true ]; then
+        echo "Updating submodule references in dotfiles..."
+        dotfiles add .
+        dotfiles commit -m "Update submodule references"
+        dotfiles push
+    else
+        echo -e "${ORANGE}Please resolve the uncommitted changes in submodules before syncing.${NC}"
+    fi
+}
+
+# Add a submodule
+function add_submodule() {
+    local submodule_url=$1
+    local submodule_path=$2
+    echo -e "${ORANGE}::: Adding submodule $submodule_path...${NC}"
+    dotfiles submodule add "$submodule_url" "$submodule_path"
+    dotfiles add .
+    dotfiles commit -m "Add submodule $submodule_path"
+    dotfiles push
+}
+
+# Remove a submodule
+function remove_submodule() {
+    local submodule_path=$1
+    echo -e "${ORANGE}::: Removing submodule $submodule_path...${NC}"
+    dotfiles submodule deinit -f "$submodule_path"
+    dotfiles rm --cached "$submodule_path"
+    rm -rf "$HOME/.dotfiles/modules/$submodule_path"
+    rm -rf "$submodule_path"
+    dotfiles commit -m "Remove submodule $submodule_path"
+    dotfiles push
 }
 
 case $1 in
 "--push")
-	push
-	;;
+    push
+    ;;
 "--status")
-	status
-	;;
+    status
+    ;;
 "--add")
-	add "$@"
-	;;
+    add "$@"
+    ;;
 "--rm")
-	remove "$@"
-	;;
+    remove "$@"
+    ;;
 "--pull")
-	pull
-	;;
+    pull
+    ;;
 "--reset")
-	reset
-	;;
+    reset
+    ;;
 "--submodules")
-	list_submodules
-	;;
-"--push-submodules")
-	push_submodules
-	;;
+    list_submodules
+    ;;
+"--sync-submodules")
+    sync_submodules
+    ;;
+"--add-submodule")
+    add_submodule "$2" "$3"
+    ;;
+"--rm-submodule")
+    remove_submodule "$2"
+    ;;
 *)
-	echo "Unknown argument \"$1\""
-	;;
+    echo "Unknown argument \"$1\""
+    ;;
 esac
