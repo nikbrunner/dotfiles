@@ -1,0 +1,28 @@
+#!/bin/bash
+# vim: set filetype=sh:
+
+# Split the window into two equal vertical panes
+tmux split-window -h
+
+# Select the first pane
+tmux select-pane -t 1
+
+# Split the first pane into two horizontal panes
+tmux split-window -v
+
+# Select the second pane
+tmux select-pane -t 2
+
+# Split the second pane into two horizontal panes
+tmux split-window -v
+
+# Distribute all panes evenly
+tmux select-layout tiled
+
+# Send 'nvm use' and 'clear' to each pane
+for pane in $(tmux list-panes -F '#P'); do
+	tmux send-keys -t "${pane}" "nvm use" Enter "clear" Enter
+done
+
+# Select the first pane
+tmux select-pane -t 1
