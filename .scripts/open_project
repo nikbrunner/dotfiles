@@ -1,12 +1,32 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 # vim: set filetype=sh:
 
 # Define the repos directory
 repos_path="$HOME/Documents/dev/repos"
 
+repos_path="$HOME/Documents/dev/repos"
+
 select_repo() {
-    # Let the user select a directory inside the repos directory and return the path to the selected directory
-    find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | fzf --prompt='Select a repository: '
+    local IFS=$'\n' dirs names selected_name full_path
+    # Use mapfile to read the full directory paths into an array
+    mapfile -t dirs < <(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path")
+
+    # Use mapfile to read the directory names into an array, converting full paths to basenames
+    mapfile -t names < <(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" -exec basename {} +)
+
+    # Let the user select a directory name
+    selected_name=$(printf '%s\n' "${names[@]}" | fzf --prompt='Select a repository: ')
+
+    # Find the full path of the selected directory
+    for dir in "${dirs[@]}"; do
+        if [[ $(basename "$dir") == "$selected_name" ]]; then
+            full_path="$dir"
+            break
+        fi
+    done
+
+    # Return the full path
+    echo "$full_path"
 }
 
 # Open fzf in a tmux popup to select a git repository
