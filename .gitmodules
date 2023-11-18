@@ -1,10 +1,4 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = git@github.com:nikbrunner/vin.git
+	url = git@github.com:nikbrunner/lazyvin.git
 	branch = main
-[submodule ".config/lvim"]
-	path = .config/lvim
-	url = git@github.com:nikbrunner/lvim.git
-[submodule "/Users/nikolausbrunner/.config/nvim"]
-	path = /Users/nikolausbrunner/.config/nvim
-	url = git@github.com:nikbrunner/lazyvin
