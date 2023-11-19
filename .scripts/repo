@@ -75,8 +75,15 @@ select_repo() {
 }
 
 open_repo() {
-    # Open fzf in a tmux popup to select a git repository
-    selected_repo=$(select_repo)
+    # If open_repo was called with an argument, use that as the selected repo
+    local selected_repo
+    if [ -n "$1" ]; then
+        selected_repo="$1"
+    else
+        selected_repo=$(select_repo)
+    fi
+
+    echo "Test: repo [[selected_repo]]: $selected_repo"
 
     # If a repo was selected
     if [ -n "$selected_repo" ]; then
@@ -117,8 +124,9 @@ open_repo() {
     fi
 }
 
-get_info() {
+get_status() {
     local number_of_repos_with_unstaged_changes=0
+    local -a repos_with_changes=()
 
     for dir in "$repos_path"/*; do
         if [[ -d "$dir" && ! -L "$dir" ]]; then # Check if it's a directory and not a symlink
@@ -143,9 +151,10 @@ get_info() {
                         number_of_repos_with_unstaged_changes=$((number_of_repos_with_unstaged_changes + 1))
                         repo_status_color=$RED
                         status_msg=" (Uncommitted changes)"
+                        repos_with_changes+=("$(basename "$dir")") # Add to the list of repos with changes
                     fi
 
-                    # Replace the @ in the repo name with a /
+                    # Replace the @ in the repo name with a / to make it recognizable as a clickable href github link
                     local display_repo_name
                     display_repo_name=$(echo "$repo_name" | tr '@' '/')
 
@@ -166,7 +175,47 @@ get_info() {
     echo ""
     echo ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
     print_info "Number of repositories: $(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | wc -l)"
-    print_negative "Number of repositories with unstaged changes: $number_of_repos_with_unstaged_changes"
+
+    # If there are repos with uncommitted changes, ask the user if they want to open one
+    if ((number_of_repos_with_unstaged_changes > 0)); then
+        print_negative "You have $number_of_repos_with_unstaged_changes repositories with uncommitted changes."
+        read -p "Do you want to open one of them? (y/N) " -n 1 -r
+        echo # move to a new line
+
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            # Use fzf to let the user select one of the repos with uncommitted changes
+            local selected_repo
+            selected_repo=$(printf '%s\n' "${repos_with_changes[@]}" | fzf --prompt='Select a repository to open: ')
+
+            # Get the full path of the selected repo
+            for dir in "$repos_path"/*; do
+                if [[ -d "$dir" && ! -L "$dir" ]]; then # Check if it's a directory and not a symlink
+                    local repo_name
+                    repo_name=$(basename "$dir")
+                    if [[ "$repo_name" == "$selected_repo" ]]; then
+                        selected_repo="$dir"
+                        break
+                    fi
+                fi
+            done
+
+            # Check if the user made a selection
+            if [ -n "$selected_repo" ]; then
+                open_repo "$selected_repo"
+            else
+                print_info "No repository selected."
+            fi
+        # If the user pressed N or n, ask him if he wants open up one the other repos by calling open_repo without an argument
+        elif [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            read -p "Do you want to open one of the other repositories? (y/N) " -n 1 -r
+            echo # move to a new line
+
+            if [[ $REPLY =~ ^[Yy]$ ]]; then
+                open_repo
+            fi
+        fi
+
+    fi
 }
 
 case $1 in
@@ -182,12 +231,12 @@ case $1 in
     remove_repo
     ;;
 
-"--info")
-    get_info
+"--status")
+    get_status
     ;;
 
 *)
     print_negative "Invalid option."
-    print_info "Usage: repo [--open|--add|--remove|--info]"
+    print_info "Usage: repo [--open|--add|--remove|--status]"
     ;;
 esac
