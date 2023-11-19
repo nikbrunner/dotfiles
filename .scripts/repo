@@ -4,6 +4,7 @@
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 RED='\033[0;31m'
+ORANGE='\033[0;33m'
 NC='\033[0m' # No Color
 
 repos_path="$HOME/Documents/dev/repos"
@@ -127,20 +128,26 @@ get_info() {
             if git -C "$dir" rev-parse >/dev/null 2>&1; then
                 # Check if there are any commits
                 if git -C "$dir" rev-parse HEAD >/dev/null 2>&1; then
-                    # Get the last commit's details
-                    local last_commit_details
-                    last_commit_details=$(git -C "$dir" log -1 --pretty=format:"%an | %s | %cd" 2>/dev/null)
+                    # Get the last commit's author, message, and date
+                    local last_author
+                    local last_message
+                    local last_date
+                    last_author=$(git -C "$dir" log -1 --pretty=format:"%an" 2>/dev/null)
+                    last_message=$(git -C "$dir" log -1 --pretty=format:"%s" 2>/dev/null)
+                    last_date=$(git -C "$dir" log -1 --pretty=format:"%cd" 2>/dev/null)
 
-                    local repo_status_color=${GREEN}
+                    local repo_status_color=$GREEN
                     local status_msg=""
                     # Check for uncommitted changes
                     if ! git -C "$dir" diff --quiet; then
-                        repo_status_color=${RED}
+                        repo_status_color=$RED
                         status_msg=" (Uncommitted changes)"
                     fi
 
                     # Print the repo name out in red or green depending on the status
-                    printf "${repo_status_color}%s${NC}%s\n  %s\n" "$repo_name" "$status_msg" "$last_commit_details"
+                    printf "${repo_status_color}%s${NC}%s\n" "$repo_name" "$status_msg"
+                    # Print the commit details with color for each part
+                    printf "  ${ORANGE}%s${NC} ${GREEN}%s${NC} ${BLUE}%s${NC}\n" "$last_author" "$last_message" "$last_date"
                 else
                     # Repo exists but no commits have been made yet
                     printf "${ORANGE}%s\n  No commits yet\n" "$repo_name"
