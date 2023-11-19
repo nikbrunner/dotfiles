@@ -1,0 +1,13 @@
+session: bc-desktop-tools
+
+root: ~/Documents/dev/repos/dcd/bc-desktop-tools
+
+windows:
+  - name: code
+    layout: main-horizontal
+    commands:
+      - nvim .
+  - name: run
+    layout: main-horizontal
+    commands:
+      - nvm use

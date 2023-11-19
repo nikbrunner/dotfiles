@@ -1,0 +1,29 @@
+session: cfg
+
+root: ~/.config
+
+windows:
+  - name: LazyVin
+    commands:
+      - cd ./nvim
+      - nvim .
+  - name: term
+    commands:
+      - nvim -O ./wezterm/wezterm.lua ./tmux/tmux.conf
+  - name: smug
+    commands:
+      - cd ./smug
+      - nvim .
+  - name: koyo
+    commands:
+      - cd ~/Documents/dev/repos/koyo/
+      - nvim .
+  - name: archive
+    commands:
+      - cd ./vin
+      - nvim .
+    panes:
+      - type: vertical
+        commands:
+          - cd $HOME/.local/share/nvim/lazy/LazyVim
+          - nvim .

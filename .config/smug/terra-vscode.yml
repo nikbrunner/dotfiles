@@ -1,22 +1,17 @@
-session: bc-homepage
+session: terra-vscode
 
-root: ~/Documents/dev/repos/dcd/bc-homepage
-
-stop:
-  - killall node; true
-
+root: ~/Documents/dev/repos/terra-theme/terra.vscode/
 windows:
   - name: code
     layout: main-horizontal
     commands:
-      - nvim ./pages/index.tsx
+      - nvim .
   - name: run
     layout: main-horizontal
     commands:
       - nvm use
-      - clear
   - name: server
+    layout: main-horizontal
     commands:
       - nvm use
-      - clear
       - npm run dev
