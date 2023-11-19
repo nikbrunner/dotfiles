@@ -118,7 +118,7 @@ open_repo() {
 }
 
 get_info() {
-    print_info "Number of repositories: $(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | wc -l)"
+    local number_of_repos_with_unstaged_changes=0
 
     for dir in "$repos_path"/*; do
         if [[ -d "$dir" && ! -L "$dir" ]]; then # Check if it's a directory and not a symlink
@@ -140,12 +140,17 @@ get_info() {
                     local status_msg=""
                     # Check for uncommitted changes
                     if ! git -C "$dir" diff --quiet; then
+                        number_of_repos_with_unstaged_changes=$((number_of_repos_with_unstaged_changes + 1))
                         repo_status_color=$RED
                         status_msg=" (Uncommitted changes)"
                     fi
 
+                    # Replace the @ in the repo name with a /
+                    local display_repo_name
+                    display_repo_name=$(echo "$repo_name" | tr '@' '/')
+
                     # Print the repo name out in red or green depending on the status
-                    printf "${repo_status_color}%s${NC}%s\n" "$repo_name" "$status_msg"
+                    printf "${repo_status_color}%s${NC}%s\n" "$display_repo_name" "$status_msg"
                     # Print the commit details with color for each part
                     printf "  ${ORANGE}%s${NC} ${GREEN}%s${NC} ${BLUE}%s${NC}\n" "$last_author" "$last_message" "$last_date"
                 else
@@ -157,6 +162,11 @@ get_info() {
             fi
         fi
     done
+
+    echo ""
+    echo ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+    print_info "Number of repositories: $(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | wc -l)"
+    print_negative "Number of repositories with unstaged changes: $number_of_repos_with_unstaged_changes"
 }
 
 case $1 in
