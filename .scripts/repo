@@ -1,0 +1,173 @@
+#!/opt/homebrew/bin/bash
+# vim: set filetype=sh:
+
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+repos_path="$HOME/Documents/dev/repos"
+
+print_positive() {
+    printf "${GREEN}::: Repo - %s${NC}\n" "$1"
+}
+
+print_info() {
+    printf "${BLUE}::: Repo - %s${NC}\n" "$1"
+}
+
+print_negative() {
+    printf "${RED}::: Repo - %s${NC}\n" "$1"
+}
+
+clone_repo() {
+    local gitUrl=$1
+    local basePath="/Users/nikolausbrunner/Documents/dev/repos"
+
+    local repoDetails
+    local username
+    local repoName
+
+    repoDetails=$(echo "$gitUrl" | awk -F '[/:]' '{print $(NF-1)"/"$NF}' | sed 's/.git$//')
+    username=$(echo "$repoDetails" | cut -d '/' -f 1)
+    repoName=$(echo "$repoDetails" | cut -d '/' -f 2)
+
+    local fullPath="$basePath/${username}@${repoName}"
+
+    print_positive "Cloning $gitUrl to $fullPath..."
+
+    git clone "$gitUrl" "$fullPath"
+}
+
+remove_repo() {
+    selected_repo=$(select_repo)
+
+    if [ -n "$selected_repo" ]; then
+        print_negative "Removing $selected_repo..."
+        rm -rf "$selected_repo"
+    else
+        print_info "No repository selected."
+    fi
+}
+
+select_repo() {
+    local IFS=$'\n' dirs names selected_name full_path
+    # Use mapfile to read the full directory paths into an array
+    mapfile -t dirs < <(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | sort)
+
+    # Use mapfile to read the directory names into an array, converting full paths to basenames
+    mapfile -t names < <(printf '%s\n' "${dirs[@]}" | xargs -I {} basename {} | sort)
+
+    # Let the user select a directory name
+    selected_name=$(printf '%s\n' "${names[@]}" | fzf --prompt='Select a repository: ')
+
+    # Find the full path of the selected directory
+    for dir in "${dirs[@]}"; do
+        if [[ $(basename "$dir") == "$selected_name" ]]; then
+            full_path="$dir"
+            break
+        fi
+    done
+
+    # Return the full path
+    echo "$full_path"
+}
+
+open_repo() {
+    # Open fzf in a tmux popup to select a git repository
+    selected_repo=$(select_repo)
+
+    # If a repo was selected
+    if [ -n "$selected_repo" ]; then
+        # TODO: Check if tmux session already exists
+        # If it does, switch to it instead of creating a new one and notify the user about it
+        # Else proceed with creating a new session
+
+        # Parse the selected_repo string to get string after @
+        session_name=$(echo "$selected_repo" | cut -d'@' -f2 | tr '.' '_')
+
+        # Start a new tmux session with the selected repo as the cwd
+        tmux new-session -d -s "$session_name" -c "$selected_repo"
+
+        # Rename the first window "code"
+        tmux rename-window -t "$session_name":1 "code"
+
+        # Run "nvim ." in the first window
+        tmux send-keys -t "$session_name":1 "nvim ." Enter
+
+        # Create a new window with the same cwd
+        tmux new-window -t "$session_name" -c "$selected_repo" -n "run"
+
+        # Run "tmux_2x2_layout" in the second window
+        tmux send-keys -t "$session_name":2 "tmux_2x2_layout" Enter
+
+        # Display loading message in the status bar
+        print_positive "Opening $selected_repo..."
+
+        sleep 2
+
+        # Switch to the new session
+        tmux switch-client -t "$session_name"
+
+        # Select the first window "code"
+        tmux select-window -t "$session_name":1
+    else
+        print_info "No repository selected."
+    fi
+}
+
+get_info() {
+    for dir in "$repos_path"/*; do
+        if [[ -d "$dir" && ! -L "$dir" ]]; then # Check if it's a directory and not a symlink
+            local repo_name
+            repo_name=$(basename "$dir")
+            # Check if the directory is a Git repository
+            if git -C "$dir" rev-parse >/dev/null 2>&1; then
+                # Get the last commit's author, message, and date
+                local last_author last_message last_date
+                last_author=$(git -C "$dir" log -1 --pretty=format:"%an")
+                last_message=$(git -C "$dir" log -1 --pretty=format:"%s")
+                last_date=$(git -C "$dir" log -1 --pretty=format:"%cd")
+
+                local repo_status_color=${GREEN}
+                local status_msg=""
+
+                if ! git -C "$dir" diff --quiet; then
+                    # If there are uncommitted changes
+                    repo_status_color=${RED}
+                    status_msg=" (Uncommitted changes)"
+                fi
+
+                # Print the repo name
+                printf "%b%s%b\n" "$repo_status_color" "$repo_name" "$NC"
+                # Print the last commit details with color
+                printf "  %b%s%b %b%s%b %b%s%b%s\n" "$ORANGE" "$last_author" "$NC" "$GREEN" "$last_message" "$NC" "$BLUE" "$last_date" "$NC" "$status_msg"
+            else
+                printf "${NC}%s\n  Not a git repository\n" "$repo_name"
+            fi
+        fi
+    done
+}
+
+case $1 in
+"--open")
+    open_repo
+    ;;
+
+"--add")
+    clone_repo "$2"
+    ;;
+
+"--remove")
+    remove_repo
+    ;;
+
+"--info")
+    get_info
+    ;;
+
+*)
+    print_negative "Invalid option."
+    print_info "Usage: repo [--open|--add|--remove|--info]"
+    ;;
+esac
