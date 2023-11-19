@@ -75,7 +75,6 @@ select_repo() {
 }
 
 open_repo() {
-    # If open_repo was called with an argument, use that as the selected repo
     local selected_repo
     if [ -n "$1" ]; then
         selected_repo="$1"
@@ -85,40 +84,28 @@ open_repo() {
 
     echo "Test: repo [[selected_repo]]: $selected_repo"
 
-    # If a repo was selected
     if [ -n "$selected_repo" ]; then
-        # TODO: Check if tmux session already exists
-        # If it does, switch to it instead of creating a new one and notify the user about it
-        # Else proceed with creating a new session
-
-        # Parse the selected_repo string to get string after @
         session_name=$(echo "$selected_repo" | cut -d'@' -f2 | tr '.' '_')
 
-        # Start a new tmux session with the selected repo as the cwd
-        tmux new-session -d -s "$session_name" -c "$selected_repo"
+        # Check if the tmux session already exists
+        if tmux has-session -t "$session_name" 2>/dev/null; then
+            # Notify the user
+            print_info "Session '$session_name' already exists. Switching to it."
 
-        # Rename the first window "code"
-        tmux rename-window -t "$session_name":1 "code"
-
-        # Run "nvim ." in the first window
-        tmux send-keys -t "$session_name":1 "nvim ." Enter
-
-        # Create a new window with the same cwd
-        tmux new-window -t "$session_name" -c "$selected_repo" -n "run"
-
-        # Run "tmux_2x2_layout" in the second window
-        tmux send-keys -t "$session_name":2 "tmux_2x2_layout" Enter
-
-        # Display loading message in the status bar
-        print_positive "Opening $selected_repo..."
-
-        sleep 2
-
-        # Switch to the new session
-        tmux switch-client -t "$session_name"
-
-        # Select the first window "code"
-        tmux select-window -t "$session_name":1
+            # Switch to the existing session
+            tmux switch-client -t "$session_name"
+        else
+            # Create a new session
+            tmux new-session -d -s "$session_name" -c "$selected_repo"
+            tmux rename-window -t "$session_name":1 "code"
+            tmux send-keys -t "$session_name":1 "nvim ." Enter
+            tmux new-window -t "$session_name" -c "$selected_repo" -n "run"
+            tmux send-keys -t "$session_name":2 "tmux_2x2_layout" Enter
+            print_positive "Opening $selected_repo..."
+            sleep 2
+            tmux switch-client -t "$session_name"
+            tmux select-window -t "$session_name":1
+        fi
     else
         print_info "No repository selected."
     fi
