@@ -1,8 +1,0 @@
-session: terra-colors
-
-root: ~/Documents/dev/repos/terra-theme/terra-colors/
-
-windows:
-  - name: terra-colors
-    commands:
-      - nvim .

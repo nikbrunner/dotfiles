@@ -33,19 +33,19 @@ function add() {
 
 # Remove a file or folder from the dotfiles
 function remove() {
-    if [ -z "$1" ]; then
+    if [ -z "$2" ]; then
         echo "Please specify a file or folder to remove."
         return 1
     fi
 
     # if the argument is a folder then remove the folder and all its contents
-    if [ -d "$1" ]; then
-        echo -e "${ORANGE}::: Removing $1 and all its contents from dotfiles...${NC}"
-        dotfiles rm -r "$1"
+    if [ -d "$2" ]; then
+        echo -e "${ORANGE}::: Removing $2 and all its contents from dotfiles...${NC}"
+        dotfiles rm -r "$2"
         return 0
     else
-        echo -e "${ORANGE}::: Removing $1 from dotfiles...${NC}"
-        dotfiles rm "$1"
+        echo -e "${ORANGE}::: Removing $2 from dotfiles...${NC}"
+        dotfiles rm "$2"
         return 0
     fi
 }
@@ -116,7 +116,6 @@ case $1 in
     ;;
 
 "--remove")
-    shift
     remove "$@"
     ;;
 
