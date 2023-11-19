@@ -117,31 +117,34 @@ open_repo() {
 }
 
 get_info() {
+    print_info "Number of repositories: $(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | wc -l)"
+
     for dir in "$repos_path"/*; do
         if [[ -d "$dir" && ! -L "$dir" ]]; then # Check if it's a directory and not a symlink
             local repo_name
             repo_name=$(basename "$dir")
             # Check if the directory is a Git repository
             if git -C "$dir" rev-parse >/dev/null 2>&1; then
-                # Get the last commit's author, message, and date
-                local last_author last_message last_date
-                last_author=$(git -C "$dir" log -1 --pretty=format:"%an")
-                last_message=$(git -C "$dir" log -1 --pretty=format:"%s")
-                last_date=$(git -C "$dir" log -1 --pretty=format:"%cd")
+                # Check if there are any commits
+                if git -C "$dir" rev-parse HEAD >/dev/null 2>&1; then
+                    # Get the last commit's details
+                    local last_commit_details
+                    last_commit_details=$(git -C "$dir" log -1 --pretty=format:"%an | %s | %cd" 2>/dev/null)
 
-                local repo_status_color=${GREEN}
-                local status_msg=""
+                    local repo_status_color=${GREEN}
+                    local status_msg=""
+                    # Check for uncommitted changes
+                    if ! git -C "$dir" diff --quiet; then
+                        repo_status_color=${RED}
+                        status_msg=" (Uncommitted changes)"
+                    fi
 
-                if ! git -C "$dir" diff --quiet; then
-                    # If there are uncommitted changes
-                    repo_status_color=${RED}
-                    status_msg=" (Uncommitted changes)"
+                    # Print the repo name out in red or green depending on the status
+                    printf "${repo_status_color}%s${NC}%s\n  %s\n" "$repo_name" "$status_msg" "$last_commit_details"
+                else
+                    # Repo exists but no commits have been made yet
+                    printf "${ORANGE}%s\n  No commits yet\n" "$repo_name"
                 fi
-
-                # Print the repo name
-                printf "%b%s%b\n" "$repo_status_color" "$repo_name" "$NC"
-                # Print the last commit details with color
-                printf "  %b%s%b %b%s%b %b%s%b%s\n" "$ORANGE" "$last_author" "$NC" "$GREEN" "$last_message" "$NC" "$BLUE" "$last_date" "$NC" "$status_msg"
             else
                 printf "${NC}%s\n  Not a git repository\n" "$repo_name"
             fi
