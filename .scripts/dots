@@ -132,5 +132,6 @@ case $1 in
 
 *)
     echo "Unknown argument \"$1\""
+    echoe "Usage: $0 [--push|--status|--add|--log|--remove|--pull|--reset|--submodules|--submodules-add|--submodules-remove]"
     ;;
 esac
