@@ -11,9 +11,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- Terra Fall Night
 config.color_scheme = "Gruvbox Material (Gogh)"
-config.colors = { background = "#252221" }
+-- config.colors = { background = "#252221" } -- Terra Fall Night
+config.colors = { background = "#212523" } -- Terra Spring Night
 
 -- Terra Winter Night
 -- config.color_scheme = "nord"
@@ -30,7 +30,7 @@ local ComicCodeLigatures = "ComicCodeLigatures Nerd Font"
 local SFMono = "SFMono Nerd Font"
 local CommitMono = "CommitMono"
 
-local font_family = JetBrainsMono
+local font_family = MapleMono
 
 config.font = wezterm.font({
 	family = font_family,

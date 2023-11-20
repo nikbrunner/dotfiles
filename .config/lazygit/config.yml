@@ -72,7 +72,7 @@ customCommands:
     context: "files"
     command: "git cz"
     subprocess: true
-  - key: "n"
+  - key: "N"
     context: "localBranches"
     prompts:
       - type: "menu"
