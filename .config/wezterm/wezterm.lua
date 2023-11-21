@@ -13,7 +13,11 @@ end
 
 config.color_scheme = "Gruvbox Material (Gogh)"
 -- config.colors = { background = "#252221" } -- Terra Fall Night
-config.colors = { background = "#212523" } -- Terra Spring Night
+-- Terra Spring Night
+config.colors = {
+	background = "#212523",
+	color = "#e0ddd1",
+}
 
 -- Terra Winter Night
 -- config.color_scheme = "nord"
@@ -30,7 +34,7 @@ local ComicCodeLigatures = "ComicCodeLigatures Nerd Font"
 local SFMono = "SFMono Nerd Font"
 local CommitMono = "CommitMono"
 
-local font_family = MapleMono
+local font_family = JetBrainsMono
 
 config.font = wezterm.font({
 	family = font_family,

@@ -1,0 +1,280 @@
+#!/opt/homebrew/bin/bash
+# vim: set filetype=sh:
+
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+RED='\033[0;31m'
+ORANGE='\033[0;33m'
+NC='\033[0m' # No Color
+
+repos_path="$HOME/Documents/dev/repos"
+
+print_positive() {
+    printf "${GREEN}::: Repo - %s${NC}\n" "$1"
+}
+
+print_info() {
+    printf "${BLUE}::: Repo - %s${NC}\n" "$1"
+}
+
+print_negative() {
+    printf "${RED}::: Repo - %s${NC}\n" "$1"
+}
+
+open_dots() {
+    local sessionName="dots"
+    local nvimPath="$HOME/.config/nvim"
+    local tmuxPath="$HOME/.config/tmux"
+    local weztermPath="$HOME/.config/wezterm"
+
+    # Check if the tmux session already exists
+    if tmux has-session -t "$sessionName" 2>/dev/null; then
+        # Notify the user
+        print_info "Session '$sessionName' already exists. Switching to it."
+
+        # If we are not in tmux attach to the session
+        if [ -z "$TMUX" ]; then
+            tmux attach-session -t "$sessionName"
+        fi
+
+        # Switch to the existing session
+        tmux switch-client -t "$sessionName"
+    else
+        # Create a new session
+        tmux new-session -d -s "$sessionName" -c "$nvimPath"
+        tmux rename-window -t "$sessionName":1 "code"
+        tmux send-keys -t "$sessionName":1 "nvim ." Enter
+        tmux new-window -t "$sessionName" -c "$tmuxPath" -n "tmux"
+        tmux send-keys -t "$sessionName":2 "nvim ." Enter
+        tmux new-window -t "$sessionName" -c "$weztermPath" -n "wezterm"
+        tmux send-keys -t "$sessionName":3 "nvim ." Enter
+        print_positive "Opening $sessionName..."
+        sleep 2
+        tmux switch-client -t "$sessionName"
+        tmux select-window -t "$sessionName":1
+
+        # If we are not in tmux attach to the session
+        if [ -z "$TMUX" ]; then
+            tmux attach-session -t "$sessionName"
+        fi
+    fi
+}
+
+clone_repo() {
+    local gitUrl=$1
+    local basePath="/Users/nikolausbrunner/Documents/dev/repos"
+
+    local repoDetails
+    local username
+    local repoName
+
+    repoDetails=$(echo "$gitUrl" | awk -F '[/:]' '{print $(NF-1)"/"$NF}' | sed 's/.git$//')
+    username=$(echo "$repoDetails" | cut -d '/' -f 1)
+    repoName=$(echo "$repoDetails" | cut -d '/' -f 2)
+
+    local fullPath="$basePath/${username}@${repoName}"
+
+    print_positive "Cloning $gitUrl to $fullPath..."
+
+    git clone "$gitUrl" "$fullPath"
+}
+
+remove_repo() {
+    selected_repo=$(select_repo)
+
+    if [ -n "$selected_repo" ]; then
+        print_negative "Removing $selected_repo..."
+        rm -rf "$selected_repo"
+    else
+        print_info "No repository selected."
+    fi
+}
+
+select_repo() {
+    local IFS=$'\n' dirs names selected_name full_path
+    # Use mapfile to read the full directory paths into an array
+    mapfile -t dirs < <(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | sort)
+
+    # Use mapfile to read the directory names into an array, converting full paths to basenames
+    mapfile -t names < <(printf '%s\n' "${dirs[@]}" | xargs -I {} basename {} | sort)
+
+    # Let the user select a directory name
+    selected_name=$(printf '%s\n' "${names[@]}" | fzf --prompt='Select a repository: ')
+
+    # Find the full path of the selected directory
+    for dir in "${dirs[@]}"; do
+        if [[ $(basename "$dir") == "$selected_name" ]]; then
+            full_path="$dir"
+            break
+        fi
+    done
+
+    # Return the full path
+    echo "$full_path"
+}
+
+open_repo() {
+    local selected_repo
+    if [ -n "$1" ]; then
+        selected_repo="$1"
+    else
+        selected_repo=$(select_repo)
+    fi
+
+    if [ -n "$selected_repo" ]; then
+        session_name=$(echo "$selected_repo" | cut -d'@' -f2 | tr '.' '_')
+
+        # Check if the tmux session already exists
+        if tmux has-session -t "$session_name" 2>/dev/null; then
+            # Notify the user
+            print_info "Session '$session_name' already exists. Switching to it."
+
+            # If we are not in tmux attach to the session
+            if [ -z "$TMUX" ]; then
+                tmux attach-session -t "$session_name"
+            fi
+
+            # Switch to the existing session
+            tmux switch-client -t "$session_name"
+        else
+            # Create a new session
+            tmux new-session -d -s "$session_name" -c "$selected_repo"
+            tmux rename-window -t "$session_name":1 "code"
+            tmux send-keys -t "$session_name":1 "nvim ." Enter
+            tmux new-window -t "$session_name" -c "$selected_repo" -n "run"
+            tmux send-keys -t "$session_name":2 "tmux_2x2_layout" Enter
+            print_positive "Opening $selected_repo..."
+            sleep 2
+            tmux switch-client -t "$session_name"
+            tmux select-window -t "$session_name":1
+
+            # If we are not in tmux attach to the session
+            if [ -z "$TMUX" ]; then
+                tmux attach-session -t "$session_name"
+            fi
+        fi
+    else
+        print_info "No repository selected."
+    fi
+}
+
+get_status() {
+    local number_of_repos_with_unstaged_changes=0
+    local -a repos_with_changes=()
+
+    for dir in "$repos_path"/*; do
+        if [[ -d "$dir" && ! -L "$dir" ]]; then # Check if it's a directory and not a symlink
+            local repo_name
+            repo_name=$(basename "$dir")
+            # Check if the directory is a Git repository
+            if git -C "$dir" rev-parse >/dev/null 2>&1; then
+                # Check if there are any commits
+                if git -C "$dir" rev-parse HEAD >/dev/null 2>&1; then
+                    # Get the last commit's author, message, and date
+                    local last_author
+                    local last_message
+                    local last_date
+                    last_author=$(git -C "$dir" log -1 --pretty=format:"%an" 2>/dev/null)
+                    last_message=$(git -C "$dir" log -1 --pretty=format:"%s" 2>/dev/null)
+                    last_date=$(git -C "$dir" log -1 --pretty=format:"%cd" 2>/dev/null)
+
+                    local repo_status_color=$GREEN
+                    local status_msg=""
+                    # Check for uncommitted changes
+                    if ! git -C "$dir" diff --quiet; then
+                        number_of_repos_with_unstaged_changes=$((number_of_repos_with_unstaged_changes + 1))
+                        repo_status_color=$RED
+                        status_msg=" (Uncommitted changes)"
+                        repos_with_changes+=("$(basename "$dir")") # Add to the list of repos with changes
+                    fi
+
+                    # Replace the @ in the repo name with a / to make it recognizable as a clickable href github link
+                    local display_repo_name
+                    display_repo_name=$(echo "$repo_name" | tr '@' '/')
+
+                    # Print the repo name out in red or green depending on the status
+                    printf "${repo_status_color}%s${NC}%s\n" "$display_repo_name" "$status_msg"
+                    # Print the commit details with color for each part
+                    printf "  ${ORANGE}%s${NC} ${GREEN}%s${NC} ${BLUE}%s${NC}\n" "$last_author" "$last_message" "$last_date"
+                else
+                    # Repo exists but no commits have been made yet
+                    printf "${ORANGE}%s\n  No commits yet\n" "$repo_name"
+                fi
+            else
+                printf "${NC}%s\n  Not a git repository\n" "$repo_name"
+            fi
+        fi
+    done
+
+    echo ""
+    echo ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+    print_info "Number of repositories: $(find "$repos_path" -maxdepth 1 -type d -not -path "$repos_path" | wc -l)"
+
+    # If there are repos with uncommitted changes, ask the user if they want to open one
+    if ((number_of_repos_with_unstaged_changes > 0)); then
+        print_negative "You have $number_of_repos_with_unstaged_changes repositories with uncommitted changes."
+        read -p "Do you want to open one of them? (y/N) " -n 1 -r
+        echo # move to a new line
+
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            # Use fzf to let the user select one of the repos with uncommitted changes
+            local selected_repo
+            selected_repo=$(printf '%s\n' "${repos_with_changes[@]}" | fzf --prompt='Select a repository to open: ')
+
+            # Get the full path of the selected repo
+            for dir in "$repos_path"/*; do
+                if [[ -d "$dir" && ! -L "$dir" ]]; then # Check if it's a directory and not a symlink
+                    local repo_name
+                    repo_name=$(basename "$dir")
+                    if [[ "$repo_name" == "$selected_repo" ]]; then
+                        selected_repo="$dir"
+                        break
+                    fi
+                fi
+            done
+
+            # Check if the user made a selection
+            if [ -n "$selected_repo" ]; then
+                open_repo "$selected_repo"
+            else
+                print_info "No repository selected."
+            fi
+        # If the user pressed N or n, ask him if he wants open up one the other repos by calling open_repo without an argument
+        elif [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            read -p "Do you want to open one of the other repositories? (y/N) " -n 1 -r
+            echo # move to a new line
+
+            if [[ $REPLY =~ ^[Yy]$ ]]; then
+                open_repo
+            fi
+        fi
+
+    fi
+}
+
+case $1 in
+"--open")
+    open_repo
+    ;;
+
+"--open-dots")
+    open_dots
+    ;;
+
+"--add")
+    clone_repo "$2"
+    ;;
+
+"--remove")
+    remove_repo
+    ;;
+
+"--status")
+    get_status
+    ;;
+
+*)
+    print_negative "Invalid option."
+    print_info "Usage: repo [--open|--add|--remove|--status]"
+    ;;
+esac
