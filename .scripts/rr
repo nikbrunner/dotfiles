@@ -25,6 +25,7 @@ open_dots() {
     local sessionName="dots"
     local nvimPath="$HOME/.config/nvim"
     local tmuxPath="$HOME/.config/tmux"
+    local scriptsPath="$HOME/.scripts"
     local weztermPath="$HOME/.config/wezterm"
 
     # Check if the tmux session already exists
@@ -42,12 +43,14 @@ open_dots() {
     else
         # Create a new session
         tmux new-session -d -s "$sessionName" -c "$nvimPath"
-        tmux rename-window -t "$sessionName":1 "code"
+        tmux rename-window -t "$sessionName":1 "nvim"
         tmux send-keys -t "$sessionName":1 "nvim ." Enter
         tmux new-window -t "$sessionName" -c "$tmuxPath" -n "tmux"
         tmux send-keys -t "$sessionName":2 "nvim ." Enter
         tmux new-window -t "$sessionName" -c "$weztermPath" -n "wezterm"
         tmux send-keys -t "$sessionName":3 "nvim ." Enter
+        tmux new-window -t "$sessionName" -c "$scriptsPath" -n "scripts"
+        tmux send-keys -t "$sessionName":4 "nvim ." Enter
         print_positive "Opening $sessionName..."
         sleep 2
         tmux switch-client -t "$sessionName"

@@ -16,7 +16,7 @@ config.color_scheme = "Gruvbox Material (Gogh)"
 -- Terra Spring Night
 config.colors = {
 	background = "#212523",
-	color = "#e0ddd1",
+	foreground = "#e0ddd1",
 }
 
 -- Terra Winter Night
@@ -55,6 +55,14 @@ config.font = wezterm.font({
 		"dlig",
 	},
 })
+
+-- TODO: Setup different italic font
+-- config.font_rules = {
+-- 	{
+-- 		italic = true,
+-- 		font = MapleMono,
+-- 	},
+-- }
 
 config.font_size = 16
 config.line_height = 1.2
