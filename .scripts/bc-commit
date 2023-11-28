@@ -1,0 +1,109 @@
+#!/bin/sh
+# vim: set filetype=sh:
+
+# TODO: Listen of interrupt signal and exit
+# TODO: check if user is logged in with `gh auth status`
+
+# Handle interrupt signal (Control-C) and exit
+handle_interrupt() {
+    printf "\n%s\n" "Interrupt signal detected. Exiting..."
+    exit 130 # 130 is the standard exit code for Control-C
+}
+
+# If there are no staged changes, exit
+if [ -z "$(git diff --cached --exit-code)" ]; then
+    printf "%s %s\n" "$(gum style --italic --foreground 1 "No staged changes.")" "$(gum style --foreground 12 "You may want to stage some changes.")"
+    exit 1
+fi
+
+# Check if the user has `gum` installed
+if ! command -v gum >/dev/null; then
+    printf "%s %s\n" "$(gum style --italic --foreground 1 "gum cli tool not found.")" "$(gum style --foreground 12 "You may want to install it.")"
+    exit 1
+# Check if the user has `gh` installed
+elif ! command -v gh >/dev/null; then
+    printf "%s %s\n" "$(gum style --italic --foreground 1 "gh cli tool not found.")" "$(gum style --foreground 12 "You may want to install it.")"
+    exit 1
+fi
+
+# Infer the issue from the branch name if possible
+# (e.g. "bcd-1234/foo-bar" => "BCD-1234" or "bcd-1234" => "BCD-1234", or "bcd-1234-foo-bar" => "BCD-1234")
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# Try to infer the issue number from the branch name
+ISSUE=$(echo "$BRANCH" | sed -E 's/^[^0-9]*([0-9]+).*$/BCD-\1/')
+
+# If issue prefix is empty, ask for an issue number
+if [ -z "$ISSUE" ]; then
+    ISSUE=$(gum input --placeholder "Issue number (e.g. BCD-XXXX)")
+else
+    printf "%s %s\n" "$(gum style --italic --foreground 10 "Issue successfully inferred from branch name:")" "$(gum style --foreground 12 "$ISSUE")"
+fi
+
+# Check with the `gh` cli tool if a pull request for the branch exists and display the title
+ISSUE_REGEXP="BCD-[0-9]{4}"
+PR_TITLE=""
+
+# Check if a pull request exists for this branch
+PR_TITLE=$(gh pr view --json title --jq '.title' 2>/dev/null)
+
+if [ ! "$PR_TITLE" ]; then
+    printf "%s %s\n" "$(gum style --italic --foreground 1 "No pull request found for this branch.")" "$(gum style --foreground 12 "You may want to create one.")"
+else
+    printf "%s %s\n" "$(gum style --italic --foreground 10 "Pull request found for this branch:")" "$(gum style --foreground 12 "$PR_TITLE")"
+
+    # Parse the PR_TITLE for the issue number
+    PR_ISSUE=$(echo "$PR_TITLE" | sed -E "s/.*($ISSUE_REGEXP).*/\1/")
+
+    # If the PR_ISSUE differs from the current issue, ask the user if they want to use the PR_ISSUE
+    if [ "$PR_ISSUE" != "$ISSUE" ]; then
+        printf "\n"
+        printf "%s\n" "$(gum style --italic --foreground 1 "Issue number in PR does not match the current issue!")"
+        printf "%s %s\n" "$(gum style --foreground 7 "Found issue number in pull request title:")" "$(gum style --foreground 212 "$PR_ISSUE")"
+        printf "%s %s\n" "$(gum style --foreground 7 "Issue infered from branch:")" "$(gum style --foreground 212 "$ISSUE")"
+        printf "%s\n" "$(gum style --italic --foreground 3 "Do you want to use the pull request issue number?")"
+        gum confirm "Use pull request issue number?" && ISSUE="$PR_ISSUE"
+    fi
+fi
+
+TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
+SCOPE=$(gum choose "client" "server" "shared" "build" "deploy" "infra" "other")
+
+# If other was chosen, ask for a custom scope
+if [ "$SCOPE" = "other" ]; then
+    SCOPE=$(gum input --placeholder "Scope")
+fi
+
+# Since the scope is optional, wrap it in parentheses if it has a value.
+test -n "$SCOPE" && SCOPE="($SCOPE)"
+
+# Pre-populate the input with the type(scope): so that the user may change it
+SUMMARY=$(gum input --value "$ISSUE $TYPE$SCOPE: " --placeholder "Summary of this change")
+DESCRIPTION=$(gum write --placeholder "Details of this change (CTRL+D to finish)")
+
+printf "\n"
+
+# Before confirm display evertyhing that will be commited
+printf "%s\n" "$(gum style --foreground 11 "$SUMMARY")"
+if [ "$DESCRIPTION" ]; then
+    printf "%s\n" "$(gum style --foreground 10 "$DESCRIPTION")"
+fi
+
+# Display `git status` output
+git status --short
+
+MADE_COMMIT=$(gum confirm "Commit these changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION")
+
+if [ "$MADE_COMMIT" ]; then
+    # If no PR_TITLE was found, ask the user if he wants to push the branch and create a PR
+    if [ ! "$PR_TITLE" ]; then
+        gum confirm "Push branch and create pull request?" && git push --set-upstream origin "$BRANCH" && gh pr create --title "$SUMMARY" --body "$DESCRIPTION"
+    else
+        # If a PR_TITLE was found, ask the user if he wants to push the branch
+        gum confirm "Push branch?"
+        gum spin --spinner dot --title "Pushing..." -- git push
+
+        # Ask the user if he wants to open the PR in the browser
+        gum confirm "Open pull request in browser?" && gh pr view --web
+    fi
+fi

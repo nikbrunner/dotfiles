@@ -100,7 +100,7 @@ export BC_JULIA_ST=8RBL9R2
 # export BC_CONSTANTIN_ST=CNRFGQ2
 
 # Bat
-export BAT_THEME="Nord"
+export BAT_THEME="base16"
 
 # fzf ====================================================================
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
