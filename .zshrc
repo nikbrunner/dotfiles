@@ -13,7 +13,6 @@ local brew_opt_path="/opt/homebrew/opt"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.scripts:$PATH
-export PATH=$HOME/.scripts/bin:$PATH
 export PATH=$HOME/Applications:$PATH
 export PATH=/usr/bin/python:$PATH
 export PATH=/usr/bin/python3:$PATH export PATH=$HOME/.deno/bin:$PATH

@@ -56,4 +56,7 @@
   all = !git-all
 
   # Fetches from origin, resets current branch to match origin, stashes untracked changes, and deletes branches with no upstream
+  resethard = !git fetch origin && git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)"
   fullreset = !git fetch origin && git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)" && git stash --include-untracked && git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
+[rebase]
+	autosquash = true

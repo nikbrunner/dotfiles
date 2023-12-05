@@ -29,10 +29,10 @@ gui:
   border: "single" # one of 'single' | 'double' | 'rounded' | 'hidden'
 git:
   commitPrefixes:
-    dealercenter-digital@bc-desktop-client:
+    bc-desktop-client:
       pattern: "^bcd-(\\d{4}).*"
       replace: "BCD-$1 "
-    dealercenter-digital@bc-homepage:
+    bc-homepage:
       pattern: "^bcd-(\\d{4}).*"
       replace: "BCD-$1 "
     terra-core.nvim:

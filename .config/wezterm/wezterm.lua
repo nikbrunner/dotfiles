@@ -34,7 +34,7 @@ local ComicCodeLigatures = "ComicCodeLigatures Nerd Font"
 local SFMono = "SFMono Nerd Font"
 local CommitMono = "CommitMono"
 
-local font_family = JetBrainsMono
+local font_family = BerkeleyMono
 
 config.font = wezterm.font({
 	family = font_family,
@@ -82,16 +82,23 @@ config.window_padding = {
 	bottom = 25,
 }
 
+local act = wezterm.action
+
 config.keys = {
 	{
 		key = "d",
 		mods = "CMD",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "D",
 		mods = "CMD",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "p",
+		mods = "CMD",
+		action = act.ActivateCommandPalette,
 	},
 }
 
