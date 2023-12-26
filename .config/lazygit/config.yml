@@ -72,6 +72,9 @@ customCommands:
     context: "files"
     command: "git cz"
     subprocess: true
+  - key: "G"
+    context: "localBranches"
+    command: "git fullreset"
   - key: "N"
     context: "localBranches"
     prompts:
