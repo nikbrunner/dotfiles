@@ -11,21 +11,37 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Gruvbox Material (Gogh)"
+-- config.color_scheme = "Gruvbox Material (Gogh)"
 -- config.colors = { background = "#252221" } -- Terra Fall Night
 -- Terra Spring Night
-config.colors = {
-	background = "#212523",
-	foreground = "#e0ddd1",
-}
+-- config.colors = {
+-- 	background = "#212523",
+-- 	foreground = "#e0ddd1",
+-- }
 
 -- Terra Winter Night
--- config.color_scheme = "nord"
--- config.colors = { background = "#232427" }
+config.color_scheme = "nord"
+config.colors = { background = "#232427" }
 
--- Solarized Osaka
--- config.color_scheme = "solarized"
--- config.colors = { background = "#041419" }
+local wallpapers_dir = os.getenv("HOME") .. "/.config/wezterm/wallpapers"
+
+config.background = {
+	{
+		source = {
+			File = wallpapers_dir .. "/ash.png",
+		},
+		height = "Cover",
+		vertical_align = "Middle",
+		repeat_x = "NoRepeat",
+		hsb = {
+			-- brightness = 0.5,
+			-- saturation = 1.0,
+		},
+	},
+}
+
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 65
 
 local JetBrainsMono = "JetBrainsMono Nerd Font"
 local MapleMono = "MapleMono Nerd Font"
@@ -33,8 +49,10 @@ local BerkeleyMono = "BerkeleyMono Nerd Font"
 local ComicCodeLigatures = "ComicCodeLigatures Nerd Font"
 local SFMono = "SFMono Nerd Font"
 local CommitMono = "CommitMono"
+local MonaspaceRadon = "Monaspace Radon"
+local MonaspaceKrypton = "Monaspace Krypton"
 
-local font_family = BerkeleyMono
+local font_family = JetBrainsMono
 
 config.font = wezterm.font({
 	family = font_family,
@@ -104,9 +122,6 @@ config.keys = {
 
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
-
--- config.window_background_opacity = 0.9
--- config.macos_window_background_blur = 65
 
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
