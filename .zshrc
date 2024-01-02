@@ -31,13 +31,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git zsh-vi-mode zsh-z zsh-autosuggestions zsh-syntax-highlighting)
 
-# Edit Config Files ======================================================
-export EDITOR="nvim"
-alias clear_nvim_cache="rm -rf ~/.cache/nvim"
-alias clear_nvim_data="rm -rf ~/.local/share/nvim"
-alias clear_nvim_state="rm -rf ~/.local/state/nvim"
-alias clear_nvim_all="clear_nvim_cache; clear_nvim_data; clear_nvim_state"
-
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfu='df add -u && df commit -m "Update dotfiles" && df push'
@@ -59,10 +52,14 @@ alias ta="tmux attach"
 alias zj="zellij"
 
 # Vim
+export EDITOR="nvim"
+
 alias vin='NVIM_APPNAME="vin" nvim'
-alias lv='NVIM_APPNAME="nvim" nvim'
-alias lazyvin='NVIM_APPNAME="nvim" nvim'
-alias lvin='NVIM_APPNAME="nvim" nvim'
+alias v='NVIM_APPNAME="vin" nvim'
+
+alias lvin='NVIM_APPNAME="lazyvin" nvim'
+alias lv='NVIM_APPNAME="lazyvin" nvim'
+
 alias neovide="open -a Neovide"
 
 alias python="python3"

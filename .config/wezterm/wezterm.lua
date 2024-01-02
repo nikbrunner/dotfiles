@@ -34,14 +34,14 @@ config.background = {
 		vertical_align = "Middle",
 		repeat_x = "NoRepeat",
 		hsb = {
-			-- brightness = 0.5,
-			-- saturation = 1.0,
+			brightness = 0.25,
+			saturation = 0.75,
 		},
 	},
 }
 
--- config.window_background_opacity = 0.9
--- config.macos_window_background_blur = 65
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 65
 
 local JetBrainsMono = "JetBrainsMono Nerd Font"
 local MapleMono = "MapleMono Nerd Font"
@@ -94,10 +94,10 @@ config.window_frame = {
 }
 
 config.window_padding = {
-	left = 25,
-	right = 25,
-	top = 25,
-	bottom = 25,
+	left = 50,
+	right = 50,
+	top = 50,
+	bottom = 50,
 }
 
 local act = wezterm.action
