@@ -1,10 +1,11 @@
 {
   "base_keymap": "VSCode",
-  "buffer_font_size": 18,
   "vim_mode": true,
-  // "buffer_font_family": "BerkeleyMono Nerd Font",
+  "buffer_font_size": 18,
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "theme": "Atelier Savanna Dark",
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 18,
+  "theme": "Solarized Dark",
   "show_completions_on_input": true,
   "git": {
     "git_gutter": "tracked_files"
@@ -22,10 +23,7 @@
       "formatter": {
         "external": {
           "command": "node_modules/.bin/prettier",
-          "arguments": [
-            "--stdin-filepath",
-            "{buffer_path}"
-          ]
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       }
     }

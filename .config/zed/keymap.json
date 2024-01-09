@@ -1,5 +1,10 @@
 [
   {
+    "bindings": {
+      "ctrl-s": "workspace::SaveAll"
+    }
+  },
+  {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in normal & visual mode
@@ -15,6 +20,7 @@
       "space c n": "editor::Rename",
       "space c c r": "editor::CopyRelativePath",
       "space f f": "file_finder::Toggle",
+      "space space": "file_finder::Toggle",
       "] g": "editor::GoToHunk",
       "[ g": "editor::GoToPrevHunk",
       "] d": "editor::GoToDiagnostic",
@@ -23,22 +29,10 @@
       "z o": "editor::UnfoldLines",
       "tab": "pane::ActivateNextItem",
       "shift-tab": "pane::ActivatePrevItem",
-      "ctrl-h": [
-        "workspace::ActivatePaneInDirection",
-        "Left"
-      ],
-      "ctrl-l": [
-        "workspace::ActivatePaneInDirection",
-        "Right"
-      ],
-      "ctrl-k": [
-        "workspace::ActivatePaneInDirection",
-        "Up"
-      ],
-      "ctrl-j": [
-        "workspace::ActivatePaneInDirection",
-        "Down"
-      ]
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
     }
   },
   {

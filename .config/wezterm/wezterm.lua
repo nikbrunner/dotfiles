@@ -4,22 +4,27 @@
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
 
 local wezterm = require("wezterm")
+local config = {}
 
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
 -- config.color_scheme = "Gruvbox Material (Gogh)"
--- config.colors = { background = "#252221" } -- Terra Fall Night
--- Terra Spring Night
--- config.colors = {
--- 	background = "#212523",
--- 	foreground = "#e0ddd1",
--- }
+config.color_scheme = "GitHub Dark"
+-- config.color_scheme = "nord"
 
--- Terra Winter Night
-config.color_scheme = "nord"
-config.colors = { background = "#232427" }
+-- config.colors = { background = "#212523", foreground = "#e0ddd1", } -- Terra Spring Night
+
+-- config.colors = { background = "#252221" } -- Terra Fall Night
+
+config.colors = { background = "#000000" }
+
+-- config.colors = { background = "#232427" } -- Original Terra Winter Night
+-- config.colors = { background = "#16181b" } -- Darker Terra Winter Night
+--
+-- config.colors = { background = "#1f2129" } -- Original Terra Summer Night
+-- config.colors = { background = "#0e0e12" } -- Darker Terra Summer Night
 
 local wallpapers_dir = os.getenv("HOME") .. "/.config/wezterm/wallpapers"
 
