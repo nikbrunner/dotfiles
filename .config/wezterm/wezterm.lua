@@ -10,18 +10,19 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Gruvbox Material (Gogh)"
+-- config.color_scheme = "Gruvbox Material (Gogh)"
 -- config.color_scheme = "Kanagawa"
 -- config.color_scheme = "Tokyo Night Moon"
 -- config.color_scheme = "GitHub Dark"
--- config.color_scheme = "nord"
+config.color_scheme = "nord"
 
 -- config.colors = { background = "#000000" }
 
 -- config.colors = { background = "#212523", foreground = "#e0ddd1" } -- Terra Spring Night
 -- config.colors = { background = "#252221" } -- Terra Fall Night
 -- config.colors = { background = "#232427" } -- Terra Winter Night
-config.colors = { background = "#1f2129" } -- Terra Summer Night
+config.colors = { background = "#23272D" } -- Terra Winter Night (With GitHub Dimmed Gray Dark)
+-- config.colors = { background = "#1f2129" } -- Terra Summer Night
 
 config.window_background_opacity = 0.65
 config.macos_window_background_blur = 65
