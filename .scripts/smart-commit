@@ -1,0 +1,30 @@
+#!/bin/bash
+# vim: set filetype=sh:
+
+# Ensure the script exits on any error
+set -e
+
+# Select files to commit
+files_to_commit=$(git status --porcelain | awk '{print $2}' | gum choose --no-limit)
+
+# Exit if no files are selected
+if [ -z "$files_to_commit" ]; then
+  echo "No files selected for commit."
+  exit 0
+fi
+
+# Generate commit message
+commit_message=$(~/.scripts/smart-git-message)
+
+# Confirm the commit message
+echo "Generated Commit Message: $commit_message"
+if ! gum confirm "Proceed with this commit message?"; then
+  echo "Commit cancelled."
+  exit 0
+fi
+
+# Stage the selected files and commit
+echo "$files_to_commit" | xargs git add
+git commit -m "$commit_message"
+
+echo "Commit successful!"
