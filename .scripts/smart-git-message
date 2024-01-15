@@ -1,0 +1,52 @@
+#!/bin/bash
+# vim: set filetype=sh:
+
+# Check if OPENAI_API_KEY is set
+if [ -z "$OPENAI_API_KEY" ]; then
+    echo "OPENAI_API_KEY is not set. Please set it to your OpenAI API key."
+    exit 1
+fi
+
+# Get the current git diff
+git_diff=$(git diff)
+
+# Check if there's any diff
+if [ -z "$git_diff" ]; then
+    echo "No changes detected."
+    exit 1
+fi
+
+# Format the input for GPT-4
+formatted_input="Convert this git diff into a concise, lowercase commit message following the conventional commit idiom:\n$git_diff"
+
+# Prepare the JSON payload
+json_payload=$(jq -n \
+    --arg model "gpt-4" \
+    --arg input "$formatted_input" \
+    '{
+        model: $model,
+        messages: [
+            { role: "system", content: "You are a helpful assistant who can summarize git diffs into commit messages." },
+            { role: "user", content: $input }
+        ]
+    }')
+
+# Use curl to send the request to OpenAI's API
+response=$(curl -s -X POST "https://api.openai.com/v1/chat/completions" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "$json_payload")
+
+# Extract the commit message from the response
+commit_message=$(echo "$response" | jq -r '.choices[0].message.content' | xargs)
+
+# Check the commit message
+if [ -z "$commit_message" ] || [ "$commit_message" = "null" ]; then
+    echo "GPT-4 did not return a valid output."
+    exit 1
+fi
+
+# Copy the commit message to clipboard via pbcopy
+echo "$commit_message" | pbcopy
+
+echo "Commit message copied to clipboard: '$commit_message'"
