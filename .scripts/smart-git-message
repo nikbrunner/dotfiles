@@ -17,7 +17,16 @@ if [ -z "$git_diff" ]; then
 fi
 
 # Format the input for GPT-4
-formatted_input="Convert this git diff into a concise, lowercase commit message following the conventional commit idiom:\n$git_diff"
+formatted_input=$(cat <<EOF
+Convert this git diff into a concise, lowercase commit message following the conventional commit idiom.
+- Try to find a scope under which the changes can be summarized, and add them after the conventional commit type. For changes scoped to a single file, use the file name (without extension) as the scope. Example: feat(keymaps): <summary>.
+- If changes are not scoped to a single file or no sensible scope can be found, skip the scope and just use the commit type. Example: feat: <summary>.
+- If an issue number is found in the branch name, prefix the message with the capitalized issue number. Example: BCD-2565 feat(<optional scope>): <summary>.
+
+Git Diff:
+$git_diff
+EOF
+)
 
 # Prepare the JSON payload
 json_payload=$(jq -n \
@@ -49,4 +58,5 @@ fi
 # Copy the commit message to clipboard via pbcopy
 echo "$commit_message" | pbcopy
 
-echo "Commit message copied to clipboard: '$commit_message'"
+echo "Generated commit message copied to clipboard: '$commit_message'"
+

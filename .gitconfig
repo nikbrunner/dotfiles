@@ -61,5 +61,6 @@
 
 
   smart-switch= "!f() { ~/.scripts/smart-branch \"$@\"; }; f"
+  smart-commit = "!f() { msg=$("~/.scripts/smart-git-message"); git commit -m \"$msg\"; }; f"
 [rebase]
 	autosquash = true
