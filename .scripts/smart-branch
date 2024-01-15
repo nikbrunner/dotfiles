@@ -1,0 +1,53 @@
+#!/bin/bash
+# vim: set filetype=sh:
+
+# Check if there's an argument
+if [ $# -eq 0 ]; then
+    echo "No arguments provided. Please provide a task description."
+    exit 1
+fi
+
+# Check if OPENAI_API_KEY is set
+if [ -z "$OPENAI_API_KEY" ]; then
+    echo "OPENAI_API_KEY is not set. Please set it to your OpenAI API key."
+    exit 1
+fi
+
+# Join arguments into a single string
+input="$*"
+
+# Format the input for GPT-4
+formatted_input="Convert this task description into a concise English branch name in the format 'bcd-xxxx/<summary>': $input"
+
+# Prepare the JSON payload
+json_payload=$(jq -n \
+    --arg model "gpt-4" \
+    --arg input "$formatted_input" \
+    '{
+        model: $model,
+        messages: [
+            { role: "system", content: "You are a helpful assistant." },
+            { role: "user", content: $input }
+        ]
+    }')
+
+# Use curl to send the request to OpenAI's API
+response=$(curl -s -X POST "https://api.openai.com/v1/chat/completions" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "$json_payload")
+
+
+# Extract the text from the response using jq
+branch_name=$(echo "$response" | jq -r '.choices[0].message.content' | xargs)
+
+# Validate output
+if [ -z "$branch_name" ] || [ "$branch_name" = "null" ]; then
+    echo "GPT-4 did not return a valid output."
+    exit 1
+fi
+
+# Create a new branch with the GPT-4 output
+git switch -c "$branch_name"
+
+echo "Created new branch: $branch_name"
