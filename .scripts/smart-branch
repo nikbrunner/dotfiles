@@ -17,7 +17,6 @@ fi
 input="$*"
 
 # Format the input for GPT-4
-# formatted_input="Convert this task description into a concise English branch name in the format 'bcd-xxxx/<summary>': $input"
 formatted_input="Convert this task description into a concise English branch name. If the description contains a issue number like 'bcd-xxxx', please include it in the branch name. The end result should be lowercase and should look something like this: '<bcd-xxxx>/<summary>'.: $input"
 
 # Prepare the JSON payload

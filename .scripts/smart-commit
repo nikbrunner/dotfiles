@@ -14,7 +14,7 @@ if [ -z "$files_to_commit" ]; then
 fi
 
 # Generate commit message
-commit_message=$(~/.scripts/smart-git-message)
+commit_message=$(~/.scripts/smart-git-message "${files_to_commit[@]}")
 
 # Confirm the commit message
 echo "Generated Commit Message: $commit_message"

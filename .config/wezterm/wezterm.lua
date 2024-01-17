@@ -24,7 +24,7 @@ config.color_scheme = "nord"
 config.colors = { background = "#23272D" } -- Terra Winter Night (With GitHub Dimmed Gray Dark)
 -- config.colors = { background = "#1f2129" } -- Terra Summer Night
 
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.92
 config.macos_window_background_blur = 50
 
 -- local wallpapers_dir = os.getenv("HOME") .. "/.config/wezterm/wallpapers"
