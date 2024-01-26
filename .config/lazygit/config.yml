@@ -1,10 +1,15 @@
 os:
   open: "code -rg {{filename}}"
+  edit: 'NVIM_APPNAME="vin" nvim {{filename}}'
+  editAtLine: 'NVIM_APPNAME="vin" nvim --line={{line}} {{filename}}'
+  editAtLineAndWait: 'NVIM_APPNAME="vin" nvim --block --line={{line}} {{filename}}'
+  editInTerminal: true
+  openDirInEditor: 'NVIM_APPNAME="vin" nvim {{dir}}'
 gui:
   # stuff relating to the UI
   scrollHeight: 10 # how many lines you scroll by
   scrollPastBottom: true # enable scrolling past the bottom
-  sidePanelWidth: 0.3 # number from 0 to 1
+  sidePanelWidth: 0.2 # number from 0 to 1
   expandFocusedSidePanel: true
   mainPanelSplitMode: "flexible" # one of 'horizontal' | 'flexible' | 'vertical'
   theme:
@@ -75,6 +80,18 @@ customCommands:
   - key: "G"
     context: "localBranches"
     command: "git fullreset"
+  - key: '<c-f>'  # Ctrl-f (think "full screen")
+    context: 'files'
+    command: "git show {{.SelectedLocalCommit.Sha}}"
+    subprocess: true
+    description: "Show selected commit"
+    stream: true
+  - key: '<c-f>'  # Ctrl-f (think "full screen")
+    context: 'commits'
+    command: "git show {{.SelectedLocalCommit.Sha}}"
+    subprocess: true
+    description: "Show selected commit"
+    stream: true
   - key: "N"
     context: "localBranches"
     prompts:
