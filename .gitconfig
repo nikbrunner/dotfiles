@@ -1,4 +1,3 @@
-# This is Git's per-user configuration file.
 [user]
   name = nbr
   email = nikolaus.brunner@protonmail.ch
@@ -17,6 +16,9 @@
 [merge]
   tool = vscode
   colorMoved = default
+
+[rebase]
+	autosquash = true
 
 [mergetool "vscode"]
   cmd = code --wait $MERGED
@@ -60,7 +62,6 @@
   fullreset = !git fetch origin && git reset --hard "origin/$(git rev-parse --abbrev-ref HEAD)" && git stash --include-untracked && git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
 
 
-  smart-switch= "!f() { ~/.scripts/smart-branch \"$@\"; }; f"
+  smart-branch= "!f() { ~/.scripts/smart-branch \"$@\"; }; f"
   smart-commit = "!f() { msg=$("~/.scripts/smart-git-message"); git commit -m \"$msg\"; }; f"
-[rebase]
-	autosquash = true
+

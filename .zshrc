@@ -74,7 +74,7 @@ alias theme="kitty +kitten themes --reload-in=all "
 alias themes="kitty +kitten themes"
 # alias ssh='env TERM=xterm-256color ssh' # allows kitty to work with ssh
 
-alias scratch="code $HOME/scratchpad.md"
+alias scratch="vin $HOME/scratchpad.md"
 
 # myip
 myip=$(ipconfig getifaddr en0)

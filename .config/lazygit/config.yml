@@ -80,14 +80,14 @@ customCommands:
   - key: "G"
     context: "localBranches"
     command: "git fullreset"
-  - key: '<c-f>'  # Ctrl-f (think "full screen")
-    context: 'files'
+  - key: "<c-f>" # Ctrl-f (think "full screen")
+    context: "files"
     command: "git show {{.SelectedLocalCommit.Sha}}"
     subprocess: true
     description: "Show selected commit"
     stream: true
-  - key: '<c-f>'  # Ctrl-f (think "full screen")
-    context: 'commits'
+  - key: "<c-f>" # Ctrl-f (think "full screen")
+    context: "commits"
     command: "git show {{.SelectedLocalCommit.Sha}}"
     subprocess: true
     description: "Show selected commit"

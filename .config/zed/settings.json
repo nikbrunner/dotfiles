@@ -1,11 +1,13 @@
 {
+  "copilot": {
+    "disabled_globs": [".env", ""]
+  },
   "base_keymap": "VSCode",
   "vim_mode": true,
   "buffer_font_size": 18,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_family": "JetBrainsMono Nerd Font",
+  // "buffer_font_family": "JetBrainsMono Nerd Font",
+  // "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 18,
-  "theme": "Solarized Dark",
   "show_completions_on_input": true,
   "git": {
     "git_gutter": "tracked_files"
@@ -17,17 +19,17 @@
     "enabled": true
   },
   "relative_line_numbers": true,
-  "language_overrides": {
-    "JavaScript": {
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "node_modules/.bin/prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
-    }
-  },
+  // "language_overrides": {
+  //   "JavaScript": {
+  //     "format_on_save": "on",
+  //     "formatter": {
+  //       "external": {
+  //         "command": "node_modules/.bin/prettier",
+  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
+  //       }
+  //     }
+  //   }
+  // },
   "lsp": {
     "typescript-language-server": {
       "initialization_options": {

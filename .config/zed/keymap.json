@@ -1,7 +1,9 @@
 [
   {
     "bindings": {
-      "ctrl-s": "workspace::SaveAll"
+      "ctrl-s": "workspace::SaveAll",
+      "alt-[": "workspace::ToggleLeftDock",
+      "alt-]": "workspace::ToggleRightDock"
     }
   },
   {
@@ -13,20 +15,40 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
-      // put key-bindings here if you want them to work only in normal mode
+      "space space": "file_finder::Toggle",
+      // LSP
       "g r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
+
+      // Comments
       "g c c": "editor::ToggleComments",
-      "space c n": "editor::Rename",
+
+      // Coee Actions
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
       "space c c r": "editor::CopyRelativePath",
+
+      // Explorer
+      "space e e": "project_panel::ToggleFocus",
+
+      // File Group
       "space f f": "file_finder::Toggle",
-      "space space": "file_finder::Toggle",
+
+      // Quit Group
+      "space q o": "pane::CloseInactiveItems",
+      "space q q": "pane::CloseActiveItem",
+
+      // Prev/Next
       "] g": "editor::GoToHunk",
       "[ g": "editor::GoToPrevHunk",
       "] d": "editor::GoToDiagnostic",
       "[ d": "editor::GoToPrevDiagnostic",
+
+      // Fold
       "z a": "editor::Fold",
       "z o": "editor::UnfoldLines",
+
+      // Pane Navigation
       "tab": "pane::ActivateNextItem",
       "shift-tab": "pane::ActivatePrevItem",
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
@@ -39,12 +61,43 @@
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       // visual, visual line & visual block modes
+      "g c": "editor::ToggleComments",
+
+      // Coee Actions
+      "space c a": "editor::ToggleCodeActions"
     }
   },
   {
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in insert mode
+    }
+  },
+  {
+    // this is not working. i dont know why really.
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "escape": "project_panel::ToggleFocus",
+      "space e e": "workspace::ToggleLeftDock",
+      "h": "project_panel::CollapseSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrev",
+      "l": "project_panel::ExpandSelectedEntry",
+      "enter": "project_panel::Open",
+      "r": "project_panel::Rename",
+      "z c": "project_panel::CollapseSelectedEntry",
+      "z o": "project_panel::ExpandSelectedEntry",
+      "z m": "project_panel::CollapseSelectedEntry",
+      "z M": "project_panel::CollapseAllEntries",
+      "shift-o": "project_panel::RevealInFinder",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "shift-y": "project_panel::CopyRelativePath",
+      "g y": "project_panel::CopyPath"
     }
   }
 ]

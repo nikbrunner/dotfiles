@@ -11,18 +11,20 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = "Gruvbox Material (Gogh)"
-config.colors = { background = "#252221" }
+
+config.colors = { background = "#212523" }
 
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 35
 
-local JetBrainsMono = "JetBrainsMono Nerd Font"
-local MapleMono = "MapleMono Nerd Font"
-local BerkeleyMono = "BerkeleyMono Nerd Font"
+local JetBrains = "JetBrainsMono Nerd Font"
+local Maple = "MapleMono Nerd Font"
+local Berkeley = "BerkeleyMono Nerd Font"
 local ComicCodeLigatures = "ComicCodeLigatures Nerd Font"
-local SFMono = "SFMono Nerd Font"
+local SF = "SFMono Nerd Font"
+local Operator = "OperatorMono Nerd Font"
 
-local font_family = JetBrainsMono
+local font_family = JetBrains
 
 config.font = wezterm.font({
 	family = font_family,
