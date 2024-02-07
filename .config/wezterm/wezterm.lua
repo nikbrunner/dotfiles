@@ -12,56 +12,29 @@ end
 
 config.color_scheme = "Gruvbox Material (Gogh)"
 
-config.colors = { background = "#212523" }
+config.colors = { background = "#252221" }
 
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 35
+-- config.window_background_opacity = 0.95
+-- config.macos_window_background_blur = 35
 
-local JetBrains = "JetBrainsMono Nerd Font"
+local Jet = "JetBrains Mono"
 local Maple = "MapleMono Nerd Font"
 local Berkeley = "BerkeleyMono Nerd Font"
-local ComicCodeLigatures = "ComicCodeLigatures Nerd Font"
+local Comic = "ComicCodeLigatures Nerd Font"
 local SF = "SFMono Nerd Font"
-local Operator = "OperatorMono Nerd Font"
 
-local font_family = JetBrains
+local font_family = Jet
 
 config.font = wezterm.font({
 	family = font_family,
 	weight = 400,
-	harfbuzz_features = {
-		"calt=0",
-		"clig=0",
-		"liga=0",
-		"ss01",
-		"ss02",
-		"ss03",
-		"ss04",
-		"ss05",
-		"ss06",
-		"ss07",
-		"ss08",
-		"calt",
-		"dlig",
-	},
 })
-
--- TODO: Setup different italic font
--- config.font_rules = {
--- 	{
--- 		italic = true,
--- 		font = MapleMono,
--- 	},
--- }
 
 config.font_size = 16
 config.line_height = 1.2
 
 config.window_frame = {
-	font = wezterm.font({
-		family = font_family,
-		weight = "Bold",
-	}),
+	font = wezterm.font({ family = font_family }),
 	font_size = 16.0,
 }
 
@@ -89,6 +62,11 @@ config.keys = {
 		key = "p",
 		mods = "CMD",
 		action = act.ActivateCommandPalette,
+	},
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.DisableDefaultAssignment,
 	},
 }
 
