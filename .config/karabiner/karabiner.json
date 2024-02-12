@@ -134,7 +134,7 @@
             ]
           },
           {
-            "description": "Right Opt: MEH on Hold",
+            "description": "Right Opt: (Cmd, Shift, Opt) on Hold",
             "manipulators": [
               {
                 "conditions": [
@@ -154,7 +154,7 @@
                 "to": [
                   {
                     "key_code": "left_shift",
-                    "modifiers": ["left_control", "left_option"]
+                    "modifiers": ["left_command", "left_option"]
                   }
                 ],
                 "type": "basic"

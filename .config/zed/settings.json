@@ -1,5 +1,5 @@
 {
-  "theme": "Atelier Savanna Dark",
+  "theme": "Ayu Dark",
   "copilot": {
     "disabled_globs": [".env", ""]
   },

@@ -1,8 +1,8 @@
 os:
   open: "code -rg {{filename}}"
   edit: 'NVIM_APPNAME="vin" nvim {{filename}}'
-  editAtLine: 'NVIM_APPNAME="vin" nvim --line={{line}} {{filename}}'
-  editAtLineAndWait: 'NVIM_APPNAME="vin" nvim --block --line={{line}} {{filename}}'
+  # editAtLine: 'NVIM_APPNAME="vin" nvim --line={{line}} {{filename}}'
+  # editAtLineAndWait: 'NVIM_APPNAME="vin" nvim --block --line={{line}} {{filename}}'
   editInTerminal: true
   openDirInEditor: 'NVIM_APPNAME="vin" nvim {{dir}}'
 gui:
@@ -73,7 +73,7 @@ quitOnTopLevelReturn: false
 disableStartupPopups: false
 notARepository: "skip" # one of: 'prompt' | 'create' | 'skip'
 customCommands:
-  - key: "C"
+  - key: "Z"
     context: "files"
     command: "git cz"
     subprocess: true

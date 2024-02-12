@@ -44,6 +44,8 @@
       "] d": "editor::GoToDiagnostic",
       "[ d": "editor::GoToPrevDiagnostic",
 
+      "v A": "editor::SelectAll",
+
       // Fold
       "z a": "editor::Fold",
       "z o": "editor::UnfoldLines",
@@ -64,7 +66,11 @@
       "g c": "editor::ToggleComments",
 
       // Coee Actions
-      "space c a": "editor::ToggleCodeActions"
+      "space c a": "editor::ToggleCodeActions",
+
+      // Fold
+      "z a": "editor::Fold",
+      "z o": "editor::UnfoldLines"
     }
   },
   {
