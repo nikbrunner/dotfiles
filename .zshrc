@@ -29,7 +29,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git zsh-vi-mode zsh-z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -154,14 +154,12 @@ complete -o nospace -C /usr/local/bin/bit bit
 # Remove if solved: https://github.com/romkatv/powerlevel10k/issues/1554#issuecomment-1701598955
 unset ZSH_AUTOSUGGEST_USE_ASYNC
 
-# begin the empty window at the bottom
-# tput cup "$LINES"
-
 source $ZSH/oh-my-zsh.sh
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(zoxide init --cmd cd zsh)"
 
 # bun completions
 [ -s "/Users/nikolausbrunner/.bun/_bun" ] && source "/Users/nikolausbrunner/.bun/_bun"

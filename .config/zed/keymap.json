@@ -44,6 +44,9 @@
       "] d": "editor::GoToDiagnostic",
       "[ d": "editor::GoToPrevDiagnostic",
 
+      "H": "pane::ActivatePrevItem",
+      "L": "pane::ActivateNextItem",
+
       "v A": "editor::SelectAll",
 
       // Fold

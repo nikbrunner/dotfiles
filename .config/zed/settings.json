@@ -1,5 +1,5 @@
 {
-  "theme": "Ayu Dark",
+  "theme": "Carbonfox",
   "copilot": {
     "disabled_globs": [".env", ""]
   },

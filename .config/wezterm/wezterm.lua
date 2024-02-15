@@ -10,9 +10,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "nord"
+config.color_scheme = "nordfox"
 
-config.colors = { background = "#232427" }
+config.colors = { background = "#17181a" }
 
 -- config.window_background_opacity = 0.95
 -- config.macos_window_background_blur = 35
@@ -23,7 +23,7 @@ local Berkeley = "BerkeleyMono Nerd Font"
 local Comic = "ComicCodeLigatures Nerd Font"
 local SF = "SFMono Nerd Font"
 
-local font_family = Berkeley
+local font_family = Jet
 
 config.font = wezterm.font({
 	family = font_family,
