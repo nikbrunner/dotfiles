@@ -144,6 +144,7 @@ fpath=(~/.config/.zsh $fpath)
 
 autoload -Uz compinit && compinit
 
+
 # Fix auto-completion bug (https://github.com/ohmyzsh/ohmyzsh/issues/4632)
 LC_ALL="en_US.UTF-8"
 autoload -U +X bashcompinit && bashcompinit
@@ -153,6 +154,7 @@ complete -o nospace -C /usr/local/bin/bit bit
 
 # Remove if solved: https://github.com/romkatv/powerlevel10k/issues/1554#issuecomment-1701598955
 unset ZSH_AUTOSUGGEST_USE_ASYNC
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -167,3 +169,5 @@ eval "$(zoxide init --cmd cd zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "[WIP]: $(date)"'

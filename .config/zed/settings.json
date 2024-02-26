@@ -1,11 +1,11 @@
 {
-  "theme": "Carbonfox",
+  "theme": "GitHub Dark Default",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
-  "buffer_font_size": 18,
+  "buffer_font_size": 14,
   "buffer_font_family": "JetBrains Mono",
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 18,

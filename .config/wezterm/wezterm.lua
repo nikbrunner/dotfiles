@@ -10,12 +10,12 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "nordfox"
+config.color_scheme = "nord"
 
-config.colors = { background = "#17181a" }
+config.colors = { background = "#232427" }
 
--- config.window_background_opacity = 0.95
--- config.macos_window_background_blur = 35
+config.window_background_opacity = 0.95
+config.macos_window_background_blur = 35
 
 local Jet = "JetBrains Mono"
 local Maple = "MapleMono Nerd Font"
@@ -30,7 +30,7 @@ config.font = wezterm.font({
 	weight = 400,
 })
 
-config.font_size = 16
+config.font_size = 14
 config.line_height = 1.2
 
 config.window_frame = {
