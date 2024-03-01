@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -67,12 +69,6 @@ alias pip="pip3"
 
 alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
 alias checkout="gh pr list -s open | fzf --preview 'gh pr view {1}' | awk '{print $1}' | xargs gh pr checkout"
-alias ts="smug list | fzf | xargs smug start"
-
-# Kitty
-alias theme="kitty +kitten themes --reload-in=all "
-alias themes="kitty +kitten themes"
-# alias ssh='env TERM=xterm-256color ssh' # allows kitty to work with ssh
 
 alias scratch="vin $HOME/scratchpad.md"
 
@@ -92,9 +88,6 @@ export BC_HOME_ST=CG7L9R2
 export BC_JULIA_IP=10.2.0.187
 export BC_JULIA_ST=CNRFGQ2
 
-# export BC_CONSTANTIN_IP=10.2.0.187
-# export BC_CONSTANTIN_ST=CNRFGQ2
-
 # Bat
 export BAT_THEME="base16"
 
@@ -102,16 +95,6 @@ export BAT_THEME="base16"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-
-function start-smug-session {
-  # Fetch smug sessions and feed them into fzf
-  session=$(smug list | fzf --height 40% --layout=reverse)
-
-  # Start the selected smug session
-  if [[ -n "$session" ]]; then
-    smug start "$session"
-  fi
-}
 
 
 function find-dotfiles {
@@ -121,17 +104,11 @@ function find-dotfiles {
   popd > /dev/null
 }
 
-# alias find-nvim="fd --type f --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
-alias find-nvim="fd --type f --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % $HOME/.scripts/open_in_git_root.sh %"
-alias find-cd-nvim="fd --type d --follow --exclude .git --ignore-file ~/.gitignore --hidden -c never . $HOME/Documents/dev/repos | fzf | xargs -I % sh -c 'cd % && nvim .'"
-alias find-dotfiles=" cd $HOME && git --git-dir=$HOME/.dotfiles --work-tree=$HOME ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :501 {}' | xargs -I % nvim %"
-alias ses="start-smug-session"
-
 # [CTRL+R is overwritten · Issue #242 · jeffreytse/zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode/issues/242)
 # Set this bindings after the plugin loader from oh-my-zsh
 function zvm_after_init() {
     bindkey -s '^[p' 'find-nvim\n'
-    bindkey -s '^[d' 'find-cd-nvim\n'
+      bindkey -s '^[d' 'find-cd-nvim\n'
     bindkey -s '^[g' 'find-dotfiles\n'
 }
 
@@ -164,10 +141,10 @@ source $ZSH/oh-my-zsh.sh
 eval "$(zoxide init --cmd cd zsh)"
 
 # bun completions
-[ -s "/Users/nikolausbrunner/.bun/_bun" ] && source "/Users/nikolausbrunner/.bun/_bun"
+  [ -s "/Users/nikolausbrunner/.bun/_bun" ] && source "/Users/nikolausbrunner/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "[WIP]: $(date)"'
+alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "wip: $(date)"'

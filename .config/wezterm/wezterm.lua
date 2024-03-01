@@ -23,7 +23,7 @@ local Berkeley = "BerkeleyMono Nerd Font"
 local Comic = "ComicCodeLigatures Nerd Font"
 local SF = "SFMono Nerd Font"
 
-local font_family = Jet
+local font_family = Berkeley
 
 config.font = wezterm.font({
 	family = font_family,
