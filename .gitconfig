@@ -10,7 +10,7 @@
   rebase = true
 
 [core]
-  editor = NVIM_APPNAME="vin" nvim
+  editor = nvim
   pager = delta
 
 [merge]

@@ -10,20 +10,21 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "nord"
+config.color_scheme = "Everforest Dark (Gogh)"
 
-config.colors = { background = "#232427" }
+config.colors = { background = "#212523" }
 
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 35
+-- config.window_background_opacity = 0.95
+-- config.macos_window_background_blur = 35
 
 local Jet = "JetBrains Mono"
 local Maple = "MapleMono Nerd Font"
 local Berkeley = "BerkeleyMono Nerd Font"
 local Comic = "ComicCodeLigatures Nerd Font"
 local SF = "SFMono Nerd Font"
+local iA = "iA Writer Mono S"
 
-local font_family = Berkeley
+local font_family = iA
 
 config.font = wezterm.font({
 	family = font_family,

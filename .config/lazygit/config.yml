@@ -1,10 +1,10 @@
 os:
   open: "code -rg {{filename}}"
-  edit: 'NVIM_APPNAME="vin" nvim {{filename}}'
-  # editAtLine: 'NVIM_APPNAME="vin" nvim --line={{line}} {{filename}}'
-  # editAtLineAndWait: 'NVIM_APPNAME="vin" nvim --block --line={{line}} {{filename}}'
+  edit: "nvim {{filename}}"
+  # editAtLine: "nvim --line={{line}} {{filename}}"
+  # editAtLineAndWait: "nvim --block --line={{line}} {{filename}}"
   editInTerminal: true
-  openDirInEditor: 'NVIM_APPNAME="vin" nvim {{dir}}'
+  openDirInEditor: "nvim {{dir}}"
 gui:
   # stuff relating to the UI
   scrollHeight: 10 # how many lines you scroll by

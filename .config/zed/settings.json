@@ -1,5 +1,5 @@
 {
-  "theme": "GitHub Dark Default",
+  "theme": "Catppuccin Latte",
   "copilot": {
     "disabled_globs": [".env", ""]
   },

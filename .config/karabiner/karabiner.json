@@ -112,28 +112,6 @@
             ]
           },
           {
-            "description": "Left Cmd: Left Cmd on Hold / Esc on Tab",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "left_command",
-                  "modifiers": {}
-                },
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
-                "to_if_held_down": [
-                  {
-                    "key_code": "left_command"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "Right Opt: MEH on Hold",
             "manipulators": [
               {

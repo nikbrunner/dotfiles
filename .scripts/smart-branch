@@ -17,7 +17,7 @@ fi
 input="$*"
 
 # Format the input for GPT-4
-formatted_input="Convert this task description into a concise English branch name. If the description contains a issue number like 'bcd-xxxx', please include it in the branch name. The end result should be lowercase and should look something like this: '<bcd-xxxx>/<summary>'.: $input"
+formatted_input="Convert this task description into a concise English branch name. If the description contains a issue number like 'bcd-xxxx', please include it in the branch name. The end result should be lowercase, always english (translate if you have to), and should look something like this: '<bcd-xxxx>-<summary>'.: $input"
 
 # Prepare the JSON payload
 json_payload=$(jq -n \
@@ -37,7 +37,6 @@ response=$(curl -s -X POST "https://api.openai.com/v1/chat/completions" \
     -H "Content-Type: application/json" \
     -d "$json_payload")
 
-
 # Extract the text from the response using jq
 branch_name=$(echo "$response" | jq -r '.choices[0].message.content' | xargs)
 
@@ -49,4 +48,3 @@ fi
 
 # Create a new branch with the GPT-4 output
 git switch -c "$branch_name"
-
