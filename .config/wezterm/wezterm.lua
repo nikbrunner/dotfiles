@@ -12,7 +12,7 @@ end
 
 config.color_scheme = "nord"
 
-config.colors = { background = "#232427" }
+config.colors = { background = "#17181a" }
 
 -- config.window_background_opacity = 0.95
 -- config.macos_window_background_blur = 35
