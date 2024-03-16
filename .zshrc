@@ -1,12 +1,3 @@
-# vim: ft=sh
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # HomeBrew
 brew_path="/opt/homebrew/bin"
 brew_opt_path="/opt/homebrew/opt"
@@ -31,7 +22,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 plugins=(git zsh-vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 # Dotfiles =================================================================
@@ -98,9 +89,6 @@ unset ZSH_AUTOSUGGEST_USE_ASYNC
 
 source $ZSH/oh-my-zsh.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 eval "$(zoxide init --cmd cd zsh)"
 
 # bun completions
@@ -111,3 +99,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "wip: $(date)"'
+source /Users/nbr/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

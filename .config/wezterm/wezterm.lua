@@ -36,7 +36,7 @@ config.line_height = 1.2
 
 config.window_frame = {
 	font = wezterm.font({ family = font_family }),
-	font_size = 16.0,
+	font_size = 12.0,
 }
 
 config.window_padding = {
