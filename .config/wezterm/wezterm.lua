@@ -18,13 +18,14 @@ config.colors = { background = "#212523" }
 -- config.macos_window_background_blur = 35
 
 local Jet = "JetBrains Mono"
-local Maple = "MapleMono Nerd Font"
-local Berkeley = "BerkeleyMono Nerd Font"
-local Comic = "ComicCodeLigatures Nerd Font"
-local SF = "SFMono Nerd Font"
-local iA = "iA Writer Mono S"
+local Berkeley = "Berkeley Mono"
+local Operator = "Operator Mono"
+local Maple = "Maple Mono"
+local Comic = "Comic Code Ligatures"
+local SF = "SF Mono"
+local iaM = "iA Writer Mono S"
 
-local font_family = Jet
+local font_family = Berkeley
 
 config.font = wezterm.font({
 	family = font_family,

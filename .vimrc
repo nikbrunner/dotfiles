@@ -17,7 +17,6 @@ set tabstop=4                                              " Number of spaces ta
 set shiftwidth=4                                           " Size of an indent
 set softtabstop=4                                          " Number of spaces in tab while editing
 set expandtab                                              " Use spaces instead of tabs
-set noshiftround                                           " Don't round indent to multiple of 'shiftwidth'
 set noswapfile                                             " Don't use swapfile
 set scrolloff=12                                           " Keep 3 lines when scrolling
 set showmode                                               " Show current mode
@@ -27,7 +26,6 @@ set incsearch                                              " Show search matches
 set ignorecase                                             " Ignore case when searching
 set smartcase                                              " Override ignorecase if search contains uppercase
 set showmatch                                              " Highlight matching brackets
-set redrawtime=10000                                       " Increase redrawtime to 10000 milliseconds (10 seconds)
 
 " Key Mappings
 let mapleader = " "                                        " Set leader key to space
