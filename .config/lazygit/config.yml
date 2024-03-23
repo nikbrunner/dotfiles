@@ -18,12 +18,21 @@ gui:
       - bold
     inactiveBorderColor:
       - white
+    searchingActiveBorderColor:
+      - cyan
+      - bold
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - underline
-    selectedRangeBgColor:
-      - reverse
+      - default # set to `default` to have no background colour
+    cherryPickedCommitBgColor:
+      - red
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default
   commitLength:
     show: true
   mouseEvents: true

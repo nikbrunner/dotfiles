@@ -1,5 +1,5 @@
 {
-  "theme": "Catppuccin Latte",
+  "theme": "Carbonfox",
   "copilot": {
     "disabled_globs": [".env", ""]
   },

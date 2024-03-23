@@ -1,5 +1,3 @@
-# vim: ft=sh
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -37,8 +35,7 @@ plugins=(git zsh-vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfu='df add -u && df commit -m "Update dotfiles" && df push'
-alias dfs='df status -s'
-alias dff="df ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
+alias dfs='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Basics =================================================================
 # This is necessary because it sets an alias for ls, which I want to build myself
@@ -76,9 +73,6 @@ export BAT_THEME="base16"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Load Git completion
 zstyle ':completion:*:*:git:*' script ~/.config/.zsh/git-completion.bash
 fpath=(~/.config/.zsh $fpath)
@@ -98,9 +92,6 @@ unset ZSH_AUTOSUGGEST_USE_ASYNC
 
 source $ZSH/oh-my-zsh.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 eval "$(zoxide init --cmd cd zsh)"
 
 # bun completions
@@ -110,4 +101,8 @@ eval "$(zoxide init --cmd cd zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "wip: $(date)"'
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
