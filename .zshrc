@@ -35,8 +35,7 @@ plugins=(git zsh-vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 # Dotfiles =================================================================
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfu='df add -u && df commit -m "Update dotfiles" && df push'
-alias dfs='df status -s'
-alias dff="df ls-files | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -I % nvim %"
+alias dfs='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Basics =================================================================
 # This is necessary because it sets an alias for ls, which I want to build myself
