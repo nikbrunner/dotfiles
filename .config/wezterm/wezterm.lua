@@ -10,9 +10,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Everforest Dark (Gogh)"
+config.color_scheme = "Everforest Light (Gogh)"
 
-config.colors = { background = "#212523" }
+config.colors = { background = "#e4e1db" }
 
 -- config.window_background_opacity = 0.95
 -- config.macos_window_background_blur = 35
@@ -25,7 +25,7 @@ local Comic = "Comic Code Ligatures"
 local SF = "SF Mono"
 local iaM = "iA Writer Mono S"
 
-local font_family = Berkeley
+local font_family = Maple
 
 config.font = wezterm.font({
 	family = font_family,

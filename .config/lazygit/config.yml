@@ -5,34 +5,18 @@ os:
   # editAtLineAndWait: "nvim --block --line={{line}} {{filename}}"
   editInTerminal: true
   openDirInEditor: "nvim {{dir}}"
+promptToReturnFromSubprocess: false
 gui:
   # stuff relating to the UI
   scrollHeight: 10 # how many lines you scroll by
   scrollPastBottom: true # enable scrolling past the bottom
-  sidePanelWidth: 0.2 # number from 0 to 1
+  sidePanelWidth: 0.3333 # number from 0 to 1
   expandFocusedSidePanel: true
   mainPanelSplitMode: "flexible" # one of 'horizontal' | 'flexible' | 'vertical'
+  enlargedSideViewLocation: "top" # one of 'left' | 'top'
   theme:
-    activeBorderColor:
-      - green
-      - bold
-    inactiveBorderColor:
-      - white
-    searchingActiveBorderColor:
-      - cyan
-      - bold
-    optionsTextColor:
-      - blue
     selectedLineBgColor:
-      - default # set to `default` to have no background colour
-    cherryPickedCommitBgColor:
-      - red
-    cherryPickedCommitFgColor:
-      - blue
-    unstagedChangesColor:
-      - red
-    defaultFgColor:
-      - default
+      - underline # set to `default` to have no background colour
   commitLength:
     show: true
   mouseEvents: true
@@ -40,7 +24,7 @@ gui:
   skipStashWarning: true
   showFileTree: true # for rendering changes files in a tree format
   nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
-  border: "single" # one of 'single' | 'double' | 'rounded' | 'hidden'
+  border: "rounded" # one of 'single' | 'double' | 'rounded' | 'hidden'
 git:
   commit:
     autoWrapCommitMessage: true
@@ -58,7 +42,7 @@ git:
   paging:
     useConfig: false
     colorArg: always
-    pager: delta --dark --paging=never
+    pager: delta
   merging:
     # only applicable to unix users
     manualCommit: false
@@ -92,13 +76,13 @@ customCommands:
   - key: "G"
     context: "localBranches"
     command: "git fullreset"
-  - key: "<c-f>" # Ctrl-f (think "full screen")
+  - key: "D" # (think "diff")
     context: "files"
     command: "git show {{.SelectedLocalCommit.Sha}}"
     subprocess: true
     description: "Show selected commit"
     stream: true
-  - key: "<c-f>" # Ctrl-f (think "full screen")
+  - key: "D" # (think "diff")
     context: "commits"
     command: "git show {{.SelectedLocalCommit.Sha}}"
     subprocess: true
