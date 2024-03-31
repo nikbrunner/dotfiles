@@ -40,7 +40,10 @@
   navigate = true
   side-by-side = true
   wrap-max-lines = 0
-  syntax-theme = GitHub
+
+  syntax-theme = ansi
+  ; light = true
+  dark = true
 
 [pager]
   diff = delta

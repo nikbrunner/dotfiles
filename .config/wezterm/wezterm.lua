@@ -10,7 +10,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Everforest Light (Gogh)"
+config.color_scheme = "Google Light (Gogh)"
 
 config.colors = { background = "#e4e1db" }
 
@@ -25,7 +25,7 @@ local Comic = "Comic Code Ligatures"
 local SF = "SF Mono"
 local iaM = "iA Writer Mono S"
 
-local font_family = Maple
+local font_family = Jet
 
 config.font = wezterm.font({
 	family = font_family,
@@ -33,7 +33,7 @@ config.font = wezterm.font({
 })
 
 config.font_size = 14
-config.line_height = 1.2
+config.line_height = 1.35
 
 config.window_frame = {
 	font = wezterm.font({ family = font_family }),
