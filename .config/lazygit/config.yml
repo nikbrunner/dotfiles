@@ -40,7 +40,6 @@ git:
       pattern: "^feature/dev-(\\d{3}).*"
       replace: "DEV-$1 "
   paging:
-    useConfig: false
     colorArg: always
     pager: delta --paging=never
   merging:

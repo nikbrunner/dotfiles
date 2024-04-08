@@ -1,5 +1,5 @@
 {
-  "theme": "Carbonfox",
+  "theme": "VScode Dark Plus",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
@@ -39,5 +39,8 @@
         }
       }
     }
+  },
+  "file_types": {
+    "CSS": ["scss"]
   }
 }

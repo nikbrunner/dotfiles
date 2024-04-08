@@ -14,7 +14,7 @@ config.color_scheme = "Google Light (Gogh)"
 
 config.colors = { background = "#e4e1db" }
 
--- config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.90
 -- config.macos_window_background_blur = 35
 
 local Jet = "JetBrains Mono"
