@@ -43,8 +43,8 @@ config.window_frame = {
 config.window_padding = {
 	left = 50,
 	right = 50,
-	top = 50,
-	bottom = 50,
+	top = 35,
+	bottom = 35,
 }
 
 local act = wezterm.action
