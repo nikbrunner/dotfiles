@@ -48,6 +48,7 @@ alias lg="lazygit"
 alias tn="tmux new"
 alias ta="tmux attach"
 alias tk="tmux kill-server"
+alias zj="zellij"
 
 # Vim
 export EDITOR="nvim"
@@ -71,6 +72,7 @@ export BAT_THEME="base16"
 
 # fzf ====================================================================
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+export FZF_DEFAULT_OPTS=" --bind 'ctrl-e:execute(echo {+} | xargs -o nvim)' "
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Load Git completion

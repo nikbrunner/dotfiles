@@ -24,7 +24,7 @@ gui:
   skipStashWarning: true
   showFileTree: true # for rendering changes files in a tree format
   nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
-  border: "rounded" # one of 'single' | 'double' | 'rounded' | 'hidden'
+  border: "single" # one of 'single' | 'double' | 'rounded' | 'hidden'
 git:
   commit:
     autoWrapCommitMessage: true

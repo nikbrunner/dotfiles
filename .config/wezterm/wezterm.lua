@@ -1,4 +1,3 @@
----@diagnostic disable: unused-local
 -- [Configuration - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/files.html)
 -- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
@@ -10,9 +9,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Google Light (Gogh)"
+config.color_scheme = "GitHub Dark"
 
-config.colors = { background = "#e4e1db" }
+config.colors = { background = "#0d1117" }
 
 -- config.window_background_opacity = 0.90
 -- config.macos_window_background_blur = 35
@@ -25,14 +24,14 @@ local Comic = "Comic Code Ligatures"
 local SF = "SF Mono"
 local iaM = "iA Writer Mono S"
 
-local font_family = Jet
+local font_family = SF
 
 config.font = wezterm.font({
 	family = font_family,
 	weight = 400,
 })
 
-config.font_size = 14
+config.font_size = 16
 config.line_height = 1.35
 
 config.window_frame = {
