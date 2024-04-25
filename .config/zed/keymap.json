@@ -7,6 +7,12 @@
     }
   },
   {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "shift-enter": ["editor::ExpandExcerpts", { "lines": 5 }]
+    }
+  },
+  {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in normal & visual mode

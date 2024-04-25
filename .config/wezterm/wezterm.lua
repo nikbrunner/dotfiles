@@ -9,9 +9,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "GitHub Dark"
+config.color_scheme = "carbonfox"
 
-config.colors = { background = "#0d1117" }
+config.colors = { background = "#121212" }
 
 -- config.window_background_opacity = 0.90
 -- config.macos_window_background_blur = 35
@@ -24,7 +24,7 @@ local Comic = "Comic Code Ligatures"
 local SF = "SF Mono"
 local iaM = "iA Writer Mono S"
 
-local font_family = SF
+local font_family = Jet
 
 config.font = wezterm.font({
 	family = font_family,

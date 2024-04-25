@@ -1,5 +1,5 @@
 {
-  "theme": "Tokyo Night",
+  "theme": "Atelier Savanna Dark",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
