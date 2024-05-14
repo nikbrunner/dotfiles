@@ -29,10 +29,17 @@
       // Comments
       "g c c": "editor::ToggleComments",
 
-      // Coee Actions
-      "space c a": "editor::ToggleCodeActions",
-      "space c r": "editor::Rename",
+      // Code Actions
+      "c r r": "editor::ToggleCodeActions",
+      "space a a": "editor::ToggleCodeActions",
+      "c r n": "editor::Rename",
+      "space a n": "editor::Rename",
       "space c c r": "editor::CopyRelativePath",
+
+      // Git
+      "space g h r": "editor::RevertSelectedHunks",
+      "space g h p": "editor::ToggleHunkDiff",
+      "space g h P": "editor::ExpandAllHunkDiffs",
 
       // Explorer
       "space e e": "project_panel::ToggleFocus",
@@ -108,7 +115,7 @@
       "x": "project_panel::Cut",
       "c": "project_panel::Copy",
       "p": "project_panel::Paste",
-      "d": "project_panel::Delete",
+      "d": "project_panel::Trash",
       "a": "project_panel::NewFile",
       "shift-a": "project_panel::NewDirectory",
       "shift-y": "project_panel::CopyRelativePath",

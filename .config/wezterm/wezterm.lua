@@ -9,11 +9,11 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "carbonfox"
+config.color_scheme = "catppuccin-latte"
 
-config.colors = { background = "#121212" }
+config.colors = { background = "#d4dbd8" }
 
--- config.window_background_opacity = 0.90
+-- config.window_background_opacity = 0.8
 -- config.macos_window_background_blur = 35
 
 local Jet = "JetBrains Mono"
@@ -29,10 +29,47 @@ local font_family = Jet
 config.font = wezterm.font({
 	family = font_family,
 	weight = 400,
+	harfbuzz_features = { "zero", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "cv05" },
 })
 
-config.font_size = 16
-config.line_height = 1.35
+-- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
+config.font_rules = {
+	{
+		intensity = "Normal",
+		italic = false,
+		font = wezterm.font({
+			family = Jet,
+		}),
+	},
+	{
+		intensity = "Bold",
+		italic = false,
+		font = wezterm.font({
+			family = Jet,
+			weight = "Bold",
+		}),
+	},
+	{
+		intensity = "Normal",
+		italic = true,
+		font = wezterm.font({
+			family = Maple,
+			style = "Italic",
+		}),
+	},
+	{
+		intensity = "Bold",
+		italic = true,
+		font = wezterm.font({
+			family = Maple,
+			weight = "Bold",
+			style = "Italic",
+		}),
+	},
+}
+
+config.font_size = 12
+config.line_height = 1.25
 
 config.window_frame = {
 	font = wezterm.font({ family = font_family }),

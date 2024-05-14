@@ -1,5 +1,5 @@
 {
-  "theme": "Atelier Savanna Dark",
+  "theme": "GitHub Dark Default",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
@@ -39,8 +39,5 @@
         }
       }
     }
-  },
-  "file_types": {
-    "CSS": ["scss"]
   }
 }
