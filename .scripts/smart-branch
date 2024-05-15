@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: set filetype=sh:
 
 # Check if there's an argument
 if [ $# -eq 0 ]; then
@@ -21,7 +20,7 @@ formatted_input="Convert this task description into a concise English branch nam
 
 # Prepare the JSON payload
 json_payload=$(jq -n \
-    --arg model "gpt-4" \
+    --arg model "gpt-4o" \
     --arg input "$formatted_input" \
     '{
         model: $model,

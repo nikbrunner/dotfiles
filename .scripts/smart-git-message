@@ -17,8 +17,7 @@ fi
 git_diff=""
 
 # Loop over each file and append its diff to the git_diff variable
-for file in "$@"
-do
+for file in "$@"; do
     git_diff+=$(git diff -- "$file")
     git_diff+="\n" # Add a newline between diffs of different files
 done
@@ -30,7 +29,8 @@ if [ -z "$git_diff" ]; then
 fi
 
 # Format the input for GPT-4
-formatted_input=$(cat <<EOF
+formatted_input=$(
+    cat <<EOF
 Convert this git diff into a concise, lowercase commit message following the conventional commit paradigm.
 - The summary should be max 72 characters long. If the commit requires a longer description, add an escaped newline, another new empty line, and the description.
 - Try to find a scope under which the changes can be summarized, and add them after the conventional commit type. For changes scoped to a single file, use the file name (without extension) as the scope. Example: feat(keymaps): <summary>.
@@ -44,7 +44,7 @@ EOF
 
 # Prepare the JSON payload
 json_payload=$(jq -n \
-    --arg model "gpt-4" \
+    --arg model "gpt-4o" \
     --arg input "$formatted_input" \
     '{
         model: $model,
@@ -73,4 +73,3 @@ fi
 echo "$commit_message" | pbcopy
 
 echo "$commit_message"
-
