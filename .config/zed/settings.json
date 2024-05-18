@@ -1,5 +1,5 @@
 {
-  "theme": "GitHub Dark Default",
+  "theme": "Rosé Pine",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
@@ -12,6 +12,10 @@
   "show_completions_on_input": true,
   "git": {
     "git_gutter": "tracked_files"
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
   },
   "project_panel": {
     "git_status": true

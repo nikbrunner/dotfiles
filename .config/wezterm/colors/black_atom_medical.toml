@@ -1,0 +1,62 @@
+[colors]
+foreground = "#313533"
+background = "#d4dbd8"
+cursor_bg = "#313533"
+cursor_border = "#313533"
+cursor_fg = "#d4dbd8"
+selection_bg = "#939e9a"
+selection_fg = "#313533"
+split = "#4db290"
+compose_cursor = "#998ed9"
+scrollbar_thumb = "#79857f"
+
+ansi = [
+  "#d4dbd8",
+  "#7872c2",
+  "#449f63",
+  "#79857f",
+  "#313533",
+  "#998ed9",
+  "#4db290",
+  "#adb5b2",
+]
+brights = [
+  "#939e9a",
+  "#7872c2",
+  "#449f63",
+  "#79857f",
+  "#313533",
+  "#998ed9",
+  "#4db290",
+  "#313533",
+]
+
+[colors.tab_bar]
+inactive_tab_edge = "#bcc3c0"
+background = "#d4dbd8"
+
+[colors.tab_bar.active_tab]
+fg_color = "#313533"
+bg_color = "#c8cfcd"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#79857f"
+bg_color = "#939e9a"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#c8cfcd"
+bg_color = "#939e9a"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#c8cfcd"
+bg_color = "#d4dbd8"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#c8cfcd"
+bg_color = "#d4dbd8"
+
+[metadata]
+author = "Black Atom Industries"
+name = "Black Atom - Medical"

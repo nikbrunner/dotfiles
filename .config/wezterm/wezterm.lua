@@ -9,9 +9,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Tokyo Night Moon"
+config.color_scheme = "Black Atom - Medical"
 
-config.colors = { background = "#181b1a" }
+config.colors = { background = "#d4dbd8" }
 
 -- config.window_background_opacity = 0.8
 -- config.macos_window_background_blur = 35

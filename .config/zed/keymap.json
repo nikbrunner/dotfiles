@@ -30,11 +30,9 @@
       "g c c": "editor::ToggleComments",
 
       // Code Actions
-      "c r r": "editor::ToggleCodeActions",
       "space a a": "editor::ToggleCodeActions",
-      "c r n": "editor::Rename",
       "space a n": "editor::Rename",
-      "space c c r": "editor::CopyRelativePath",
+      "space a c r": "editor::CopyRelativePath",
 
       // Git
       "space g h r": "editor::RevertSelectedHunks",

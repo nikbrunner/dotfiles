@@ -1,0 +1,62 @@
+[colors]
+foreground = "#d0e0d8"
+background = "#181b1a"
+cursor_bg = "#d0e0d8"
+cursor_border = "#d0e0d8"
+cursor_fg = "#181b1a"
+selection_bg = "#3e4441"
+selection_fg = "#d0e0d8"
+split = "#88DCB2"
+compose_cursor = "#b7aded"
+scrollbar_thumb = "#565f59"
+
+ansi = [
+  "#181b1a",
+  "#a6a1df",
+  "#64b47e",
+  "#c4d4cc",
+  "#abbbb3",
+  "#b7aded",
+  "#88DCB2",
+  "#79857f",
+]
+brights = [
+  "#606a65",
+  "#a6a1df",
+  "#64b47e",
+  "#c4d4cc",
+  "#abbbb3",
+  "#b7aded",
+  "#88DCB2",
+  "#d0e0d8",
+]
+
+[colors.tab_bar]
+inactive_tab_edge = "#141515"
+background = "#181b1a"
+
+[colors.tab_bar.active_tab]
+fg_color = "#141515"
+bg_color = "#abbbb3"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#565f59"
+bg_color = "#3e4441"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#abbbb3"
+bg_color = "#3e4441"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#abbbb3"
+bg_color = "#181b1a"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#abbbb3"
+bg_color = "#181b1a"
+
+[metadata]
+author = "Black Atom Industries"
+name = "Black Atom - Operations"
