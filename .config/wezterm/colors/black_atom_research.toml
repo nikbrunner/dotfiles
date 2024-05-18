@@ -20,6 +20,7 @@ ansi = [
   "#509583", # dark_cyan
   "#adb5b2", # light_gray
 ]
+
 brights = [
   "#606a67", # gray
   "#7872c2", # red

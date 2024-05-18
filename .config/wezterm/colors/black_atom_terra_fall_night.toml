@@ -11,24 +11,24 @@ compose_cursor = "#c4b2d1"
 scrollbar_thumb = "#7c6f64"
 
 ansi = [
-  "#322e2b", # black
-  "#c0603f", # maroon
-  "#7a895c", # green
-  "#ef9e74", # olive
-  "#b6b3e5", # navy
-  "#d2acc3", # purple
-  "#6a9b86", # teal
-  "#b99e95", # silver
+  "#242222", # black
+  "#c0603f", # dark_red
+  "#7a895c", # dark_green
+  "#ef9e74", # dark_yellow
+  "#b6b3e5", # dark_blue
+  "#d2acc3", # dark_magenta
+  "#6a9b86", # dark_cyan
+  "#ae9685", # light_gray
 ]
 
 brights = [
-  "#928374", # grey
+  "#322e2b", # gray
   "#c57054", # red
-  "#a6bc90", # lime
+  "#a6bc90", # green
   "#e0a66d", # yellow
   "#a6bbd9", # blue
-  "#c4b2d1", # fuchsia
-  "#7fb395", # aqua
+  "#c4b2d1", # magenta
+  "#7fb395", # cyan
   "#ccb9b3", # white
 ]
 
