@@ -9,9 +9,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Medical"
+config.color_scheme = "Black Atom - Engineering"
 
-config.colors = { background = "#d4dbd8" }
+config.colors = { background = "#0e1110" }
 
 -- config.window_background_opacity = 0.8
 -- config.macos_window_background_blur = 35
@@ -33,40 +33,40 @@ config.font = wezterm.font({
 })
 
 -- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
-config.font_rules = {
-	{
-		intensity = "Normal",
-		italic = false,
-		font = wezterm.font({
-			family = Jet,
-		}),
-	},
-	{
-		intensity = "Bold",
-		italic = false,
-		font = wezterm.font({
-			family = Jet,
-			weight = "Bold",
-		}),
-	},
-	{
-		intensity = "Normal",
-		italic = true,
-		font = wezterm.font({
-			family = Maple,
-			style = "Italic",
-		}),
-	},
-	{
-		intensity = "Bold",
-		italic = true,
-		font = wezterm.font({
-			family = Maple,
-			weight = "Bold",
-			style = "Italic",
-		}),
-	},
-}
+-- config.font_rules = {
+-- 	{
+-- 		intensity = "Normal",
+-- 		italic = false,
+-- 		font = wezterm.font({
+-- 			family = Jet,
+-- 		}),
+-- 	},
+-- 	{
+-- 		intensity = "Bold",
+-- 		italic = false,
+-- 		font = wezterm.font({
+-- 			family = Jet,
+-- 			weight = "Bold",
+-- 		}),
+-- 	},
+-- 	{
+-- 		intensity = "Normal",
+-- 		italic = true,
+-- 		font = wezterm.font({
+-- 			family = Maple,
+-- 			style = "Italic",
+-- 		}),
+-- 	},
+-- 	{
+-- 		intensity = "Bold",
+-- 		italic = true,
+-- 		font = wezterm.font({
+-- 			family = Maple,
+-- 			weight = "Bold",
+-- 			style = "Italic",
+-- 		}),
+-- 	},
+-- }
 
 config.font_size = 12
 config.line_height = 1.25

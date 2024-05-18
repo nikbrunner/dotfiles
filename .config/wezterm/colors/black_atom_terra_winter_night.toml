@@ -1,0 +1,64 @@
+[colors]
+foreground = "#bcc9db"
+background = "#17181a"
+cursor_bg = "#67a5a5"
+cursor_border = "#67a5a5"
+cursor_fg = "#17181a"
+selection_bg = "#505563"
+selection_fg = "#bcc9db"
+split = "#67a5a5"
+compose_cursor = "#c8adc8"
+scrollbar_thumb = "#505563"
+
+ansi = [
+  "#212225",
+  "#a65959",
+  "#507765",
+  "#eba778",
+  "#7483a5",
+  "#b793b7",
+  "#568383",
+  "#a0acc5",
+]
+
+brights = [
+  "#575f72",
+  "#b86a6a",
+  "#5e9e8b",
+  "#d3b17a",
+  "#909dbe",
+  "#c8adc8",
+  "#67a5a5",
+  "#bcc9db",
+]
+
+[colors.tab_bar]
+inactive_tab_edge = "#0e0f10"
+background = "#17181a"
+
+[colors.tab_bar.active_tab]
+fg_color = "#0e0f10"
+bg_color = "#909dbe"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#505563"
+bg_color = "#3a3d47"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#909dbe"
+bg_color = "#3a3d47"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#909dbe"
+bg_color = "#17181a"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#909dbe"
+bg_color = "#17181a"
+
+[metadata]
+aliases = []
+author = "Black Atom Industries"
+name = "Black Atom - Terra Winter Night"

@@ -1,17 +1,36 @@
 [colors]
-foreground = "#e0ddd1"
+foreground = "#d6d0c2"
 background = "#212523"
-cursor_bg = "#e0ddd1"
-cursor_border = "#e0ddd1"
+cursor_bg = "#8ac090"
+cursor_border = "#8ac090"
 cursor_fg = "#212523"
 selection_bg = "#394740"
-selection_fg = "#e0ddd1"
-split = "#85ad9f"
+selection_fg = "#d6d0c2"
+split = "#8ac090"
 compose_cursor = "#c6b3da"
 scrollbar_thumb = "#51635a"
 
-ansi = ["#212523", "#ba6e5f", "#8ac090", "#d6d0c2", "#99b9e6", "#c6b3da", "#85ad9f", "#82978c"]
-brights = ["#677e72", "#ba6e5f", "#8ac090", "#d6d0c2", "#99b9e6", "#c6b3da", "#85ad9f", "#e0ddd1"]
+ansi = [
+  "#313634", # black
+  "#b95847", # red
+  "#6a9f60", # green
+  "#e89a61", # yellow
+  "#899ddc", # blue
+  "#d5a9c3", # magenta
+  "#679980", # cyan
+  "#c3b8a4", # gray
+]
+
+brights = [
+  "#677e72", # black
+  "#ba6e5f", # red
+  "#8ac090", # green
+  "#d1a762", # yellow
+  "#99b9e6", # blue
+  "#c6b3da", # magenta
+  "#85ad9f", # cyan
+  "#d6d0c2", # gray
+]
 
 [colors.tab_bar]
 inactive_tab_edge = "#1d201f"
@@ -40,6 +59,5 @@ fg_color = "#99b9e6"
 bg_color = "#212523"
 
 [metadata]
-aliases = []
 author = "Black Atom Industries"
 name = "Black Atom - Terra Spring Night"

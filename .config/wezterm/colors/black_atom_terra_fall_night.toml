@@ -1,0 +1,64 @@
+[colors]
+foreground = "#ccb9b3"
+background = "#242222"
+cursor_bg = "#ef9e74"
+cursor_border = "#ef9e74"
+cursor_fg = "#242222"
+selection_bg = "#7c6f64"
+selection_fg = "#ccb9b3"
+split = "#ef9e74"
+compose_cursor = "#c4b2d1"
+scrollbar_thumb = "#7c6f64"
+
+ansi = [
+  "#322e2b", # black
+  "#c0603f", # maroon
+  "#7a895c", # green
+  "#ef9e74", # olive
+  "#b6b3e5", # navy
+  "#d2acc3", # purple
+  "#6a9b86", # teal
+  "#b99e95", # silver
+]
+
+brights = [
+  "#928374", # grey
+  "#c57054", # red
+  "#a6bc90", # lime
+  "#e0a66d", # yellow
+  "#a6bbd9", # blue
+  "#c4b2d1", # fuchsia
+  "#7fb395", # aqua
+  "#ccb9b3", # white
+]
+
+[colors.tab_bar]
+inactive_tab_edge = "#1f1d1d"
+background = "#242222"
+
+[colors.tab_bar.active_tab]
+fg_color = "#1f1d1d"
+bg_color = "#a6bbd9"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#7c6f64"
+bg_color = "#665c54"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#a6bbd9"
+bg_color = "#665c54"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#a6bbd9"
+bg_color = "#242222"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#a6bbd9"
+bg_color = "#242222"
+
+[metadata]
+aliases = []
+author = "Black Atom Industries"
+name = "Black Atom - Terra Fall Night"
