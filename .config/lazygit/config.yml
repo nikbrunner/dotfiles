@@ -68,13 +68,16 @@ quitOnTopLevelReturn: false
 disableStartupPopups: false
 notARepository: "skip" # one of: 'prompt' | 'create' | 'skip'
 customCommands:
+  - key: "D"
+    command: "git branch -D {{.SelectedLocalBranch.Name}}"
+    context: "localBranches"
+  - key: "G"
+    context: "localBranches"
+    command: "git fullreset"
   - key: "Z"
     context: "files"
     command: "git cz"
     subprocess: true
-  - key: "G"
-    context: "localBranches"
-    command: "git fullreset"
   - key: "N"
     context: "localBranches"
     prompts:
