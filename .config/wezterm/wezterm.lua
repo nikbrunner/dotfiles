@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 -- [Configuration - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/files.html)
 -- [Default Key Assignments - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/config/default-keys.html)
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
@@ -9,27 +10,29 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Terra Winter Night"
+config.color_scheme = "Black Atom - Operations"
 
-config.colors = { background = "#17181a" }
+config.colors = { background = "#181b1a" }
 
 -- config.window_background_opacity = 0.8
 -- config.macos_window_background_blur = 35
 
-local Jet = "JetBrains Mono"
+local Jet = "JetBrainsMono Nerd Font"
 local Berkeley = "Berkeley Mono"
 local Operator = "Operator Mono"
 local Maple = "Maple Mono"
 local Comic = "Comic Code Ligatures"
 local SF = "SF Mono"
 local iaM = "iA Writer Mono S"
+local Iosevka = "Iosevka Nerd Font"
+local IosevkaSlab = "IosevkaTermSlab Nerd Font"
+local Zed = "ZedMono Nerd Font"
 
 local font_family = Jet
 
 config.font = wezterm.font({
 	family = font_family,
 	weight = 400,
-	harfbuzz_features = { "zero", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "cv05" },
 })
 
 -- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
@@ -68,7 +71,7 @@ config.font = wezterm.font({
 -- 	},
 -- }
 
-config.font_size = 12
+config.font_size = 14
 config.line_height = 1.25
 
 config.window_frame = {
