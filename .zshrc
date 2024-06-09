@@ -35,6 +35,9 @@ alias dfs='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # This is necessary because it sets an alias for ls, which I want to build myself
 DISABLE_LS_COLORS="true"
 
+# Vim
+export EDITOR="nvim"
+
 # alias ls="ls -a"
 alias ls="exa --all --oneline --long --icons --sort=type"
 alias lt="exa --all --tree --icons --sort=type --level=1 --ignore-glob=\"node_modules|.git\""
@@ -43,9 +46,7 @@ alias tn="tmux new"
 alias ta="tmux attach"
 alias tk="tmux kill-server"
 alias zj="zellij"
-
-# Vim
-export EDITOR="nvim"
+alias vim="nvim"
 
 alias python="python3"
 alias pip="pip3"

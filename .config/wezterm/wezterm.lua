@@ -10,12 +10,23 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Operations"
-
-config.colors = { background = "#181b1a" }
+config.color_scheme = "Black Atom - Engineering"
+config.colors = {
+	background = "#0e1110",
+}
 
 -- config.window_background_opacity = 0.8
--- config.macos_window_background_blur = 35
+-- config.macos_window_background_blur = 50
+
+-- config.window_background_image_hsb = { hue = 1.0, saturation = 0.25, brightness = 0.35 }
+-- config.window_background_image = "#0e1110"
+-- config.window_background_image = "#0e1110"
+-- config.window_background_image = "#0e1110"
+-- config.window_background_image = "#0e1110"
+-- config.window_background_image = "#0e1110"
+-- config.window_background_image = "#0e1110"
+-- config.window_background_image = "#0e1110"
+-- config.window_background_image = "#0e1110"
 
 local Jet = "JetBrainsMono Nerd Font"
 local Berkeley = "Berkeley Mono"
@@ -109,13 +120,22 @@ config.keys = {
 		mods = "ALT",
 		action = wezterm.action.DisableDefaultAssignment,
 	},
+	{
+		key = "u",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.CharSelect({
+			copy_on_select = true,
+			copy_to = "ClipboardAndPrimarySelection",
+		}),
+	},
 }
 
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
 
-config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
 
 config.command_palette_font_size = 18.0
 

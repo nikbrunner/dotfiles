@@ -41,7 +41,7 @@
   side-by-side = true
   wrap-max-lines = 0
 
-  syntax-theme = ansi
+  ; syntax-theme = ansi
   ; light = true
   dark = true
 
