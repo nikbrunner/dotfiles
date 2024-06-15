@@ -10,23 +10,23 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Engineering"
+config.color_scheme = "Solarized Dark Higher Contrast"
 config.colors = {
-	background = "#0e1110",
+	background = "#001419",
 }
 
--- config.window_background_opacity = 0.8
+-- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 50
 
 -- config.window_background_image_hsb = { hue = 1.0, saturation = 0.25, brightness = 0.35 }
--- config.window_background_image = "#0e1110"
--- config.window_background_image = "#0e1110"
--- config.window_background_image = "#0e1110"
--- config.window_background_image = "#0e1110"
--- config.window_background_image = "#0e1110"
--- config.window_background_image = "#0e1110"
--- config.window_background_image = "#0e1110"
--- config.window_background_image = "#0e1110"
+-- config.window_background_image = "#001419"
+-- config.window_background_image = "#001419"
+-- config.window_background_image = "#001419"
+-- config.window_background_image = "#001419"
+-- config.window_background_image = "#001419"
+-- config.window_background_image = "#001419"
+-- config.window_background_image = "#001419"
+-- config.window_background_image = "#001419"
 
 local Jet = "JetBrainsMono Nerd Font"
 local Berkeley = "Berkeley Mono"

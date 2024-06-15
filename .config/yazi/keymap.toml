@@ -1,0 +1,12 @@
+# Defaults: https://github.com/sxyazi/yazi/blob/latest/yazi-config/preset/keymap.toml
+[manager]
+prepend_keymap = [
+  { on = [
+    "g",
+    "r",
+  ], run = "cd ~/repos", desc = "Go to the repos directory" },
+  # shell doc: https://yazi-rs.github.io/docs/configuration/keymap/#manager.shell
+  { on = [
+    "<C-g>",
+  ], run = "shell --block --confirm lazygit", desc = "LazyGit" },
+]

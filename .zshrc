@@ -61,9 +61,18 @@ export BC_DANIEL_IP=10.2.0.128
 export BC_BEN_IP=10.2.0.94
 export BC_HOME_IP=192.168.2.107
 export BC_HOME_ST=CG7L9R2
-export BC_JULIA_IP=10.2.0.187
+export BC_JULIA_IP=10.2.0.195
 export BC_JULIA_ST=CNRFGQ2
 export BAT_THEME="base16"
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # fzf ====================================================================
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'

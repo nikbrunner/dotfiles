@@ -1,5 +1,5 @@
 {
-  "theme": "GitHub Dark Default",
+  "theme": "Gruvbox Dark Soft",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
