@@ -10,23 +10,13 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Medical"
+config.color_scheme = "Black Atom - Engineering"
 config.colors = {
-	background = "#d4dbd8",
+	background = "#040505",
 }
 
--- config.window_background_opacity = 0.9
--- config.macos_window_background_blur = 50
-
--- config.window_background_image_hsb = { hue = 1.0, saturation = 0.25, brightness = 0.35 }
--- config.window_background_image = "#d4dbd8"
--- config.window_background_image = "#d4dbd8"
--- config.window_background_image = "#d4dbd8"
--- config.window_background_image = "#d4dbd8"
--- config.window_background_image = "#d4dbd8"
--- config.window_background_image = "#d4dbd8"
--- config.window_background_image = "#d4dbd8"
--- config.window_background_image = "#d4dbd8"
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 50
 
 local Jet = "JetBrainsMono Nerd Font"
 local Berkeley = "Berkeley Mono"
@@ -39,7 +29,7 @@ local Iosevka = "Iosevka Nerd Font"
 local IosevkaSlab = "IosevkaTermSlab Nerd Font"
 local Zed = "ZedMono Nerd Font"
 
-local font_family = Jet
+local font_family = Berkeley
 
 config.font = wezterm.font({
 	family = font_family,
@@ -136,6 +126,7 @@ config.force_reverse_video_cursor = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
+config.tab_max_width = 50
 
 config.command_palette_font_size = 18.0
 

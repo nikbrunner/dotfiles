@@ -3,8 +3,8 @@
 prepend_keymap = [
   { on = [
     "g",
-    "r",
-  ], run = "cd ~/repos", desc = "Go to the repos directory" },
+    "p",
+  ], run = "cd ~/repos", desc = "Go to the Projects directory" },
   # shell doc: https://yazi-rs.github.io/docs/configuration/keymap/#manager.shell
   { on = [
     "<C-g>",
