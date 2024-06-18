@@ -12,11 +12,11 @@ end
 
 config.color_scheme = "Black Atom - Engineering"
 config.colors = {
-	background = "#040505",
+	background = "#0e1110",
 }
 
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 50
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 50
 
 local Jet = "JetBrainsMono Nerd Font"
 local Berkeley = "Berkeley Mono"
@@ -29,7 +29,7 @@ local Iosevka = "Iosevka Nerd Font"
 local IosevkaSlab = "IosevkaTermSlab Nerd Font"
 local Zed = "ZedMono Nerd Font"
 
-local font_family = Berkeley
+local font_family = Jet
 
 config.font = wezterm.font({
 	family = font_family,

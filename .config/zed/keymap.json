@@ -13,15 +13,14 @@
     }
   },
   {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
-    "bindings": {
-      // put key-bindings here if you want them to work in normal & visual mode
-    }
-  },
-  {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
+      // Find
       "space space": "file_finder::Toggle",
+      "space r": "tab_switcher::Toggle",
+
+      "space p": "projects::OpenRecent",
+
       // LSP
       "g r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
@@ -30,9 +29,9 @@
       "g c c": "editor::ToggleComments",
 
       // Code Actions
-      "space a a": "editor::ToggleCodeActions",
-      "space a n": "editor::Rename",
-      "space a c r": "editor::CopyRelativePath",
+      "space c a": "editor::ToggleCodeActions",
+      "space c n": "editor::Rename",
+      "space c c r": "editor::CopyRelativePath",
 
       // Git
       "space g h r": "editor::RevertSelectedHunks",
@@ -40,10 +39,7 @@
       "space g h P": "editor::ExpandAllHunkDiffs",
 
       // Explorer
-      "space e e": "project_panel::ToggleFocus",
-
-      // File Group
-      "space f f": "file_finder::Toggle",
+      "space e": "project_panel::ToggleFocus",
 
       // Quit Group
       "space q o": "pane::CloseInactiveItems",
@@ -52,17 +48,8 @@
       // Prev/Next
       "] g": "editor::GoToHunk",
       "[ g": "editor::GoToPrevHunk",
-      "] d": "editor::GoToDiagnostic",
-      "[ d": "editor::GoToPrevDiagnostic",
-
-      "H": "pane::ActivatePrevItem",
-      "L": "pane::ActivateNextItem",
 
       "v A": "editor::SelectAll",
-
-      // Fold
-      "z a": "editor::Fold",
-      "z o": "editor::UnfoldLines",
 
       // Pane Navigation
       "tab": "pane::ActivateNextItem",

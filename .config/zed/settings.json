@@ -1,12 +1,12 @@
 {
-  "theme": "Gruvbox Dark Soft",
+  "theme": "Gruvbox Dark Hard",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
   "buffer_font_size": 14,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "Berkeley Mono",
   "ui_font_family": "Zed Sans",
   "ui_font_size": 18,
   "show_completions_on_input": true,
@@ -24,17 +24,6 @@
     "enabled": true
   },
   "relative_line_numbers": true,
-  // "language_overrides": {
-  //   "JavaScript": {
-  //     "format_on_save": "on",
-  //     "formatter": {
-  //       "external": {
-  //         "command": "node_modules/.bin/prettier",
-  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
-  //       }
-  //     }
-  //   }
-  // },
   "lsp": {
     "typescript-language-server": {
       "initialization_options": {
