@@ -42,8 +42,8 @@
   wrap-max-lines = 0
 
   syntax-theme = ansi
-  light = true
-  ; dark = true
+  ; light = true
+  dark = true
 
 [pager]
   diff = delta

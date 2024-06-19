@@ -17,7 +17,7 @@
     "bindings": {
       // Find
       "space space": "file_finder::Toggle",
-      "space r": "tab_switcher::Toggle",
+      "ctrl-e": "tab_switcher::Toggle",
 
       "space p": "projects::OpenRecent",
 
