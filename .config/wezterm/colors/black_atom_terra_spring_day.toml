@@ -1,0 +1,63 @@
+[colors]
+foreground = "#416353"
+background = "#e4e1db"
+cursor_bg = "#0f9d58"
+cursor_border = "#0f9d58"
+cursor_fg = "#e4e1db"
+selection_bg = "#62937a"
+selection_fg = "#416353"
+split = "#0f9d6d"
+compose_cursor = "#a586c6"
+scrollbar_thumb = "#62937a"
+
+ansi = [
+  "#304a3f", # black
+  "#d6582e", # dark_red
+  "#0d8a4e", # dark_green
+  "#ea7b14", # dark_yellow
+  "#3473b2", # dark_blue
+  "#B07BAC", # dark_magenta
+  "#0d8a76", # dark_cyan
+  "#d3cec5", # light_gray
+]
+
+brights = [
+  "#517b67", # gray
+  "#da714d", # red
+  "#0f9d58", # green
+  "#e0a618", # yellow
+  "#588dc1", # blue
+  "#a586c6", # magenta
+  "#0f9d6d", # cyan
+  "#dad6cd", # white
+]
+
+[colors.tab_bar]
+inactive_tab_edge = "#304a3f"
+background = "#e4e1db"
+
+[colors.tab_bar.active_tab]
+fg_color = "#304a3f"
+bg_color = "#588dc1"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#62937a"
+bg_color = "#55816a"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#588dc1"
+bg_color = "#55816a"
+# intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#588dc1"
+bg_color = "#e4e1db"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#588dc1"
+bg_color = "#e4e1db"
+
+[metadata]
+author = "Black Atom Industries"
+name = "Black Atom - Terra Spring Day"

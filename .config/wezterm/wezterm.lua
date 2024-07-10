@@ -10,10 +10,12 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Terra Fall Night"
+config.color_scheme = "Tokyo Night Moon"
 config.colors = {
-	background = "#242222",
+	background = "#222436",
 }
+
+config.default_cursor_style = "SteadyBar"
 
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 50
@@ -22,14 +24,17 @@ local Jet = "JetBrainsMono Nerd Font"
 local Berkeley = "Berkeley Mono"
 local Operator = "Operator Mono"
 local Maple = "Maple Mono"
+local Fira = "FiraMono Nerd Font"
+local FiraCode = "FiraCode Nerd Font"
 local Comic = "Comic Code Ligatures"
 local SF = "SF Mono"
 local iaM = "iA Writer Mono S"
 local Iosevka = "Iosevka Nerd Font"
 local IosevkaSlab = "IosevkaTermSlab Nerd Font"
 local Zed = "ZedMono Nerd Font"
+local Overpass = "OverpassM Nerd Font"
 
-local font_family = Jet
+local font_family = SF
 
 config.font = wezterm.font({
 	family = font_family,
@@ -81,10 +86,10 @@ config.window_frame = {
 }
 
 config.window_padding = {
-	left = 50,
-	right = 50,
-	top = 35,
-	bottom = 35,
+	left = 25,
+	right = 25,
+	top = 25,
+	bottom = 25,
 }
 
 local act = wezterm.action
