@@ -24,6 +24,7 @@ export NVM_DIR=$HOME/.nvm
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ZSH_THEME=robbyrussell
+source $ZSH/oh-my-zsh.sh
 
 # Globals ================================================================
 export EDITOR="nvim"
@@ -82,8 +83,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=gutter:-1 \
 "
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
