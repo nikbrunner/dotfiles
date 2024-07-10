@@ -1,13 +1,12 @@
 {
-  "theme": "GitHub Dark Default",
+  "theme": "Catppuccin Macchiato",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
   "buffer_font_size": 14,
-  "buffer_font_family": "Berkeley Mono",
-  "ui_font_family": "Zed Sans",
+  // "buffer_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 18,
   "show_completions_on_input": true,
   "git": {
@@ -22,6 +21,11 @@
   },
   "semantic_index": {
     "enabled": true
+  },
+  "terminal": {
+    "line_height": "standard",
+    "font_family": "JetBrainsMono Nerd Font",
+    "working_directory": "current_project_directory"
   },
   "relative_line_numbers": true,
   "lsp": {

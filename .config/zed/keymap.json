@@ -7,9 +7,20 @@
     }
   },
   {
+    "context": "Workspace",
+    "bindings": {
+      "space g g": ["task::Spawn", { "lazygit": "Open lazygit" }]
+    }
+  },
+  {
     "context": "Editor && mode == full",
     "bindings": {
-      "shift-enter": ["editor::ExpandExcerpts", { "lines": 5 }]
+      "shift-enter": [
+        "editor::ExpandExcerpts",
+        {
+          "lines": 5
+        }
+      ]
     }
   },
   {
@@ -18,39 +29,31 @@
       // Find
       "space space": "file_finder::Toggle",
       "ctrl-e": "tab_switcher::Toggle",
-
       "space p": "projects::OpenRecent",
-
+      "alt-h": "pane::ActivatePrevItem",
+      "alt-l": "pane::ActivateNextItem",
       // LSP
       "g r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
-
       // Comments
       "g c c": "editor::ToggleComments",
-
       // Code Actions
       "space c a": "editor::ToggleCodeActions",
       "space c n": "editor::Rename",
       "space c c r": "editor::CopyRelativePath",
-
       // Git
       "space g h r": "editor::RevertSelectedHunks",
       "space g h p": "editor::ToggleHunkDiff",
       "space g h P": "editor::ExpandAllHunkDiffs",
-
       // Explorer
       "space e": "project_panel::ToggleFocus",
-
       // Quit Group
       "space q o": "pane::CloseInactiveItems",
       "space q q": "pane::CloseActiveItem",
-
       // Prev/Next
       "] g": "editor::GoToHunk",
       "[ g": "editor::GoToPrevHunk",
-
       "v A": "editor::SelectAll",
-
       // Pane Navigation
       "tab": "pane::ActivateNextItem",
       "shift-tab": "pane::ActivatePrevItem",
@@ -65,10 +68,8 @@
     "bindings": {
       // visual, visual line & visual block modes
       "g c": "editor::ToggleComments",
-
       // Coee Actions
       "space c a": "editor::ToggleCodeActions",
-
       // Fold
       "z a": "editor::Fold",
       "z o": "editor::UnfoldLines"
@@ -105,6 +106,13 @@
       "shift-a": "project_panel::NewDirectory",
       "shift-y": "project_panel::CopyRelativePath",
       "g y": "project_panel::CopyPath"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-h": "pane::ActivatePrevItem",
+      "alt-l": "pane::ActivateNextItem"
     }
   }
 ]
