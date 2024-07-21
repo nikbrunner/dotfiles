@@ -4,18 +4,18 @@
 -- [Color Schemes - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/colorschemes/index.html)
 
 local wezterm = require("wezterm")
+local act = wezterm.action
+
 local config = {}
 
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Tokyo Night Moon"
+config.color_scheme = "Black Atom - Terra Spring Night"
 config.colors = {
-	background = "#222436",
+	background = "#212523",
 }
-
-config.default_cursor_style = "SteadyBar"
 
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 50
@@ -34,7 +34,7 @@ local IosevkaSlab = "IosevkaTermSlab Nerd Font"
 local Zed = "ZedMono Nerd Font"
 local Overpass = "OverpassM Nerd Font"
 
-local font_family = SF
+local font_family = Jet
 
 config.font = wezterm.font({
 	family = font_family,
@@ -86,34 +86,17 @@ config.window_frame = {
 }
 
 config.window_padding = {
-	left = 25,
-	right = 25,
-	top = 25,
-	bottom = 25,
+	left = 50,
+	right = 50,
+	top = 35,
+	bottom = 35,
 }
 
-local act = wezterm.action
-
 config.keys = {
-	{
-		key = "d",
-		mods = "CMD",
-		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "D",
-		mods = "CMD",
-		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
 	{
 		key = "p",
 		mods = "CMD",
 		action = act.ActivateCommandPalette,
-	},
-	{
-		key = "Enter",
-		mods = "ALT",
-		action = wezterm.action.DisableDefaultAssignment,
 	},
 	{
 		key = "u",
@@ -126,14 +109,15 @@ config.keys = {
 }
 
 config.window_decorations = "RESIZE"
+
+config.default_cursor_style = "SteadyBlock"
 config.force_reverse_video_cursor = true
 
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
 config.tab_max_width = 50
 
-config.command_palette_font_size = 18.0
+config.command_palette_font_size = 14.0
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 

@@ -39,6 +39,7 @@
       "g c c": "editor::ToggleComments",
       // Code Actions
       "space c a": "editor::ToggleCodeActions",
+      "c n": "editor::Rename",
       "space c n": "editor::Rename",
       "space c c r": "editor::CopyRelativePath",
       // Git
@@ -97,7 +98,6 @@
       "z o": "project_panel::ExpandSelectedEntry",
       "z m": "project_panel::CollapseSelectedEntry",
       "z M": "project_panel::CollapseAllEntries",
-      "shift-o": "project_panel::RevealInFinder",
       "x": "project_panel::Cut",
       "c": "project_panel::Copy",
       "p": "project_panel::Paste",

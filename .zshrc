@@ -44,7 +44,8 @@ export BAT_THEME="base16"
 # Dotfiles 
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dfu='df add -u && df commit -m "Update dotfiles" && df push'
-alias dfs='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dfs='df status'
+alias dflg='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias ls="exa --all --oneline --long --icons --sort=type"
 alias lt="exa --all --tree --icons --sort=type --level=1 --ignore-glob=\"node_modules|.git\""
