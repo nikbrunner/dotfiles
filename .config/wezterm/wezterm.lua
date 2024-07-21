@@ -36,53 +36,55 @@ local Overpass = "OverpassM Nerd Font"
 
 local font_family = Jet
 
+config.bold_brightens_ansi_colors = true
+
 config.font = wezterm.font({
 	family = font_family,
 	weight = 400,
 })
 
 -- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
--- config.font_rules = {
--- 	{
--- 		intensity = "Normal",
--- 		italic = false,
--- 		font = wezterm.font({
--- 			family = Jet,
--- 		}),
--- 	},
--- 	{
--- 		intensity = "Bold",
--- 		italic = false,
--- 		font = wezterm.font({
--- 			family = Jet,
--- 			weight = "Bold",
--- 		}),
--- 	},
--- 	{
--- 		intensity = "Normal",
--- 		italic = true,
--- 		font = wezterm.font({
--- 			family = Maple,
--- 			style = "Italic",
--- 		}),
--- 	},
--- 	{
--- 		intensity = "Bold",
--- 		italic = true,
--- 		font = wezterm.font({
--- 			family = Maple,
--- 			weight = "Bold",
--- 			style = "Italic",
--- 		}),
--- 	},
--- }
+config.font_rules = {
+	{
+		intensity = "Normal",
+		italic = false,
+		font = wezterm.font({
+			family = Jet,
+		}),
+	},
+	{
+		intensity = "Bold",
+		italic = false,
+		font = wezterm.font({
+			family = Jet,
+			weight = "Bold",
+		}),
+	},
+	{
+		intensity = "Normal",
+		italic = true,
+		font = wezterm.font({
+			family = Maple,
+			style = "Italic",
+		}),
+	},
+	{
+		intensity = "Bold",
+		italic = true,
+		font = wezterm.font({
+			family = Maple,
+			weight = "Bold",
+			style = "Italic",
+		}),
+	},
+}
 
-config.font_size = 14
+config.font_size = 16
 config.line_height = 1.25
 
 config.window_frame = {
 	font = wezterm.font({ family = font_family }),
-	font_size = 12.0,
+	font_size = 14.0,
 }
 
 config.window_padding = {
