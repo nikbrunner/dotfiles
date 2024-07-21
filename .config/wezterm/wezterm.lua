@@ -12,9 +12,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Terra Spring Night"
+config.color_scheme = "Black Atom - Engineering"
 config.colors = {
-	background = "#212523",
+	background = "#0e1110",
 }
 
 -- config.window_background_opacity = 0.9
@@ -112,8 +112,8 @@ config.keys = {
 
 config.window_decorations = "RESIZE"
 
-config.default_cursor_style = "SteadyBlock"
-config.force_reverse_video_cursor = true
+-- config.default_cursor_style = "SteadyBlock"
+-- config.force_reverse_video_cursor = true
 
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
