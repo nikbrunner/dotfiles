@@ -12,9 +12,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Engineering"
+config.color_scheme = "Black Atom - Operations"
 config.colors = {
-	background = "#0e1110",
+	background = "#181b1a",
 }
 
 -- config.window_background_opacity = 0.9
@@ -42,6 +42,9 @@ config.font = wezterm.font({
 	family = font_family,
 	weight = 400,
 })
+
+config.font_size = 14
+config.line_height = 1.25
 
 -- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
 config.font_rules = {
@@ -78,9 +81,6 @@ config.font_rules = {
 		}),
 	},
 }
-
-config.font_size = 16
-config.line_height = 1.25
 
 config.window_frame = {
 	font = wezterm.font({ family = font_family }),
