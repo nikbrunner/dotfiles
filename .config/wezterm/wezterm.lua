@@ -12,9 +12,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Black Atom - Operations"
+config.color_scheme = "Black Atom - Terra Spring Night"
 config.colors = {
-	background = "#181b1a",
+	background = "#212523",
 }
 
 -- config.window_background_opacity = 0.9
@@ -46,41 +46,41 @@ config.font = wezterm.font({
 config.font_size = 14
 config.line_height = 1.25
 
--- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
-config.font_rules = {
-	{
-		intensity = "Normal",
-		italic = false,
-		font = wezterm.font({
-			family = Jet,
-		}),
-	},
-	{
-		intensity = "Bold",
-		italic = false,
-		font = wezterm.font({
-			family = Jet,
-			weight = "Bold",
-		}),
-	},
-	{
-		intensity = "Normal",
-		italic = true,
-		font = wezterm.font({
-			family = Maple,
-			style = "Italic",
-		}),
-	},
-	{
-		intensity = "Bold",
-		italic = true,
-		font = wezterm.font({
-			family = Maple,
-			weight = "Bold",
-			style = "Italic",
-		}),
-	},
-}
+-- -- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
+-- config.font_rules = {
+-- 	{
+-- 		intensity = "Normal",
+-- 		italic = false,
+-- 		font = wezterm.font({
+-- 			family = Jet,
+-- 		}),
+-- 	},
+-- 	{
+-- 		intensity = "Bold",
+-- 		italic = false,
+-- 		font = wezterm.font({
+-- 			family = Jet,
+-- 			weight = "Bold",
+-- 		}),
+-- 	},
+-- 	{
+-- 		intensity = "Normal",
+-- 		italic = true,
+-- 		font = wezterm.font({
+-- 			family = Maple,
+-- 			style = "Italic",
+-- 		}),
+-- 	},
+-- 	{
+-- 		intensity = "Bold",
+-- 		italic = true,
+-- 		font = wezterm.font({
+-- 			family = Maple,
+-- 			weight = "Bold",
+-- 			style = "Italic",
+-- 		}),
+-- 	},
+-- }
 
 config.window_frame = {
 	font = wezterm.font({ family = font_family }),
@@ -111,9 +111,6 @@ config.keys = {
 }
 
 config.window_decorations = "RESIZE"
-
--- config.default_cursor_style = "SteadyBlock"
--- config.force_reverse_video_cursor = true
 
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
