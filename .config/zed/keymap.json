@@ -47,14 +47,20 @@
       "space g h p": "editor::ToggleHunkDiff",
       "space g h P": "editor::ExpandAllHunkDiffs",
       // Explorer
+
       "space e": "project_panel::ToggleFocus",
+
       // Quit Group
       "space q o": "pane::CloseInactiveItems",
       "space q q": "pane::CloseActiveItem",
+
+      "space u t": "theme_selector::Toggle",
+
       // Prev/Next
       "] g": "editor::GoToHunk",
       "[ g": "editor::GoToPrevHunk",
       "v A": "editor::SelectAll",
+
       // Pane Navigation
       "tab": "pane::ActivateNextItem",
       "shift-tab": "pane::ActivatePrevItem",

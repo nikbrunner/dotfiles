@@ -47,6 +47,7 @@ alias dfu='df add -u && df commit -m "Update dotfiles" && df push'
 alias dfs='df status'
 alias dflg='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+
 alias ls="exa --all --oneline --long --icons --sort=type"
 alias lt="exa --all --tree --icons --sort=type --level=1 --ignore-glob=\"node_modules|.git\""
 alias lg="lazygit"
@@ -87,6 +88,38 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
+
+# Git Branch Switcher ====================================================
+git_branch_switch() {
+    local branches
+    local target
+
+    if [[ "$1" == "-a" || "$1" == "--all" ]]; then
+        # Show all branches (local and remote)
+        branches=$(git branch -a | grep -v HEAD | sed "s/.* //")
+    else
+        # Show only local branches
+        branches=$(git branch | sed "s/.* //")
+    fi
+
+    target=$(echo "$branches" | fzf --ansi --preview-window=top:70% \
+        --preview="git -c color.ui=always log -n 50 --graph --color=always \
+        --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' {}")
+
+    if [[ -n "$target" ]]; then
+        if [[ "$target" == remotes/* ]]; then
+            git checkout --track "${target#remotes/}"
+        else
+            git checkout "$target"
+        fi
+    fi
+}
+
+# Alias for switching local Git branches using fzf
+alias gbr='git_branch_switch'
+
+# Alias for switching all (including remote) Git branches using fzf
+alias gbra='git_branch_switch -a'
 
 # Misc ==================================================================
 myip=$(ipconfig getifaddr en0)
