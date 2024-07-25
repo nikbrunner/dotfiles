@@ -12,9 +12,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "nvim_default_dark"
+config.color_scheme = "Black Atom - Engineering"
 config.colors = {
-	background = "#14161b",
+	background = "#0e1110",
 }
 
 -- config.window_background_opacity = 0.9

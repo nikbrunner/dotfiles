@@ -1,5 +1,5 @@
 {
-  "theme": "GitHub Dark Default",
+  "theme": "Black Atom - Engineering",
   "copilot": {
     "disabled_globs": [".env", ""]
   },
@@ -21,6 +21,9 @@
   },
   "semantic_index": {
     "enabled": true
+  },
+  "features": {
+    "inline_completion_provider": "supermaven"
   },
   "terminal": {
     "line_height": "standard",
